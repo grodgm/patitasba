@@ -30,6 +30,10 @@ echo "📡 Scrapeando Instagram..."
 echo "--- $(date) ---" >> "$LOG"
 $PYTHON scraper.py >> "$LOG" 2>&1
 
+# ── Actualizar donaciones desde MercadoPago ──
+echo "💰 Actualizando donaciones..."
+$PYTHON actualizar_donaciones.py >> "$LOG" 2>&1
+
 if [ $? -ne 0 ]; then
     echo "⚠️  El scraper terminó con errores. Revisá scraper.log para más detalles."
     echo "   Igualmente subiendo lo que haya..."

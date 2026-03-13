@@ -1,0 +1,10 @@
+# Token de MercadoPago — NUNCA subir a GitHub
+mp_token.txt
+
+# Logs locales
+scraper.log
+
+# Archivos del sistema
+.DS_Store
+__pycache__/
+*.pyc
