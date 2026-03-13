@@ -40,7 +40,7 @@ echo ""
 echo "📤 Subiendo a GitHub Pages..."
 
 # Agregar los archivos del sitio (acepta tanto index.html como patitasba.html)
-git add pets.json images/ index.html patitasba.html 2>/dev/null || true
+git add pets.json donaciones.json images/ index.html patitasba.html 2>/dev/null || true
 git add -A 2>/dev/null || true
 
 # Verificar si hay cambios

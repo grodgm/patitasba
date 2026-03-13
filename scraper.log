@@ -64,3 +64,45 @@ JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.
 ==================================================
 
 💡 Ahora abrí patitasba.html en tu browser — ya va a mostrar los datos reales!
+--- Completado viernes, 13 de marzo de 2026, 13:55:58 -03 ---
+--- viernes, 13 de marzo de 2026, 14:32:04 -03 ---
+JSON Query to api/v1/users/web_profile_info/?username=zaguatesrefugio: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=zaguatesrefugio [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=zaguatesrefugio: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=zaguatesrefugio [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=refugioelcampito: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=refugioelcampito [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=refugioelcampito: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=refugioelcampito [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=adoptaungalgo: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=adoptaungalgo [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=adoptaungalgo: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=adoptaungalgo [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=mascotasenadopcion: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=mascotasenadopcion [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=mascotasenadopcion: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=mascotasenadopcion [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=proyecto4patas: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=proyecto4patas [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=proyecto4patas: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=proyecto4patas [retrying; skip with ^C]
+🐾 PatitasBA Scraper
+==================================================
+📋 Perfiles a scrapear: @zaguatesrefugio, @refugioelcampito, @adoptaungalgo, @mascotasenadopcion, @proyecto4patas
+📊 Máximo 15 posts por perfil
+👤 Sin login (acceso anónimo — puede ser limitado)
+
+
+📱 Scrapeando @zaguatesrefugio...
+   ❌ Error inesperado: JSON Query to api/v1/users/web_profile_info/?username=zaguatesrefugio: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=zaguatesrefugio
+
+📱 Scrapeando @refugioelcampito...
+   ❌ Error inesperado: JSON Query to api/v1/users/web_profile_info/?username=refugioelcampito: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=refugioelcampito
+
+📱 Scrapeando @adoptaungalgo...
+   ❌ Error inesperado: JSON Query to api/v1/users/web_profile_info/?username=adoptaungalgo: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=adoptaungalgo
+
+📱 Scrapeando @mascotasenadopcion...
+   ❌ Error inesperado: JSON Query to api/v1/users/web_profile_info/?username=mascotasenadopcion: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=mascotasenadopcion
+
+📱 Scrapeando @proyecto4patas...
+   ❌ Error inesperado: JSON Query to api/v1/users/web_profile_info/?username=proyecto4patas: 401 Unauthorized - "fail" status, message "Please wait a few minutes before you try again." when accessing https://i.instagram.com/api/v1/users/web_profile_info/?username=proyecto4patas
+
+==================================================
+✅ Scraping completado!
+   Posts revisados:  0
+   Mascotas encontradas: 0
+   Guardado en: pets.json
+==================================================
+
+💡 Ahora abrí patitasba.html en tu browser — ya va a mostrar los datos reales!
