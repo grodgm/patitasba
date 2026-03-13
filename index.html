@@ -947,7 +947,7 @@ function renderPets() {
     document.getElementById('statPerros').textContent = disponibles.filter(p => p.tipo === 'perro').length;
     document.getElementById('statGatos').textContent  = disponibles.filter(p => p.tipo === 'gato').length;
     document.getElementById('statTotal').textContent  = disponibles.length;
-    document.getElementById('visibleCount').textContent = ordenados.length;
+    document.getElementById('visibleCount').textContent = disponibles.length;
 }
 
 // Arrancar cargando datos
