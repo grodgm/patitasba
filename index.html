@@ -30,21 +30,55 @@
 
         /* ── HERO ── */
         .hero {
-            background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 55%, #FFAD60 100%);
-            padding: 64px 32px 56px;
+            position: relative;
+            padding: 0;
             text-align: center;
             color: white;
+            overflow: hidden;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .hero h1 { font-size: 44px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
-        .hero p { font-size: 18px; opacity: .9; margin-bottom: 32px; }
+        .hero-collage {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 3px;
+            z-index: 1;
+        }
+        .hero-collage img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: brightness(0.85) saturate(1.1);
+            transition: transform 0.5s ease;
+        }
+        .hero-collage img:hover { transform: scale(1.05); }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(255,107,53,0.75) 0%, rgba(233,30,140,0.55) 50%, rgba(255,140,66,0.7) 100%);
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative; z-index: 3;
+            padding: 64px 32px 56px;
+        }
+        .hero h1 { font-size: 44px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; text-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+        .hero p { font-size: 18px; opacity: .95; margin-bottom: 32px; text-shadow: 0 1px 6px rgba(0,0,0,0.3); }
         .search-bar {
             display: flex; max-width: 560px; margin: 0 auto;
             background: white; border-radius: 50px; padding: 6px 6px 6px 20px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
         }
         .search-bar input { flex: 1; border: none; outline: none; font-size: 15px; color: #2D3436; background: transparent; }
         .search-bar input::placeholder { color: #b2bec3; }
         .search-bar button { background: #FF6B35; color: white; border: none; border-radius: 50px; padding: 10px 26px; font-weight: 600; font-size: 14px; cursor: pointer; }
+        @media (max-width: 600px) {
+            .hero-collage { grid-template-columns: repeat(3, 1fr); }
+            .hero { min-height: 340px; }
+            .hero h1 { font-size: 30px; }
+        }
 
         /* ── STATS ── */
         .stats { background: white; display: flex; justify-content: center; gap: 56px; padding: 18px; border-bottom: 1px solid #f0f0f0; }
@@ -299,12 +333,18 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
-    <h1>Encontrá tu compañero ideal<br>en Buenos Aires 🐾</h1>
-    <p>Perros y gatos rescatados de refugios de CABA y GBA buscando una familia para siempre 🐾</p>
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Buscá por nombre, raza o refugio…" oninput="applyFilters()">
-        <button onclick="applyFilters()">Buscar</button>
+<section class="hero" id="heroSection">
+    <div class="hero-collage" id="heroCollage">
+        <!-- Filled dynamically with pet images -->
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Encontrá tu compañero ideal<br>en Buenos Aires 🐾</h1>
+        <p>Perros y gatos rescatados de refugios de CABA y GBA buscando una familia para siempre 🐾</p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscá por nombre, raza o refugio…" oninput="applyFilters()">
+            <button onclick="applyFilters()">Buscar</button>
+        </div>
     </div>
 </section>
 
@@ -540,6 +580,40 @@ async function cargarDatos() {
         console.log('ℹ️  pets.json no encontrado — usando demo');
     }
     renderPets();
+    llenarCollageHero();
+}
+
+function llenarCollageHero() {
+    const collage = document.getElementById('heroCollage');
+    if (!collage || pets.length === 0) return;
+    // Prefer adopted pets (happy endings!) then fill with available ones
+    const adoptados = pets.filter(p => p.disponible === false && p.imgUrls && p.imgUrls.length > 0);
+    const disponibles = pets.filter(p => p.disponible !== false && p.imgUrls && p.imgUrls.length > 0);
+    // Also include pets with single imgUrl
+    const conFoto = pets.filter(p => {
+        if (p.imgUrls && p.imgUrls.length > 0) return true;
+        if (p.imgUrl) return true;
+        return false;
+    });
+    // Shuffle and pick 8 images for the collage
+    const shuffled = [...conFoto].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 8);
+    collage.innerHTML = '';
+    selected.forEach(pet => {
+        const img = document.createElement('img');
+        const src = (pet.imgUrls && pet.imgUrls.length > 0) ? pet.imgUrls[0] : pet.imgUrl;
+        if (src) {
+            img.src = src;
+            img.alt = pet.nombre || 'Mascota en adopción';
+            img.loading = 'lazy';
+            collage.appendChild(img);
+        }
+    });
+    // If we have fewer than 8 images, adjust grid
+    if (selected.length <= 4) {
+        collage.style.gridTemplateColumns = 'repeat(' + Math.max(selected.length, 2) + ', 1fr)';
+        collage.style.gridTemplateRows = '1fr';
+    }
 }
 
 // ── DATOS DE DEMO (fallback si no hay pets.json) ──
