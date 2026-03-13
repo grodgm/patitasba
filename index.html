@@ -23,9 +23,9 @@
         .logo { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 800; color: #FF6B35; }
         .logo span { color: #2D3436; }
         nav { display: flex; gap: 28px; }
-        nav a { text-decoration: none; color: #636e72; font-weight: 500; font-size: 14px; transition: color .2s; }
+        nav a { text-decoration: none; color: #636e72; font-weight: 600; font-size: 16px; transition: color .2s; }
         nav a:hover { color: #FF6B35; }
-        .btn-primary { background: #FF6B35; color: white; border: none; padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background .2s; }
+        .btn-primary { background: #FF6B35; color: white; border: none; padding: 11px 24px; border-radius: 50px; font-weight: 700; font-size: 15px; cursor: pointer; transition: background .2s; }
         .btn-primary:hover { background: #e55a25; }
 
         /* ── HERO ── */
@@ -301,7 +301,7 @@
 <!-- HERO -->
 <section class="hero">
     <h1>Encontrá tu compañero ideal<br>en Buenos Aires 🐾</h1>
-    <p>Perros y gatos de refugios de CABA y GBA esperando un hogar</p>
+    <p>Perros y gatos rescatados de refugios de CABA y GBA buscando una familia para siempre 🐾</p>
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Buscá por nombre, raza o refugio…" oninput="applyFilters()">
         <button onclick="applyFilters()">Buscar</button>
@@ -324,7 +324,7 @@
     </div>
     <div class="stat">
         <div class="stat-number" id="statTotal">—</div>
-        <div class="stat-label">Total disponibles</div>
+        <div class="stat-label">🐾 Esperando hogar</div>
     </div>
 </section>
 
@@ -353,18 +353,18 @@
         <button class="filter-btn active" data-group="edad" onclick="setFilter('edad','todos',this)">Todas</button>
         <button class="filter-btn" data-group="edad" onclick="setFilter('edad','cachorro',this)">Cachorro</button>
         <button class="filter-btn" data-group="edad" onclick="setFilter('edad','adulto',this)">Adulto</button>
-        <button class="filter-btn" data-group="edad" onclick="setFilter('edad','senior',this)">Senior</button>
+        <button class="filter-btn" data-group="edad" onclick="setFilter('edad','senior',this)">Adulto+</button>
     </div>
 </section>
 
 <!-- GRID -->
 <main class="main-content">
     <div class="results-header">
-        <div class="results-count"><strong id="visibleCount">12</strong> mascotas disponibles para adopción</div>
+        <div class="results-count"><strong id="visibleCount">12</strong> amigos esperando un hogar con amor</div>
     </div>
     <div class="no-results" id="noResults">
         <span>🔍</span>
-        No encontramos mascotas con esos filtros. ¡Probá con otra combinación!
+        No encontramos amigos con esos filtros. ¡Probá con otra combinación, todos merecen un hogar!
     </div>
     <div class="pets-grid" id="petsGrid"></div>
 </main>
@@ -381,8 +381,8 @@
             <div class="modal-desc" id="modalDesc"></div>
             <div class="card-org" id="modalOrg"></div>
             <div class="modal-actions">
-                <a id="modalPostLink" class="modal-post" href="#" target="_blank">🐾 Ver post de adopción</a>
-                <a id="modalIgLink" class="modal-ig" href="#" target="_blank">📸 Instagram del refugio</a>
+                <a id="modalPostLink" class="modal-post" href="#" target="_blank">🐾 Ver publicación del refugio</a>
+                <a id="modalIgLink" class="modal-ig" href="#" target="_blank">📸 Seguir al refugio</a>
             </div>
         </div>
     </div>
@@ -503,7 +503,12 @@
 <footer>
     <div class="footer-logo">🐾 PatitasBA</div>
     <p>Adopción responsable en Buenos Aires · CABA y GBA</p>
-    <p>Este sitio no representa oficialmente a los refugios listados.<br>Para adoptar, contactá directamente a cada organización por Instagram.</p>
+    <p style="margin-top:12px;opacity:.8;font-size:12px;">
+        ❤️ Adoptá con compromiso · ✂️ Castración responsable · 🏥 Salud y vacunas al día
+    </p>
+    <p>Este sitio no representa oficialmente a los refugios listados.<br>
+    Para adoptar, contactá directamente a cada organización por Instagram.<br>
+    Adoptar es un compromiso de por vida — ¡gracias por elegir adoptar!</p>
 </footer>
 
 <script>
@@ -687,9 +692,9 @@ function openModal(id) {
         `<span class="tag tag-type">${p.tipo === 'perro' ? '🐕 Perro' : '🐈 Gato'}</span>
          <span class="tag tag-age">📅 ${p.edad}</span>
          <span class="tag tag-size">📏 ${p.tamanio}</span>
-         ${!p.disponible ? '<span class="tag" style="background:#E8F5E9;color:#2E7D32">🏠 Ya adoptado</span>' : ''}`;
+         ${!p.disponible ? '<span class="tag" style="background:#E8F5E9;color:#2E7D32">🏠 Ya encontró familia</span>' : '<span class="tag" style="background:#FFF0F0;color:#e91e8c">❤️ En adopción</span>'}`;
     document.getElementById('modalDesc').textContent = p.desc;
-    document.getElementById('modalOrg').innerHTML    = `🏠 <a href="https://www.instagram.com/${p.ig}/" target="_blank">@${p.ig}</a> · ${p.org}`;
+    document.getElementById('modalOrg').innerHTML    = `📍 <a href="https://www.instagram.com/${p.ig}/" target="_blank">@${p.ig}</a> · ${p.org}`;
     document.getElementById('modalPostLink').href    = p.postUrl || `https://www.instagram.com/${p.ig}/`;
     document.getElementById('modalIgLink').href      = `https://www.instagram.com/${p.ig}/`;
     document.getElementById('modal').classList.add('open');
@@ -809,9 +814,9 @@ function renderPets() {
     grid.innerHTML = ordenados.map(p => {
         const adopClass = p.disponible === false ? 'adoptado' : '';
         const badge     = p.disponible === false
-            ? `<div class="badge-adoptado">🏠 Ya adoptado</div>`
-            : `<div class="badge-available">✓ Disponible</div>`;
-        const btnLabel  = p.disponible === false ? '🏠 Ya fue adoptado' : '🐾 ¡Quiero adoptarlo!';
+            ? `<div class="badge-adoptado">🏠 Ya encontró familia</div>`
+            : `<div class="badge-available">❤️ En adopción</div>`;
+        const btnLabel  = p.disponible === false ? '🏠 Ya encontró familia ❤️' : '🐾 ¡Quiero adoptarlo!';
         const btnClass  = p.disponible === false ? 'btn-adopt adoptado-btn' : 'btn-adopt';
         const btnAction = p.disponible === false
             ? ''

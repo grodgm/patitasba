@@ -1,5 +1,5 @@
 {
-  "generado": "2026-03-13T15:23:45.852227",
+  "generado": "2026-03-13T16:37:57.611422",
   "total": 27,
   "posts_revisados": 61,
   "mascotas": [
@@ -109,7 +109,7 @@
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
-      "edad": "9 años",
+      "edad": "9 años (Adulto+)",
       "edadCat": "senior",
       "tamanio": "Chico",
       "tamanioCat": "chico",
@@ -282,7 +282,7 @@
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
-      "edad": "Senior",
+      "edad": "Adulto+",
       "edadCat": "senior",
       "tamanio": "Mediano",
       "tamanioCat": "mediano",
@@ -331,7 +331,7 @@
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
-      "edad": "Senior",
+      "edad": "Adulto+",
       "edadCat": "senior",
       "tamanio": "Chico",
       "tamanioCat": "chico",

@@ -171,6 +171,7 @@ def extraer_edad(caption: str) -> tuple[str, str]:
                     cat = "cachorro"
                 elif num >= 8:
                     cat = "senior"
+                    return f"{num} años (Adulto+)", cat
                 else:
                     cat = "adulto"
                 return f"{num} años", cat
@@ -180,7 +181,7 @@ def extraer_edad(caption: str) -> tuple[str, str]:
                                  "recién nacido", "joven", "gatito", "gatita", "michito", "michita"]):
         return "Cachorro", "cachorro"
     if any(w in lower for w in ["senior", "mayor", "anciano", "anciana", "vejez", "viejito", "viejita"]):
-        return "Senior", "senior"
+        return "Adulto+", "senior"
 
     return "Adulto", "adulto"
 
