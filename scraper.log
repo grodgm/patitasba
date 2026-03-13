@@ -176,3 +176,73 @@ JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.
 💰 PatitasBA — Actualizando donaciones...
    ⚠️  Error consultando MercadoPago: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
    No se pudo obtener el monto. donaciones.json no fue modificado.
+--- Completado viernes, 13 de marzo de 2026, 14:57:23 -03 ---
+--- viernes, 13 de marzo de 2026, 15:22:17 -03 ---
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+🐾 PatitasBA Scraper
+==================================================
+📋 Perfiles a scrapear: @zaguatesrefugio, @refugioelcampito, @adoptaungalgo, @mascotasenadopcion, @proyecto4patas
+📊 Máximo 15 posts por perfil
+👤 Sin login (acceso anónimo — puede ser limitado)
+
+
+📱 Scrapeando @zaguatesrefugio...
+   263,148 seguidores · 18813 posts
+   ✅ [1] Sin nombre #0 — perro 5 meses Chico · 🏠 adoptado
+   ✅ [2] Leonel — perro Adulto Grande · 📸 3 foto(s)
+   ✅ [3] Sin nombre #2 — perro 1 años Mediano · 📸 3 foto(s)
+   ✅ [4] Hermanitos — perro Cachorro Mediano · 🏠 adoptado
+   ✅ [5] Batata — perro 9 años Chico · 📸 1 foto(s)
+   ✅ [6] Hermanitos — perro 2 meses Mediano · 📸 3 foto(s)
+   ✅ [7] Benito — perro 3 meses Grande · 📸 3 foto(s)
+   ✅ [8] Olivia — perro 4 meses Grande · 📸 3 foto(s)
+   ✅ [9] China — perro 2 años Mediano · 📸 3 foto(s)
+   ✅ [10] Tango — perro Cachorro Mediano · 📸 3 foto(s)
+   ✅ [11] Pumba — perro Adulto Mediano · 📸 3 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @refugioelcampito...
+   398,282 seguidores · 8169 posts
+   ✅ [1] Sin nombre #11 — perro Senior Mediano · 📸 3 foto(s)
+   ✅ [2] Camperitos — perro Adulto Mediano · 📸 2 foto(s)
+   ✅ [3] Fueron — perro Senior Chico · 🏠 adoptado
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @adoptaungalgo...
+   82,509 seguidores · 2799 posts
+   ✅ [1] Chester — perro 2 años Grande · 📸 3 foto(s)
+   ✅ [2] Sin nombre #15 — perro 3 años Grande · 📸 2 foto(s)
+   ✅ [3] Máximo — perro Adulto Grande · 📸 3 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @mascotasenadopcion...
+   164 seguidores · 1 posts
+   ✅ [1] Sin nombre #17 — perro Adulto Mediano · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @proyecto4patas...
+   737,478 seguidores · 2831 posts
+   ✅ [1] Sin nombre #18 — perro Cachorro Mediano · 📸 1 foto(s)
+   ✅ [2] Están — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [3] Joaco — perro 5 meses Mediano · 🏠 adoptado
+   ✅ [4] Cada — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [5] Sin nombre #22 — perro 1 años Chico · 📸 3 foto(s)
+   ✅ [6] Sin nombre #23 — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [7] Sin nombre #24 — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [8] Fueron — perro 3 meses Mediano · 🏠 adoptado
+   ✅ [9] Sin nombre #26 — perro Cachorro Mediano · 🏠 adoptado
+
+==================================================
+✅ Scraping completado!
+   Posts revisados:  61
+   Mascotas encontradas: 27
+   Guardado en: pets.json
+==================================================
+
+💡 Ahora abrí patitasba.html en tu browser — ya va a mostrar los datos reales!
+💰 PatitasBA — Actualizando donaciones...
+   ⚠️  Error consultando MercadoPago: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
+   No se pudo obtener el monto. donaciones.json no fue modificado.

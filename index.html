@@ -201,6 +201,61 @@
         /* ── MODAL PUBLICAR ── */
         .pub-modal { max-width: 520px; }
         .pub-modal .modal-body { padding: 28px; }
+
+        /* ── MODAL DONAR ── */
+        .donar-modal { max-width: 560px; }
+        .donar-modal .modal-body { padding: 0; overflow: hidden; border-radius: 24px; }
+        .donar-header {
+            background: linear-gradient(135deg, #FF6B35 0%, #e91e8c 100%);
+            padding: 32px 32px 24px;
+            color: white;
+            text-align: center;
+        }
+        .donar-header h2 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+        .donar-header p { font-size: 14px; opacity: .9; line-height: 1.5; }
+        .donar-body { padding: 28px 32px; }
+        .goal-label { display: flex; justify-content: space-between; font-size: 13px; color: #636e72; margin-bottom: 8px; font-weight: 600; }
+        .goal-label .meta { color: #FF6B35; font-size: 15px; font-weight: 800; }
+        .progress-track {
+            background: #f0f0f0; border-radius: 50px; height: 18px;
+            overflow: visible; position: relative; margin-bottom: 6px;
+        }
+        .progress-fill {
+            height: 100%; border-radius: 50px;
+            background: linear-gradient(90deg, #FF6B35, #e91e8c);
+            transition: width 1s ease;
+            position: relative; min-width: 0;
+        }
+        .progress-fill.superado { background: linear-gradient(90deg, #00b894, #00cec9); }
+        .progress-pct {
+            position: absolute; right: 0; top: -24px;
+            font-size: 13px; font-weight: 800; color: #FF6B35; white-space: nowrap;
+        }
+        .progress-pct.superado { color: #00b894; }
+        .goal-sub { font-size: 12px; color: #b2bec3; margin-bottom: 22px; }
+        .superado-msg {
+            background: linear-gradient(135deg,#00b894,#00cec9);
+            color: white; border-radius: 12px; padding: 10px 16px;
+            font-size: 13px; font-weight: 600; text-align: center;
+            margin-bottom: 18px; display: none;
+        }
+        .alias-box {
+            background: #FFF3EF; border: 2px solid #FF6B35; border-radius: 16px;
+            padding: 20px 24px; text-align: center; margin-bottom: 20px;
+        }
+        .alias-label { font-size: 12px; color: #636e72; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
+        .alias-value { font-size: 28px; font-weight: 800; color: #FF6B35; letter-spacing: .5px; margin-bottom: 10px; }
+        .alias-steps { font-size: 12px; color: #636e72; line-height: 1.6; }
+        .btn-copy {
+            background: #FF6B35; color: white; border: none; border-radius: 50px;
+            padding: 8px 20px; font-size: 13px; font-weight: 600; cursor: pointer;
+            margin-top: 10px; transition: background .2s;
+        }
+        .btn-copy:hover { background: #e55a25; }
+        .refugios-list { font-size: 13px; color: #636e72; line-height: 1.8; margin-bottom: 18px; }
+        .refugios-list strong { color: #2D3436; }
+        .donar-footer { font-size: 12px; color: #b2bec3; text-align: center; padding: 0 32px 24px; line-height: 1.6; }
+        @keyframes pulse-btn { 0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,.4)} 50%{box-shadow:0 0 0 8px rgba(255,107,53,0)} }
         .pub-modal h2 { margin-bottom: 20px; }
         .form-group { margin-bottom: 14px; text-align: left; }
         .form-group label { display: block; font-size: 13px; font-weight: 600; color: #2D3436; margin-bottom: 5px; }
@@ -238,11 +293,9 @@
     <div class="logo">🐾 Patitas<span>BA</span></div>
     <nav>
         <a href="#">Inicio</a>
-        <a href="#">¿Cómo adoptar?</a>
-        <a href="#">Refugios</a>
-        <a href="#">Donar</a>
+        <a href="#" onclick="abrirDonar(); return false;" style="color:#FF6B35; font-weight:700;">❤️ Donar</a>
     </nav>
-    <button class="btn-primary" onclick="document.getElementById('modalPublicar').classList.add('open')">+ Publicar mascota</button>
+    <button class="btn-primary" onclick="abrirDonar()" style="background: linear-gradient(135deg,#FF6B35,#e91e8c); animation: pulse-btn 2s infinite;">❤️ Apoyá a los refugios</button>
 </header>
 
 <!-- HERO -->
@@ -330,6 +383,56 @@
             <div class="modal-actions">
                 <a id="modalPostLink" class="modal-post" href="#" target="_blank">🐾 Ver post de adopción</a>
                 <a id="modalIgLink" class="modal-ig" href="#" target="_blank">📸 Instagram del refugio</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DONAR -->
+<div class="modal-overlay" id="modalDonar">
+    <div class="modal donar-modal">
+        <button class="modal-close" onclick="cerrarDonar()" style="background:rgba(255,255,255,.25);color:white;top:16px;right:16px;">✕</button>
+        <div class="modal-body">
+            <div class="donar-header">
+                <div style="font-size:42px;margin-bottom:10px;">🐾</div>
+                <h2>Ayudá a los refugios</h2>
+                <p>El 100% de lo recaudado se distribuye entre los 5 refugios para comida, veterinario y cuidados. Sin comisiones.</p>
+            </div>
+            <div class="donar-body">
+                <!-- Barra de progreso -->
+                <div class="goal-label">
+                    <span>Recaudado este mes</span>
+                    <span class="meta" id="donarMetaLabel">Meta: $200.000</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="donarProgressFill" style="width:0%">
+                        <span class="progress-pct" id="donarPct">0%</span>
+                    </div>
+                </div>
+                <div class="goal-sub" id="donarGoalSub">$0 de $200.000 ARS · <span id="donarMes">este mes</span></div>
+                <div class="superado-msg" id="superadoMsg">🎉 ¡Superamos la meta! Cada peso extra también va a los refugios.</div>
+
+                <!-- Alias MercadoPago -->
+                <div class="alias-box">
+                    <div class="alias-label">Alias MercadoPago</div>
+                    <div class="alias-value" id="donarAlias">patitasba.mp</div>
+                    <button class="btn-copy" onclick="copiarAlias()">📋 Copiar alias</button>
+                    <div class="alias-steps" style="margin-top:12px">
+                        Abrí MercadoPago → Transferir → Ingresar alias → Mandá el monto que puedas 💛
+                    </div>
+                </div>
+
+                <!-- Refugios beneficiarios -->
+                <div class="refugios-list">
+                    <strong>Refugios que reciben las donaciones:</strong><br>
+                    🐕 Zaguates Refugio &nbsp;·&nbsp; 🐕 Refugio El Campito<br>
+                    🐕 Adopta un Galgo &nbsp;·&nbsp; 🐕 Mascotas en Adopción<br>
+                    🐕 Proyecto 4 Patas
+                </div>
+            </div>
+            <div class="donar-footer">
+                PatitasBA es un proyecto sin fines de lucro hecho con amor 🐾<br>
+                Distribuimos las donaciones equitativamente cada mes.
             </div>
         </div>
     </div>
@@ -598,6 +701,56 @@ document.getElementById('modal').addEventListener('click', e => { if (e.target =
 // ── MODAL PUBLICAR ──
 function closePublicar() { document.getElementById('modalPublicar').classList.remove('open'); }
 document.getElementById('modalPublicar').addEventListener('click', e => { if (e.target === document.getElementById('modalPublicar')) closePublicar(); });
+
+// ── MODAL DONAR ──
+function abrirDonar() {
+    document.getElementById('modalDonar').classList.add('open');
+    cargarDonaciones();
+}
+function cerrarDonar() { document.getElementById('modalDonar').classList.remove('open'); }
+document.getElementById('modalDonar').addEventListener('click', e => {
+    if (e.target === document.getElementById('modalDonar')) cerrarDonar();
+});
+
+function cargarDonaciones() {
+    fetch('donaciones.json?t=' + Date.now())
+        .then(r => r.json())
+        .then(d => renderDonaciones(d))
+        .catch(() => renderDonaciones({ mes: 'este mes', objetivo: 200000, recaudado: 0, alias: 'patitasba.mp' }));
+}
+
+function renderDonaciones(d) {
+    const obj       = d.objetivo  || 200000;
+    const rec       = d.recaudado || 0;
+    const pct       = Math.round((rec / obj) * 100);
+    const superado  = pct >= 100;
+    const fillW     = Math.min(pct, 100);
+    const fill      = document.getElementById('donarProgressFill');
+    const pctEl     = document.getElementById('donarPct');
+    const subEl     = document.getElementById('donarGoalSub');
+    const msgEl     = document.getElementById('superadoMsg');
+    const metaEl    = document.getElementById('donarMetaLabel');
+    const mesEl     = document.getElementById('donarMes');
+    const aliasEl   = document.getElementById('donarAlias');
+
+    fill.style.width = fillW + '%';
+    fill.classList.toggle('superado', superado);
+    pctEl.classList.toggle('superado', superado);
+    pctEl.textContent = pct + '%';
+    subEl.innerHTML   = `$${rec.toLocaleString('es-AR')} de $${obj.toLocaleString('es-AR')} ARS · <span id="donarMes">${d.mes || 'este mes'}</span>`;
+    metaEl.textContent = `Meta: $${obj.toLocaleString('es-AR')}`;
+    msgEl.style.display = superado ? 'block' : 'none';
+    if (aliasEl && d.alias) aliasEl.textContent = d.alias;
+}
+
+function copiarAlias() {
+    const alias = document.getElementById('donarAlias').textContent;
+    navigator.clipboard.writeText(alias).then(() => {
+        const btn = document.querySelector('.btn-copy');
+        btn.textContent = '✅ ¡Copiado!';
+        setTimeout(() => btn.textContent = '📋 Copiar alias', 2000);
+    });
+}
 
 function generarPublicacion() {
     const nombre  = document.getElementById('pub_nombre').value.trim() || 'Sin nombre';
