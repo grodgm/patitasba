@@ -331,12 +331,22 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 28px; }
-            header { padding: 14px 16px; }
+            .hero h1 { font-size: 26px; }
+            header { padding: 10px 12px; flex-wrap: nowrap; gap: 8px; }
+            .logo { font-size: 18px; white-space: nowrap; flex-shrink: 0; }
             nav { display: none; }
-            .stats { gap: 24px; }
+            .btn-primary { padding: 8px 14px; font-size: 12px; white-space: nowrap; flex-shrink: 0; }
+            .stats { gap: 16px; padding: 14px 8px; flex-wrap: wrap; }
+            .stat-number { font-size: 22px; }
+            .stat-label { font-size: 11px; }
             .filters-section { padding: 14px 16px; }
             .main-content { padding: 20px 14px; }
+        }
+        @media (max-width: 400px) {
+            .logo { font-size: 16px; }
+            .btn-primary { padding: 7px 10px; font-size: 11px; }
+            .hero h1 { font-size: 22px; }
+            .hero p { font-size: 14px; }
         }
     </style>
 </head>
@@ -584,7 +594,8 @@ async function cargarDatos() {
         const banner = document.getElementById('dataBanner');
         if (banner) {
             const fecha = data.generado ? new Date(data.generado).toLocaleDateString('es-AR') : '—';
-            banner.textContent = `✅ Datos reales de Instagram · ${pets.length} mascotas · Actualizado: ${fecha}`;
+            const disponiblesCount = pets.filter(p => p.disponible !== false).length;
+            banner.textContent = `✅ Datos reales de Instagram · ${disponiblesCount} mascotas en adopción · Actualizado: ${fecha}`;
             banner.style.background = '#E8F5E9';
             banner.style.color = '#2E7D32';
         }
