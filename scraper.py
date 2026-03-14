@@ -140,8 +140,17 @@ def esta_adoptado(caption: str) -> bool:
     return not sigue_disponible
 
 
-def detectar_tipo(caption: str) -> str:
+def detectar_tipo(caption: str, ig: str = "") -> str:
     """Detecta si es perro o gato con scoring mejorado."""
+
+    # Perfiles 100% de gatos → siempre gato
+    PERFILES_GATOS = {"gatitos_parque_chacabuco"}
+    if ig in PERFILES_GATOS:
+        return "gato"
+
+    # Perfiles mixtos con tendencia a gatos → bonus gato
+    PERFILES_MIXTOS_GATOS = {"hogardeproteccionlourdes", "rescataditosenadopcionn"}
+
     lower = caption.lower()
 
     # Indicadores de perro (peso 1)
@@ -178,8 +187,9 @@ def detectar_tipo(caption: str) -> str:
     score_perro += sum(3 for e in perro_emoji if e in caption)
     score_gato  += sum(3 for e in gato_emoji  if e in caption)
 
-    # Bonus: si el perfil es conocido por gatos
-    # (algunos refugios publican ambos, pero ciertos posts son claramente de gatos)
+    # Bonus para perfiles mixtos con tendencia a gatos
+    if ig in PERFILES_MIXTOS_GATOS:
+        score_gato += 1  # desempata hacia gato cuando no hay señales claras
 
     if score_gato > score_perro:
         return "gato"
@@ -187,6 +197,9 @@ def detectar_tipo(caption: str) -> str:
         return "perro"
     # Empate: si hay alguna señal de gato, preferimos gato (menos common-case)
     if score_gato > 0:
+        return "gato"
+    # Empate sin señales: en perfiles mixtos de gatos, default gato
+    if ig in PERFILES_MIXTOS_GATOS:
         return "gato"
     return "perro"  # default: la mayoría de las cuentas son de perros
 
@@ -419,7 +432,7 @@ def generar_descripcion_corta(caption: str) -> str:
 
 def parsear_caption(caption: str, ig: str) -> dict:
     """Parsea el caption y retorna un dict con los datos del animal."""
-    tipo        = detectar_tipo(caption)
+    tipo        = detectar_tipo(caption, ig)
     nombre      = extraer_nombre(caption)
     edad, ecat  = extraer_edad(caption)
     tam, tcat   = extraer_tamanio(caption, tipo, ig)
