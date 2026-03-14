@@ -1,0 +1,36 @@
+name: Actualizar donaciones
+
+on:
+  schedule:
+    - cron: '0 14 * * *'   # 11 AM Argentina (UTC-3)
+  workflow_dispatch:         # para correrlo manual
+
+jobs:
+  donaciones:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar certifi
+        run: pip install certifi
+
+      - name: Actualizar donaciones
+        env:
+          MP_TOKEN: ${{ secrets.MP_ACCESS_TOKEN }}
+        run: |
+          echo "$MP_TOKEN" > mp_token.txt
+          export SSL_CERT_FILE=$(python -c "import certifi; print(certifi.where())")
+          python actualizar_donaciones.py
+          rm mp_token.txt
+
+      - name: Commitear cambios
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add donaciones.json
+          git diff --staged --quiet || git commit -m "💰 Donaciones actualizado $(date +'%d/%m/%Y')"
+          git push
