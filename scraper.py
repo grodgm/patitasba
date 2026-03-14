@@ -63,13 +63,78 @@ def es_post_de_adopcion(caption: str) -> bool:
         "adopci", "adoptar", "buscamos hogar", "busca hogar",
         "en adopción", "en adopcion", "necesita hogar", "hogar buscado",
         "darlo en adopción", "darlo en adopcion", "está en adopción",
+        "buscan familia", "busca familia", "buscando familia",
+        "buscando hogar", "necesitan hogar", "necesitan familia",
     ]
-    return any(kw in lower for kw in keywords)
+    if any(kw in lower for kw in keywords):
+        return True
+    # Algunos posts de refugios son implícitamente de adopción
+    adoptado_check = any(kw in lower for kw in ADOPTADO_KW)
+    return adoptado_check
+
+def es_campania(caption: str) -> bool:
+    """Detecta si el post es una campaña general, no de un animal específico."""
+    lower = caption.lower()
+    campania_kw = [
+        "jornada de adopción", "jornada de adopcion", "evento de adopción",
+        "evento de adopcion", "feria de adopción", "feria de adopcion",
+        "campaña de", "campaña", "jornada", "evento", "feria",
+        "vení a conocer", "veni a conocer", "te esperamos",
+        "este sábado", "este sabado", "este domingo",
+        "los esperamos en", "nos vemos en",
+        "charla", "voluntarios", "voluntariado",
+        "sorteo", "rifa", "bono contribución",
+    ]
+    # Si tiene muchas de estas keywords, probablemente es campaña
+    hits = sum(1 for kw in campania_kw if kw in lower)
+    if hits >= 2:
+        return True
+    # Si NO menciona ningún animal individual (sin nombre propio, sin "busca hogar")
+    animal_individual_kw = [
+        "se llama", "nombre:", "busca hogar", "necesita hogar",
+        "busca familia", "en adopción responsable",
+    ]
+    tiene_animal = any(kw in lower for kw in animal_individual_kw)
+    # Si tiene keywords de campaña pero no de animal individual
+    if hits >= 1 and not tiene_animal:
+        return True
+    return False
 
 def esta_adoptado(caption: str) -> bool:
-    """Detecta si el animal ya fue adoptado."""
+    """
+    Detecta si el animal ya fue adoptado.
+
+    Lógica:
+    - Si la keyword de adoptado aparece en los PRIMEROS 150 caracteres
+      (el refugio editó el post y agregó "ADOPTADO" arriba) → adoptado definitivo.
+    - Si aparece más adelante Y también hay keywords de búsqueda activa
+      → probablemente solo algunos fueron adoptados → NO marcar como adoptado.
+    """
     lower = caption.lower()
-    return any(kw in lower for kw in ADOPTADO_KW)
+
+    # ¿Hay alguna mención de adoptado en algún lado?
+    tiene_adoptado = any(kw in lower for kw in ADOPTADO_KW)
+    if not tiene_adoptado:
+        return False
+
+    # Si la keyword está al PRINCIPIO del caption (patrón "ADOPTADO\n\n[post original]")
+    # → definitivamente adoptado, ignorar el resto del texto
+    inicio = lower[:150]
+    if any(kw in inicio for kw in ADOPTADO_KW):
+        return True
+
+    # Está más adelante → verificar si quedan animales disponibles en el mismo post
+    sigue_disponible_kw = [
+        "busca hogar", "buscamos hogar", "en adopción", "en adopcion",
+        "necesita hogar", "buscando hogar", "siguen buscando", "sigue buscando",
+        "todavía busca", "todavia busca", "aún busca", "aun busca",
+        "quedan", "todavía disponible", "todavia disponible",
+        "sigue en adopción", "sigue en adopcion",
+        "los demás", "los demas", "sus hermanos", "sus hermanitos",
+        "el resto", "los otros",
+    ]
+    sigue_disponible = any(kw in lower for kw in sigue_disponible_kw)
+    return not sigue_disponible
 
 
 def detectar_tipo(caption: str) -> str:
@@ -78,30 +143,40 @@ def detectar_tipo(caption: str) -> str:
 
     # Indicadores de perro (peso 1)
     perro_kw = [
-        "perro", "perra", "cachorro", "cachorrita", "cachorra",
+        "perro", "perra", "perrito", "perrita",
+        "cachorro", "cachorrita", "cachorra",
         "can ", "canino", "canina",
         "labrador", "mestizo", "mestiza", "galgo", "chihuahua", "pitbull",
         "beagle", "rottweiler", "pastor", "husky", "golden", "boxer",
         "dálmata", "dalmata", "poodle", "caniche", "cocker", "dogo",
         "dachshund", "salchicha", "bulldog", "border collie",
+        "ladra", "paseo", "correa", "collar",
     ]
     # Indicadores de gato (peso 1) — incluye jerga argentina
     gato_kw = [
-        "gato", "gata", "gatito", "gatita", "gatún", "gatuna",
-        "felino", "felina", "minino", "minina",
-        "michi", "michito", "michita", "mish",      # jerga argentina
+        "gato", "gata", "gatito", "gatita", "gatitos", "gatitas",
+        "gatún", "gatuna", "gatunas", "gatunos",
+        "felino", "felina", "felinos", "felinas",
+        "minino", "minina", "mininos", "mininas",
+        "michi", "michis", "michito", "michita", "michitos", "michitas", "mish",
+        "micho", "micha",
         "angora", "siamés", "siames", "persa",
         "maine coon", "bengalí", "bengali", "ragdoll",
-        "doméstico", "domestico",
+        "ronronea", "ronroneo", "maulla", "maúlla", "arenero",
+        "bigotes", "patitas suaves",
     ]
-    # Emojis con peso 2 (son muy específicos)
+    # Emojis con peso 3 (son muy específicos)
     perro_emoji = ["🐕", "🐶", "🐩", "🦮", "🐕‍🦺"]
-    gato_emoji  = ["🐈", "🐱", "🐈‍⬛", "😺", "😸"]
+    gato_emoji  = ["🐈", "🐱", "🐈‍⬛", "😺", "😸", "🙀", "😻", "😿", "😾"]
 
-    score_perro  = sum(1 for kw in perro_kw    if kw in lower)
-    score_gato   = sum(1 for kw in gato_kw     if kw in lower)
-    score_perro += sum(2 for e  in perro_emoji  if e  in caption)
-    score_gato  += sum(2 for e  in gato_emoji   if e  in caption)
+    # Contar ocurrencias (no solo presencia) para palabras clave frecuentes
+    score_perro  = sum(lower.count(kw) for kw in perro_kw)
+    score_gato   = sum(lower.count(kw) for kw in gato_kw)
+    score_perro += sum(3 for e in perro_emoji if e in caption)
+    score_gato  += sum(3 for e in gato_emoji  if e in caption)
+
+    # Bonus: si el perfil es conocido por gatos
+    # (algunos refugios publican ambos, pero ciertos posts son claramente de gatos)
 
     if score_gato > score_perro:
         return "gato"
@@ -115,30 +190,83 @@ def detectar_tipo(caption: str) -> str:
 
 def extraer_nombre(caption: str) -> str | None:
     """Intenta extraer el nombre del animal del caption."""
-    # Palabras que no son nombres de animales
+    # Palabras que NO son nombres de animales
     STOP = {
-        "Busca", "Está", "Este", "Esta", "Tiene", "Gran", "Muy", "Para",
-        "Hola", "Por", "Les", "Nos", "Sus", "Con", "Sin", "Que", "Del",
-        "Una", "Uno", "Los", "Las", "Pueden", "Tienen", "Queremos",
-        "Buscamos", "Necesita", "Necesitamos", "Urgente", "Hoy",
-        "Ayer", "Hace", "Desde", "Hasta", "Zona", "Barrio", "Caba",
-        "Buenos", "Aires", "Hogar", "Adopcion", "Adopción", "Casa",
-        "Familia", "Perro", "Perra", "Gato", "Gata", "Cachorro",
-        "Cachorra", "Animal", "Mascota", "Rescate", "Rescatado",
+        "busca", "está", "este", "esta", "están", "estan", "tiene", "gran", "muy", "para",
+        "hola", "por", "les", "nos", "sus", "con", "sin", "que", "del",
+        "una", "uno", "los", "las", "pueden", "tienen", "queremos",
+        "buscamos", "necesita", "necesitamos", "urgente", "hoy",
+        "ayer", "hace", "desde", "hasta", "zona", "barrio", "caba",
+        "buenos", "aires", "hogar", "adopcion", "adopción", "casa",
+        "familia", "perro", "perra", "perrito", "perrita", "gato", "gata",
+        "gatito", "gatita", "cachorro", "cachorra", "cachorrito", "cachorrita",
+        "animal", "mascota", "rescate", "rescatado", "rescatada",
+        "macho", "hembra", "castrado", "castrada", "esterilizada",
+        "vacunado", "vacunada", "desparasitado", "desparasitada",
+        "edad", "tamaño", "peso", "color", "raza", "mes", "meses", "años",
+        "año", "dias", "día", "semanas", "semana",
+        "adopta", "adoptado", "adoptada", "adoptados",
+        "hermoso", "hermosa", "lindo", "linda", "bello", "bella",
+        "nuevo", "nueva", "bueno", "buena",
+        "info", "información", "consultas", "contacto", "datos",
+        "refugio", "fundación", "fundacion", "proyecto", "campaña",
+        "disponible", "disponibles", "transitando", "tránsito", "transito",
+        "jornada", "evento", "feria", "charla",
+        "como", "cómo", "donde", "dónde", "cuando", "cuándo",
+        "todo", "toda", "todos", "todas", "cada", "solo", "sola",
+        "ellos", "ellas", "ella", "nuestro", "nuestra", "nuestros",
+        "lleva", "llegan", "llegó", "llego", "viene", "vienen",
+        "quiere", "quieren", "puede", "pueden", "sigue", "siguen",
+        "buscando", "esperando", "necesitando",
+        "super", "súper", "mega", "más", "mas",
+        "bien", "mal", "mejor", "peor",
+        "ser", "estar", "tener", "hacer", "poder",
+        "estos", "estas", "esos", "esas", "aquel", "aquella",
+        "ahora", "antes", "después", "despues", "siempre", "nunca",
+        "tres", "cuatro", "cinco", "seis", "siete", "ocho",
+        "hermanitos", "hermanitas", "hermanos", "hermanas",
+        "conoce", "conocé", "mirá", "mira", "aquí", "acá",
     }
+
     patterns = [
-        # Patrones explícitos con etiqueta "Nombre:"
-        r"(?:nombre|se llama|llamamos?|llama|su nombre es)\s*[:\-]?\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
-        # Animal con nombre en mayúsculas destacado: "MOCHI busca hogar"
-        r"\b([A-ZÁÉÍÓÚÑ]{3,12})\s+(?:busca|necesita|está en|en adopción|busca hogar)",
-        # Emojis seguidos de nombre
+        # 1. Etiqueta explícita: "Nombre: Rogelio", "se llama Pandy"
+        r"(?:nombre|se llama|llamamos?|llama|su nombre es|lo llamamos|la llamamos)\s*[:\-]?\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        # 2. "Él/ella es NOMBRE" o "Te presentamos a NOMBRE"
+        r"(?:(?:él|ella|el|la) es|te presentamos a|les presentamos a|conocé a|conoce a)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        # 3. Nombre en MAYÚSCULAS al inicio del caption (primera línea)
+        r"^[🐾🐕🐕‍🦺🦮🐩🐶🐈🐈‍⬛🐱😺😸❤️💕✨⭐️🌟✅🔴🟢🟡]*\s*([A-ZÁÉÍÓÚÑ]{2,14})\b",
+        # 4. Nombre en MAYÚSCULAS seguido de verbos/contexto de adopción
+        r"\b([A-ZÁÉÍÓÚÑ]{2,14})\s+(?:busca|necesita|está en|en adopción|busca hogar|busca familia|espera|llegó|llego)",
+        # 5. Emojis seguidos de nombre
         r"(?:🐾|🐕|🐕‍🦺|🦮|🐩|🐶|🐈|🐈‍⬛|🐱)\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        # 6. "NOMBRE, [edad/tamaño/tipo]" en la primera línea
+        r"^[^.\n]{0,30}?([A-ZÁÉÍÓÚÑ]{2,14})\s*[,\-]\s*(?:\d+|macho|hembra|cachorro|adulto|perro|perra|gato|gata)",
+        # 7. Nombre en mayúsculas seguido de coma o punto
+        r"\b([A-ZÁÉÍÓÚÑ]{2,14})\s*[,\.]\s*(?:\d+\s*(?:años?|meses?)|macho|hembra|cachorro|adulto)",
+        # 8. "en adopción NOMBRE y NOMBRE" o "adopción: NOMBRE"
+        r"(?:en adopción|en adopcion)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        # 9. Nombre después de "adoptá a" o "adoptar a"
+        r"(?:adoptá a|adoptar a|adopta a)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
     ]
+
     for pattern in patterns:
-        for match in re.finditer(pattern, caption, re.IGNORECASE | re.MULTILINE):
-            nombre = match.group(1).strip().capitalize()
-            if nombre not in STOP and len(nombre) >= 3:
-                return nombre
+        for match in re.finditer(pattern, caption, re.MULTILINE):
+            nombre = match.group(1).strip()
+            # Normalizar: "ROGELIO" -> "Rogelio"
+            nombre_clean = nombre.capitalize()
+            if nombre_clean.lower() not in STOP and len(nombre_clean) >= 2:
+                return nombre_clean
+
+    # Último intento: buscar primera palabra capitalizada en la primera línea
+    primera_linea = caption.split('\n')[0].strip()
+    # Quitar emojis del inicio
+    primera_linea = re.sub(r'^[^\w]*', '', primera_linea)
+    match = re.match(r'^([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b', primera_linea)
+    if match:
+        nombre = match.group(1)
+        if nombre.lower() not in STOP:
+            return nombre.capitalize()
+
     return None
 
 
@@ -379,6 +507,10 @@ def post_a_mascota(post, ig: str, idx: int) -> dict | None:
     caption = post.caption or ""
 
     if not es_post_de_adopcion(caption):
+        return None
+
+    if es_campania(caption):
+        print(f"      ⏭️  Saltando campaña/evento (no es animal individual)")
         return None
 
     datos      = parsear_caption(caption, ig)

@@ -316,3 +316,4 @@ JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.
 💰 PatitasBA — Actualizando donaciones...
    ⚠️  Error consultando MercadoPago: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
    No se pudo obtener el monto. donaciones.json no fue modificado.
+--- Completado viernes, 13 de marzo de 2026, 16:38:02 -03 ---
