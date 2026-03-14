@@ -595,7 +595,8 @@ def scrape(login_user: str | None = None, max_posts: int = MAX_POSTS_POR_PERFIL)
         save_metadata=False,
         post_metadata_txt_pattern="",
         quiet=True,
-        request_timeout=30,
+        request_timeout=15,  # timeout más corto para no colgarse
+        max_connection_attempts=2,  # máximo 2 reintentos (no infinito)
     )
 
     # Login opcional (permite ver más posts)
@@ -652,6 +653,14 @@ def scrape(login_user: str | None = None, max_posts: int = MAX_POSTS_POR_PERFIL)
             print(f"   ❌ @{ig} requiere login para ver sus posts. Usá --login TU_USUARIO")
         except Exception as e:
             print(f"   ❌ Error inesperado: {e}")
+
+    # No sobreescribir si no encontró nada (Instagram bloqueó)
+    if len(todas_las_mascotas) == 0:
+        print(f"\n{'='*50}")
+        print(f"⚠️  No se encontraron mascotas — Instagram probablemente bloqueó.")
+        print(f"   Se conserva el pets.json anterior.")
+        print(f"{'='*50}")
+        return
 
     # Guardar resultado
     output = {
