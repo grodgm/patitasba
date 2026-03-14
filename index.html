@@ -130,19 +130,22 @@
 
         /* ── CARD ── */
         .pet-card {
-            background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 2px 14px rgba(0,0,0,0.07); transition: transform .2s, box-shadow .2s;
+            background: white; border-radius: 18px; overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+            transition: transform .25s ease, box-shadow .25s ease;
+            cursor: pointer; border: 1px solid rgba(0,0,0,0.04);
         }
-        .pet-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,0,0,0.13); }
+        .pet-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
         .pet-card.hidden { display: none; }
 
         .card-image {
-            height: 280px; display: flex; align-items: center; justify-content: center;
+            height: 300px; display: flex; align-items: center; justify-content: center;
             font-size: 76px; position: relative; overflow: hidden;
         }
         .card-image::after {
             content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-            height: 40px; background: linear-gradient(transparent, rgba(0,0,0,.15));
+            height: 80px; background: linear-gradient(transparent, rgba(0,0,0,.25));
+            pointer-events: none;
         }
         /* ── CAROUSEL ── */
         .carousel { position: relative; width: 100%; height: 100%; overflow: hidden; }
@@ -152,105 +155,143 @@
         .carousel-slide .emoji-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 76px; }
         .carousel-arrow {
             position: absolute; top: 50%; transform: translateY(-50%);
-            background: rgba(0,0,0,.4); color: white; border: none;
-            width: 30px; height: 30px; border-radius: 50%; font-size: 14px;
-            cursor: pointer; z-index: 10; transition: background .2s; display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,.9); color: #2D3436; border: none;
+            width: 34px; height: 34px; border-radius: 50%; font-size: 16px; font-weight: 700;
+            cursor: pointer; z-index: 10; transition: all .2s;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); opacity: 0;
         }
-        .carousel-arrow:hover { background: rgba(0,0,0,.65); }
-        .carousel-arrow.prev { left: 8px; }
-        .carousel-arrow.next { right: 8px; }
-        .carousel-dots { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 10; }
-        .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.5); border: none; cursor: pointer; padding: 0; transition: background .2s; }
-        .carousel-dot.active { background: white; }
+        .pet-card:hover .carousel-arrow, .modal .carousel-arrow { opacity: 1; }
+        .carousel-arrow:hover { background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .carousel-arrow.prev { left: 10px; }
+        .carousel-arrow.next { right: 10px; }
+        .carousel-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 10; }
+        .carousel-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.5); border: none; cursor: pointer; padding: 0; transition: all .2s; }
+        .carousel-dot.active { background: white; transform: scale(1.2); }
 
         .badge-available {
-            position: absolute; top: 12px; right: 12px;
-            background: rgba(255,255,255,.95); padding: 4px 10px;
-            border-radius: 50px; font-size: 11px; font-weight: 600; color: #27ae60; z-index: 5;
+            position: absolute; top: 14px; right: 14px;
+            background: white; padding: 5px 12px;
+            border-radius: 50px; font-size: 11px; font-weight: 600; color: #e91e8c; z-index: 5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
         }
         .badge-adoptado {
-            position: absolute; top: 12px; right: 12px;
-            background: rgba(0,0,0,.6); padding: 4px 10px;
+            position: absolute; top: 14px; right: 14px;
+            background: rgba(0,0,0,.55); padding: 5px 12px; backdrop-filter: blur(8px);
             border-radius: 50px; font-size: 11px; font-weight: 600; color: #fff; z-index: 5;
         }
         .badge-org {
-            position: absolute; top: 12px; left: 12px;
-            background: rgba(0,0,0,.45); color: white; padding: 4px 10px;
-            border-radius: 50px; font-size: 11px; font-weight: 500; backdrop-filter: blur(4px); z-index: 5;
+            position: absolute; top: 14px; left: 14px;
+            background: rgba(0,0,0,.4); color: white; padding: 5px 12px;
+            border-radius: 50px; font-size: 11px; font-weight: 500; backdrop-filter: blur(8px); z-index: 5;
         }
-        .pet-card.adoptado { opacity: .65; }
-        .pet-card.adoptado .card-name::after { content: " · Ya adoptado 🏠"; font-size: 13px; color: #27ae60; font-weight: 500; }
+        .pet-card.adoptado { opacity: .6; filter: saturate(0.7); }
+        .pet-card.adoptado:hover { opacity: .75; }
 
-        .card-body { padding: 16px; }
-        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
-        .card-name { font-size: 20px; font-weight: 700; color: #2D3436; }
-        .card-gender { font-size: 18px; margin-top: 2px; }
-        .card-breed { font-size: 13px; color: #636e72; margin-bottom: 12px; }
+        .card-body { padding: 18px 18px 16px; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; }
+        .card-name { font-size: 21px; font-weight: 700; color: #2D3436; letter-spacing: -0.3px; }
+        .card-gender { font-size: 18px; opacity: 0.7; }
+        .card-breed { font-size: 13px; color: #919eab; margin-bottom: 12px; font-weight: 400; }
 
-        .card-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 12px; }
-        .tag { border-radius: 50px; padding: 4px 11px; font-size: 12px; font-weight: 500; }
-        .tag-type  { background: #E3F2FD; color: #1565C0; }
-        .tag-age   { background: #FFF3E0; color: #E65100; }
-        .tag-size  { background: #E8F5E9; color: #2E7D32; }
+        .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+        .tag { border-radius: 8px; padding: 5px 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.1px; }
+        .tag-type  { background: #EEF2FF; color: #4F46E5; }
+        .tag-age   { background: #FFF7ED; color: #C2410C; }
+        .tag-size  { background: #ECFDF5; color: #059669; }
 
-        .card-desc { font-size: 13px; color: #636e72; line-height: 1.5; margin-bottom: 14px; }
+        .card-desc {
+            font-size: 13px; color: #636e72; line-height: 1.55; margin-bottom: 14px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
 
         .card-org {
             display: flex; align-items: center; gap: 6px; font-size: 13px;
-            color: #636e72; margin-bottom: 14px; padding-bottom: 14px;
-            border-bottom: 1px solid #f0f0f0;
+            color: #919eab; margin-bottom: 16px; padding-bottom: 14px;
+            border-bottom: 1px solid #f4f5f6;
         }
-        .card-org a { color: #1565C0; text-decoration: none; font-weight: 500; }
-        .card-org a:hover { text-decoration: underline; }
+        .card-org a { color: #4F46E5; text-decoration: none; font-weight: 600; transition: color .2s; }
+        .card-org a:hover { color: #FF6B35; }
 
         .card-actions { display: flex; gap: 8px; }
         .btn-adopt {
             flex: 1; background: #FF6B35; color: white; border: none;
-            padding: 11px; border-radius: 12px; font-size: 13px; font-weight: 600;
-            cursor: pointer; transition: background .2s;
+            padding: 12px; border-radius: 12px; font-size: 13px; font-weight: 700;
+            cursor: pointer; transition: all .2s; letter-spacing: 0.1px;
         }
-        .btn-adopt:hover { background: #e55a25; }
-        .btn-adopt.adoptado-btn { background: #b2bec3; cursor: default; }
+        .btn-adopt:hover { background: #e55a25; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(255,107,53,0.3); }
+        .btn-adopt.adoptado-btn { background: #e2e8f0; color: #94a3b8; cursor: default; }
+        .btn-adopt.adoptado-btn:hover { transform: none; box-shadow: none; }
         .btn-ig {
             background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-            color: white; border: none; padding: 11px 15px;
-            border-radius: 12px; font-size: 16px; cursor: pointer; transition: opacity .2s;
+            color: white; border: none; padding: 12px 16px;
+            border-radius: 12px; font-size: 16px; cursor: pointer; transition: all .2s;
         }
-        .btn-ig:hover { opacity: .88; }
+        .btn-ig:hover { opacity: .88; transform: translateY(-1px); }
 
         /* ── MODAL DETALLE PET ── */
         .modal-overlay {
             display: none; position: fixed; inset: 0;
-            background: rgba(0,0,0,.55); z-index: 200; align-items: center; justify-content: center; padding: 16px;
+            background: rgba(15,15,20,.6); backdrop-filter: blur(4px);
+            z-index: 200; align-items: center; justify-content: center; padding: 16px;
         }
-        .modal-overlay.open { display: flex; }
+        .modal-overlay.open { display: flex; animation: fadeIn .2s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .modal {
-            background: white; border-radius: 24px; max-width: 480px; width: 100%;
+            background: white; border-radius: 20px; max-width: 520px; width: 100%;
             max-height: 90vh; overflow-y: auto; position: relative;
+            animation: slideUp .3s ease;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.2);
         }
-        .modal-imgs { border-radius: 24px 24px 0 0; overflow: hidden; height: 260px; background: #f0f0f0; position: relative; }
-        .modal-imgs img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-imgs {
+            border-radius: 20px 20px 0 0; overflow: hidden; height: 340px;
+            background: #f4f5f6; position: relative;
+        }
+        .modal-imgs .carousel { height: 100%; }
+        .modal-imgs .carousel-arrow { opacity: 1; }
+        .modal-imgs img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
         .modal-imgs .emoji-lg { font-size: 80px; display: flex; align-items: center; justify-content: center; height: 100%; }
-        .modal-body { padding: 24px; }
-        .modal h2 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-        .modal-sub { color: #636e72; font-size: 14px; margin-bottom: 14px; }
-        .modal-desc { color: #2D3436; font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+        .modal-body { padding: 28px; }
+        .modal h2 { font-size: 26px; font-weight: 800; margin-bottom: 4px; color: #1a1a2e; letter-spacing: -0.5px; }
+        .modal-sub { color: #919eab; font-size: 14px; margin-bottom: 16px; font-weight: 500; }
+        .modal .card-tags { margin-bottom: 18px; }
+        .modal .tag { padding: 6px 14px; font-size: 13px; }
+        .modal-desc {
+            color: #4a5568; font-size: 15px; line-height: 1.7; margin-bottom: 20px;
+            background: #f8f9fa; border-radius: 12px; padding: 16px;
+            border-left: 3px solid #FF6B35;
+        }
+        .modal .card-org {
+            border-bottom: none; margin-bottom: 20px; padding-bottom: 0;
+            font-size: 14px;
+        }
         .modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-        .modal-ig {
-            flex: 1; display: inline-block; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-            color: white; text-decoration: none; padding: 12px; text-align: center;
-            border-radius: 12px; font-weight: 600; font-size: 14px; border: none; cursor: pointer;
-        }
         .modal-post {
-            flex: 1; display: inline-block; background: #FF6B35;
-            color: white; text-decoration: none; padding: 12px; text-align: center;
-            border-radius: 12px; font-weight: 600; font-size: 14px;
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+            background: #FF6B35; color: white; text-decoration: none;
+            padding: 14px 18px; text-align: center;
+            border-radius: 14px; font-weight: 700; font-size: 14px;
+            transition: all .2s;
         }
+        .modal-post:hover { background: #e55a25; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,107,53,0.3); }
+        .modal-ig {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            color: white; text-decoration: none; padding: 14px 18px; text-align: center;
+            border-radius: 14px; font-weight: 700; font-size: 14px; border: none; cursor: pointer;
+            transition: all .2s;
+        }
+        .modal-ig:hover { opacity: .9; transform: translateY(-1px); }
         .modal-close {
-            position: absolute; top: 12px; right: 14px; background: rgba(0,0,0,.4);
-            color: white; border: none; width: 32px; height: 32px; border-radius: 50%;
-            font-size: 16px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
+            position: absolute; top: 14px; right: 14px;
+            background: rgba(0,0,0,.35); backdrop-filter: blur(8px);
+            color: white; border: none; width: 36px; height: 36px; border-radius: 50%;
+            font-size: 18px; cursor: pointer; z-index: 10;
+            display: flex; align-items: center; justify-content: center;
+            transition: background .2s;
         }
+        .modal-close:hover { background: rgba(0,0,0,.6); }
 
         /* ── MODAL PUBLICAR ── */
         .pub-modal { max-width: 520px; }
@@ -339,7 +380,7 @@
             .stats { gap: 16px; padding: 14px 8px; flex-wrap: wrap; }
             .stat-number { font-size: 22px; }
             .stat-label { font-size: 11px; }
-            .card-image { height: 240px; }
+            .card-image { height: 260px; }
             .filters-section { padding: 14px 16px; }
             .main-content { padding: 20px 14px; }
         }
@@ -450,9 +491,9 @@
             <div class="modal-sub" id="modalSub"></div>
             <div class="card-tags" id="modalTags"></div>
             <div class="modal-desc" id="modalDesc"></div>
-            <div class="card-org" id="modalOrg"></div>
+            <div class="card-org" id="modalOrg" style="border-bottom:none;margin-bottom:20px;padding-bottom:0;font-size:14px;"></div>
             <div class="modal-actions">
-                <a id="modalPostLink" class="modal-post" href="#" target="_blank">🐾 Ver publicación del refugio</a>
+                <a id="modalPostLink" class="modal-post" href="#" target="_blank">🐾 Ver publicación</a>
                 <a id="modalIgLink" class="modal-ig" href="#" target="_blank">📸 Seguir al refugio</a>
             </div>
         </div>
@@ -787,7 +828,18 @@ function openModal(id) {
     const imgs = p.imgUrls || (p.imgUrl ? [p.imgUrl] : []);
     const imgsEl = document.getElementById('modalImgs');
     if (imgs.length > 0) {
-        imgsEl.innerHTML = `<img src="${imgs[0]}" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div class=emoji-lg>${p.emoji}</div>'">`;
+        // Build a carousel for the modal
+        const slides = imgs.map(src =>
+            `<div class="carousel-slide"><img src="${src}" onerror="this.parentElement.innerHTML='<div style=font-size:60px;display:flex;align-items:center;justify-content:center;height:100%>${p.emoji}</div>'"></div>`
+        ).join('');
+        const dots = imgs.length > 1
+            ? `<div class="carousel-dots">${imgs.map((_,i) => `<button class="carousel-dot ${i===0?'active':''}" onclick="modalCarousel(${i === 0 ? 0 : i},event)"></button>`).join('')}</div>`
+            : '';
+        const arrows = imgs.length > 1
+            ? `<button class="carousel-arrow prev" onclick="modalCarouselMove(-1,event)">‹</button>
+               <button class="carousel-arrow next" onclick="modalCarouselMove(1,event)">›</button>`
+            : '';
+        imgsEl.innerHTML = `<div class="carousel"><div class="carousel-track" data-cur="0" id="modalTrack">${slides}</div>${arrows}${dots}</div>`;
     } else {
         imgsEl.innerHTML = `<div class="emoji-lg">${p.emoji}</div>`;
     }
@@ -798,12 +850,35 @@ function openModal(id) {
         `<span class="tag tag-type">${p.tipo === 'perro' ? '🐕 Perro' : '🐈 Gato'}</span>
          <span class="tag tag-age">📅 ${p.edad}</span>
          <span class="tag tag-size">📏 ${p.tamanio}</span>
-         ${!p.disponible ? '<span class="tag" style="background:#E8F5E9;color:#2E7D32">🏠 Ya encontró familia</span>' : '<span class="tag" style="background:#FFF0F0;color:#e91e8c">❤️ En adopción</span>'}`;
+         ${!p.disponible ? '<span class="tag" style="background:#ECFDF5;color:#059669">🏠 Ya encontró familia</span>' : '<span class="tag" style="background:#FFF1F2;color:#e11d48">❤️ En adopción</span>'}`;
     document.getElementById('modalDesc').textContent = p.desc;
     document.getElementById('modalOrg').innerHTML    = `📍 <a href="https://www.instagram.com/${p.ig}/" target="_blank">@${p.ig}</a> · ${p.org}`;
     document.getElementById('modalPostLink').href    = p.postUrl || `https://www.instagram.com/${p.ig}/`;
     document.getElementById('modalIgLink').href      = `https://www.instagram.com/${p.ig}/`;
     document.getElementById('modal').classList.add('open');
+}
+
+function modalCarouselMove(dir, e) {
+    e && e.stopPropagation();
+    const track = document.getElementById('modalTrack');
+    if (!track) return;
+    const slides = track.querySelectorAll('.carousel-slide');
+    const dots = track.parentElement.querySelectorAll('.carousel-dot');
+    let cur = parseInt(track.dataset.cur || 0);
+    cur = (cur + dir + slides.length) % slides.length;
+    track.dataset.cur = cur;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+}
+
+function modalCarousel(idx, e) {
+    e && e.stopPropagation();
+    const track = document.getElementById('modalTrack');
+    if (!track) return;
+    const dots = track.parentElement.querySelectorAll('.carousel-dot');
+    track.dataset.cur = idx;
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
 }
 
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
@@ -922,7 +997,7 @@ function renderPets() {
         const badge     = p.disponible === false
             ? `<div class="badge-adoptado">🏠 Ya encontró familia</div>`
             : `<div class="badge-available">❤️ En adopción</div>`;
-        const btnLabel  = p.disponible === false ? '🏠 Ya encontró familia ❤️' : '🐾 ¡Quiero adoptarlo!';
+        const btnLabel  = p.disponible === false ? '🏠 Ya encontró familia' : '🐾 ¡Quiero adoptarlo!';
         const btnClass  = p.disponible === false ? 'btn-adopt adoptado-btn' : 'btn-adopt';
         const btnAction = p.disponible === false
             ? ''
@@ -930,7 +1005,7 @@ function renderPets() {
 
         return `
         <div class="pet-card ${adopClass}" data-id="${p.id}" onclick="openModal('${p.id}')">
-            <div class="card-image" style="background:${p.bg};position:relative">
+            <div class="card-image" style="background:${p.bg || '#f4f5f6'};position:relative">
                 ${buildCarousel(p)}
                 ${badge}
                 <div class="badge-org">@${p.ig}</div>
@@ -947,7 +1022,7 @@ function renderPets() {
                     <span class="tag tag-size">📏 ${p.tamanio}</span>
                 </div>
                 <div class="card-desc">${p.desc}</div>
-                <div class="card-org">🏠 <a href="https://www.instagram.com/${p.ig}/" target="_blank" onclick="event.stopPropagation()">@${p.ig}</a>&nbsp;·&nbsp;${p.org}</div>
+                <div class="card-org">📍 <a href="https://www.instagram.com/${p.ig}/" target="_blank" onclick="event.stopPropagation()">@${p.ig}</a>&nbsp;·&nbsp;${p.org}</div>
                 <div class="card-actions">
                     <button class="${btnClass}" ${btnAction}>${btnLabel}</button>
                     <button class="btn-ig" title="Ver Instagram" onclick="event.stopPropagation(); window.open('https://www.instagram.com/${p.ig}/','_blank')">📸</button>
