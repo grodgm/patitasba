@@ -25,7 +25,7 @@ TOKEN_FILE      = Path("mp_token.txt")
 OBJETIVO        = 200_000   # ARS — cambiá este número si cambia la meta
 REFUGIOS        = 5         # cantidad de refugios entre los que se divide
 
-def leer_token() -> str | None:
+def leer_token():
     """Lee el Access Token de MercadoPago desde mp_token.txt."""
     if TOKEN_FILE.exists():
         token = TOKEN_FILE.read_text().strip()
@@ -33,7 +33,7 @@ def leer_token() -> str | None:
             return token
     return None
 
-def obtener_pagos_del_mes(token: str) -> float:
+def obtener_pagos_del_mes(token):
     """
     Consulta la API de MP y devuelve el total recibido en el mes actual.
     Solo cuenta pagos con status=approved.
@@ -41,18 +41,17 @@ def obtener_pagos_del_mes(token: str) -> float:
     hoy    = datetime.now()
     inicio = hoy.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
     desde  = inicio.strftime("%Y-%m-%dT00:00:00.000-03:00")
+    hasta  = hoy.strftime("%Y-%m-%dT23:59:59.000-03:00")
 
     params = urllib.parse.urlencode({
-        "status":               "approved",
-        "date_created.from":    desde,
-        "sort":                 "date_created",
-        "criteria":             "desc",
-        "range":                "date_created",
-        "limit":                100,
+        "sort":       "date_created",
+        "criteria":   "desc",
+        "limit":      100,
+        "begin_date": desde,
+        "end_date":   hasta,
     })
     url = f"https://api.mercadopago.com/v1/payments/search?{params}"
 
-    ctx = ssl.create_default_context()
     req = urllib.request.Request(
         url,
         headers={"Authorization": f"Bearer {token}"}
@@ -60,17 +59,18 @@ def obtener_pagos_del_mes(token: str) -> float:
 
     total = 0.0
     try:
-        with urllib.request.urlopen(req, timeout=15, context=ctx) as resp:
+        with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read())
             for pago in data.get("results", []):
-                total += pago.get("transaction_amount", 0)
+                if pago.get("status") == "approved":
+                    total += pago.get("transaction_amount", 0)
         print(f"   💰 Total recibido en {hoy.strftime('%B %Y')}: ${total:,.0f} ARS")
         return total
     except Exception as e:
         print(f"   ⚠️  Error consultando MercadoPago: {e}")
         return None
 
-def actualizar_donaciones(recaudado: float):
+def actualizar_donaciones(recaudado):
     """Actualiza donaciones.json con el monto recibido."""
     hoy = datetime.now()
 
@@ -91,7 +91,6 @@ def actualizar_donaciones(recaudado: float):
     data["objetivo"]  = OBJETIVO
     data["recaudado"] = round(recaudado)
 
-    # Si falta el alias, dejarlo como estaba
     if "alias" not in data:
         data["alias"] = "patitasba.mp"
 
