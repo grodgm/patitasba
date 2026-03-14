@@ -2,8 +2,11 @@ name: Actualizar donaciones
 
 on:
   schedule:
-    - cron: '0 14 * * *'   # 11 AM Argentina (UTC-3)
-  workflow_dispatch:         # para correrlo manual
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   donaciones:
