@@ -1,0 +1,30 @@
+name: Actualizar mascotas
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: pip install instaloader
+      - name: Correr scraper
+        run: python scraper.py
+      - name: Commit y push cambios
+        run: |
+          git config user.name "PatitasBA Bot"
+          git config user.email "bot@patitasba.com.ar"
+          git add pets.json images/ donaciones.json || true
+          git diff --staged --quiet || git commit -m "🐾 Actualización automática $(date +'%d/%m/%Y %H:%M')"
+          git push

@@ -37,6 +37,9 @@ PERFILES = [
     "adoptaungalgo",
     "mascotasenadopcion",
     "proyecto4patas",
+    "rescataditosenadopcionn",
+    "hogardeproteccionlourdes",
+    "gatitos_parque_chacabuco",
 ]
 
 MAX_POSTS_POR_PERFIL = 15   # cuántos posts recientes revisar por perfil
@@ -432,11 +435,14 @@ def parsear_caption(caption: str, ig: str) -> dict:
 # ─────────────────────────────────────────
 
 ORG_NOMBRES = {
-    "zaguatesrefugio":    "Zaguates Refugio",
-    "refugioelcampito":   "Refugio El Campito",
-    "adoptaungalgo":      "Adopta un Galgo",
-    "mascotasenadopcion": "Mascotas en Adopción",
-    "proyecto4patas":     "Proyecto 4 Patas",
+    "zaguatesrefugio":          "Zaguates Refugio",
+    "refugioelcampito":         "Refugio El Campito",
+    "adoptaungalgo":            "Adopta un Galgo",
+    "mascotasenadopcion":       "Mascotas en Adopción",
+    "proyecto4patas":           "Proyecto 4 Patas",
+    "rescataditosenadopcionn":  "Rescataditos en Adopción",
+    "hogardeproteccionlourdes": "Hogar de Protección Lourdes",
+    "gatitos_parque_chacabuco": "Gatitos Parque Chacabuco",
 }
 
 EMOJIS_PERRO = ["🐕", "🐶", "🐕‍🦺", "🦮"]
