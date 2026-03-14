@@ -229,6 +229,16 @@ def extraer_nombre(caption: str) -> str | None:
         "tres", "cuatro", "cinco", "seis", "siete", "ocho",
         "hermanitos", "hermanitas", "hermanos", "hermanas",
         "conoce", "conocé", "mirá", "mira", "aquí", "acá",
+        # Verbos/palabras que el scraper confundió con nombres
+        "no", "nadie", "fueron", "fue", "saben", "muchas", "muchos",
+        "seguimos", "llegaron", "llegó", "rescatados", "rescatadas",
+        "informes", "resuelto", "resuelta",
+        "lourdesiana", "lourdesiano", "camperitos",
+        "somos", "tenemos", "estamos", "querés", "queres",
+        "miralo", "mirala", "ayuda", "ayudanos", "compartí", "comparti",
+        "gracias", "graciass", "thanks",
+        "nuevo", "nueva", "recién", "recien",
+        "vamos", "dale", "buenas", "tardes", "noches", "días",
     }
 
     patterns = [
