@@ -1,5 +1,5 @@
 {
-  "generado": "2026-03-14T18:30:25.913759",
+  "generado": "2026-03-15T11:48:06.035798",
   "total": 39,
   "posts_revisados": 91,
   "mascotas": [
@@ -227,8 +227,33 @@
       "caption": "China busca  hogar 🐾\n\nChina es una perrita de aproximadamente 2 años, de tamaño mediano y ya está castrada. \nTiene un carácter súper dulce: es tranquila, muy cariñosa y le encanta recibir mimos… ¡especialmente en la pancita! 🥹\nDisfruta salir a pasear, explorar y también jugar con otros perritos🐶🥎\nEs la compañera ideal para quien busque una perrita fiel y amorosa 💗\nChina está lista para encontrar esa familia que la elija para siempre.\n¿Le abrís tu hogar? ❤️\nSi querés adoptarla o conocer más sobre"
     },
     {
+      "id": "DVoAldSFXD5",
+      "nombre": "Tango",
+      "tipo": "perro",
+      "raza": "Mestizo/a",
+      "genero": "♂",
+      "edad": "Cachorro",
+      "edadCat": "cachorro",
+      "tamanio": "Mediano",
+      "tamanioCat": "mediano",
+      "desc": "Tango busca familia 🐾. Tiene cinco meses y un carácter tranquilo e independiente, pero al mismo tiempo es súper alegre",
+      "org": "Zaguates Refugio",
+      "ig": "zaguatesrefugio",
+      "emoji": "🐕",
+      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
+      "postUrl": "https://www.instagram.com/p/DVoAldSFXD5/",
+      "imgUrls": [
+        "images/DVoAldSFXD5_0.jpg",
+        "images/DVoAldSFXD5_1.jpg",
+        "images/DVoAldSFXD5_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-03-08",
+      "caption": "Tango busca familia 🐾\nTiene cinco meses y un carácter tranquilo e independiente, pero al mismo tiempo es súper alegre. Le encanta jugar y puede entretenerse solito durante horas, siempre encontrando algo para divertirse 🏀 🦴 \nTiene mucha energía, se lleva genial con otros perritos y va por la vida siempre feliz 🥹\nEs de esos perros agradecidos que con un poquito de amor te devuelven todo multiplicado. ❤️\nTodavía es un bebé: tiene 1 vacuna y está en la etapa en la que se le están cayendo los dienti"
+    },
+    {
       "id": "DVOGqMgjqN7",
-      "nombre": "Sin nombre #9",
+      "nombre": "Sin nombre #10",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
@@ -240,7 +265,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
+      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
       "postUrl": "https://www.instagram.com/p/DVOGqMgjqN7/",
       "imgUrls": [
         "images/DVOGqMgjqN7_0.jpg",
@@ -253,7 +278,7 @@
     },
     {
       "id": "DVGkZvqkcLc",
-      "nombre": "Sin nombre #10",
+      "nombre": "Sin nombre #11",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
@@ -265,7 +290,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
       "postUrl": "https://www.instagram.com/p/DVGkZvqkcLc/",
       "imgUrls": [
         "images/DVGkZvqkcLc_0.jpg",
@@ -274,31 +299,6 @@
       "disponible": true,
       "fecha": "2026-02-23",
       "caption": "Camperitos en adopción. \nSi te enamoras, escribinos a adoptantesdelcampito@gmail.com \nTambién podes compartir para que tengan más oportunidades de ser vistos"
-    },
-    {
-      "id": "DVEwjfmEkJv",
-      "nombre": "Sin nombre #11",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "Adulto+",
-      "edadCat": "senior",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "En octubre del año pasado atropellaron a Margarita. Ramirez se quedo a su lado",
-      "org": "Refugio El Campito",
-      "ig": "refugioelcampito",
-      "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
-      "postUrl": "https://www.instagram.com/p/DVEwjfmEkJv/",
-      "imgUrls": [
-        "images/DVEwjfmEkJv_0.jpg",
-        "images/DVEwjfmEkJv_1.jpg",
-        "images/DVEwjfmEkJv_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-02-22",
-      "caption": "En octubre del año pasado atropellaron a Margarita. Ramirez se quedo a su lado. Lo que se dice LEALTAD. \n\nEran dos ancianos  en un estado de abandono absoluto, y tan inseparables que\nsolo podían ser adoptados por quienes entendieran esa necesidad profunda\n\nEsa familia llegó: se fueron en adopción JUNTOS. Gracias chicos. 🙂"
     },
     {
       "id": "DTjIrh6AWlS",
