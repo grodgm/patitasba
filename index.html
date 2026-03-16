@@ -301,6 +301,42 @@
         }
         .modal-close:hover { background: rgba(0,0,0,.6); }
 
+        /* ── SHARE BUTTONS ── */
+        .share-section {
+            margin-top: 20px; padding-top: 18px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .share-label {
+            font-size: 12px; font-weight: 700; color: #919eab;
+            text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
+        }
+        .share-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+        .share-btn {
+            display: flex; align-items: center; gap: 6px;
+            padding: 10px 16px; border-radius: 12px; border: none;
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            text-decoration: none; color: white; transition: all .2s;
+        }
+        .share-btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
+        .share-btn.whatsapp { background: #25D366; }
+        .share-btn.facebook { background: #1877F2; }
+        .share-btn.twitter { background: #1DA1F2; }
+        .share-btn.copy-link { background: #636e72; }
+        .share-btn.copy-link.copied { background: #27ae60; }
+
+        /* Mini share on card */
+        .card-share-btn {
+            position: absolute; bottom: 14px; right: 14px;
+            background: rgba(255,255,255,.9); color: #636e72;
+            border: none; width: 34px; height: 34px; border-radius: 50%;
+            font-size: 15px; cursor: pointer; z-index: 5;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            opacity: 0; transition: all .2s;
+        }
+        .pet-card:hover .card-share-btn { opacity: 1; }
+        .card-share-btn:hover { background: white; color: #FF6B35; transform: scale(1.1); }
+
         /* ── MODAL PUBLICAR ── */
         .pub-modal { max-width: 520px; }
         .pub-modal .modal-body { padding: 28px; }
@@ -504,6 +540,15 @@
                 <a id="modalPostLink" class="modal-post" href="#" target="_blank">🐾 Ver publicación</a>
                 <a id="modalIgLink" class="modal-ig" href="#" target="_blank">📸 Seguir al refugio</a>
             </div>
+            <div class="share-section">
+                <div class="share-label">Compartí esta ficha</div>
+                <div class="share-buttons">
+                    <a id="shareWhatsapp" class="share-btn whatsapp" href="#" target="_blank">💬 WhatsApp</a>
+                    <a id="shareFacebook" class="share-btn facebook" href="#" target="_blank">📘 Facebook</a>
+                    <a id="shareTwitter" class="share-btn twitter" href="#" target="_blank">🐦 Twitter</a>
+                    <button id="shareCopyLink" class="share-btn copy-link" onclick="copiarLinkMascota()">🔗 Copiar link</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -618,6 +663,18 @@
         </div>
     </div>
 </div>
+
+<!-- CTA VIRAL BANNER -->
+<section style="background:linear-gradient(135deg,#FF6B35,#e91e8c);padding:40px 24px;text-align:center;color:white;margin-top:48px;">
+    <div style="font-size:36px;margin-bottom:12px;">🐾</div>
+    <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Conocés a alguien que quiera adoptar?</h2>
+    <p style="font-size:15px;opacity:.9;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto;">Cada vez que compartís, un perrito o gatito tiene más chances de encontrar familia. Dale share!</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <a href="#" onclick="compartirSitioWA(); return false;" class="share-btn whatsapp" style="font-size:15px;padding:14px 24px;">💬 Compartir por WhatsApp</a>
+        <a href="#" onclick="compartirSitioFB(); return false;" class="share-btn facebook" style="font-size:15px;padding:14px 24px;">📘 Compartir en Facebook</a>
+        <button onclick="copiarLinkSitio(this)" class="share-btn copy-link" style="font-size:15px;padding:14px 24px;">🔗 Copiar link del sitio</button>
+    </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -863,7 +920,55 @@ function openModal(id) {
     document.getElementById('modalOrg').innerHTML    = `📍 <a href="https://www.instagram.com/${p.ig}/" target="_blank">@${p.ig}</a> · ${p.org}`;
     document.getElementById('modalPostLink').href    = p.postUrl || `https://www.instagram.com/${p.ig}/`;
     document.getElementById('modalIgLink').href      = `https://www.instagram.com/${p.ig}/`;
+
+    // Update URL hash for shareable link
+    window.history.replaceState(null, '', `#mascota=${p.id}`);
+    currentModalPetId = p.id;
+
+    // Update share buttons
+    const petUrl = `https://patitasba.com.ar/#mascota=${p.id}`;
+    const shareText = p.disponible !== false
+        ? `Mirá a ${p.nombre}, está buscando hogar en Buenos Aires ❤️🐾 ${petUrl}`
+        : `${p.nombre} ya encontró familia! Hay más esperando en patitasba.com.ar ❤️🐾`;
+
+    document.getElementById('shareWhatsapp').href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+    document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(petUrl)}&quote=${encodeURIComponent(shareText)}`;
+    document.getElementById('shareTwitter').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+
+    // Reset copy button
+    const copyBtn = document.getElementById('shareCopyLink');
+    copyBtn.textContent = '🔗 Copiar link';
+    copyBtn.classList.remove('copied');
+
     document.getElementById('modal').classList.add('open');
+}
+
+let currentModalPetId = null;
+
+function copiarLinkMascota() {
+    const url = `https://patitasba.com.ar/#mascota=${currentModalPetId}`;
+    navigator.clipboard.writeText(url).then(() => {
+        const btn = document.getElementById('shareCopyLink');
+        btn.textContent = '✅ ¡Link copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '🔗 Copiar link';
+            btn.classList.remove('copied');
+        }, 3000);
+    });
+}
+
+function compartirRapido(id) {
+    const p = pets.find(x => String(x.id) === String(id));
+    if (!p) return;
+    const petUrl = `https://patitasba.com.ar/#mascota=${p.id}`;
+    const shareText = `Mirá a ${p.nombre}, está buscando hogar en Buenos Aires ❤️🐾 ${petUrl}`;
+
+    if (navigator.share) {
+        navigator.share({ title: `${p.nombre} busca hogar`, text: shareText, url: petUrl });
+    } else {
+        window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
+    }
 }
 
 function modalCarouselMove(dir, e) {
@@ -889,7 +994,11 @@ function modalCarousel(idx, e) {
     dots.forEach((d, i) => d.classList.toggle('active', i === idx));
 }
 
-function closeModal() { document.getElementById('modal').classList.remove('open'); }
+function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    currentModalPetId = null;
+    window.history.replaceState(null, '', window.location.pathname);
+}
 document.getElementById('modal').addEventListener('click', e => { if (e.target === document.getElementById('modal')) closeModal(); });
 
 // ── MODAL PUBLICAR ──
@@ -1017,6 +1126,7 @@ function renderPets() {
                 ${buildCarousel(p)}
                 ${badge}
                 <div class="badge-org">@${p.ig}</div>
+                <button class="card-share-btn" title="Compartir" onclick="event.stopPropagation(); compartirRapido('${p.id}')">↗</button>
             </div>
             <div class="card-body">
                 <div class="card-header">
@@ -1045,8 +1155,50 @@ function renderPets() {
     document.getElementById('visibleCount').textContent = disponibles.length;
 }
 
+// ── SHARE SITE ──
+function compartirSitioWA() {
+    const total = pets.filter(p => p.disponible !== false).length;
+    const text = `Mirá esta web con más de ${total} perritos y gatitos buscando hogar en Buenos Aires! 🐾❤️ patitasba.com.ar`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+}
+function compartirSitioFB() {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://patitasba.com.ar')}`, '_blank');
+}
+function copiarLinkSitio(btn) {
+    navigator.clipboard.writeText('https://patitasba.com.ar').then(() => {
+        btn.textContent = '✅ ¡Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '🔗 Copiar link del sitio';
+            btn.classList.remove('copied');
+        }, 3000);
+    });
+}
+
+// ── DEEP LINK: abrir mascota desde URL hash ──
+function checkDeepLink() {
+    const hash = window.location.hash;
+    const match = hash.match(/#mascota=(.+)/);
+    if (match) {
+        const id = decodeURIComponent(match[1]);
+        // Small delay to ensure pets are rendered
+        setTimeout(() => openModal(id), 300);
+    }
+}
+
 // Arrancar cargando datos
-cargarDatos();
+cargarDatos().finally(() => checkDeepLink());
+
+// Handle back/forward browser navigation
+window.addEventListener('hashchange', () => {
+    const hash = window.location.hash;
+    const match = hash.match(/#mascota=(.+)/);
+    if (match) {
+        openModal(decodeURIComponent(match[1]));
+    } else {
+        closeModal();
+    }
+});
 </script>
 </body>
 </html>
