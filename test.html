@@ -479,10 +479,7 @@ async function loadAndFilterPets(profile) {
 
         // Filter based on profile
         let matches = pets.filter(pet => {
-            // Solo mostrar disponibles
-            if (pet.disponible === false) return true; // mostrar igual por ahora, muchos no tienen este campo
-
-            // Especie filter (campo: tipo)
+            // Especie filter (campo: tipo) — siempre aplicar primero
             if (profile.especie === 'perro' && pet.tipo !== 'perro') return false;
             if (profile.especie === 'gato' && pet.tipo !== 'gato') return false;
 
