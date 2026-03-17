@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayudá a un refugio — PatitasBA</title>
+    <meta name="description" content="Los refugios de Buenos Aires están formados por voluntarios que necesitan tu ayuda. Doná comida, dinero o tu tiempo para que más perritos y gatitos tengan una segunda oportunidad.">
+    <meta name="keywords" content="donar refugio animales Buenos Aires, ayudar refugio perros, voluntario refugio animales, donación mascotas, apadrinar refugio">
+    <link rel="canonical" href="https://patitasba.com.ar/donar.html">
+    <meta property="og:title" content="Ayudá a un refugio — PatitasBA">
+    <meta property="og:description" content="Los refugios dependen de personas como vos. Doná comida, dinero o tu tiempo.">
+    <meta property="og:image" content="https://patitasba.com.ar/og-image.png">
+    <meta property="og:url" content="https://patitasba.com.ar/donar.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%23FF6B35'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #F7F8FA; color: #1a1a2e; }
+
+        /* Nav */
+        nav { background: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+        .nav-logo { font-size: 24px; font-weight: 800; color: #1a1a2e; text-decoration: none; }
+        .nav-logo span { color: #FF6B35; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 500; font-size: 15px; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #FF6B35; }
+        .nav-links .btn-donar { background: #FF6B35; color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; }
+        .nav-links .btn-donar:hover { background: #e55a2b; color: white; }
+        .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+            .nav-links.open { display: flex; }
+        }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #FF6B35 0%, #e91e8c 100%); color: white; padding: 80px 24px; text-align: center; }
+        .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin-bottom: 16px; }
+        .hero p { font-size: 18px; opacity: 0.92; max-width: 620px; margin: 0 auto; line-height: 1.6; }
+
+        /* Content */
+        .content { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+
+        /* Storytelling section */
+        .story-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 32px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .story-section h2 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #1a1a2e;
+        }
+        .story-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 16px;
+        }
+        .story-section p:last-child { margin-bottom: 0; }
+        .story-section strong { color: #FF6B35; }
+
+        /* Highlight stat */
+        .highlight-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .highlight-stat {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border-top: 4px solid #FF6B35;
+        }
+        .highlight-stat .emoji { font-size: 36px; margin-bottom: 10px; }
+        .highlight-stat .number { font-size: 28px; font-weight: 800; color: #FF6B35; }
+        .highlight-stat .label { font-size: 14px; color: #666; margin-top: 4px; }
+
+        /* Ways to help */
+        .ways-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .way-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: transform 0.2s;
+        }
+        .way-card:hover { transform: translateY(-4px); }
+        .way-card .icon { font-size: 40px; margin-bottom: 14px; }
+        .way-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+        .way-card p { font-size: 15px; line-height: 1.7; color: #555; }
+
+        /* Donation box */
+        .donate-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: 20px;
+            padding: 48px 36px;
+            text-align: center;
+            color: white;
+            margin: 48px 0;
+        }
+        .donate-box h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+        .donate-box p { opacity: 0.85; font-size: 16px; margin-bottom: 28px; line-height: 1.6; max-width: 540px; margin-left: auto; margin-right: auto; }
+
+        /* Progress bar */
+        .goal-label { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; opacity: 0.8; }
+        .progress-track { background: rgba(255,255,255,0.15); border-radius: 12px; height: 20px; overflow: hidden; margin-bottom: 8px; }
+        .progress-fill { background: linear-gradient(90deg, #FF6B35, #ff8f65); height: 100%; border-radius: 12px; transition: width 1s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; min-width: 40px; }
+        .progress-pct { font-size: 11px; font-weight: 700; }
+        .goal-sub { font-size: 13px; opacity: 0.7; margin-bottom: 28px; }
+        .superado-msg { display: none; font-size: 14px; margin-bottom: 20px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 10px; }
+
+        .alias-box {
+            background: rgba(255,255,255,0.08);
+            border: 2px dashed rgba(255,255,255,0.25);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .alias-label { font-size: 13px; opacity: 0.7; margin-bottom: 6px; }
+        .alias-value { font-size: 28px; font-weight: 800; letter-spacing: 1px; color: #FF6B35; margin-bottom: 12px; }
+        .btn-copy { background: #FF6B35; color: white; border: none; padding: 10px 24px; border-radius: 12px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background 0.2s; }
+        .btn-copy:hover { background: #e55a2b; }
+        .alias-steps { font-size: 13px; opacity: 0.7; line-height: 1.6; }
+
+        .mp-link {
+            display: inline-block;
+            background: #FF6B35;
+            color: white;
+            padding: 16px 36px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 17px;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+            margin-top: 16px;
+        }
+        .mp-link:hover { transform: scale(1.05); background: #e55a2b; }
+
+        .refugios-list {
+            margin-top: 24px;
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .transparency-note {
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 20px;
+            font-size: 13px;
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        /* Contact section */
+        .contact-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 32px;
+            margin-top: 48px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+        .contact-section h2 { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
+        .contact-section p { font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 24px; max-width: 540px; margin-left: auto; margin-right: auto; }
+        .contact-form { max-width: 500px; margin: 0 auto; text-align: left; }
+        .contact-form label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #333; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: #FF6B35; outline: none; }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .btn-enviar {
+            background: #FF6B35;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            width: 100%;
+        }
+        .btn-enviar:hover { background: #e55a2b; transform: scale(1.02); }
+
+        /* CTA bottom */
+        .cta-bottom { background: linear-gradient(135deg, #FF6B35, #ff8f65); color: white; text-align: center; padding: 60px 24px; margin-top: 60px; }
+        .cta-bottom h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+        .cta-bottom p { opacity: 0.9; margin-bottom: 24px; font-size: 16px; }
+        .cta-btn { display: inline-block; background: white; color: #FF6B35; padding: 14px 32px; border-radius: 30px; font-weight: 700; font-size: 16px; text-decoration: none; transition: transform 0.2s; margin: 0 8px; }
+        .cta-btn:hover { transform: scale(1.05); }
+        .cta-btn.secondary { background: transparent; border: 2px solid white; color: white; }
+
+        footer { text-align: center; padding: 32px; color: #999; font-size: 14px; }
+        footer a { color: #FF6B35; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">Patitas<span>BA</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/proceso.html">Cómo adoptar</a>
+        <a href="/guia.html">Guía</a>
+        <a href="/test.html">Test</a>
+        <a href="/donar.html" class="active btn-donar">❤️ Ayudá a un refugio</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Detrás de cada refugio hay<br>personas como vos</h1>
+    <p>Los refugios de Buenos Aires funcionan con voluntarios que ponen el cuerpo todos los días. Sin sueldo, sin sponsors, sin estructura. Solo amor y compromiso — y necesitan tu ayuda.</p>
+</div>
+
+<div class="content">
+
+    <!-- Storytelling -->
+    <div class="story-section">
+        <h2>La realidad de un refugio</h2>
+        <p>Cada refugio que ves en PatitasBA está formado por <strong>voluntarios que pagan de su bolsillo</strong> la comida, las vacunas, las castraciones y los tratamientos veterinarios de decenas — a veces cientos — de animales rescatados.</p>
+        <p>No tienen un presupuesto fijo. No reciben plata del gobierno. No son empresas. Son personas comunes que un día decidieron que no podían mirar para otro lado cuando veían un perro abandonado en la calle o un gato herido en una obra.</p>
+        <p>La realidad es que <strong>los refugios dependen casi exclusivamente de donaciones</strong> para seguir funcionando. Un mes malo de donaciones puede significar que un animal no reciba el tratamiento que necesita. Tu ayuda — por más chica que sea — cambia vidas.</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="highlight-stats">
+        <div class="highlight-stat">
+            <div class="emoji">🏠</div>
+            <div class="number">5</div>
+            <div class="label">Refugios que apoyamos</div>
+        </div>
+        <div class="highlight-stat">
+            <div class="emoji">🐾</div>
+            <div class="number" id="statTotal">300+</div>
+            <div class="label">Animales en adopción</div>
+        </div>
+        <div class="highlight-stat">
+            <div class="emoji">💪</div>
+            <div class="number">100%</div>
+            <div class="label">Voluntarios, sin fines de lucro</div>
+        </div>
+    </div>
+
+    <!-- Ways to help -->
+    <h2 style="text-align:center;font-size:28px;font-weight:800;margin-bottom:8px;">Cómo podés ayudar</h2>
+    <p style="text-align:center;color:#666;font-size:16px;margin-bottom:32px;">No hace falta mucho. Cualquier gesto suma.</p>
+
+    <div class="ways-grid">
+        <div class="way-card">
+            <div class="icon">💰</div>
+            <h3>Doná dinero</h3>
+            <p>Con $2.000 un refugio puede comprar un bolsón de alimento balanceado. Con $5.000, una castración. Cada peso cuenta y se distribuye entre los 5 refugios.</p>
+        </div>
+        <div class="way-card">
+            <div class="icon">🍖</div>
+            <h3>Doná alimento</h3>
+            <p>Muchos refugios aceptan donaciones de alimento balanceado directamente. Si preferís donar en especie, contactanos y te conectamos con el refugio más cercano.</p>
+        </div>
+        <div class="way-card">
+            <div class="icon">📢</div>
+            <h3>Compartí</h3>
+            <p>A veces la mejor ayuda es pasar la voz. Compartí PatitasBA con amigos, en redes sociales o en tu grupo de WhatsApp. Cada compartida puede ser una adopción más.</p>
+        </div>
+    </div>
+
+    <!-- Donation box -->
+    <div class="donate-box">
+        <h2>Hacé tu donación</h2>
+        <p>El 100% de lo recaudado se distribuye entre los refugios para comida, veterinario y cuidados. Sin comisiones, sin intermediarios.</p>
+
+        <!-- Progress bar -->
+        <div style="max-width:400px;margin:0 auto 24px;">
+            <div class="goal-label">
+                <span>Recaudado este mes</span>
+                <span id="donarMetaLabel">Meta: $200.000</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="donarProgressFill" style="width:0%">
+                    <span class="progress-pct" id="donarPct">0%</span>
+                </div>
+            </div>
+            <div class="goal-sub" id="donarGoalSub">$0 de $200.000 ARS</div>
+            <div class="superado-msg" id="superadoMsg">🎉 ¡Superamos la meta! Cada peso extra también va a los refugios.</div>
+        </div>
+
+        <!-- Alias -->
+        <div class="alias-box" style="max-width:400px;margin:0 auto 24px;">
+            <div class="alias-label">Alias MercadoPago</div>
+            <div class="alias-value" id="donarAlias">patitasba.mp</div>
+            <button class="btn-copy" onclick="copiarAlias()">📋 Copiar alias</button>
+            <div class="alias-steps" style="margin-top:12px">
+                Abrí MercadoPago → Transferir → Ingresar alias → Mandá el monto que puedas 💛
+            </div>
+        </div>
+
+        <a href="https://link.mercadopago.com.ar/patitasba" target="_blank" class="mp-link">Donar con MercadoPago</a>
+
+        <div class="refugios-list">
+            <strong>Refugios que reciben las donaciones:</strong><br>
+            🐕 Zaguates Refugio &nbsp;·&nbsp; 🐕 Refugio El Campito<br>
+            🐕 Adopta un Galgo &nbsp;·&nbsp; 🐕 Mascotas en Adopción<br>
+            🐕 Proyecto 4 Patas
+        </div>
+
+        <div class="transparency-note">
+            PatitasBA es un proyecto sin fines de lucro. Distribuimos las donaciones equitativamente cada mes entre todos los refugios. No cobramos comisión.
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-section" id="contacto">
+        <h2>Contactanos</h2>
+        <p>¿Tenés una propuesta, una idea, querés sumar tu refugio o simplemente saludar? Escribinos y te respondemos.</p>
+        <form class="contact-form" onsubmit="enviarContacto(event)">
+            <label for="contact-name">Tu nombre</label>
+            <input type="text" id="contact-name" placeholder="Ej: María López" required>
+
+            <label for="contact-email">Tu email</label>
+            <input type="email" id="contact-email" placeholder="Ej: maria@gmail.com" required>
+
+            <label for="contact-message">Mensaje</label>
+            <textarea id="contact-message" placeholder="Contanos en qué podemos ayudarte o cómo querés colaborar..." required></textarea>
+
+            <button type="submit" class="btn-enviar">Enviar mensaje</button>
+        </form>
+    </div>
+
+</div>
+
+<div class="cta-bottom">
+    <h2>Cada gesto cuenta</h2>
+    <p>Doná, compartí, adoptá. Lo que puedas, cuando puedas. Los refugios y sus animales te lo agradecen.</p>
+    <a href="/" class="cta-btn">Ver mascotas en adopción</a>
+    <a href="/test.html" class="cta-btn secondary">Hacer el test de compatibilidad</a>
+</div>
+
+<footer>
+    <p>Hecho con amor por <a href="/">PatitasBA</a> — Buenos Aires, Argentina</p>
+</footer>
+
+<script>
+// Copy alias
+function copiarAlias() {
+    navigator.clipboard.writeText('patitasba.mp').then(() => {
+        const btn = document.querySelector('.btn-copy');
+        btn.textContent = '✅ ¡Copiado!';
+        setTimeout(() => btn.textContent = '📋 Copiar alias', 2000);
+    });
+}
+
+// Load donation progress
+async function cargarDonaciones() {
+    try {
+        const resp = await fetch('donaciones.json');
+        if (!resp.ok) return;
+        const data = await resp.json();
+        const meta = data.meta || 200000;
+        const actual = data.recaudado || 0;
+        const pct = Math.min(Math.round((actual / meta) * 100), 100);
+        document.getElementById('donarProgressFill').style.width = pct + '%';
+        document.getElementById('donarPct').textContent = pct + '%';
+        document.getElementById('donarGoalSub').textContent = `$${actual.toLocaleString('es-AR')} de $${meta.toLocaleString('es-AR')} ARS`;
+        document.getElementById('donarMetaLabel').textContent = `Meta: $${meta.toLocaleString('es-AR')}`;
+        if (actual >= meta) {
+            document.getElementById('superadoMsg').style.display = 'block';
+        }
+    } catch(e) {}
+}
+
+// Contact form → mailto
+function enviarContacto(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const mensaje = document.getElementById('contact-message').value.trim();
+    const subject = encodeURIComponent('Contacto desde Patitasba.com.ar');
+    const body = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\n\n${mensaje}`);
+    window.location.href = `mailto:grodgm@gmail.com?subject=${subject}&body=${body}`;
+}
+
+// Load pet count
+async function cargarStats() {
+    try {
+        const resp = await fetch('pets.json');
+        if (!resp.ok) return;
+        const data = await resp.json();
+        const pets = data.mascotas || [];
+        const disponibles = pets.filter(p => p.disponible !== false).length;
+        if (disponibles > 0) {
+            document.getElementById('statTotal').textContent = disponibles + '+';
+        }
+    } catch(e) {}
+}
+
+cargarDonaciones();
+cargarStats();
+</script>
+
+</body>
+</html>

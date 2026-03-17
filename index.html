@@ -479,9 +479,9 @@
         <a href="/proceso.html">Cómo adoptar</a>
         <a href="/guia.html">Guía</a>
         <a href="/test.html">Test</a>
-        <a href="#" onclick="abrirDonar(); return false;" style="color:#FF6B35; font-weight:700;">❤️ Donar</a>
+        <a href="/donar.html" style="color:#FF6B35; font-weight:700;">❤️ Ayudá a un refugio</a>
     </nav>
-    <button class="btn-primary" onclick="abrirDonar()" style="background: linear-gradient(135deg,#FF6B35,#e91e8c); animation: pulse-btn 2s infinite;">❤️ Apoyá a los refugios</button>
+    <a href="/donar.html" class="btn-primary" style="background: linear-gradient(135deg,#FF6B35,#e91e8c); animation: pulse-btn 2s infinite; text-decoration:none; color:white;">❤️ Ayudá a un refugio</a>
 </header>
 
 <!-- HERO -->
@@ -589,55 +589,6 @@
     </div>
 </div>
 
-<!-- MODAL DONAR -->
-<div class="modal-overlay" id="modalDonar">
-    <div class="modal donar-modal">
-        <button class="modal-close" onclick="cerrarDonar()" style="background:rgba(255,255,255,.25);color:white;top:16px;right:16px;">✕</button>
-        <div class="modal-body">
-            <div class="donar-header">
-                <div style="font-size:42px;margin-bottom:10px;">🐾</div>
-                <h2>Ayudá a los refugios</h2>
-                <p>El 100% de lo recaudado se distribuye entre los 5 refugios para comida, veterinario y cuidados. Sin comisiones.</p>
-            </div>
-            <div class="donar-body">
-                <!-- Barra de progreso -->
-                <div class="goal-label">
-                    <span>Recaudado este mes</span>
-                    <span class="meta" id="donarMetaLabel">Meta: $200.000</span>
-                </div>
-                <div class="progress-track">
-                    <div class="progress-fill" id="donarProgressFill" style="width:0%">
-                        <span class="progress-pct" id="donarPct">0%</span>
-                    </div>
-                </div>
-                <div class="goal-sub" id="donarGoalSub">$0 de $200.000 ARS · <span id="donarMes">este mes</span></div>
-                <div class="superado-msg" id="superadoMsg">🎉 ¡Superamos la meta! Cada peso extra también va a los refugios.</div>
-
-                <!-- Alias MercadoPago -->
-                <div class="alias-box">
-                    <div class="alias-label">Alias MercadoPago</div>
-                    <div class="alias-value" id="donarAlias">patitasba.mp</div>
-                    <button class="btn-copy" onclick="copiarAlias()">📋 Copiar alias</button>
-                    <div class="alias-steps" style="margin-top:12px">
-                        Abrí MercadoPago → Transferir → Ingresar alias → Mandá el monto que puedas 💛
-                    </div>
-                </div>
-
-                <!-- Refugios beneficiarios -->
-                <div class="refugios-list">
-                    <strong>Refugios que reciben las donaciones:</strong><br>
-                    🐕 Zaguates Refugio &nbsp;·&nbsp; 🐕 Refugio El Campito<br>
-                    🐕 Adopta un Galgo &nbsp;·&nbsp; 🐕 Mascotas en Adopción<br>
-                    🐕 Proyecto 4 Patas
-                </div>
-            </div>
-            <div class="donar-footer">
-                PatitasBA es un proyecto sin fines de lucro hecho con amor 🐾<br>
-                Distribuimos las donaciones equitativamente cada mes.
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- MODAL PUBLICAR MASCOTA -->
 <div class="modal-overlay" id="modalPublicar">
@@ -1041,55 +992,6 @@ document.getElementById('modal').addEventListener('click', e => { if (e.target =
 function closePublicar() { document.getElementById('modalPublicar').classList.remove('open'); }
 document.getElementById('modalPublicar').addEventListener('click', e => { if (e.target === document.getElementById('modalPublicar')) closePublicar(); });
 
-// ── MODAL DONAR ──
-function abrirDonar() {
-    document.getElementById('modalDonar').classList.add('open');
-    cargarDonaciones();
-}
-function cerrarDonar() { document.getElementById('modalDonar').classList.remove('open'); }
-document.getElementById('modalDonar').addEventListener('click', e => {
-    if (e.target === document.getElementById('modalDonar')) cerrarDonar();
-});
-
-function cargarDonaciones() {
-    fetch('donaciones.json?t=' + Date.now())
-        .then(r => r.json())
-        .then(d => renderDonaciones(d))
-        .catch(() => renderDonaciones({ mes: 'este mes', objetivo: 200000, recaudado: 0, alias: 'patitasba.mp' }));
-}
-
-function renderDonaciones(d) {
-    const obj       = d.objetivo  || 200000;
-    const rec       = d.recaudado || 0;
-    const pct       = Math.round((rec / obj) * 100);
-    const superado  = pct >= 100;
-    const fillW     = Math.min(pct, 100);
-    const fill      = document.getElementById('donarProgressFill');
-    const pctEl     = document.getElementById('donarPct');
-    const subEl     = document.getElementById('donarGoalSub');
-    const msgEl     = document.getElementById('superadoMsg');
-    const metaEl    = document.getElementById('donarMetaLabel');
-    const mesEl     = document.getElementById('donarMes');
-    const aliasEl   = document.getElementById('donarAlias');
-
-    fill.style.width = fillW + '%';
-    fill.classList.toggle('superado', superado);
-    pctEl.classList.toggle('superado', superado);
-    pctEl.textContent = pct + '%';
-    subEl.innerHTML   = `$${rec.toLocaleString('es-AR')} de $${obj.toLocaleString('es-AR')} ARS · <span id="donarMes">${d.mes || 'este mes'}</span>`;
-    metaEl.textContent = `Meta: $${obj.toLocaleString('es-AR')}`;
-    msgEl.style.display = superado ? 'block' : 'none';
-    if (aliasEl && d.alias) aliasEl.textContent = d.alias;
-}
-
-function copiarAlias() {
-    const alias = document.getElementById('donarAlias').textContent;
-    navigator.clipboard.writeText(alias).then(() => {
-        const btn = document.querySelector('.btn-copy');
-        btn.textContent = '✅ ¡Copiado!';
-        setTimeout(() => btn.textContent = '📋 Copiar alias', 2000);
-    });
-}
 
 function generarPublicacion() {
     const nombre  = document.getElementById('pub_nombre').value.trim() || 'Sin nombre';
