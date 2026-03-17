@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de compatibilidad — PatitasBA</title>
+    <meta name="description" content="Respondé 5 preguntas y descubrí qué tipo de mascota se adapta mejor a tu vida. Después te mostramos las que están disponibles.">
+    <meta name="keywords" content="test adopción mascota, qué perro adoptar, quiz mascota compatible, test perro gato">
+    <link rel="canonical" href="https://patitasba.com.ar/test.html">
+    <meta property="og:title" content="Test: ¿Qué mascota es para vos? — PatitasBA">
+    <meta property="og:description" content="5 preguntas para descubrir qué tipo de mascota se adapta a tu vida.">
+    <meta property="og:image" content="https://patitasba.com.ar/og-image.png">
+    <meta property="og:url" content="https://patitasba.com.ar/test.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%23FF6B35'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #F7F8FA; color: #1a1a2e; }
+
+        /* Nav */
+        nav { background: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+        .nav-logo { font-size: 24px; font-weight: 800; color: #1a1a2e; text-decoration: none; }
+        .nav-logo span { color: #FF6B35; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 500; font-size: 15px; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #FF6B35; }
+        .nav-links .btn-donar { background: #FF6B35; color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; }
+        .nav-links .btn-donar:hover { background: #e55a2b; color: white; }
+        .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+            .nav-links.open { display: flex; }
+        }
+
+        /* Quiz container */
+        .quiz-container {
+            max-width: 640px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            background: #E5E7EB;
+            border-radius: 100px;
+            height: 8px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: #FF6B35;
+            height: 100%;
+            border-radius: 100px;
+            transition: width 0.4s ease;
+        }
+
+        /* Question */
+        .question-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .question-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: #FF6B35;
+            margin-bottom: 8px;
+        }
+        .question-text {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            line-height: 1.3;
+        }
+
+        /* Options */
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 16px;
+        }
+        .option:hover {
+            border-color: #FF6B35;
+            background: #FFF8F5;
+        }
+        .option .emoji { font-size: 28px; flex-shrink: 0; }
+        .option .label { font-weight: 500; }
+        .option .sublabel { font-size: 13px; color: #888; margin-top: 2px; }
+        .option.selected {
+            border-color: #FF6B35;
+            background: #FFF3ED;
+        }
+
+        /* Result */
+        .result-container {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .result-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .result-emoji { font-size: 64px; margin-bottom: 16px; }
+        .result-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .result-desc {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 24px;
+        }
+        .result-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .result-tag {
+            background: #FFF3ED;
+            color: #FF6B35;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Matching pets */
+        .matches-section {
+            margin-top: 40px;
+        }
+        .matches-title {
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .matches-subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+        .pet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .pet-match-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .pet-match-card:hover { transform: translateY(-4px); }
+        .pet-match-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .pet-match-info {
+            padding: 16px;
+        }
+        .pet-match-info h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .pet-match-info p { font-size: 14px; color: #888; }
+        .pet-match-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .pet-match-tags span {
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        .tag-perro { background: #EEF2FF; color: #4F46E5; }
+        .tag-gato { background: #FFF7ED; color: #EA580C; }
+        .tag-size { background: #F0FDF4; color: #16A34A; }
+
+        .no-matches {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 16px;
+        }
+
+        .btn-restart {
+            display: inline-block;
+            background: #FF6B35;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            margin-top: 16px;
+            transition: transform 0.2s;
+        }
+        .btn-restart:hover { transform: scale(1.05); }
+        .btn-secondary {
+            display: inline-block;
+            color: #FF6B35;
+            padding: 14px 32px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        footer { text-align: center; padding: 32px; color: #999; font-size: 14px; }
+        footer a { color: #FF6B35; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">Patitas<span>BA</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/proceso.html">Cómo adoptar</a>
+        <a href="/guia.html">Guía</a>
+        <a href="/test.html" class="active">Test</a>
+        <a href="https://link.mercadopago.com.ar/patitasba" target="_blank" class="btn-donar">Donar</a>
+    </div>
+</nav>
+
+<div class="quiz-container">
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+    </div>
+
+    <div id="quizSection">
+        <div class="question-card" id="questionCard">
+            <!-- Rendered by JS -->
+        </div>
+    </div>
+
+    <div class="result-container" id="resultSection">
+        <div class="result-card" id="resultCard">
+            <!-- Rendered by JS -->
+        </div>
+        <div class="matches-section" id="matchesSection">
+            <!-- Rendered by JS -->
+        </div>
+        <div style="text-align: center; margin-top: 24px;">
+            <button class="btn-restart" onclick="restartQuiz()">Volver a hacer el test</button>
+            <br>
+            <a href="/" class="btn-secondary">Ver todas las mascotas</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Hecho con amor por <a href="/">PatitasBA</a> — Buenos Aires, Argentina</p>
+</footer>
+
+<script>
+const questions = [
+    {
+        question: "¿Dónde vivís?",
+        options: [
+            { emoji: "🏢", label: "Departamento chico", sublabel: "Monoambiente o 1 ambiente", value: "depto_chico" },
+            { emoji: "🏠", label: "Departamento grande", sublabel: "2+ ambientes con balcón", value: "depto_grande" },
+            { emoji: "🏡", label: "Casa con patio", sublabel: "Patio o jardín", value: "casa" }
+        ]
+    },
+    {
+        question: "¿Cuántas horas pasás en casa por día?",
+        options: [
+            { emoji: "🏃", label: "Pocas (menos de 8hs)", sublabel: "Trabajo presencial full-time", value: "pocas" },
+            { emoji: "🔄", label: "Mitad y mitad", sublabel: "Híbrido o medio tiempo", value: "mitad" },
+            { emoji: "💻", label: "Muchas (8hs+)", sublabel: "Home office o trabajo desde casa", value: "muchas" }
+        ]
+    },
+    {
+        question: "¿Qué nivel de energía tenés?",
+        options: [
+            { emoji: "🛋️", label: "Tranqui", sublabel: "Prefiero paseos cortos y relax", value: "baja" },
+            { emoji: "🚶", label: "Moderada", sublabel: "Un par de paseos al día está bien", value: "media" },
+            { emoji: "🏃‍♂️", label: "Alta", sublabel: "Salgo a correr/bici, soy muy activo", value: "alta" }
+        ]
+    },
+    {
+        question: "¿Tenés otras mascotas en casa?",
+        options: [
+            { emoji: "🐕", label: "Sí, perro/s", sublabel: "", value: "si_perro" },
+            { emoji: "🐈", label: "Sí, gato/s", sublabel: "", value: "si_gato" },
+            { emoji: "✨", label: "No, sería el primero", sublabel: "", value: "no" }
+        ]
+    },
+    {
+        question: "¿Qué preferís?",
+        options: [
+            { emoji: "🐶", label: "Perro", sublabel: "Compañero fiel, paseos, juego", value: "perro" },
+            { emoji: "🐱", label: "Gato", sublabel: "Independiente, cariñoso, bajo mantenimiento", value: "gato" },
+            { emoji: "🤷", label: "Me da igual", sublabel: "Estoy abierto a lo que mejor se adapte", value: "cualquiera" }
+        ]
+    }
+];
+
+let currentQuestion = 0;
+let answers = {};
+
+function renderQuestion() {
+    const q = questions[currentQuestion];
+    const card = document.getElementById('questionCard');
+    const progress = ((currentQuestion) / questions.length) * 100;
+    document.getElementById('progressFill').style.width = progress + '%';
+
+    let html = `
+        <div class="question-number">Pregunta ${currentQuestion + 1} de ${questions.length}</div>
+        <div class="question-text">${q.question}</div>
+    `;
+    q.options.forEach((opt, i) => {
+        html += `
+            <div class="option" onclick="selectOption(${currentQuestion}, '${opt.value}', this)">
+                <div class="emoji">${opt.emoji}</div>
+                <div>
+                    <div class="label">${opt.label}</div>
+                    ${opt.sublabel ? `<div class="sublabel">${opt.sublabel}</div>` : ''}
+                </div>
+            </div>
+        `;
+    });
+    card.innerHTML = html;
+}
+
+function selectOption(qIndex, value, el) {
+    answers[qIndex] = value;
+
+    // Visual feedback
+    el.classList.add('selected');
+
+    setTimeout(() => {
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            renderQuestion();
+        } else {
+            showResult();
+        }
+    }, 300);
+}
+
+function showResult() {
+    document.getElementById('progressFill').style.width = '100%';
+    document.getElementById('quizSection').style.display = 'none';
+    document.getElementById('resultSection').style.display = 'block';
+
+    const profile = calculateProfile();
+    renderResult(profile);
+    loadAndFilterPets(profile);
+}
+
+function calculateProfile() {
+    const espacio = answers[0];     // depto_chico, depto_grande, casa
+    const tiempo = answers[1];      // pocas, mitad, muchas
+    const energia = answers[2];     // baja, media, alta
+    const otrasMascotas = answers[3]; // si_perro, si_gato, no
+    const preferencia = answers[4];  // perro, gato, cualquiera
+
+    let especie = preferencia;
+    let tamano = [];
+    let edadPreferida = [];
+    let descripcion = '';
+    let emoji = '';
+    let titulo = '';
+    let tags = [];
+
+    // Lógica de recomendación
+    if (preferencia === 'gato' || (preferencia === 'cualquiera' && espacio === 'depto_chico' && tiempo === 'pocas')) {
+        especie = 'gato';
+        emoji = '🐱';
+        titulo = 'Un gato es tu match ideal';
+        descripcion = 'Los gatos son independientes, se adaptan perfecto a departamentos y toleran bien estar solos. Con un rascador, una ventana con red y algo de juego diario, van a ser felices.';
+        tags = ['Gato', 'Cualquier edad'];
+        tamano = ['chico', 'mediano'];
+    }
+    else if (preferencia === 'perro' || preferencia === 'cualquiera') {
+        especie = 'perro';
+
+        if (espacio === 'depto_chico') {
+            tamano = ['chico'];
+            if (tiempo === 'pocas') {
+                edadPreferida = ['adulto', 'senior'];
+                emoji = '🐕';
+                titulo = 'Un perro chico y tranquilo';
+                descripcion = 'Para tu espacio y tiempo, lo mejor es un perro chico y adulto. Son más tranquilos que los cachorros, necesitan menos ejercicio y se adaptan bien a espacios reducidos.';
+                tags = ['Perro', 'Chico', 'Adulto'];
+            } else {
+                emoji = '🐕';
+                titulo = 'Un perro chico';
+                descripcion = 'Tu depto es ideal para un perro chico. Como pasás bastante tiempo en casa, puede ser cachorro o adulto — tenés el tiempo para dedicarle.';
+                tags = ['Perro', 'Chico'];
+            }
+        }
+        else if (espacio === 'depto_grande') {
+            tamano = ['chico', 'mediano'];
+            if (energia === 'alta') {
+                tamano = ['mediano'];
+                emoji = '🐕‍🦺';
+                titulo = 'Un perro mediano y activo';
+                descripcion = 'Tu depto tiene espacio suficiente para un perro mediano, y tu energía acompaña. Buscá uno joven o adulto joven que disfrute los paseos tanto como vos.';
+                tags = ['Perro', 'Mediano', 'Activo'];
+            } else {
+                emoji = '🐕';
+                titulo = 'Un perro chico a mediano';
+                descripcion = 'Tenés buen espacio y un estilo de vida equilibrado. Un perro chico o mediano se va a adaptar muy bien a tu rutina.';
+                tags = ['Perro', 'Chico/Mediano'];
+            }
+        }
+        else { // casa
+            tamano = ['chico', 'mediano', 'grande'];
+            if (energia === 'alta') {
+                emoji = '🐕‍🦺';
+                titulo = 'Un perro mediano a grande y activo';
+                descripcion = 'Tenés patio y energía de sobra: podés adoptar prácticamente cualquier perro. Los medianos y grandes que necesitan espacio van a estar en el paraíso con vos.';
+                tags = ['Perro', 'Mediano/Grande', 'Activo'];
+            } else {
+                emoji = '🐶';
+                titulo = 'Cualquier perro se adapta a tu casa';
+                descripcion = 'Con patio tenés mucha flexibilidad. Si preferís algo tranquilo, un adulto mediano es perfecto. Si querés más acción, un joven o mediano-grande va a disfrutar tu espacio.';
+                tags = ['Perro', 'Cualquier tamaño'];
+            }
+        }
+    }
+
+    return { especie, tamano, edadPreferida, emoji, titulo, descripcion, tags };
+}
+
+function renderResult(profile) {
+    const card = document.getElementById('resultCard');
+    card.innerHTML = `
+        <div class="result-emoji">${profile.emoji}</div>
+        <div class="result-title">${profile.titulo}</div>
+        <div class="result-desc">${profile.descripcion}</div>
+        <div class="result-tags">
+            ${profile.tags.map(t => `<span class="result-tag">${t}</span>`).join('')}
+        </div>
+    `;
+}
+
+async function loadAndFilterPets(profile) {
+    const section = document.getElementById('matchesSection');
+    try {
+        const response = await fetch('/pets.json');
+        const pets = await response.json();
+
+        // Filter based on profile
+        let matches = pets.filter(pet => {
+            // Especie filter
+            if (profile.especie === 'perro' && pet.especie !== 'perro') return false;
+            if (profile.especie === 'gato' && pet.especie !== 'gato') return false;
+
+            // Tamaño filter (if we have size data and it's a dog)
+            if (pet.especie === 'perro' && pet.tamano && profile.tamano.length > 0) {
+                const tamanoNorm = pet.tamano.toLowerCase();
+                const matchesTamano = profile.tamano.some(t => tamanoNorm.includes(t));
+                if (!matchesTamano) return false;
+            }
+
+            return true;
+        });
+
+        // Limit to 6
+        matches = matches.slice(0, 6);
+
+        if (matches.length === 0) {
+            section.innerHTML = `
+                <div class="matches-title">Mascotas disponibles</div>
+                <div class="no-matches">
+                    No encontramos mascotas que matcheen exactamente con tu perfil en este momento.<br>
+                    Pero revisá todas las disponibles — puede haber alguna que te sorprenda.
+                    <br><br>
+                    <a href="/" class="btn-restart" style="text-decoration: none;">Ver todas las mascotas</a>
+                </div>
+            `;
+            return;
+        }
+
+        let html = `
+            <div class="matches-title">Estas mascotas podrían ser para vos</div>
+            <div class="matches-subtitle">Basado en tus respuestas, estas son las que más se adaptan</div>
+            <div class="pet-grid">
+        `;
+
+        matches.forEach(pet => {
+            const img = pet.imagenes && pet.imagenes.length > 0 ? pet.imagenes[0] : '';
+            const tagClass = pet.especie === 'perro' ? 'tag-perro' : 'tag-gato';
+            const especieLabel = pet.especie === 'perro' ? 'Perro' : 'Gato';
+            const tamLabel = pet.tamano || '';
+
+            html += `
+                <a href="/#mascota=${pet.id}" class="pet-match-card">
+                    ${img ? `<img src="${img}" alt="${pet.nombre}" loading="lazy">` : ''}
+                    <div class="pet-match-info">
+                        <h3>${pet.nombre}</h3>
+                        <p>${pet.refugio || ''}</p>
+                        <div class="pet-match-tags">
+                            <span class="${tagClass}">${especieLabel}</span>
+                            ${tamLabel ? `<span class="tag-size">${tamLabel}</span>` : ''}
+                        </div>
+                    </div>
+                </a>
+            `;
+        });
+
+        html += '</div>';
+        section.innerHTML = html;
+
+    } catch (err) {
+        section.innerHTML = `
+            <div class="no-matches">
+                No pudimos cargar las mascotas en este momento.<br>
+                <a href="/" class="btn-restart" style="text-decoration: none; margin-top: 16px; display: inline-block;">Ver todas en la página principal</a>
+            </div>
+        `;
+    }
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    answers = {};
+    document.getElementById('quizSection').style.display = 'block';
+    document.getElementById('resultSection').style.display = 'none';
+    renderQuestion();
+}
+
+// Start
+renderQuestion();
+</script>
+
+</body>
+</html>

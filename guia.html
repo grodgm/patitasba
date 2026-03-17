@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de adopción responsable — PatitasBA</title>
+    <meta name="description" content="Antes de adoptar, pensá bien qué mascota se adapta a tu vida. Tamaño, energía, espacio y tiempo: todo lo que tenés que considerar.">
+    <meta name="keywords" content="guía adopción perro, qué perro adoptar, perro para departamento, mascota para niños, adopción responsable">
+    <link rel="canonical" href="https://patitasba.com.ar/guia.html">
+    <meta property="og:title" content="Guía de adopción responsable — PatitasBA">
+    <meta property="og:description" content="Antes de adoptar, pensá bien qué mascota se adapta a tu vida. Tamaño, energía, espacio y tiempo.">
+    <meta property="og:image" content="https://patitasba.com.ar/og-image.png">
+    <meta property="og:url" content="https://patitasba.com.ar/guia.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%23FF6B35'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #F7F8FA; color: #1a1a2e; }
+
+        /* Nav (same as proceso.html) */
+        nav { background: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+        .nav-logo { font-size: 24px; font-weight: 800; color: #1a1a2e; text-decoration: none; }
+        .nav-logo span { color: #FF6B35; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 500; font-size: 15px; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #FF6B35; }
+        .nav-links .btn-donar { background: #FF6B35; color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; }
+        .nav-links .btn-donar:hover { background: #e55a2b; color: white; }
+        .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+            .nav-links.open { display: flex; }
+        }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 80px 24px; text-align: center; }
+        .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin-bottom: 16px; }
+        .hero p { font-size: 18px; opacity: 0.85; max-width: 620px; margin: 0 auto; line-height: 1.6; }
+
+        /* Content */
+        .content { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+
+        /* Intro */
+        .intro {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            font-size: 17px;
+            line-height: 1.8;
+            color: #333;
+        }
+        .intro strong { color: #FF6B35; }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .guide-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border-top: 4px solid #FF6B35;
+        }
+        .guide-card .icon { font-size: 40px; margin-bottom: 16px; }
+        .guide-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+        .guide-card p { font-size: 15px; line-height: 1.7; color: #555; }
+
+        /* Comparison table */
+        .comparison {
+            margin: 48px 0;
+        }
+        .comparison h2 {
+            font-size: 28px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .comparison-table th {
+            background: #1a1a2e;
+            color: white;
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: left;
+        }
+        .comparison-table td {
+            padding: 16px 20px;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 1.5;
+            color: #444;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: #FFF8F5; }
+        .tag-si { color: #16a34a; font-weight: 600; }
+        .tag-no { color: #dc2626; font-weight: 600; }
+        .tag-depende { color: #d97706; font-weight: 600; }
+
+        @media (max-width: 600px) {
+            .comparison-table { font-size: 13px; }
+            .comparison-table th, .comparison-table td { padding: 12px 10px; }
+        }
+
+        /* Warning boxes */
+        .warning-box {
+            background: #FEF2F2;
+            border-left: 4px solid #dc2626;
+            border-radius: 0 12px 12px 0;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .warning-box h3 { color: #dc2626; font-size: 18px; margin-bottom: 8px; }
+        .warning-box p { font-size: 15px; line-height: 1.7; color: #555; }
+
+        .success-box {
+            background: #F0FDF4;
+            border-left: 4px solid #16a34a;
+            border-radius: 0 12px 12px 0;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .success-box h3 { color: #16a34a; font-size: 18px; margin-bottom: 8px; }
+        .success-box p { font-size: 15px; line-height: 1.7; color: #555; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, #FF6B35, #ff8f65); color: white; text-align: center; padding: 60px 24px; margin-top: 60px; }
+        .cta-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 24px; font-size: 16px; }
+        .cta-btn { display: inline-block; background: white; color: #FF6B35; padding: 14px 32px; border-radius: 30px; font-weight: 700; font-size: 16px; text-decoration: none; transition: transform 0.2s; margin: 0 8px; }
+        .cta-btn:hover { transform: scale(1.05); }
+        .cta-btn.secondary { background: transparent; border: 2px solid white; color: white; }
+
+        footer { text-align: center; padding: 32px; color: #999; font-size: 14px; }
+        footer a { color: #FF6B35; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">Patitas<span>BA</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/proceso.html">Cómo adoptar</a>
+        <a href="/guia.html" class="active">Guía</a>
+        <a href="/test.html">Test</a>
+        <a href="https://link.mercadopago.com.ar/patitasba" target="_blank" class="btn-donar">Donar</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Guía de adopción responsable</h1>
+    <p>Adoptar es un acto hermoso, pero requiere pensar bien. El mejor match entre vos y tu mascota depende de tu espacio, tu tiempo y tu estilo de vida.</p>
+</div>
+
+<div class="content">
+
+    <div class="intro">
+        La realidad es esta: <strong>la mayoría de las devoluciones de mascotas adoptadas pasan porque la persona no pensó bien antes</strong>. Adoptar un cachorro hiperactivo cuando trabajás 10 horas afuera no es justo para vos ni para él. Esta guía te ayuda a evitar eso.
+    </div>
+
+    <!-- Factores clave -->
+    <div class="cards-grid">
+        <div class="guide-card">
+            <div class="icon">🏠</div>
+            <h3>Tu espacio</h3>
+            <p>¿Vivís en un departamento chico, uno grande, o una casa con patio? Un perro grande y activo necesita espacio para moverse. Un gato necesita altura (estantes, rascadores) más que metros cuadrados. Un perro chico o mediano puede vivir perfecto en un depto.</p>
+        </div>
+        <div class="guide-card">
+            <div class="icon">⏰</div>
+            <h3>Tu tiempo</h3>
+            <p>¿Cuántas horas pasás en casa? Los perros son animales sociales que sufren si están solos muchas horas. Los gatos son más independientes. Si trabajás afuera todo el día, un perro adulto y tranquilo o un gato pueden ser mejor opción que un cachorro.</p>
+        </div>
+        <div class="guide-card">
+            <div class="icon">🏃</div>
+            <h3>Tu energía</h3>
+            <p>¿Sos de salir a correr, o preferís Netflix en el sillón? Un perro joven y activo necesita mínimo 2 paseos diarios y juego. Si preferís algo más tranquilo, un perro adulto o senior puede ser tu compañero ideal — y los refugios están llenos de ellos esperando una oportunidad.</p>
+        </div>
+        <div class="guide-card">
+            <div class="icon">👨‍👩‍👧</div>
+            <h3>Tu familia</h3>
+            <p>¿Tenés hijos chicos? ¿Otras mascotas? No todos los perros se llevan bien con niños o con otros animales. Los refugios conocen la personalidad de cada animal y te pueden orientar. Siempre preguntá.</p>
+        </div>
+    </div>
+
+    <!-- Tabla comparativa -->
+    <div class="comparison">
+        <h2>Tamaño y necesidades: qué esperar</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Tamaño</th>
+                    <th>Depto chico</th>
+                    <th>Ejercicio diario</th>
+                    <th>Solo en casa 8hs+</th>
+                    <th>Ideal para</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Perro chico</strong><br>(hasta 10kg)</td>
+                    <td><span class="tag-si">Sí</span></td>
+                    <td>30-45 min</td>
+                    <td><span class="tag-depende">Depende</span></td>
+                    <td>Departamentos, personas solas, adultos mayores</td>
+                </tr>
+                <tr>
+                    <td><strong>Perro mediano</strong><br>(10-25kg)</td>
+                    <td><span class="tag-depende">Depende</span></td>
+                    <td>45-90 min</td>
+                    <td><span class="tag-depende">Depende</span></td>
+                    <td>Deptos grandes o casas, familias activas</td>
+                </tr>
+                <tr>
+                    <td><strong>Perro grande</strong><br>(25kg+)</td>
+                    <td><span class="tag-no">Difícil</span></td>
+                    <td>60-120 min</td>
+                    <td><span class="tag-no">No recomendado</span></td>
+                    <td>Casas con patio, personas muy activas</td>
+                </tr>
+                <tr>
+                    <td><strong>Gato</strong></td>
+                    <td><span class="tag-si">Perfecto</span></td>
+                    <td>Juego 15-30 min</td>
+                    <td><span class="tag-si">Toleran bien</span></td>
+                    <td>Cualquier espacio (con red en ventanas)</td>
+                </tr>
+                <tr>
+                    <td><strong>Cachorro</strong><br>(cualquier tamaño)</td>
+                    <td><span class="tag-depende">Depende</span></td>
+                    <td>Mucho juego + paseos</td>
+                    <td><span class="tag-no">No</span></td>
+                    <td>Personas con tiempo, paciencia y energía</td>
+                </tr>
+                <tr>
+                    <td><strong>Adulto/Senior</strong></td>
+                    <td><span class="tag-si">Excelente</span></td>
+                    <td>Moderado</td>
+                    <td><span class="tag-si">Generalmente sí</span></td>
+                    <td>Cualquier persona. Son los más olvidados y los más agradecidos.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Warning -->
+    <div class="warning-box">
+        <h3>Ejemplo real: el error más común</h3>
+        <p>"Me encantó el Border Collie del refugio, es hermoso". Sí, pero los Border Collies son perros de trabajo que necesitan horas de actividad mental y física por día. Si vivís en un monoambiente y trabajás de 9 a 18, ese perro va a destruir tu departamento por ansiedad — y los dos van a sufrir. No es que sea un mal perro; es que no es el perro para esa situación.</p>
+    </div>
+
+    <div class="success-box">
+        <h3>El match perfecto</h3>
+        <p>Adoptás un perro adulto de tamaño mediano, tranquilo, que ya está acostumbrado a estar solo algunas horas. Vos trabajás remoto 3 días por semana y lo sacás a pasear a la mañana y a la tarde. Los fines de semana van juntos a la plaza. Él está feliz, vos estás feliz. Eso es adopción responsable.</p>
+    </div>
+
+</div>
+
+<div class="cta-section">
+    <h2>¿No sabés qué mascota te conviene?</h2>
+    <p>Hacé nuestro test de compatibilidad y te recomendamos qué buscar.</p>
+    <a href="/test.html" class="cta-btn">Hacer el test</a>
+    <a href="/" class="cta-btn secondary">Ver mascotas</a>
+</div>
+
+<footer>
+    <p>Hecho con amor por <a href="/">PatitasBA</a> — Buenos Aires, Argentina</p>
+</footer>
+
+</body>
+</html>

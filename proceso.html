@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo adoptar — PatitasBA</title>
+    <meta name="description" content="Guía paso a paso para adoptar un perro o gato en Buenos Aires. Conocé el proceso, los requisitos y qué esperar de los refugios.">
+    <meta name="keywords" content="cómo adoptar un perro, proceso adopción mascota, requisitos adopción, refugio Buenos Aires">
+    <link rel="canonical" href="https://patitasba.com.ar/proceso.html">
+    <meta property="og:title" content="Cómo adoptar una mascota — PatitasBA">
+    <meta property="og:description" content="Todo lo que necesitás saber para adoptar un perro o gato de un refugio en Buenos Aires.">
+    <meta property="og:image" content="https://patitasba.com.ar/og-image.png">
+    <meta property="og:url" content="https://patitasba.com.ar/proceso.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%23FF6B35'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #F7F8FA; color: #1a1a2e; }
+
+        /* Nav */
+        nav {
+            background: white;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a1a2e;
+            text-decoration: none;
+        }
+        .nav-logo span { color: #FF6B35; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: #FF6B35; }
+        .nav-links .btn-donar {
+            background: #FF6B35;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .nav-links .btn-donar:hover { background: #e55a2b; color: white; }
+
+        /* Mobile nav */
+        .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+            .nav-links.open { display: flex; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 44px);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 18px;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Steps */
+        .step {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 48px;
+            align-items: flex-start;
+        }
+        .step-number {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            background: #FF6B35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+        }
+        .step-content h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+        .step-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+        }
+        .step-content .tip {
+            background: #FFF3ED;
+            border-left: 4px solid #FF6B35;
+            padding: 12px 16px;
+            margin-top: 12px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .step { flex-direction: column; align-items: center; text-align: center; }
+            .step-content .tip { text-align: left; }
+        }
+
+        /* Section headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            color: #666;
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* FAQ */
+        .faq { margin-top: 60px; }
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+        .faq-question:hover { background: #FAFAFA; }
+        .faq-question .arrow { transition: transform 0.3s; font-size: 14px; color: #999; }
+        .faq-question.open .arrow { transform: rotate(180deg); }
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+        .faq-answer.open {
+            padding: 0 24px 20px;
+            max-height: 300px;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #FF6B35, #ff8f65);
+            color: white;
+            text-align: center;
+            padding: 60px 24px;
+            margin-top: 60px;
+        }
+        .cta-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .cta-section p { opacity: 0.9; margin-bottom: 24px; font-size: 16px; }
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #FF6B35;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .cta-btn:hover { transform: scale(1.05); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: #999;
+            font-size: 14px;
+        }
+        footer a { color: #FF6B35; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">Patitas<span>BA</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/proceso.html" class="active">Cómo adoptar</a>
+        <a href="/guia.html">Guía</a>
+        <a href="/test.html">Test</a>
+        <a href="https://link.mercadopago.com.ar/patitasba" target="_blank" class="btn-donar">Donar</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Cómo adoptar una mascota</h1>
+    <p>El proceso es más simple de lo que pensás. Acá te explicamos paso a paso qué esperar cuando decidís adoptar.</p>
+</div>
+
+<div class="content">
+
+    <div class="section-header">
+        <h2>El proceso paso a paso</h2>
+        <p>Cada refugio tiene sus particularidades, pero en general el proceso es así:</p>
+    </div>
+
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            <h2>Elegí tu futuro compañero</h2>
+            <p>Navegá las mascotas disponibles en PatitasBA. Podés filtrar por especie (perro o gato), tamaño y refugio. Leé la descripción de cada uno — ahí vas a encontrar info sobre su personalidad, edad y necesidades.</p>
+            <div class="tip">No te enamores solo de la foto. Leé la descripción completa: un perro puede ser hermoso pero necesitar un patio grande que quizás no tenés.</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+            <h2>Contactá al refugio</h2>
+            <p>Cada mascota en PatitasBA tiene un botón que te lleva directo al Instagram del refugio. Escribiles por mensaje directo (DM) mencionando el nombre de la mascota que te interesa. Ellos te van a responder con los pasos específicos de su proceso.</p>
+            <div class="tip">Sé paciente. Los refugios son organizaciones chicas manejadas por voluntarios. Pueden tardar 24-48hs en responder.</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            <h2>Completá el formulario de adopción</h2>
+            <p>La mayoría de los refugios te van a pedir que llenes un formulario. Las preguntas típicas son: dónde vivís (casa/depto), si tenés otras mascotas, si tenés balcón con red (para gatos), cuántas horas pasás en casa, y si todos en la familia están de acuerdo con la adopción.</p>
+            <div class="tip">Respondé con honestidad. El formulario no es para juzgarte, es para asegurarse de que la mascota va a estar bien en tu hogar. Si algo no matchea, te van a sugerir otro animal que sí se adapte.</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+            <h2>Entrevista y visita</h2>
+            <p>Algunos refugios hacen una videollamada o charla breve para conocerte. Otros te invitan a conocer al animal en persona. Aprovechá este momento para hacer todas las preguntas que tengas: cómo come, si está castrado, si tiene alguna condición médica, cómo se lleva con otros animales.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+            <h2>Firma del compromiso y entrega</h2>
+            <p>Si todo sale bien, firmás un compromiso de adopción responsable. Esto incluye comprometerte a vacunarlo, castrarlo (si no lo está), y darle los cuidados básicos. El refugio te entrega la mascota, generalmente ya vacunada y desparasitada.</p>
+            <div class="tip">Muchos refugios piden una colaboración económica que ayuda a cubrir los gastos veterinarios del animal. No es una "compra" — es una contribución para que puedan seguir rescatando.</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+            <h2>Seguimiento post-adopción</h2>
+            <p>Los buenos refugios hacen seguimiento después de la adopción. Te van a pedir fotos o actualizaciones para ver cómo se está adaptando tu nuevo compañero. Los primeros días pueden ser de adaptación — es normal que esté nervioso o tímido. Dale tiempo y espacio.</p>
+            <div class="tip">Si tenés problemas de adaptación, no dudes en contactar al refugio. Ellos conocen al animal y te pueden guiar. Nunca abandones a la mascota en la calle.</div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+        <div class="section-header">
+            <h2>Preguntas frecuentes</h2>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                ¿Cuánto cuesta adoptar?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                Adoptar es gratuito. Algunos refugios piden una colaboración voluntaria (generalmente entre $5.000 y $20.000 ARS) para ayudar a cubrir los costos veterinarios del animal (vacunas, castración, desparasitación). Esto no es una venta — es una contribución solidaria.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                ¿Puedo adoptar si vivo en un departamento?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                Sí. Muchas mascotas se adaptan perfecto a departamentos. Lo importante es el tamaño y el nivel de energía del animal. Un perro chico o adulto tranquilo puede vivir feliz en un depto. Para gatos, lo principal es tener redes en balcones y ventanas.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                ¿Cuánto tarda el proceso?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                Depende del refugio, pero en general entre 3 días y 2 semanas. El paso que más tarda suele ser la revisión del formulario y la coordinación de la entrevista/entrega.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                ¿Qué pasa si no funciona la convivencia?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                Contactá al refugio. Todos prefieren que les avises antes de tomar cualquier decisión. Ellos te van a ayudar — ya sea con consejos de adaptación o, en último caso, retomando al animal. Lo que nunca hay que hacer es abandonarlo.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                ¿Las mascotas vienen vacunadas y castradas?
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                La mayoría de los refugios entregan a los animales vacunados, desparasitados y castrados (o con turno de castración). Preguntá al refugio específico para confirmar qué incluye la adopción.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <h2>¿Listo para conocer a tu futuro compañero?</h2>
+    <p>Hay decenas de perros y gatos esperando una familia en Buenos Aires.</p>
+    <a href="/" class="cta-btn">Ver mascotas disponibles</a>
+</div>
+
+<footer>
+    <p>Hecho con amor por <a href="/">PatitasBA</a> — Buenos Aires, Argentina</p>
+</footer>
+
+<script>
+function toggleFaq(el) {
+    const answer = el.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('open'));
+    // Open clicked if was closed
+    if (!isOpen) {
+        answer.classList.add('open');
+        el.classList.add('open');
+    }
+}
+</script>
+
+</body>
+</html>
