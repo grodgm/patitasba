@@ -337,17 +337,27 @@
     <div class="contact-section" id="contacto">
         <h2>Contactanos</h2>
         <p>¿Tenés una propuesta, una idea, querés sumar tu refugio o simplemente saludar? Escribinos y te respondemos.</p>
-        <form class="contact-form" onsubmit="enviarContacto(event)">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvrwrew" method="POST">
+            <input type="hidden" name="_subject" value="Contacto desde Patitasba.com.ar">
+            <!-- Honeypot anti-spam (hidden from humans) -->
+            <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+
             <label for="contact-name">Tu nombre</label>
-            <input type="text" id="contact-name" placeholder="Ej: María López" required>
+            <input type="text" name="name" id="contact-name" placeholder="Ej: María López" required>
 
             <label for="contact-email">Tu email</label>
-            <input type="email" id="contact-email" placeholder="Ej: maria@gmail.com" required>
+            <input type="email" name="email" id="contact-email" placeholder="Ej: maria@gmail.com" required>
 
             <label for="contact-message">Mensaje</label>
-            <textarea id="contact-message" placeholder="Contanos en qué podemos ayudarte o cómo querés colaborar..." required></textarea>
+            <textarea name="message" id="contact-message" placeholder="Contanos en qué podemos ayudarte o cómo querés colaborar..." required></textarea>
 
-            <button type="submit" class="btn-enviar">Enviar mensaje</button>
+            <button type="submit" class="btn-enviar" id="btnEnviar">Enviar mensaje</button>
+            <div id="formSuccess" style="display:none;margin-top:16px;background:#E8F5E9;color:#2E7D32;padding:16px;border-radius:12px;font-weight:600;text-align:center;">
+                ¡Mensaje enviado! Te respondemos pronto.
+            </div>
+            <div id="formError" style="display:none;margin-top:16px;background:#FFEBEE;color:#C62828;padding:16px;border-radius:12px;font-weight:600;text-align:center;">
+                Hubo un error. Intentá de nuevo o escribinos a grodgm@gmail.com
+            </div>
         </form>
     </div>
 
@@ -393,16 +403,34 @@ async function cargarDonaciones() {
     } catch(e) {}
 }
 
-// Contact form → mailto
-function enviarContacto(e) {
+// Contact form → Formspree
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const nombre = document.getElementById('contact-name').value.trim();
-    const email = document.getElementById('contact-email').value.trim();
-    const mensaje = document.getElementById('contact-message').value.trim();
-    const subject = encodeURIComponent('Contacto desde Patitasba.com.ar');
-    const body = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\n\n${mensaje}`);
-    window.location.href = `mailto:grodgm@gmail.com?subject=${subject}&body=${body}`;
-}
+    const btn = document.getElementById('btnEnviar');
+    const successMsg = document.getElementById('formSuccess');
+    const errorMsg = document.getElementById('formError');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+    try {
+        const resp = await fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+        });
+        if (resp.ok) {
+            successMsg.style.display = 'block';
+            this.reset();
+        } else {
+            errorMsg.style.display = 'block';
+        }
+    } catch(err) {
+        errorMsg.style.display = 'block';
+    }
+    btn.textContent = 'Enviar mensaje';
+    btn.disabled = false;
+});
 
 // Load pet count
 async function cargarStats() {
