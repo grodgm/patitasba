@@ -474,17 +474,21 @@ async function loadAndFilterPets(profile) {
     const section = document.getElementById('matchesSection');
     try {
         const response = await fetch('/pets.json');
-        const pets = await response.json();
+        const data = await response.json();
+        const pets = data.mascotas || [];
 
         // Filter based on profile
         let matches = pets.filter(pet => {
-            // Especie filter
-            if (profile.especie === 'perro' && pet.especie !== 'perro') return false;
-            if (profile.especie === 'gato' && pet.especie !== 'gato') return false;
+            // Solo mostrar disponibles
+            if (pet.disponible === false) return true; // mostrar igual por ahora, muchos no tienen este campo
 
-            // Tamaño filter (if we have size data and it's a dog)
-            if (pet.especie === 'perro' && pet.tamano && profile.tamano.length > 0) {
-                const tamanoNorm = pet.tamano.toLowerCase();
+            // Especie filter (campo: tipo)
+            if (profile.especie === 'perro' && pet.tipo !== 'perro') return false;
+            if (profile.especie === 'gato' && pet.tipo !== 'gato') return false;
+
+            // Tamaño filter (campo: tamanioCat)
+            if (pet.tipo === 'perro' && pet.tamanioCat && profile.tamano.length > 0) {
+                const tamanoNorm = pet.tamanioCat.toLowerCase();
                 const matchesTamano = profile.tamano.some(t => tamanoNorm.includes(t));
                 if (!matchesTamano) return false;
             }
@@ -515,17 +519,17 @@ async function loadAndFilterPets(profile) {
         `;
 
         matches.forEach(pet => {
-            const img = pet.imagenes && pet.imagenes.length > 0 ? pet.imagenes[0] : '';
-            const tagClass = pet.especie === 'perro' ? 'tag-perro' : 'tag-gato';
-            const especieLabel = pet.especie === 'perro' ? 'Perro' : 'Gato';
-            const tamLabel = pet.tamano || '';
+            const img = pet.imgUrls && pet.imgUrls.length > 0 ? pet.imgUrls[0] : '';
+            const tagClass = pet.tipo === 'perro' ? 'tag-perro' : 'tag-gato';
+            const especieLabel = pet.tipo === 'perro' ? 'Perro' : 'Gato';
+            const tamLabel = pet.tamanio || '';
 
             html += `
                 <a href="/#mascota=${pet.id}" class="pet-match-card">
                     ${img ? `<img src="${img}" alt="${pet.nombre}" loading="lazy">` : ''}
                     <div class="pet-match-info">
                         <h3>${pet.nombre}</h3>
-                        <p>${pet.refugio || ''}</p>
+                        <p>${pet.org || ''}</p>
                         <div class="pet-match-tags">
                             <span class="${tagClass}">${especieLabel}</span>
                             ${tamLabel ? `<span class="tag-size">${tamLabel}</span>` : ''}
