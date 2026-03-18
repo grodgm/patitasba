@@ -18,8 +18,6 @@ import re
 import os
 import sys
 import time
-import signal
-import signal
 import argparse
 import hashlib
 import urllib.request
@@ -44,8 +42,8 @@ PERFILES = [
     "gatitos_parque_chacabuco",
 ]
 
-MAX_POSTS_POR_PERFIL = 8   # cuántos posts recientes revisar por perfil
-PAUSA_ENTRE_PERFILES = 2    # segundos de pausa (evita rate limit)
+MAX_POSTS_POR_PERFIL = 15   # cuántos posts recientes revisar por perfil
+PAUSA_ENTRE_PERFILES = 4    # segundos de pausa (evita rate limit)
 OUTPUT_FILE = "pets.json"
 
 # ─────────────────────────────────────────
@@ -149,6 +147,11 @@ def detectar_tipo(caption: str, ig: str = "") -> str:
     PERFILES_GATOS = {"gatitos_parque_chacabuco"}
     if ig in PERFILES_GATOS:
         return "gato"
+
+    # Perfiles 100% de perros → siempre perro
+    PERFILES_PERROS = {"adoptaungalgo"}
+    if ig in PERFILES_PERROS:
+        return "perro"
 
     # Perfiles mixtos con tendencia a gatos → bonus gato
     PERFILES_MIXTOS_GATOS = {"hogardeproteccionlourdes", "rescataditosenadopcionn"}
@@ -639,7 +642,7 @@ def scrape(login_user: str | None = None, max_posts: int = MAX_POSTS_POR_PERFIL)
                     print(f"   ✅ [{mascotas_perfil}] {mascota['nombre']} — {mascota['tipo']} {mascota['edad']} {mascota['tamanio']} · {estado}")
 
                 # Pausa corta entre requests
-                time.sleep(0.3)
+                time.sleep(0.5)
 
             if mascotas_perfil == 0:
                 print(f"   ⚠️  No se encontraron posts de adopción en los últimos {max_posts} posts.")
