@@ -19,6 +19,7 @@ import os
 import sys
 import time
 import signal
+import signal
 import argparse
 import hashlib
 import urllib.request
