@@ -317,3 +317,227 @@ JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.
    ⚠️  Error consultando MercadoPago: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
    No se pudo obtener el monto. donaciones.json no fue modificado.
 --- Completado viernes, 13 de marzo de 2026, 16:38:02 -03 ---
+domingo, 15 de marzo de 2026, 11:45:44 -03: Iniciando actualización automática...
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+domingo, 15 de marzo de 2026, 11:47:57 -03: Iniciando actualización automática...
+JSON Query to web/search/topsearch/: 401 Unauthorized - "fail" status, message "Server Error" when accessing https://www.instagram.com/web/search/topsearch/?context=blended&query=gatitos_parque_chacabuco&include_reel=False&__a=1 [retrying; skip with ^C]
+🐾 PatitasBA Scraper
+==================================================
+📋 Perfiles a scrapear: @zaguatesrefugio, @refugioelcampito, @adoptaungalgo, @mascotasenadopcion, @proyecto4patas, @rescataditosenadopcionn, @hogardeproteccionlourdes, @gatitos_parque_chacabuco
+📊 Máximo 15 posts por perfil
+👤 Sin login (acceso anónimo — puede ser limitado)
+
+
+📱 Scrapeando @zaguatesrefugio...
+   263,627 seguidores · 18814 posts
+   ✅ [1] Sin nombre #0 — perro 5 meses Chico · 🏠 adoptado
+   ✅ [2] Leonel — perro Adulto Grande · 📸 3 foto(s)
+   ✅ [3] Ricky — perro 1 años Mediano · 📸 3 foto(s)
+   ✅ [4] Ashley — perro Cachorro Mediano · 🏠 adoptado
+   ✅ [5] Batata — perro 9 años (Adulto+) Chico · 📸 1 foto(s)
+   ✅ [6] Elsa — perro 2 meses Mediano · 📸 3 foto(s)
+   ✅ [7] Pedro — perro 3 meses Grande · 📸 3 foto(s)
+   ✅ [8] Olivia — perro 4 meses Grande · 📸 3 foto(s)
+   ✅ [9] China — perro 2 años Mediano · 📸 3 foto(s)
+   ✅ [10] Tango — perro Cachorro Mediano · 📸 3 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @refugioelcampito...
+   398,295 seguidores · 8171 posts
+   ✅ [1] Sin nombre #10 — perro Adulto+ Mediano · 📸 3 foto(s)
+   ✅ [2] Sin nombre #11 — perro Adulto Mediano · 📸 2 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @adoptaungalgo...
+   82,584 seguidores · 2800 posts
+   ✅ [1] Rogelio — perro 3 años Grande · 📸 2 foto(s)
+   ✅ [2] Sin nombre #13 — perro 10 meses Grande · 🏠 adoptado
+   ✅ [3] Chester — perro 2 años Grande · 🏠 adoptado
+      ⏭️  Saltando campaña/evento (no es animal individual)
+   ✅ [4] Sin nombre #15 — perro Adulto Grande · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @mascotasenadopcion...
+   164 seguidores · 1 posts
+   ✅ [1] Sin nombre #16 — perro Adulto Mediano · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @proyecto4patas...
+   737,542 seguidores · 2832 posts
+      ⏭️  Saltando campaña/evento (no es animal individual)
+      ⏭️  Saltando campaña/evento (no es animal individual)
+   ✅ [1] Sin nombre #17 — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [2] Joaco — perro 5 meses Mediano · 📸 3 foto(s)
+   ✅ [3] Sin nombre #19 — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [4] Rocco — perro 1 años Chico · 📸 3 foto(s)
+   ✅ [5] Patito — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [6] Pepe — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [7] Compartiendo — perro 3 meses Mediano · 🏠 adoptado
+   ✅ [8] Sin nombre #24 — perro Cachorro Mediano · 🏠 adoptado
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @rescataditosenadopcionn...
+   63,419 seguidores · 2490 posts
+   ✅ [1] Chizito — gato Adulto Chico · 📸 3 foto(s)
+   ✅ [2] Nuggets — gato Cachorro Chico · 📸 2 foto(s)
+   ✅ [3] Daiquiri — gato Adulto Chico · 📸 3 foto(s)
+   ✅ [4] Sin nombre #28 — gato Cachorro Chico · 📸 3 foto(s)
+   ✅ [5] Vita — perro Adulto Chico · 📸 3 foto(s)
+   ✅ [6] Sin nombre #30 — gato 2 meses Chico · 📸 3 foto(s)
+   ✅ [7] Dorito — gato Cachorro Chico · 📸 1 foto(s)
+   ✅ [8] Iris — gato Adulto Chico · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @hogardeproteccionlourdes...
+   15,245 seguidores · 26873 posts
+      ⏭️  Saltando campaña/evento (no es animal individual)
+   ✅ [1] Sin nombre #33 — gato Adulto Chico · 📸 1 foto(s)
+   ✅ [2] Mónica — gato 8 meses Chico · 📸 2 foto(s)
+   ✅ [3] Ciao — gato 18 meses Chico · 📸 3 foto(s)
+   ✅ [4] Sushi — gato 10 meses Chico · 📸 1 foto(s)
+   ✅ [5] Sin nombre #37 — gato Cachorro Chico · 📸 1 foto(s)
+   ✅ [6] Ig — gato Cachorro Chico · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @gatitos_parque_chacabuco...
+   ❌ Error inesperado: JSON Query to web/search/topsearch/: 401 Unauthorized - "fail" status, message "Server Error" when accessing https://www.instagram.com/web/search/topsearch/?context=blended&query=gatitos_parque_chacabuco&include_reel=False&__a=1
+
+==================================================
+✅ Scraping completado!
+   Posts revisados:  91
+   Mascotas encontradas: 39
+   Guardado en: pets.json
+==================================================
+
+💡 Ahora abrí patitasba.html en tu browser — ya va a mostrar los datos reales!
+[main b575308] 🐾 Actualización automática 15/03/2026 11:48
+ 1 file changed, 30 insertions(+), 30 deletions(-)
+To https://github.com/grodgm/patitasba.git
+   42b1547..b575308  main -> main
+domingo, 15 de marzo de 2026, 11:48:10 -03: Push realizado.
+domingo, 15 de marzo de 2026, 11:48:10 -03: Listo.
+---
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to web/search/topsearch/: 401 Unauthorized - "fail" status, message "Server Error" when accessing https://www.instagram.com/web/search/topsearch/?context=blended&query=gatitos_parque_chacabuco&include_reel=False&__a=1 [retrying; skip with ^C]
+🐾 PatitasBA Scraper
+==================================================
+📋 Perfiles a scrapear: @zaguatesrefugio, @refugioelcampito, @adoptaungalgo, @mascotasenadopcion, @proyecto4patas, @rescataditosenadopcionn, @hogardeproteccionlourdes, @gatitos_parque_chacabuco
+📊 Máximo 15 posts por perfil
+👤 Sin login (acceso anónimo — puede ser limitado)
+
+
+📱 Scrapeando @zaguatesrefugio...
+   263,627 seguidores · 18814 posts
+   ✅ [1] Sin nombre #0 — perro 5 meses Chico · 🏠 adoptado
+   ✅ [2] Leonel — perro Adulto Grande · 📸 3 foto(s)
+   ✅ [3] Ricky — perro 1 años Mediano · 📸 3 foto(s)
+   ✅ [4] Ashley — perro Cachorro Mediano · 🏠 adoptado
+   ✅ [5] Batata — perro 9 años (Adulto+) Chico · 📸 1 foto(s)
+   ✅ [6] Elsa — perro 2 meses Mediano · 📸 3 foto(s)
+   ✅ [7] Pedro — perro 3 meses Grande · 📸 3 foto(s)
+   ✅ [8] Olivia — perro 4 meses Grande · 📸 3 foto(s)
+   ✅ [9] China — perro 2 años Mediano · 📸 3 foto(s)
+   ✅ [10] Tango — perro Cachorro Mediano · 📸 3 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @refugioelcampito...
+   398,295 seguidores · 8171 posts
+   ✅ [1] Sin nombre #10 — perro Adulto+ Mediano · 📸 3 foto(s)
+   ✅ [2] Sin nombre #11 — perro Adulto Mediano · 📸 2 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @adoptaungalgo...
+   82,584 seguidores · 2800 posts
+   ✅ [1] Rogelio — perro 3 años Grande · 📸 2 foto(s)
+   ✅ [2] Sin nombre #13 — perro 10 meses Grande · 🏠 adoptado
+   ✅ [3] Chester — perro 2 años Grande · 🏠 adoptado
+      ⏭️  Saltando campaña/evento (no es animal individual)
+   ✅ [4] Sin nombre #15 — perro Adulto Grande · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @mascotasenadopcion...
+   164 seguidores · 1 posts
+   ✅ [1] Sin nombre #16 — perro Adulto Mediano · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @proyecto4patas...
+   737,542 seguidores · 2832 posts
+      ⏭️  Saltando campaña/evento (no es animal individual)
+      ⏭️  Saltando campaña/evento (no es animal individual)
+   ✅ [1] Sin nombre #17 — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [2] Joaco — perro 5 meses Mediano · 📸 3 foto(s)
+   ✅ [3] Sin nombre #19 — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [4] Rocco — perro 1 años Chico · 📸 3 foto(s)
+   ✅ [5] Patito — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [6] Pepe — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [7] Compartiendo — perro 3 meses Mediano · 🏠 adoptado
+   ✅ [8] Sin nombre #24 — perro Cachorro Mediano · 🏠 adoptado
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @rescataditosenadopcionn...
+   63,419 seguidores · 2490 posts
+   ✅ [1] Chizito — gato Adulto Chico · 📸 3 foto(s)
+   ✅ [2] Nuggets — gato Cachorro Chico · 📸 2 foto(s)
+   ✅ [3] Daiquiri — gato Adulto Chico · 📸 3 foto(s)
+   ✅ [4] Sin nombre #28 — gato Cachorro Chico · 📸 3 foto(s)
+   ✅ [5] Vita — perro Adulto Chico · 📸 3 foto(s)
+   ✅ [6] Sin nombre #30 — gato 2 meses Chico · 📸 3 foto(s)
+   ✅ [7] Dorito — gato Cachorro Chico · 📸 1 foto(s)
+   ✅ [8] Iris — gato Adulto Chico · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @hogardeproteccionlourdes...
+   15,245 seguidores · 26873 posts
+      ⏭️  Saltando campaña/evento (no es animal individual)
+   ✅ [1] Sin nombre #33 — gato Adulto Chico · 📸 1 foto(s)
+   ✅ [2] Mónica — gato 8 meses Chico · 📸 2 foto(s)
+   ✅ [3] Ciao — gato 18 meses Chico · 📸 3 foto(s)
+   ✅ [4] Sushi — gato 10 meses Chico · 📸 1 foto(s)
+   ✅ [5] Sin nombre #37 — gato Cachorro Chico · 📸 1 foto(s)
+   ✅ [6] Ig — gato Cachorro Chico · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @gatitos_parque_chacabuco...
+   ❌ Error inesperado: JSON Query to web/search/topsearch/: 401 Unauthorized - "fail" status, message "Server Error" when accessing https://www.instagram.com/web/search/topsearch/?context=blended&query=gatitos_parque_chacabuco&include_reel=False&__a=1
+
+==================================================
+✅ Scraping completado!
+   Posts revisados:  91
+   Mascotas encontradas: 39
+   Guardado en: pets.json
+==================================================
+
+💡 Ahora abrí patitasba.html en tu browser — ya va a mostrar los datos reales!
+[main 2c49e90] 🐾 Actualización automática 15/03/2026 11:50
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/grodgm/patitasba.git
+   b575308..2c49e90  main -> main
+domingo, 15 de marzo de 2026, 11:50:33 -03: Push realizado.
+domingo, 15 de marzo de 2026, 11:50:33 -03: Listo.
+---
+Mon Mar 16 10:23:46 -03 2026: Iniciando actualización automática...
+Traceback (most recent call last):
+  File "/Users/gonzalorodriguez/Desktop/Patitas/scraper.py", line 15, in <module>
+    import instaloader
+ModuleNotFoundError: No module named 'instaloader'
+Mon Mar 16 10:23:48 -03 2026: Sin cambios nuevos.
+Mon Mar 16 10:23:48 -03 2026: Listo.
+---
+Mon Mar 16 10:29:21 -03 2026: Iniciando actualización automática...
+Traceback (most recent call last):
+  File "/Users/gonzalorodriguez/Desktop/Patitas/scraper.py", line 15, in <module>
+    import instaloader
+ModuleNotFoundError: No module named 'instaloader'
+Mon Mar 16 10:29:21 -03 2026: Sin cambios nuevos.
+Mon Mar 16 10:29:21 -03 2026: Listo.
+---

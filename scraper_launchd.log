@@ -1,0 +1,145 @@
+cat ~/Desktop/Patitas/scraper_launchd.log
+cat ~/Desktop/Patitas/scraper_launchd.log
+> ~/Desktop/Patitas/scraper_launchd.log
+launchctl unload ~/Library/LaunchAgents/com.patitasba.scraper.plist
+launchctl load ~/Library/LaunchAgents/com.patitasba.scraper.plist
+launchctl start com.patitasba.scraper
+cat ~/Desktop/Patitas/scraper_launchd.log
+cat ~/Desktop/Patitas/scraper_launchd.log
+tail -20 ~/Desktop/Patitas/scraper_launchd.log
+> ~/Desktop/Patitas/scraper_launchd.log
+launchctl start com.patitasba.scraper
+sleep 240
+tail -20 ~/Desktop/Patitas/scraper_launchd.log
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to api/v1/users/web_profile_info/?username=adoptaungalgo: HTTPSConnectionPool(host='i.instagram.com', port=443): Read timed out. (read timeout=15) [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to graphql/query: 403 Forbidden when accessing https://www.instagram.com/graphql/query [retrying; skip with ^C]
+JSON Query to web/search/topsearch/: 401 Unauthorized - "fail" status, message "Server Error" when accessing https://www.instagram.com/web/search/topsearch/?context=blended&query=gatitos_parque_chacabuco&include_reel=False&__a=1 [retrying; skip with ^C]
+🐾 PatitasBA Scraper
+==================================================
+📋 Perfiles a scrapear: @zaguatesrefugio, @refugioelcampito, @adoptaungalgo, @mascotasenadopcion, @proyecto4patas, @rescataditosenadopcionn, @hogardeproteccionlourdes, @gatitos_parque_chacabuco
+📊 Máximo 15 posts por perfil
+👤 Sin login (acceso anónimo — puede ser limitado)
+
+
+📱 Scrapeando @zaguatesrefugio...
+   263,697 seguidores · 18817 posts
+   ✅ [1] Cachorros — perro Cachorro Mediano · 🏠 adoptado
+   ✅ [2] Ideal — perro 3 años Chico · 📸 3 foto(s)
+   ✅ [3] Sin nombre #2 — perro 5 meses Chico · 🏠 adoptado
+   ✅ [4] Leonel — perro Adulto Grande · 📸 3 foto(s)
+   ✅ [5] Ricky — perro 1 años Mediano · 📸 3 foto(s)
+   ✅ [6] Ashley — perro Cachorro Mediano · 🏠 adoptado
+   ✅ [7] Batata — perro 9 años (Adulto+) Chico · 📸 1 foto(s)
+   ✅ [8] Elsa — perro 2 meses Mediano · 📸 3 foto(s)
+   ✅ [9] Pedro — perro 3 meses Grande · 📸 3 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @refugioelcampito...
+   398,365 seguidores · 8172 posts
+   ✅ [1] Sin nombre #9 — perro Adulto+ Mediano · 📸 3 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @adoptaungalgo...
+   82,632 seguidores · 2802 posts
+   ✅ [1] Rogelio — perro 3 años Grande · 📸 2 foto(s)
+   ✅ [2] Sin nombre #11 — perro 6 años Grande · 🏠 adoptado
+   ✅ [3] Sin nombre #12 — perro 3 meses Grande · 🏠 adoptado
+   ✅ [4] Rocco — perro 9 meses Grande · 📸 3 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @mascotasenadopcion...
+   164 seguidores · 1 posts
+   ✅ [1] Sin nombre #14 — perro Adulto Mediano · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @proyecto4patas...
+   737,529 seguidores · 2832 posts
+      ⏭️  Saltando campaña/evento (no es animal individual)
+      ⏭️  Saltando campaña/evento (no es animal individual)
+   ✅ [1] Sin nombre #15 — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [2] Joaco — perro 5 meses Mediano · 📸 3 foto(s)
+   ✅ [3] Sin nombre #17 — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [4] Rocco — perro 1 años Chico · 📸 3 foto(s)
+   ✅ [5] Patito — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [6] Pepe — perro Adulto Mediano · 📸 1 foto(s)
+   ✅ [7] Compartiendo — perro 3 meses Mediano · 🏠 adoptado
+   ✅ [8] Sin nombre #22 — perro Cachorro Mediano · 🏠 adoptado
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @rescataditosenadopcionn...
+   63,471 seguidores · 2492 posts
+   ✅ [1] Chizito — gato Adulto Chico · 📸 3 foto(s)
+   ✅ [2] Nuggets — gato Cachorro Chico · 📸 2 foto(s)
+   ✅ [3] Daiquiri — gato Adulto Chico · 📸 3 foto(s)
+   ✅ [4] Sin nombre #26 — gato Cachorro Chico · 📸 3 foto(s)
+   ✅ [5] Vita — perro Adulto Chico · 📸 3 foto(s)
+   ✅ [6] Sin nombre #28 — gato 2 meses Chico · 📸 3 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @hogardeproteccionlourdes...
+   15,253 seguidores · 26899 posts
+   ✅ [1] Mónica — gato 8 meses Chico · 📸 2 foto(s)
+   ✅ [2] Sugar — gato 18 meses Chico · 📸 2 foto(s)
+   ✅ [3] Ciao — gato 18 meses Chico · 📸 3 foto(s)
+   ✅ [4] Raban — gato 12 meses Chico · 📸 2 foto(s)
+   ✅ [5] Khala — gato 18 meses Chico · 📸 2 foto(s)
+   ✅ [6] Spirit — gato 2 años Chico · 📸 1 foto(s)
+   ✅ [7] Sin nombre #35 — gato Cachorro Chico · 📸 1 foto(s)
+   ✅ [8] Sin nombre #36 — gato Cachorro Chico · 📸 1 foto(s)
+   ✅ [9] Sin nombre #37 — gato Cachorro Chico · 📸 2 foto(s)
+   ✅ [10] Ashley — gato Cachorro Chico · 📸 1 foto(s)
+   ⏳ Esperando 4s antes del próximo perfil...
+
+📱 Scrapeando @gatitos_parque_chacabuco...
+   ❌ Error inesperado: JSON Query to web/search/topsearch/: 401 Unauthorized - "fail" status, message "Server Error" when accessing https://www.instagram.com/web/search/topsearch/?context=blended&query=gatitos_parque_chacabuco&include_reel=False&__a=1
+
+==================================================
+✅ Scraping completado!
+   Posts revisados:  91
+   Mascotas encontradas: 39
+   Guardado en: pets.json
+==================================================
+
+💡 Ahora abrí patitasba.html en tu browser — ya va a mostrar los datos reales!
+💰 PatitasBA — Actualizando donaciones...
+   💰 Total recibido en March 2026: $1,000 ARS
+   📊 Meta: 0% (0% de $200,000)
+   🏠 Corresponde ~$200 por refugio
+   ✅ donaciones.json actualizado
+[main a058e6b] Actualización automática 17/03/2026
+ 27 files changed, 204 insertions(+), 296 deletions(-)
+ create mode 100644 images/DM_i6HPJJ3u_0.jpg
+ create mode 100644 images/DM_i6HPJJ3u_1.jpg
+ create mode 100644 images/DM_i6HPJJ3u_2.jpg
+ create mode 100644 images/DMqj7r7vdcc_0.jpg
+ create mode 100644 images/DMqj7r7vdcc_1.jpg
+ create mode 100644 images/DMqj7r7vdcc_2.jpg
+ create mode 100644 images/DMqpS01Pq6B_0.jpg
+ create mode 100644 images/DMqpS01Pq6B_1.jpg
+ create mode 100644 images/DMqpS01Pq6B_2.jpg
+ create mode 100644 images/DV9C1XIFK7q.jpg
+ create mode 100644 images/DV9EGzuADq7.jpg
+ create mode 100644 images/DV9F7t1lD3o.jpg
+ create mode 100644 images/DV9G-_cFOHB_0.jpg
+ create mode 100644 images/DV9G-_cFOHB_1.jpg
+ create mode 100644 images/DV9GHpDlNix_0.jpg
+ create mode 100644 images/DV9GHpDlNix_1.jpg
+ create mode 100644 images/DV9GQIzlFLH_0.jpg
+ create mode 100644 images/DV9GQIzlFLH_1.jpg
+ create mode 100644 images/DV9GtpbFE8l_0.jpg
+ create mode 100644 images/DV9GtpbFE8l_1.jpg
+ create mode 100644 images/DV9GtpbFE8l_2.jpg
+ create mode 100644 images/DV9H027lMlQ_0.jpg
+ create mode 100644 images/DV9H027lMlQ_1.jpg
+ create mode 100644 images/DV9W2HYFchd_0.jpg
+ create mode 100644 images/DV9W2HYFchd_1.jpg
+ create mode 100644 images/DV9W2HYFchd_2.jpg
+error: RPC failed; HTTP 408 curl 22 The requested URL returned error: 408
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date

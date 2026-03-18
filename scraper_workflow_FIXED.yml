@@ -1,0 +1,43 @@
+name: Actualizar mascotas
+
+on:
+  schedule:
+    # Todos los días a las 8 AM hora Argentina (UTC-3 = 11:00 UTC)
+    - cron: '0 11 * * *'
+  workflow_dispatch:  # Permite correrlo manualmente desde GitHub
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20  # MÁXIMO 20 minutos — si se traba, cancela
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install instaloader
+
+      - name: Correr scraper (con timeout y menos posts)
+        timeout-minutes: 15
+        run: python scraper.py --max-posts 8
+
+      - name: Commit y push cambios
+        run: |
+          git config user.name "PatitasBA Bot"
+          git config user.email "bot@patitasba.com.ar"
+
+          # CLAVE: traer cambios remotos antes de pushear
+          git pull --rebase origin main || true
+
+          git add pets.json images/ donaciones.json || true
+          git diff --staged --quiet || git commit -m "🐾 Actualización automática $(date +'%d/%m/%Y %H:%M')"
+          git push || echo "⚠️ Push falló, se reintenta..." && git pull --rebase origin main && git push
