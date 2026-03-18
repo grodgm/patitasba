@@ -18,6 +18,7 @@ import re
 import os
 import sys
 import time
+import signal
 import argparse
 import hashlib
 import urllib.request
@@ -42,8 +43,8 @@ PERFILES = [
     "gatitos_parque_chacabuco",
 ]
 
-MAX_POSTS_POR_PERFIL = 15   # cuántos posts recientes revisar por perfil
-PAUSA_ENTRE_PERFILES = 4    # segundos de pausa (evita rate limit)
+MAX_POSTS_POR_PERFIL = 8   # cuántos posts recientes revisar por perfil
+PAUSA_ENTRE_PERFILES = 2    # segundos de pausa (evita rate limit)
 OUTPUT_FILE = "pets.json"
 
 # ─────────────────────────────────────────
@@ -637,7 +638,7 @@ def scrape(login_user: str | None = None, max_posts: int = MAX_POSTS_POR_PERFIL)
                     print(f"   ✅ [{mascotas_perfil}] {mascota['nombre']} — {mascota['tipo']} {mascota['edad']} {mascota['tamanio']} · {estado}")
 
                 # Pausa corta entre requests
-                time.sleep(0.5)
+                time.sleep(0.3)
 
             if mascotas_perfil == 0:
                 print(f"   ⚠️  No se encontraron posts de adopción en los últimos {max_posts} posts.")
