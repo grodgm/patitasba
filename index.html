@@ -67,9 +67,54 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <script>
+      firebase.initializeApp({
+        apiKey: "AIzaSyAKv2F4cN6YvABbgAA3mWsXw1r88dAdI0s",
+        authDomain: "patitasba-35183.firebaseapp.com",
+        databaseURL: "https://patitasba-35183-default-rtdb.firebaseio.com",
+        projectId: "patitasba-35183",
+        storageBucket: "patitasba-35183.firebasestorage.app",
+        messagingSenderId: "455941176681",
+        appId: "1:455941176681:web:80a19304ae0a823e2751f8"
+      });
+      const db = firebase.database();
+    </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #F7F8FA; color: #1a1a2e; }
+
+        /* ── PULSE BAR (Latidos) ── */
+        .pulse-bar {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white; text-align: center; padding: 9px 20px;
+            font-size: 14px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            box-shadow: 0 2px 10px rgba(238,90,36,0.25);
+        }
+        .pulse-bar .pulse-heart { animation: hbeat 1.2s ease-in-out infinite; display: inline-block; font-size: 18px; }
+        @keyframes hbeat { 0%,100%{transform:scale(1)} 15%{transform:scale(1.3)} 30%{transform:scale(1)} 45%{transform:scale(1.15)} }
+        .pulse-bar .pulse-count { font-size: 20px; font-weight: 800; }
+
+        /* ── HEART BUTTON ON CARDS ── */
+        .card-heart-btn {
+            position: absolute; top: 10px; right: 10px; z-index: 10;
+            background: rgba(255,255,255,0.92); border: none; border-radius: 50%;
+            width: 40px; height: 40px; font-size: 20px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: all 0.2s;
+        }
+        .card-heart-btn:hover { transform: scale(1.15); }
+        .card-heart-btn.liked { background: #ff6b6b; }
+        .card-heart-btn.liked span { filter: brightness(10); }
+        .card-interested {
+            position: absolute; bottom: 10px; right: 10px; z-index: 10;
+            background: rgba(255,107,107,0.9); color: white;
+            padding: 3px 10px; border-radius: 20px;
+            font-size: 11px; font-weight: 700; backdrop-filter: blur(4px);
+        }
 
         /* ── HEADER ── */
         header {
@@ -470,6 +515,12 @@
     </style>
 </head>
 <body>
+
+<!-- PULSE BAR (Latidos de PatitasBA) -->
+<div class="pulse-bar" id="pulseBar">
+    <span class="pulse-heart">❤️</span>
+    <span><span class="pulse-count" id="pulseCount">0</span> corazones latieron por una mascota hoy</span>
+</div>
 
 <!-- HEADER -->
 <header>
@@ -1065,6 +1116,8 @@ function renderPets() {
                 ${badge}
                 <div class="badge-org">@${p.ig}</div>
                 <button class="card-share-btn" title="Compartir" onclick="event.stopPropagation(); compartirRapido('${p.id}')">↗</button>
+                ${p.disponible !== false ? `<button class="card-heart-btn" id="heart-${p.id}" onclick="event.stopPropagation(); toggleHeart('${p.id}')"><span>🤍</span></button>` : ''}
+                <span class="card-interested" id="interested-${p.id}" style="display:none"></span>
             </div>
             <div class="card-body">
                 <div class="card-header">
@@ -1125,7 +1178,7 @@ function checkDeepLink() {
 }
 
 // Arrancar cargando datos
-cargarDatos().finally(() => checkDeepLink());
+cargarDatos().finally(() => { checkDeepLink(); initLatidos(); });
 
 // Handle back/forward browser navigation
 window.addEventListener('hashchange', () => {
@@ -1137,6 +1190,90 @@ window.addEventListener('hashchange', () => {
         closeModal();
     }
 });
+
+// ══════════════════════════════════════════════
+//  LATIDOS DE PATITASBA — Firebase Realtime
+// ══════════════════════════════════════════════
+
+function getTodayKey() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function initLatidos() {
+    // 1. Escuchar el pulso del día (corazones totales de hoy)
+    const todayRef = db.ref('pulse/' + getTodayKey());
+    todayRef.on('value', snap => {
+        const val = snap.val() || 0;
+        const el = document.getElementById('pulseCount');
+        if (el) el.textContent = val;
+    });
+
+    // 2. Escuchar corazones por mascota
+    db.ref('hearts').on('value', snap => {
+        const data = snap.val() || {};
+        Object.keys(data).forEach(petId => {
+            const count = data[petId] || 0;
+            const el = document.getElementById('interested-' + petId);
+            if (el) {
+                if (count > 0) {
+                    el.textContent = '❤️ ' + count + (count === 1 ? ' persona interesada' : ' personas interesadas');
+                    el.style.display = 'block';
+                } else {
+                    el.style.display = 'none';
+                }
+            }
+        });
+    });
+
+    // 3. Restaurar likes del usuario (localStorage)
+    const myLikes = JSON.parse(localStorage.getItem('patitas_likes') || '{}');
+    Object.keys(myLikes).forEach(petId => {
+        const btn = document.getElementById('heart-' + petId);
+        if (btn) {
+            btn.classList.add('liked');
+            btn.querySelector('span').textContent = '❤️';
+        }
+    });
+}
+
+function toggleHeart(petId) {
+    const myLikes = JSON.parse(localStorage.getItem('patitas_likes') || '{}');
+    const btn = document.getElementById('heart-' + petId);
+    const heartRef = db.ref('hearts/' + petId);
+    const pulseRef = db.ref('pulse/' + getTodayKey());
+
+    if (myLikes[petId]) {
+        // Unlike
+        delete myLikes[petId];
+        btn.classList.remove('liked');
+        btn.querySelector('span').textContent = '🤍';
+        heartRef.transaction(v => Math.max((v || 0) - 1, 0));
+        pulseRef.transaction(v => Math.max((v || 0) - 1, 0));
+    } else {
+        // Like
+        myLikes[petId] = true;
+        btn.classList.add('liked');
+        btn.querySelector('span').textContent = '❤️';
+        heartRef.transaction(v => (v || 0) + 1);
+        pulseRef.transaction(v => (v || 0) + 1);
+    }
+    localStorage.setItem('patitas_likes', JSON.stringify(myLikes));
+}
+
+// También sumar al pulso cuando clickean "Quiero adoptarlo"
+const _origRenderPets = renderPets;
+renderPets = function() {
+    _origRenderPets();
+    document.querySelectorAll('.btn-adopt:not(.adoptado-btn)').forEach(btn => {
+        btn.addEventListener('click', () => {
+            db.ref('pulse/' + getTodayKey()).transaction(v => (v || 0) + 1);
+        });
+    });
+    // Re-init hearts display
+    initLatidos();
+};
+
 </script>
 </body>
 </html>
