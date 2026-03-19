@@ -1107,7 +1107,7 @@ function renderPets() {
         const btnClass  = p.disponible === false ? 'btn-adopt adoptado-btn' : 'btn-adopt';
         const btnAction = p.disponible === false
             ? ''
-            : `onclick="event.stopPropagation(); window.open('${p.postUrl}','_blank')"`;
+            : `onclick="event.stopPropagation(); gtag('event','quiero_adoptarlo',{pet_name:'${p.nombre}',pet_type:'${p.tipo}',shelter:'${p.ig}'}); window.open('${p.postUrl}','_blank')"`;
 
         return `
         <div class="pet-card ${adopClass}" data-id="${p.id}" onclick="openModal('${p.id}')">
