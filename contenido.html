@@ -6,30 +6,47 @@
 <title>PatitasBA — Generador de Contenido para Instagram</title>
 <meta name="robots" content="noindex, nofollow">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:wght@400;500;600;700&display=swap');
+
+  :root {
+    --cream: #FFF8F0;
+    --warm-bg: #FEF6EE;
+    --brown: #8B6F47;
+    --brown-dark: #6B5335;
+    --brown-light: #A8896C;
+    --rose: #D4827E;
+    --rose-soft: #E8A5A2;
+    --rose-bg: #FDF0EF;
+    --sand: #E8DDD3;
+    --text: #4A3728;
+    --text-light: #8B7B6B;
+    --text-muted: #B8A898;
+    --card-bg: #FFFCF8;
+    --border: #E8DDD3;
+  }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: 'Inter', sans-serif;
-    background: #0a0a0a;
-    color: #e0e0e0;
+    background: var(--warm-bg);
+    color: var(--text);
     min-height: 100vh;
   }
 
   /* ─── NAV ─── */
   .topbar {
-    background: #111;
-    border-bottom: 1px solid #222;
+    background: var(--cream);
+    border-bottom: 1px solid var(--sand);
     padding: 12px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .topbar .logo { font-size: 1.1rem; font-weight: 700; color: #fff; }
-  .topbar .logo span { color: #f97316; }
-  .topbar .back-link { color: #888; text-decoration: none; font-size: 0.85rem; }
-  .topbar .back-link:hover { color: #fff; }
+  .topbar .logo { font-size: 1.1rem; font-weight: 700; color: var(--brown-dark); font-family: 'Lora', serif; }
+  .topbar .logo span { color: var(--rose); }
+  .topbar .back-link { color: var(--text-light); text-decoration: none; font-size: 0.85rem; }
+  .topbar .back-link:hover { color: var(--brown-dark); }
 
   /* ─── LAYOUT ─── */
   .container {
@@ -44,18 +61,17 @@
   }
   .header h1 {
     font-size: 1.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #f97316, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-family: 'Lora', serif;
+    color: var(--brown-dark);
     margin-bottom: 8px;
   }
-  .header p { color: #888; font-size: 0.95rem; }
+  .header p { color: var(--text-light); font-size: 0.95rem; }
 
   /* ─── SUGERENCIA DEL DÍA ─── */
   .daily-pick {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border: 1px solid #f9731644;
+    background: var(--rose-bg);
+    border: 1px solid var(--rose-soft);
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 32px;
@@ -64,21 +80,20 @@
     gap: 20px;
   }
   .daily-pick .badge {
-    background: #f97316;
+    background: var(--rose);
     color: #fff;
     font-weight: 700;
     font-size: 0.75rem;
     padding: 6px 14px;
     border-radius: 20px;
     white-space: nowrap;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
   }
   .daily-pick .info { flex: 1; }
-  .daily-pick .info h3 { color: #fff; font-size: 1.1rem; margin-bottom: 4px; }
-  .daily-pick .info p { color: #aaa; font-size: 0.85rem; }
+  .daily-pick .info h3 { color: var(--brown-dark); font-size: 1.1rem; margin-bottom: 4px; font-family: 'Lora', serif; }
+  .daily-pick .info p { color: var(--text-light); font-size: 0.85rem; }
   .daily-pick .action-btn {
-    background: #f97316;
+    background: var(--brown);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -88,7 +103,7 @@
     font-size: 0.9rem;
     white-space: nowrap;
   }
-  .daily-pick .action-btn:hover { background: #ea580c; }
+  .daily-pick .action-btn:hover { background: var(--brown-dark); }
 
   /* ─── STATS ─── */
   .stats-row {
@@ -98,16 +113,16 @@
     flex-wrap: wrap;
   }
   .stat-card {
-    background: #151515;
-    border: 1px solid #222;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 16px 20px;
     flex: 1;
     min-width: 140px;
     text-align: center;
   }
-  .stat-card .num { font-size: 1.6rem; font-weight: 800; color: #fff; }
-  .stat-card .label { font-size: 0.75rem; color: #888; margin-top: 2px; }
+  .stat-card .num { font-size: 1.6rem; font-weight: 800; color: var(--brown-dark); font-family: 'Lora', serif; }
+  .stat-card .label { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
 
   /* ─── FORMAT TABS ─── */
   .format-tabs {
@@ -117,9 +132,9 @@
     flex-wrap: wrap;
   }
   .format-tab {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    color: #aaa;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-light);
     padding: 8px 18px;
     border-radius: 8px;
     cursor: pointer;
@@ -127,10 +142,10 @@
     font-weight: 500;
     transition: all 0.2s;
   }
-  .format-tab:hover { border-color: #555; color: #fff; }
+  .format-tab:hover { border-color: var(--brown-light); color: var(--brown-dark); }
   .format-tab.active {
-    background: #f97316;
-    border-color: #f97316;
+    background: var(--brown);
+    border-color: var(--brown);
     color: #fff;
   }
 
@@ -142,21 +157,21 @@
   }
 
   .pet-card {
-    background: #151515;
-    border: 1px solid #222;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .pet-card:hover { border-color: #444; }
-  .pet-card.suggested { border-color: #f97316; }
+  .pet-card:hover { border-color: var(--brown-light); box-shadow: 0 4px 20px rgba(139,111,71,0.1); }
+  .pet-card.suggested { border-color: var(--rose); box-shadow: 0 4px 20px rgba(212,130,126,0.15); }
 
   .pet-card .preview {
     position: relative;
     width: 100%;
     aspect-ratio: 1;
     overflow: hidden;
-    background: #0a0a0a;
+    background: var(--sand);
   }
   .pet-card .preview canvas {
     width: 100%;
@@ -165,20 +180,20 @@
   }
 
   .pet-card .card-body { padding: 16px; }
-  .pet-card .card-body h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-  .pet-card .meta { font-size: 0.8rem; color: #888; margin-bottom: 12px; }
+  .pet-card .card-body h3 { font-size: 1rem; font-weight: 700; color: var(--brown-dark); margin-bottom: 4px; font-family: 'Lora', serif; }
+  .pet-card .meta { font-size: 0.8rem; color: var(--text-light); margin-bottom: 12px; }
   .pet-card .meta span { margin-right: 8px; }
 
   .pet-card .caption-box {
-    background: #0d0d0d;
-    border: 1px solid #222;
+    background: var(--warm-bg);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 12px;
     max-height: 120px;
     overflow-y: auto;
     font-size: 0.8rem;
-    color: #ccc;
+    color: var(--text);
     line-height: 1.5;
     white-space: pre-wrap;
     word-break: break-word;
@@ -199,27 +214,27 @@
     transition: all 0.2s;
   }
   .btn-download {
-    background: #f97316;
+    background: var(--brown);
     color: #fff;
   }
-  .btn-download:hover { background: #ea580c; }
+  .btn-download:hover { background: var(--brown-dark); }
   .btn-copy {
-    background: #222;
-    color: #ccc;
+    background: var(--sand);
+    color: var(--text);
   }
-  .btn-copy:hover { background: #333; color: #fff; }
-  .btn-copy.copied { background: #16a34a; color: #fff; }
+  .btn-copy:hover { background: var(--brown-light); color: #fff; }
+  .btn-copy.copied { background: #7a9e7a; color: #fff; }
 
   /* ─── LOADING ─── */
   .loading {
     text-align: center;
     padding: 60px;
-    color: #666;
+    color: var(--text-light);
   }
   .loading .spinner {
     width: 40px; height: 40px;
-    border: 3px solid #333;
-    border-top-color: #f97316;
+    border: 3px solid var(--sand);
+    border-top-color: var(--rose);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
     margin: 0 auto 16px;
@@ -243,7 +258,7 @@
 <div class="container">
   <div class="header">
     <h1>Generador de Contenido para Instagram</h1>
-    <p>Cards listas para postear, captions virales y sugerencia del día. Todo automático.</p>
+    <p>Cards y captions con corazón, listos para postear. Sugerencia del día incluida.</p>
   </div>
 
   <div id="daily-pick-container"></div>
@@ -277,36 +292,38 @@ let allPets = [];
 let currentFormat = 'feed';
 
 // ═══════════════════════════════════════
-//  CAPTIONS VIRALES
+//  CAPTIONS — TONO CÁLIDO Y HUMANO
+//  (inspirado en @zaguatesrefugio)
 // ═══════════════════════════════════════
+
+// Hooks que cuentan una historia, no venden
 const HOOKS_ADOPCION = [
-  (p) => `${p.nombre} lleva esperando una familia desde ${p.fecha}. ¿Vas a ser vos? 🥺`,
-  (p) => `Mirá esos ojos. ${p.nombre} no entiende por qué nadie lo elige. 💔`,
-  (p) => `Si este post llega a 1000 personas, ${p.nombre} tiene más chances de encontrar hogar. COMPARTÍ. 🙏`,
-  (p) => `${p.nombre} solo quiere una cosa: alguien que lo elija. ¿Lo compartís? ❤️`,
-  (p) => `BASTA de scrollear. Mirá a ${p.nombre}. ${p.emoji} ${p.edad}, ${p.tamanio.toLowerCase()}. Está esperándote.`,
-  (p) => `¿Sabías que los ${p.tipo === 'perro' ? 'perritos' : 'gatitos'} ${p.raza === 'Mestizo/a' ? 'mestizos' : 'de raza ' + p.raza} son los más fieles? ${p.nombre} lo demuestra cada día. 🐾`,
-  (p) => `Cada día que pasa, ${p.nombre} ve cómo otros se van con familia. ¿Cuándo le toca a ${p.genero === '♀' ? 'ella' : 'él'}? 😢`,
-  (p) => `No compres. ADOPTÁ. ${p.nombre} es ${p.tipo === 'perro' ? 'un perrito' : 'un gatito'} increíble que merece una oportunidad. 🧡`,
-  (p) => `Este es ${p.nombre}. Tiene ${p.edad}. No tiene familia. ¿Podés cambiar eso? ❤️‍🩹`,
-  (p) => `Si no podés adoptar, COMPARTÍ. Para ${p.nombre}, un share puede ser la diferencia entre la calle y un hogar. 🏠`,
+  (p) => `Hablemos de ${p.nombre} ❤️\n${p.genero === '♀' ? 'Es una ' : 'Es un '}${p.tipo === 'perro' ? 'perrito' : 'gatito'} que está buscando su familia para siempre. Tiene ${p.edad} y cada día nos demuestra lo increíble que es.`,
+  (p) => `${p.nombre} tiene algo especial 🧡\nDe esas miradas que te llegan al corazón. Tiene ${p.edad}, es ${p.tamanio.toLowerCase()} y está esperando a alguien que ${p.genero === '♀' ? 'la' : 'lo'} elija.`,
+  (p) => `Les queremos presentar a ${p.nombre} 🐾\nLlegó al refugio buscando una segunda oportunidad y la verdad es que se la merece con creces. Tiene ${p.edad} y es ${p.tamanio.toLowerCase()}.`,
+  (p) => `Conocé a ${p.nombre} 💛\n${p.genero === '♀' ? 'Una ' : 'Un '}${p.tipo === 'perro' ? (p.raza !== 'Mestizo/a' ? p.raza.toLowerCase() : 'perrito mestizo') : (p.raza !== 'Doméstico/a' ? p.raza.toLowerCase() : 'gatito doméstico')} de ${p.edad} que solo necesita una familia que ${p.genero === '♀' ? 'la' : 'lo'} quiera como merece.`,
+  (p) => `${p.nombre} está esperando 💔\nA veces cuesta encontrar familia, pero no perdemos la esperanza. Tiene ${p.edad}, es ${p.tamanio.toLowerCase()}, y tiene mucho amor para dar.`,
+  (p) => `Cada vez que miramos a ${p.nombre} nos damos cuenta de por qué hacemos esto 🧡\nTiene ${p.edad}, es ${p.tamanio.toLowerCase()} y está ${p.genero === '♀' ? 'lista' : 'listo'} para ser parte de una familia.`,
+  (p) => `${p.nombre} necesita que su historia llegue a más personas ❤️‍🩹\n${p.genero === '♀' ? 'Es una ' : 'Es un '}${p.tipo === 'perro' ? 'perrito' : 'gatito'} ${p.tamanio.toLowerCase()} de ${p.edad} que todavía no encontró a su humano. Capaz sos vos, o capaz conocés a alguien.`,
+  (p) => `Les presentamos a ${p.nombre} 🐾\nTiene ${p.edad} y es de esos ${p.tipo === 'perro' ? 'perritos' : 'gatitos'} que cuando los conocés te cambian el día. Solo ${p.genero === '♀' ? 'le' : 'le'} falta una familia que ${p.genero === '♀' ? 'la' : 'lo'} acompañe para siempre.`,
 ];
 
+// Formato "Nadie me quiere" — primera persona, vulnerable pero esperanzado
 const HOOKS_NADIE = [
-  (p, dias) => `Llevo ${dias} días esperando que alguien me elija. Mis compañeros ya se fueron todos. 💔`,
-  (p, dias) => `Hoy hace ${dias} días que estoy acá. A veces pienso que nadie me quiere. 🥺`,
-  (p, dias) => `Todos los días veo gente pasar. Ninguno me mira. Soy ${p.nombre} y llevo ${dias} días esperando. 😢`,
-  (p, dias) => `Me dijeron que soy "difícil de adoptar" porque soy ${p.tamanio.toLowerCase()}. Solo quiero que alguien me quiera. 💔`,
-  (p, dias) => `${dias} días. ${dias} noches. Todavía espero. ¿Alguien me va a elegir? 🐾`,
+  (p, dias) => `Hace ${dias} días que estoy acá. Mis voluntarios me cuidan, me dan de comer, me hacen mimos… pero todavía no tengo una familia propia 💔\nMe llamo ${p.nombre} y sigo esperando.`,
+  (p, dias) => `A veces me pregunto cuándo va a ser mi turno 🥺\nVeo cómo mis compañeros se van con sus familias nuevas y yo me quedo. No es que no sea ${p.genero === '♀' ? 'buena' : 'bueno'}… solo que todavía no me encontraron.\nSoy ${p.nombre} y llevo ${dias} días esperando.`,
+  (p, dias) => `Me llamo ${p.nombre} y llevo ${dias} días soñando con un hogar ❤️‍🩹\nTengo ${p.edad}, soy ${p.tamanio.toLowerCase()} y prometo que tengo mucho amor para dar. Solo necesito que alguien me dé la oportunidad.`,
+  (p, dias) => `${dias} días pueden parecer poco… pero cuando estás esperando una familia, cada uno se siente eterno 💔\nSoy ${p.nombre}. Tengo ${p.edad}. Y sigo creyendo que mi persona va a llegar.`,
+  (p, dias) => `Hoy me desperté y pensé: "capaz hoy es el día" 🐾\nPienso eso todas las mañanas desde hace ${dias} días. Me llamo ${p.nombre} y todavía estoy acá, esperando con el corazón lleno de esperanza.`,
 ];
 
-const HASHTAGS = '#AdoptáConPatitas #AdoptáNoCompres #PatitasBA #AdopciónResponsable #PerrosEnAdopción #GatosEnAdopción #BuenosAires #CABA #GBA #Adoptar #Refugio #Rescate #MascotaEnAdopción #AmigoPeludo';
+const HASHTAGS = '#PatitasBA #AdoptáConAmor #AdopciónResponsable #AdoptáNoCompres #PerrosEnAdopción #GatosEnAdopción #BuenosAires #CABA #GBA #Refugio #Rescate';
 
 const CTA_OPTIONS = [
-  '👉 Más info en patitasba.com.ar',
-  '🔗 Conocelo en patitasba.com.ar',
-  '📲 Entrá a patitasba.com.ar y encontrá tu compañero',
-  '🐾 patitasba.com.ar — Adoptá con amor',
+  '🐾 Conocé su historia completa en patitasba.com.ar',
+  '💛 Más info y fotos en patitasba.com.ar',
+  '📲 Entrá a patitasba.com.ar y conocé a todos los que esperan un hogar',
+  '🐾 patitasba.com.ar — Donde las historias de amor empiezan',
 ];
 
 function generateCaption(pet, format) {
@@ -323,11 +340,12 @@ function generateCaption(pet, format) {
   const orgLine = `🏥 Refugio: @${pet.ig}`;
 
   return `${hook}\n\n` +
-    `🐾 ${pet.nombre} — ${pet.tipo === 'perro' ? 'Perro' : 'Gato'}\n` +
-    `📅 ${pet.edad} · 📏 ${pet.tamanio}\n` +
-    `${orgLine}\n\n` +
+    `${pet.emoji} ${pet.nombre}\n` +
+    `📅 ${pet.edad} · 📏 ${pet.tamanio} · ${pet.raza}\n` +
+    `🏠 ${pet.org} (@${pet.ig})\n\n` +
+    `Si creés que ${pet.nombre} puede ser parte de tu familia, o conocés a alguien que esté buscando un compañero, escribile al refugio 💌\n\n` +
     `${cta}\n\n` +
-    `Etiquetá a alguien que NECESITA conocer a ${pet.nombre} 👇\n\n` +
+    `Si no podés adoptar, compartir también ayuda 🧡\n\n` +
     HASHTAGS;
 }
 
@@ -386,89 +404,85 @@ async function generateFeedCard(canvas, pet) {
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext('2d');
 
-  // Background
-  ctx.fillStyle = '#0a0a0a';
+  // Warm cream background
+  ctx.fillStyle = '#FFF8F0';
   ctx.fillRect(0, 0, W, H);
 
   // Try to load pet image
   let img;
+  const imgH = 650;
+  const margin = 40;
   try {
     img = await loadImage(pet.imgUrls[0]);
-    // Draw image covering top portion
-    const imgH = 700;
-    const scale = Math.max(W / img.width, imgH / img.height);
-    const dx = (W - img.width * scale) / 2;
-    const dy = (imgH - img.height * scale) / 2;
+    const scale = Math.max((W - margin*2) / img.width, imgH / img.height);
+    const dx = margin + ((W - margin*2) - img.width * scale) / 2;
+    const dy = margin + (imgH - img.height * scale) / 2;
     ctx.save();
-    ctx.rect(0, 0, W, imgH);
+    drawRoundedRect(ctx, margin, margin, W - margin*2, imgH, 24);
     ctx.clip();
     ctx.drawImage(img, dx, dy, img.width * scale, img.height * scale);
     ctx.restore();
-
-    // Gradient overlay on image
-    const grad = ctx.createLinearGradient(0, imgH - 300, 0, imgH);
-    grad.addColorStop(0, 'rgba(10,10,10,0)');
-    grad.addColorStop(1, 'rgba(10,10,10,1)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, imgH - 300, W, 300);
   } catch (e) {
-    // No image - gradient bg
-    const grad = ctx.createLinearGradient(0, 0, W, H);
-    grad.addColorStop(0, '#1a1a2e');
-    grad.addColorStop(1, '#16213e');
+    // No image - warm gradient
+    drawRoundedRect(ctx, margin, margin, W - margin*2, imgH, 24);
+    const grad = ctx.createLinearGradient(0, 0, W, imgH);
+    grad.addColorStop(0, '#E8DDD3');
+    grad.addColorStop(1, '#D4827E');
     ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, 700);
+    ctx.fill();
   }
 
-  // "EN ADOPCIÓN" badge
-  const badgeY = 30;
-  ctx.font = '700 28px Inter, sans-serif';
-  const badgeText = pet.disponible ? '❤️ EN ADOPCIÓN' : '🏠 YA ADOPTADO';
-  const badgeW = ctx.measureText(badgeText).width + 40;
-  drawRoundedRect(ctx, 30, badgeY, badgeW, 50, 25);
-  ctx.fillStyle = pet.disponible ? '#f97316' : '#16a34a';
+  // "Busca familia" badge on photo
+  const badgeY = 60;
+  ctx.font = '600 26px Inter, sans-serif';
+  const badgeText = pet.disponible ? '❤️ Busca familia' : '🏠 Ya encontró hogar';
+  const badgeW = ctx.measureText(badgeText).width + 36;
+  drawRoundedRect(ctx, 60, badgeY, badgeW, 46, 23);
+  ctx.fillStyle = pet.disponible ? 'rgba(212,130,126,0.9)' : 'rgba(122,158,122,0.9)';
   ctx.fill();
   ctx.fillStyle = '#fff';
-  ctx.fillText(badgeText, 50, badgeY + 35);
+  ctx.fillText(badgeText, 78, badgeY + 32);
 
-  // Shelter tag
-  ctx.font = '500 24px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.7)';
-  ctx.fillText(`@${pet.ig}`, 30, badgeY + 90);
-
-  // Pet name - big
-  const nameY = 740;
-  ctx.font = '900 72px Inter, sans-serif';
+  // Shelter tag on photo
+  ctx.font = '500 22px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  const igTag = `@${pet.ig}`;
+  const igW = ctx.measureText(igTag).width + 28;
+  drawRoundedRect(ctx, 60, badgeY + 56, igW, 36, 18);
+  ctx.fillStyle = 'rgba(0,0,0,0.35)';
+  ctx.fill();
   ctx.fillStyle = '#fff';
-  ctx.fillText(pet.nombre, 40, nameY);
+  ctx.font = '500 20px Inter, sans-serif';
+  ctx.fillText(igTag, 74, badgeY + 80);
+
+  // Pet name
+  const nameY = imgH + margin + 70;
+  ctx.font = '700 64px Lora, serif';
+  ctx.fillStyle = '#4A3728';
+  ctx.fillText(pet.nombre, margin + 10, nameY);
 
   // Info line
-  ctx.font = '500 32px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.8)';
-  const infoText = `${pet.emoji} ${pet.tipo === 'perro' ? 'Perro' : 'Gato'} · ${pet.edad} · ${pet.tamanio}`;
-  ctx.fillText(infoText, 40, nameY + 50);
-
-  // Breed
-  ctx.font = '400 26px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.5)';
-  ctx.fillText(pet.raza, 40, nameY + 90);
+  ctx.font = '500 28px Inter, sans-serif';
+  ctx.fillStyle = '#8B7B6B';
+  const infoText = `${pet.emoji} ${pet.tipo === 'perro' ? 'Perro' : 'Gato'} · ${pet.edad} · ${pet.tamanio} · ${pet.raza}`;
+  ctx.fillText(infoText, margin + 10, nameY + 42);
 
   // Description (truncated)
-  const desc = pet.desc.length > 140 ? pet.desc.substring(0, 137) + '...' : pet.desc;
+  const desc = pet.desc.length > 120 ? pet.desc.substring(0, 117) + '...' : pet.desc;
   ctx.font = '400 24px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.6)';
-  wrapText(ctx, desc, 40, nameY + 140, W - 80, 32);
+  ctx.fillStyle = '#8B7B6B';
+  wrapText(ctx, desc, margin + 10, nameY + 90, W - margin*2 - 20, 32);
 
-  // Bottom bar
-  ctx.fillStyle = '#111';
-  ctx.fillRect(0, H - 80, W, 80);
-  ctx.font = '700 28px Inter, sans-serif';
-  ctx.fillStyle = '#f97316';
-  ctx.fillText('🐾 patitasba.com.ar', 40, H - 30);
+  // Bottom bar - warm
+  ctx.fillStyle = '#F0E6DA';
+  ctx.fillRect(0, H - 70, W, 70);
+  ctx.font = '600 24px Lora, serif';
+  ctx.fillStyle = '#8B6F47';
+  ctx.fillText('🐾 patitasba.com.ar', margin, H - 28);
 
   // Shelter on right
-  ctx.font = '500 24px Inter, sans-serif';
-  ctx.fillStyle = '#888';
+  ctx.font = '500 22px Inter, sans-serif';
+  ctx.fillStyle = '#A8896C';
   const orgText = `📍 ${pet.org}`;
   const orgW = ctx.measureText(orgText).width;
   ctx.fillText(orgText, W - orgW - 40, H - 30);
@@ -496,60 +510,60 @@ async function generateStoryCard(canvas, pet) {
     ctx.fillRect(0, 0, W, H);
   } catch (e) {
     const grad = ctx.createLinearGradient(0, 0, 0, H);
-    grad.addColorStop(0, '#1a1a2e');
-    grad.addColorStop(1, '#0a0a0a');
+    grad.addColorStop(0, '#E8DDD3');
+    grad.addColorStop(1, '#D4827E');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, W, H);
   }
 
-  // Bottom gradient
+  // Warm bottom gradient (cream/brown instead of black)
   const grad = ctx.createLinearGradient(0, H - 800, 0, H);
-  grad.addColorStop(0, 'rgba(0,0,0,0)');
-  grad.addColorStop(0.5, 'rgba(0,0,0,0.8)');
-  grad.addColorStop(1, 'rgba(0,0,0,0.95)');
+  grad.addColorStop(0, 'rgba(74,55,40,0)');
+  grad.addColorStop(0.5, 'rgba(74,55,40,0.7)');
+  grad.addColorStop(1, 'rgba(74,55,40,0.92)');
   ctx.fillStyle = grad;
   ctx.fillRect(0, H - 800, W, 800);
 
   // Top badge
-  ctx.font = '700 32px Inter, sans-serif';
-  const badgeText = '❤️ EN ADOPCIÓN';
+  ctx.font = '600 30px Inter, sans-serif';
+  const badgeText = '❤️ Busca familia';
   const badgeW = ctx.measureText(badgeText).width + 48;
   drawRoundedRect(ctx, (W - badgeW) / 2, 80, badgeW, 56, 28);
-  ctx.fillStyle = '#f97316';
+  ctx.fillStyle = 'rgba(212,130,126,0.9)';
   ctx.fill();
   ctx.fillStyle = '#fff';
   ctx.textAlign = 'center';
   ctx.fillText(badgeText, W / 2, 117);
 
   // Name
-  ctx.font = '900 96px Inter, sans-serif';
+  ctx.font = '700 90px Lora, serif';
   ctx.fillStyle = '#fff';
   ctx.textAlign = 'center';
   ctx.fillText(pet.nombre, W / 2, H - 480);
 
   // Info
-  ctx.font = '500 40px Inter, sans-serif';
+  ctx.font = '500 36px Inter, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.85)';
-  ctx.fillText(`${pet.emoji} ${pet.edad} · ${pet.tamanio} · ${pet.raza}`, W / 2, H - 410);
+  ctx.fillText(`${pet.emoji} ${pet.edad} · ${pet.tamanio} · ${pet.raza}`, W / 2, H - 415);
 
   // Description
-  ctx.font = '400 32px Inter, sans-serif';
+  ctx.font = '400 30px Inter, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.7)';
   ctx.textAlign = 'center';
   const desc = pet.desc.length > 120 ? pet.desc.substring(0, 117) + '...' : pet.desc;
-  wrapText(ctx, desc, W / 2, H - 340, W - 120, 42, 'center');
+  wrapText(ctx, desc, W / 2, H - 340, W - 120, 40, 'center');
 
   // CTA
   drawRoundedRect(ctx, 140, H - 220, W - 280, 70, 35);
-  ctx.fillStyle = '#f97316';
+  ctx.fillStyle = '#8B6F47';
   ctx.fill();
-  ctx.font = '700 32px Inter, sans-serif';
+  ctx.font = '600 30px Inter, sans-serif';
   ctx.fillStyle = '#fff';
   ctx.textAlign = 'center';
-  ctx.fillText('🐾 ¡Quiero adoptarlo!', W / 2, H - 177);
+  ctx.fillText('🐾 Conocé su historia', W / 2, H - 177);
 
   // Footer
-  ctx.font = '600 28px Inter, sans-serif';
+  ctx.font = '500 26px Inter, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.5)';
   ctx.fillText(`patitasba.com.ar · @${pet.ig}`, W / 2, H - 100);
 
@@ -561,48 +575,54 @@ async function generateNadieMeQuiereCard(canvas, pet) {
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext('2d');
 
-  // Dark dramatic background
-  ctx.fillStyle = '#050505';
+  // Warm muted background
+  ctx.fillStyle = '#3D2E22';
   ctx.fillRect(0, 0, W, H);
 
-  // Try image - desaturated
+  // Try image - softly desaturated with warm tone
   try {
     const img = await loadImage(pet.imgUrls[0]);
     const scale = Math.max(W / img.width, H / img.height);
     const dx = (W - img.width * scale) / 2;
     const dy = (H - img.height * scale) / 2;
-    ctx.filter = 'grayscale(60%) brightness(0.6)';
+    ctx.filter = 'grayscale(30%) brightness(0.5) sepia(20%)';
     ctx.drawImage(img, dx, dy, img.width * scale, img.height * scale);
     ctx.filter = 'none';
   } catch (e) {}
 
-  // Heavy dark overlay
+  // Warm overlay
   const grad = ctx.createLinearGradient(0, 0, 0, H);
-  grad.addColorStop(0, 'rgba(0,0,0,0.4)');
-  grad.addColorStop(0.6, 'rgba(0,0,0,0.7)');
-  grad.addColorStop(1, 'rgba(0,0,0,0.9)');
+  grad.addColorStop(0, 'rgba(61,46,34,0.4)');
+  grad.addColorStop(0.6, 'rgba(61,46,34,0.7)');
+  grad.addColorStop(1, 'rgba(61,46,34,0.92)');
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, W, H);
 
   // Days counter
   const dias = Math.max(1, Math.floor((Date.now() - new Date(pet.fecha).getTime()) / 86400000));
   ctx.textAlign = 'center';
-  ctx.font = '900 180px Inter, sans-serif';
-  ctx.fillStyle = '#f97316';
+  ctx.font = '700 160px Lora, serif';
+  ctx.fillStyle = '#D4827E';
   ctx.fillText(dias, W / 2, 280);
-  ctx.font = '600 36px Inter, sans-serif';
+  ctx.font = '500 34px Inter, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.6)';
   ctx.fillText('días esperando una familia', W / 2, 330);
 
   // Name
-  ctx.font = '900 80px Inter, sans-serif';
+  ctx.font = '700 72px Lora, serif';
   ctx.fillStyle = '#fff';
-  ctx.fillText(pet.nombre, W / 2, 550);
+  ctx.fillText(pet.nombre, W / 2, 540);
 
   // Emotional quote
   ctx.font = '400 30px Inter, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.7)';
-  const quote = `"Solo quiero que alguien me elija"`;
+  const quotes = [
+    '"Capaz hoy es el día"',
+    '"Sigo esperando con el corazón lleno"',
+    '"Solo necesito una oportunidad"',
+    '"¿Cuándo me toca a mí?"',
+  ];
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
   ctx.fillText(quote, W / 2, 620);
 
   // Info
@@ -611,9 +631,9 @@ async function generateNadieMeQuiereCard(canvas, pet) {
   ctx.fillText(`${pet.emoji} ${pet.tipo === 'perro' ? 'Perro' : 'Gato'} · ${pet.edad} · ${pet.tamanio} · ${pet.raza}`, W / 2, 700);
 
   // CTA bottom
-  ctx.font = '700 34px Inter, sans-serif';
-  ctx.fillStyle = '#f97316';
-  ctx.fillText('¿Vas a ser vos? ❤️', W / 2, 850);
+  ctx.font = '600 32px Inter, sans-serif';
+  ctx.fillStyle = '#D4827E';
+  ctx.fillText('Conocé su historia en patitasba.com.ar 🐾', W / 2, 850);
 
   // Footer
   ctx.font = '500 24px Inter, sans-serif';
@@ -691,7 +711,7 @@ async function renderCards(pets, format) {
     card.innerHTML = `
       <div class="preview"><canvas id="canvas-${pet.id}"></canvas></div>
       <div class="card-body">
-        <h3>${pet.emoji} ${pet.nombre} ${dailyPick && pet.id === dailyPick.id ? '<span style="color:#f97316;font-size:0.75rem;">⭐ SUGERIDO HOY</span>' : ''}</h3>
+        <h3>${pet.emoji} ${pet.nombre} ${dailyPick && pet.id === dailyPick.id ? '<span style="color:#D4827E;font-size:0.75rem;">⭐ SUGERIDO HOY</span>' : ''}</h3>
         <div class="meta">
           <span>📅 ${pet.edad}</span>
           <span>📏 ${pet.tamanio}</span>
@@ -733,7 +753,7 @@ function renderDailyPick(pets) {
       <div class="badge">⭐ SUGERENCIA DEL DÍA</div>
       <div class="info">
         <h3>${pick.emoji} ${pick.nombre} — ${pick.edad}, ${pick.tamanio}</h3>
-        <p>${dias} días esperando · ${pick.org} · Prioridad alta porque ${pick.edadCat === 'adulto' || pick.edadCat === 'adulto+' ? 'es adulto y' : ''} ${pick.raza === 'Mestizo/a' || pick.raza === 'Doméstico/a' ? 'es mestizo' : 'lleva mucho tiempo'}</p>
+        <p>${dias} días esperando hogar · ${pick.org} · ${pick.edadCat === 'adulto' || pick.edadCat === 'adulto+' ? 'Los adultos necesitan más visibilidad 💛' : pick.raza === 'Mestizo/a' || pick.raza === 'Doméstico/a' ? 'Los mestizos suelen esperar más tiempo 💛' : 'Su historia merece ser contada 💛'}</p>
       </div>
       <button class="action-btn" onclick="document.querySelector('.pet-card.suggested .btn-download')?.click()">⬇️ Descargar</button>
     </div>
@@ -783,7 +803,7 @@ async function init() {
   } catch (err) {
     document.getElementById('cards-container').innerHTML = `
       <div class="loading">
-        <p style="color:#f97316;">❌ Error cargando pets.json</p>
+        <p style="color:#D4827E;">❌ Error cargando pets.json</p>
         <p style="font-size:0.8rem;color:#666;margin-top:8px;">Asegurate de que este archivo esté en la misma carpeta que pets.json</p>
         <p style="font-size:0.75rem;color:#444;margin-top:8px;">${err.message}</p>
       </div>
