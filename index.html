@@ -11,11 +11,11 @@
         gtag('js', new Date());
         gtag('config', 'G-LZ8Q82ML5B');
     </script>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%23FF6B35'/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%238B6F47'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%238B6F47'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%238B6F47'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%238B6F47'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%238B6F47'/></svg>">
     <title>PatitasBA — Adoptá perros y gatos en Buenos Aires</title>
     <meta name="description" content="Encontrá perros y gatos en adopción de refugios de Buenos Aires y GBA. PatitasBA reúne mascotas rescatadas de 5 refugios para que encuentren una familia.">
     <meta name="keywords" content="adopción perros Buenos Aires, adoptar gato CABA, refugio animales GBA, mascotas en adopción, adopción responsable, perros rescatados, gatos en adopción Buenos Aires, adoptar mascota gratis, refugio perros zona norte, adoptar cachorro Buenos Aires, adoptar gatito capital federal">
-    <meta name="theme-color" content="#FF6B35">
+    <meta name="theme-color" content="#8B6F47">
     <meta name="author" content="PatitasBA">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://patitasba.com.ar/">
@@ -66,7 +66,7 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
@@ -84,15 +84,15 @@
     </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #F7F8FA; color: #1a1a2e; }
+        body { font-family: 'Inter', sans-serif; background: #FEF6EE; color: #4A3728; }
 
         /* ── PULSE BAR (Latidos) ── */
         .pulse-bar {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            background: linear-gradient(135deg, #D4827E, #8B6F47);
             color: white; text-align: center; padding: 9px 20px;
             font-size: 14px; font-weight: 700;
             display: flex; align-items: center; justify-content: center; gap: 10px;
-            box-shadow: 0 2px 10px rgba(238,90,36,0.25);
+            box-shadow: 0 2px 10px rgba(139,111,71,0.25);
         }
         .pulse-bar .pulse-heart { animation: hbeat 1.2s ease-in-out infinite; display: inline-block; font-size: 18px; }
         @keyframes hbeat { 0%,100%{transform:scale(1)} 15%{transform:scale(1.3)} 30%{transform:scale(1)} 45%{transform:scale(1.15)} }
@@ -107,32 +107,33 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: all 0.2s;
         }
         .card-heart-btn:hover { transform: scale(1.15); }
-        .card-heart-btn.liked { background: #ff6b6b; }
+        .card-heart-btn.liked { background: #D4827E; }
         .card-heart-btn.liked span { filter: brightness(10); }
         .card-interested {
             position: absolute; bottom: 10px; right: 10px; z-index: 10;
-            background: rgba(255,107,107,0.9); color: white;
+            background: rgba(212,130,126,0.9); color: white;
             padding: 3px 10px; border-radius: 20px;
             font-size: 11px; font-weight: 700; backdrop-filter: blur(4px);
         }
 
         /* ── HEADER ── */
         header {
-            background: white;
+            background: #FFF8F0;
             padding: 14px 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            box-shadow: 0 2px 8px rgba(139,111,71,0.08);
+            border-bottom: 1px solid #E8DDD3;
             position: sticky; top: 0; z-index: 100;
         }
-        .logo { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 800; color: #FF6B35; }
-        .logo span { color: #2D3436; }
+        .logo { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 800; color: #6B5335; }
+        .logo span { color: #D4827E; }
         nav { display: flex; gap: 28px; }
-        nav a { text-decoration: none; color: #636e72; font-weight: 600; font-size: 16px; transition: color .2s; }
-        nav a:hover { color: #FF6B35; }
-        .btn-primary { background: #FF6B35; color: white; border: none; padding: 11px 24px; border-radius: 50px; font-weight: 700; font-size: 15px; cursor: pointer; transition: background .2s; }
-        .btn-primary:hover { background: #e55a25; }
+        nav a { text-decoration: none; color: #8B7B6B; font-weight: 600; font-size: 16px; transition: color .2s; }
+        nav a:hover { color: #8B6F47; }
+        .btn-primary { background: #D4827E; color: white; border: none; padding: 11px 24px; border-radius: 50px; font-weight: 700; font-size: 15px; cursor: pointer; transition: background .2s; }
+        .btn-primary:hover { background: #C06E6A; }
 
         /* ── HERO ── */
         .hero {
@@ -163,7 +164,7 @@
         .hero-collage img:hover { transform: scale(1.05); }
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(45,52,54,0.55) 0%, rgba(99,78,46,0.4) 50%, rgba(45,52,54,0.5) 100%);
+            background: linear-gradient(135deg, rgba(74,55,40,0.6) 0%, rgba(139,111,71,0.45) 50%, rgba(74,55,40,0.55) 100%);
             z-index: 2;
         }
         .hero-content {
@@ -177,9 +178,10 @@
             background: white; border-radius: 50px; padding: 6px 6px 6px 20px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.25);
         }
-        .search-bar input { flex: 1; border: none; outline: none; font-size: 15px; color: #2D3436; background: transparent; }
+        .search-bar input { flex: 1; border: none; outline: none; font-size: 15px; color: #4A3728; background: transparent; }
         .search-bar input::placeholder { color: #b2bec3; }
-        .search-bar button { background: #FF6B35; color: white; border: none; border-radius: 50px; padding: 10px 26px; font-weight: 600; font-size: 14px; cursor: pointer; }
+        .search-bar button { background: #8B6F47; color: white; border: none; border-radius: 50px; padding: 10px 26px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background .2s; }
+        .search-bar button:hover { background: #6B5335; }
         @media (max-width: 600px) {
             .hero-collage { grid-template-columns: repeat(3, 1fr); }
             .hero { min-height: 340px; }
@@ -187,41 +189,41 @@
         }
 
         /* ── STATS ── */
-        .stats { background: white; display: flex; justify-content: center; gap: 56px; padding: 18px; border-bottom: 1px solid #f0f0f0; }
+        .stats { background: #FFF8F0; display: flex; justify-content: center; gap: 56px; padding: 18px; border-bottom: 1px solid #E8DDD3; }
         .stat { text-align: center; }
-        .stat-number { font-size: 26px; font-weight: 800; color: #FF6B35; }
-        .stat-label { font-size: 11px; color: #636e72; text-transform: uppercase; letter-spacing: .6px; margin-top: 2px; }
+        .stat-number { font-size: 26px; font-weight: 800; color: #8B6F47; }
+        .stat-label { font-size: 11px; color: #8B7B6B; text-transform: uppercase; letter-spacing: .6px; margin-top: 2px; }
 
         /* ── FILTERS ── */
-        .filters-section { padding: 18px 32px; background: white; border-bottom: 1px solid #f0f0f0; }
+        .filters-section { padding: 18px 32px; background: #FFF8F0; border-bottom: 1px solid #E8DDD3; }
         .filters-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .filter-label { font-size: 13px; font-weight: 600; color: #636e72; }
+        .filter-label { font-size: 13px; font-weight: 600; color: #8B7B6B; }
         .filter-btn {
-            background: #f1f3f4; border: 2px solid transparent;
+            background: #F5EDE4; border: 2px solid transparent;
             padding: 7px 16px; border-radius: 50px; font-size: 13px;
-            font-weight: 500; cursor: pointer; color: #636e72; transition: all .18s;
+            font-weight: 500; cursor: pointer; color: #8B7B6B; transition: all .18s;
         }
-        .filter-btn:hover { border-color: #FF6B35; color: #FF6B35; background: #FFF3EF; }
-        .filter-btn.active { background: #FF6B35; color: white; border-color: #FF6B35; }
+        .filter-btn:hover { border-color: #8B6F47; color: #8B6F47; background: #FFF8F0; }
+        .filter-btn.active { background: #8B6F47; color: white; border-color: #8B6F47; }
         .filter-divider { width: 1px; height: 26px; background: #e0e0e0; margin: 0 4px; }
 
         /* ── GRID ── */
         .main-content { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
         .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
-        .results-count { font-size: 15px; color: #636e72; }
-        .results-count strong { color: #2D3436; font-size: 17px; }
-        .no-results { text-align: center; padding: 60px 20px; color: #636e72; font-size: 16px; display: none; }
+        .results-count { font-size: 15px; color: #8B7B6B; }
+        .results-count strong { color: #4A3728; font-size: 17px; }
+        .no-results { text-align: center; padding: 60px 20px; color: #8B7B6B; font-size: 16px; display: none; }
         .no-results span { font-size: 48px; display: block; margin-bottom: 12px; }
         .pets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 24px; }
 
         /* ── CARD ── */
         .pet-card {
-            background: white; border-radius: 18px; overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
+            background: #FFFCF8; border-radius: 18px; overflow: hidden;
+            box-shadow: 0 1px 3px rgba(139,111,71,0.06), 0 4px 16px rgba(139,111,71,0.08);
             transition: transform .25s ease, box-shadow .25s ease;
-            cursor: pointer; border: 1px solid rgba(0,0,0,0.04);
+            cursor: pointer; border: 1px solid #E8DDD3;
         }
-        .pet-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+        .pet-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(139,111,71,0.15); }
         .pet-card.hidden { display: none; }
 
         .card-image {
@@ -241,7 +243,7 @@
         .carousel-slide .emoji-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 76px; }
         .carousel-arrow {
             position: absolute; top: 50%; transform: translateY(-50%);
-            background: rgba(255,255,255,.9); color: #2D3436; border: none;
+            background: rgba(255,255,255,.9); color: #4A3728; border: none;
             width: 34px; height: 34px; border-radius: 50%; font-size: 16px; font-weight: 700;
             cursor: pointer; z-index: 10; transition: all .2s;
             display: flex; align-items: center; justify-content: center;
@@ -257,9 +259,9 @@
 
         .badge-available {
             position: absolute; top: 14px; right: 14px;
-            background: white; padding: 5px 12px;
-            border-radius: 50px; font-size: 11px; font-weight: 600; color: #e91e8c; z-index: 5;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            background: #FFF8F0; padding: 5px 12px;
+            border-radius: 50px; font-size: 11px; font-weight: 600; color: #D4827E; z-index: 5;
+            box-shadow: 0 2px 8px rgba(139,111,71,0.12);
         }
         .badge-adoptado {
             position: absolute; top: 14px; right: 14px;
@@ -276,44 +278,44 @@
 
         .card-body { padding: 18px 18px 16px; }
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; }
-        .card-name { font-size: 21px; font-weight: 700; color: #2D3436; letter-spacing: -0.3px; }
+        .card-name { font-size: 21px; font-weight: 700; color: #4A3728; letter-spacing: -0.3px; }
         .card-gender { font-size: 18px; opacity: 0.7; }
-        .card-breed { font-size: 13px; color: #919eab; margin-bottom: 12px; font-weight: 400; }
+        .card-breed { font-size: 13px; color: #A8896C; margin-bottom: 12px; font-weight: 400; }
 
         .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
         .tag { border-radius: 8px; padding: 5px 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.1px; }
-        .tag-type  { background: #EEF2FF; color: #4F46E5; }
-        .tag-age   { background: #FFF7ED; color: #C2410C; }
-        .tag-size  { background: #ECFDF5; color: #059669; }
+        .tag-type  { background: #FFF8F0; color: #8B6F47; }
+        .tag-age   { background: #FDF0EF; color: #C06E6A; }
+        .tag-size  { background: #F0EDE8; color: #6B5335; }
 
         .card-desc {
-            font-size: 13px; color: #636e72; line-height: 1.55; margin-bottom: 14px;
+            font-size: 13px; color: #8B7B6B; line-height: 1.55; margin-bottom: 14px;
             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
         }
 
         .card-org {
             display: flex; align-items: center; gap: 6px; font-size: 13px;
-            color: #919eab; margin-bottom: 16px; padding-bottom: 14px;
-            border-bottom: 1px solid #f4f5f6;
+            color: #A8896C; margin-bottom: 16px; padding-bottom: 14px;
+            border-bottom: 1px solid #E8DDD3;
         }
-        .card-org a { color: #4F46E5; text-decoration: none; font-weight: 600; transition: color .2s; }
-        .card-org a:hover { color: #FF6B35; }
+        .card-org a { color: #8B6F47; text-decoration: none; font-weight: 600; transition: color .2s; }
+        .card-org a:hover { color: #D4827E; }
 
         .card-actions { display: flex; gap: 8px; }
         .btn-adopt {
-            flex: 1; background: #FF6B35; color: white; border: none;
+            flex: 1; background: #8B6F47; color: white; border: none;
             padding: 12px; border-radius: 12px; font-size: 13px; font-weight: 700;
             cursor: pointer; transition: all .2s; letter-spacing: 0.1px;
         }
-        .btn-adopt:hover { background: #e55a25; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(255,107,53,0.3); }
-        .btn-adopt.adoptado-btn { background: #e2e8f0; color: #94a3b8; cursor: default; }
+        .btn-adopt:hover { background: #6B5335; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(139,111,71,0.3); }
+        .btn-adopt.adoptado-btn { background: #E8DDD3; color: #A8896C; cursor: default; }
         .btn-adopt.adoptado-btn:hover { transform: none; box-shadow: none; }
         .btn-ig {
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            background: #D4827E;
             color: white; border: none; padding: 12px 16px;
             border-radius: 12px; font-size: 16px; cursor: pointer; transition: all .2s;
         }
-        .btn-ig:hover { opacity: .88; transform: translateY(-1px); }
+        .btn-ig:hover { background: #C06E6A; transform: translateY(-1px); }
 
         /* ── MODAL DETALLE PET ── */
         .modal-overlay {
@@ -339,14 +341,14 @@
         .modal-imgs img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
         .modal-imgs .emoji-lg { font-size: 80px; display: flex; align-items: center; justify-content: center; height: 100%; }
         .modal-body { padding: 28px; }
-        .modal h2 { font-size: 26px; font-weight: 800; margin-bottom: 4px; color: #1a1a2e; letter-spacing: -0.5px; }
-        .modal-sub { color: #919eab; font-size: 14px; margin-bottom: 16px; font-weight: 500; }
+        .modal h2 { font-size: 26px; font-weight: 800; margin-bottom: 4px; color: #4A3728; letter-spacing: -0.5px; }
+        .modal-sub { color: #A8896C; font-size: 14px; margin-bottom: 16px; font-weight: 500; }
         .modal .card-tags { margin-bottom: 18px; }
         .modal .tag { padding: 6px 14px; font-size: 13px; }
         .modal-desc {
-            color: #4a5568; font-size: 15px; line-height: 1.7; margin-bottom: 20px;
-            background: #f8f9fa; border-radius: 12px; padding: 16px;
-            border-left: 3px solid #FF6B35;
+            color: #4A3728; font-size: 15px; line-height: 1.7; margin-bottom: 20px;
+            background: #FFF8F0; border-radius: 12px; padding: 16px;
+            border-left: 3px solid #D4827E;
         }
         .modal .card-org {
             border-bottom: none; margin-bottom: 20px; padding-bottom: 0;
@@ -355,20 +357,20 @@
         .modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
         .modal-post {
             flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
-            background: #FF6B35; color: white; text-decoration: none;
+            background: #8B6F47; color: white; text-decoration: none;
             padding: 14px 18px; text-align: center;
             border-radius: 14px; font-weight: 700; font-size: 14px;
             transition: all .2s;
         }
-        .modal-post:hover { background: #e55a25; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,107,53,0.3); }
+        .modal-post:hover { background: #6B5335; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(139,111,71,0.3); }
         .modal-ig {
             flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            background: #D4827E;
             color: white; text-decoration: none; padding: 14px 18px; text-align: center;
             border-radius: 14px; font-weight: 700; font-size: 14px; border: none; cursor: pointer;
             transition: all .2s;
         }
-        .modal-ig:hover { opacity: .9; transform: translateY(-1px); }
+        .modal-ig:hover { background: #C06E6A; transform: translateY(-1px); }
         .modal-close {
             position: absolute; top: 14px; right: 14px;
             background: rgba(0,0,0,.35); backdrop-filter: blur(8px);
@@ -385,7 +387,7 @@
             border-top: 1px solid #f0f0f0;
         }
         .share-label {
-            font-size: 12px; font-weight: 700; color: #919eab;
+            font-size: 12px; font-weight: 700; color: #A8896C;
             text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
         }
         .share-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -399,13 +401,13 @@
         .share-btn.whatsapp { background: #25D366; }
         .share-btn.facebook { background: #1877F2; }
         .share-btn.twitter { background: #1DA1F2; }
-        .share-btn.copy-link { background: #636e72; }
+        .share-btn.copy-link { background: #8B7B6B; }
         .share-btn.copy-link.copied { background: #27ae60; }
 
         /* Mini share on card */
         .card-share-btn {
             position: absolute; bottom: 14px; right: 14px;
-            background: rgba(255,255,255,.9); color: #636e72;
+            background: rgba(255,255,255,.9); color: #8B7B6B;
             border: none; width: 34px; height: 34px; border-radius: 50%;
             font-size: 15px; cursor: pointer; z-index: 5;
             display: flex; align-items: center; justify-content: center;
@@ -413,7 +415,7 @@
             opacity: 0; transition: all .2s;
         }
         .pet-card:hover .card-share-btn { opacity: 1; }
-        .card-share-btn:hover { background: white; color: #FF6B35; transform: scale(1.1); }
+        .card-share-btn:hover { background: white; color: #8B6F47; transform: scale(1.1); }
 
         /* ── MODAL PUBLICAR ── */
         .pub-modal { max-width: 520px; }
@@ -423,7 +425,7 @@
         .donar-modal { max-width: 560px; }
         .donar-modal .modal-body { padding: 0; overflow: hidden; border-radius: 24px; }
         .donar-header {
-            background: linear-gradient(135deg, #FF6B35 0%, #e91e8c 100%);
+            background: linear-gradient(135deg, #8B6F47 0%, #D4827E 100%);
             padding: 32px 32px 24px;
             color: white;
             text-align: center;
@@ -431,22 +433,22 @@
         .donar-header h2 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
         .donar-header p { font-size: 14px; opacity: .9; line-height: 1.5; }
         .donar-body { padding: 28px 32px; }
-        .goal-label { display: flex; justify-content: space-between; font-size: 13px; color: #636e72; margin-bottom: 8px; font-weight: 600; }
-        .goal-label .meta { color: #FF6B35; font-size: 15px; font-weight: 800; }
+        .goal-label { display: flex; justify-content: space-between; font-size: 13px; color: #8B7B6B; margin-bottom: 8px; font-weight: 600; }
+        .goal-label .meta { color: #8B6F47; font-size: 15px; font-weight: 800; }
         .progress-track {
             background: #f0f0f0; border-radius: 50px; height: 18px;
             overflow: visible; position: relative; margin-bottom: 6px;
         }
         .progress-fill {
             height: 100%; border-radius: 50px;
-            background: linear-gradient(90deg, #FF6B35, #e91e8c);
+            background: linear-gradient(90deg, #8B6F47, #D4827E);
             transition: width 1s ease;
             position: relative; min-width: 0;
         }
         .progress-fill.superado { background: linear-gradient(90deg, #00b894, #00cec9); }
         .progress-pct {
             position: absolute; right: 0; top: -24px;
-            font-size: 13px; font-weight: 800; color: #FF6B35; white-space: nowrap;
+            font-size: 13px; font-weight: 800; color: #8B6F47; white-space: nowrap;
         }
         .progress-pct.superado { color: #00b894; }
         .goal-sub { font-size: 12px; color: #b2bec3; margin-bottom: 22px; }
@@ -457,39 +459,39 @@
             margin-bottom: 18px; display: none;
         }
         .alias-box {
-            background: #FFF3EF; border: 2px solid #FF6B35; border-radius: 16px;
+            background: #FFF8F0; border: 2px solid #8B6F47; border-radius: 16px;
             padding: 20px 24px; text-align: center; margin-bottom: 20px;
         }
-        .alias-label { font-size: 12px; color: #636e72; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
-        .alias-value { font-size: 28px; font-weight: 800; color: #FF6B35; letter-spacing: .5px; margin-bottom: 10px; }
-        .alias-steps { font-size: 12px; color: #636e72; line-height: 1.6; }
+        .alias-label { font-size: 12px; color: #8B7B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
+        .alias-value { font-size: 28px; font-weight: 800; color: #8B6F47; letter-spacing: .5px; margin-bottom: 10px; }
+        .alias-steps { font-size: 12px; color: #8B7B6B; line-height: 1.6; }
         .btn-copy {
-            background: #FF6B35; color: white; border: none; border-radius: 50px;
+            background: #8B6F47; color: white; border: none; border-radius: 50px;
             padding: 8px 20px; font-size: 13px; font-weight: 600; cursor: pointer;
             margin-top: 10px; transition: background .2s;
         }
-        .btn-copy:hover { background: #e55a25; }
-        .refugios-list { font-size: 13px; color: #636e72; line-height: 1.8; margin-bottom: 18px; }
-        .refugios-list strong { color: #2D3436; }
+        .btn-copy:hover { background: #6B5335; }
+        .refugios-list { font-size: 13px; color: #8B7B6B; line-height: 1.8; margin-bottom: 18px; }
+        .refugios-list strong { color: #4A3728; }
         .donar-footer { font-size: 12px; color: #b2bec3; text-align: center; padding: 0 32px 24px; line-height: 1.6; }
-        @keyframes pulse-btn { 0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,.4)} 50%{box-shadow:0 0 0 8px rgba(255,107,53,0)} }
+        @keyframes pulse-btn { 0%,100%{box-shadow:0 0 0 0 rgba(212,130,126,.4)} 50%{box-shadow:0 0 0 8px rgba(212,130,126,0)} }
         .pub-modal h2 { margin-bottom: 20px; }
         .form-group { margin-bottom: 14px; text-align: left; }
-        .form-group label { display: block; font-size: 13px; font-weight: 600; color: #2D3436; margin-bottom: 5px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: #4A3728; margin-bottom: 5px; }
         .form-group input, .form-group select, .form-group textarea {
             width: 100%; border: 1.5px solid #e0e0e0; border-radius: 10px;
             padding: 10px 12px; font-size: 14px; outline: none; transition: border-color .2s;
             font-family: inherit;
         }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #FF6B35; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #8B6F47; }
         .form-row { display: flex; gap: 12px; }
         .form-row .form-group { flex: 1; }
-        .btn-submit { width: 100%; background: #FF6B35; color: white; border: none; padding: 13px; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 8px; }
-        .btn-submit:hover { background: #e55a25; }
+        .btn-submit { width: 100%; background: #8B6F47; color: white; border: none; padding: 13px; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 8px; }
+        .btn-submit:hover { background: #6B5335; }
 
         /* ── FOOTER ── */
-        footer { background: #2D3436; color: #dfe6e9; text-align: center; padding: 36px 24px; margin-top: 48px; }
-        footer .footer-logo { font-size: 20px; font-weight: 800; color: #FF6B35; margin-bottom: 8px; }
+        footer { background: #4A3728; color: #E8DDD3; text-align: center; padding: 36px 24px; margin-top: 48px; }
+        footer .footer-logo { font-size: 20px; font-weight: 800; color: #D4827E; margin-bottom: 8px; }
         footer p { font-size: 13px; opacity: .6; margin-top: 6px; line-height: 1.6; }
 
         /* ── RESPONSIVE ── */
@@ -530,9 +532,9 @@
         <a href="/proceso.html">Cómo adoptar</a>
         <a href="/guia.html">Guía</a>
         <a href="/test.html">Test</a>
-        <a href="/donar.html" style="color:#FF6B35; font-weight:700;">❤️ Ayudá a un refugio</a>
+        <a href="/donar.html" style="color:#D4827E; font-weight:700;">🧡 Ayudá a un refugio</a>
     </nav>
-    <a href="/donar.html" class="btn-primary" style="background: linear-gradient(135deg,#FF6B35,#e91e8c); animation: pulse-btn 2s infinite; text-decoration:none; color:white;">❤️ Ayudá a un refugio</a>
+    <a href="/donar.html" class="btn-primary" style="background: linear-gradient(135deg,#D4827E,#8B6F47); animation: pulse-btn 2s infinite; text-decoration:none; color:white;">🧡 Ayudá a un refugio</a>
 </header>
 
 <!-- HERO -->
@@ -644,10 +646,10 @@
 <!-- MODAL PUBLICAR MASCOTA -->
 <div class="modal-overlay" id="modalPublicar">
     <div class="modal pub-modal">
-        <button class="modal-close" onclick="closePublicar()" style="background:rgba(0,0,0,.15);color:#636e72">✕</button>
+        <button class="modal-close" onclick="closePublicar()" style="background:rgba(0,0,0,.15);color:#8B7B6B">✕</button>
         <div class="modal-body">
             <h2>🐾 Publicar una mascota</h2>
-            <p style="color:#636e72;font-size:13px;margin-bottom:18px">Completá los datos y te generamos un mensaje listo para compartir por WhatsApp o email con el refugio.</p>
+            <p style="color:#8B7B6B;font-size:13px;margin-bottom:18px">Completá los datos y te generamos un mensaje listo para compartir por WhatsApp o email con el refugio.</p>
             <div class="form-row">
                 <div class="form-group">
                     <label>Nombre del animal</label>
@@ -694,7 +696,7 @@
                 <p style="font-size:13px;font-weight:600;margin-bottom:8px">✅ Mensaje generado — copialo y compartilo:</p>
                 <textarea id="pub_mensaje" rows="6" style="width:100%;border:1px solid #e0e0e0;border-radius:8px;padding:10px;font-size:13px;resize:none" readonly></textarea>
                 <div style="display:flex;gap:8px;margin-top:10px">
-                    <button onclick="copiarMensaje()" style="flex:1;background:#2D3436;color:white;border:none;padding:10px;border-radius:10px;font-weight:600;cursor:pointer">📋 Copiar</button>
+                    <button onclick="copiarMensaje()" style="flex:1;background:#4A3728;color:white;border:none;padding:10px;border-radius:10px;font-weight:600;cursor:pointer">📋 Copiar</button>
                     <a id="pub_whatsapp" href="#" target="_blank" style="flex:1;background:#25D366;color:white;text-decoration:none;padding:10px;border-radius:10px;font-weight:600;text-align:center">💬 WhatsApp</a>
                 </div>
             </div>
@@ -703,7 +705,7 @@
 </div>
 
 <!-- CTA VIRAL BANNER -->
-<section style="background:linear-gradient(135deg,#FF6B35,#e91e8c);padding:40px 24px;text-align:center;color:white;margin-top:48px;">
+<section style="background:linear-gradient(135deg,#8B6F47,#D4827E);padding:40px 24px;text-align:center;color:white;margin-top:48px;">
     <div style="font-size:36px;margin-bottom:12px;">🐾</div>
     <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Conocés a alguien que quiera adoptar?</h2>
     <p style="font-size:15px;opacity:.9;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto;">Cada vez que compartís, un perrito o gatito tiene más chances de encontrar familia. Dale share!</p>
