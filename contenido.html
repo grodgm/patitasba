@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PatitasBA — Generador de Contenido para Instagram</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV ─── */
+  .topbar {
+    background: #111;
+    border-bottom: 1px solid #222;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .topbar .logo { font-size: 1.1rem; font-weight: 700; color: #fff; }
+  .topbar .logo span { color: #f97316; }
+  .topbar .back-link { color: #888; text-decoration: none; font-size: 0.85rem; }
+  .topbar .back-link:hover { color: #fff; }
+
+  /* ─── LAYOUT ─── */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f97316, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header p { color: #888; font-size: 0.95rem; }
+
+  /* ─── SUGERENCIA DEL DÍA ─── */
+  .daily-pick {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 1px solid #f9731644;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .daily-pick .badge {
+    background: #f97316;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .daily-pick .info { flex: 1; }
+  .daily-pick .info h3 { color: #fff; font-size: 1.1rem; margin-bottom: 4px; }
+  .daily-pick .info p { color: #aaa; font-size: 0.85rem; }
+  .daily-pick .action-btn {
+    background: #f97316;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .daily-pick .action-btn:hover { background: #ea580c; }
+
+  /* ─── STATS ─── */
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-card {
+    background: #151515;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 16px 20px;
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+  .stat-card .num { font-size: 1.6rem; font-weight: 800; color: #fff; }
+  .stat-card .label { font-size: 0.75rem; color: #888; margin-top: 2px; }
+
+  /* ─── FORMAT TABS ─── */
+  .format-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .format-tab {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #aaa;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .format-tab:hover { border-color: #555; color: #fff; }
+  .format-tab.active {
+    background: #f97316;
+    border-color: #f97316;
+    color: #fff;
+  }
+
+  /* ─── GRID DE CARDS ─── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .pet-card {
+    background: #151515;
+    border: 1px solid #222;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .pet-card:hover { border-color: #444; }
+  .pet-card.suggested { border-color: #f97316; }
+
+  .pet-card .preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+  .pet-card .preview canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pet-card .card-body { padding: 16px; }
+  .pet-card .card-body h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .pet-card .meta { font-size: 0.8rem; color: #888; margin-bottom: 12px; }
+  .pet-card .meta span { margin-right: 8px; }
+
+  .pet-card .caption-box {
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    max-height: 120px;
+    overflow-y: auto;
+    font-size: 0.8rem;
+    color: #ccc;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 8px;
+  }
+  .card-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-download {
+    background: #f97316;
+    color: #fff;
+  }
+  .btn-download:hover { background: #ea580c; }
+  .btn-copy {
+    background: #222;
+    color: #ccc;
+  }
+  .btn-copy:hover { background: #333; color: #fff; }
+  .btn-copy.copied { background: #16a34a; color: #fff; }
+
+  /* ─── LOADING ─── */
+  .loading {
+    text-align: center;
+    padding: 60px;
+    color: #666;
+  }
+  .loading .spinner {
+    width: 40px; height: 40px;
+    border: 3px solid #333;
+    border-top-color: #f97316;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .daily-pick { flex-direction: column; text-align: center; }
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">🐾 Patitas<span>BA</span> — Content Studio</div>
+  <a href="/" class="back-link">← Volver al sitio</a>
+</div>
+
+<div class="container">
+  <div class="header">
+    <h1>Generador de Contenido para Instagram</h1>
+    <p>Cards listas para postear, captions virales y sugerencia del día. Todo automático.</p>
+  </div>
+
+  <div id="daily-pick-container"></div>
+
+  <div id="stats-container" class="stats-row"></div>
+
+  <div class="format-tabs" id="format-tabs">
+    <button class="format-tab active" data-format="feed">📱 Feed (1080×1080)</button>
+    <button class="format-tab" data-format="story">📲 Story (1080×1920)</button>
+    <button class="format-tab" data-format="nadie-me-quiere">💔 "Nadie me quiere"</button>
+    <button class="format-tab" data-format="antes-despues">🔄 Antes y después</button>
+  </div>
+
+  <div id="cards-container" class="cards-grid">
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Cargando mascotas...</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CANVAS OFFSCREEN (para generar imágenes) ─── -->
+<canvas id="offscreen-canvas" style="display:none;"></canvas>
+
+<script>
+// ═══════════════════════════════════════
+//  CONFIG
+// ═══════════════════════════════════════
+const PETS_JSON_URL = 'pets.json';
+let allPets = [];
+let currentFormat = 'feed';
+
+// ═══════════════════════════════════════
+//  CAPTIONS VIRALES
+// ═══════════════════════════════════════
+const HOOKS_ADOPCION = [
+  (p) => `${p.nombre} lleva esperando una familia desde ${p.fecha}. ¿Vas a ser vos? 🥺`,
+  (p) => `Mirá esos ojos. ${p.nombre} no entiende por qué nadie lo elige. 💔`,
+  (p) => `Si este post llega a 1000 personas, ${p.nombre} tiene más chances de encontrar hogar. COMPARTÍ. 🙏`,
+  (p) => `${p.nombre} solo quiere una cosa: alguien que lo elija. ¿Lo compartís? ❤️`,
+  (p) => `BASTA de scrollear. Mirá a ${p.nombre}. ${p.emoji} ${p.edad}, ${p.tamanio.toLowerCase()}. Está esperándote.`,
+  (p) => `¿Sabías que los ${p.tipo === 'perro' ? 'perritos' : 'gatitos'} ${p.raza === 'Mestizo/a' ? 'mestizos' : 'de raza ' + p.raza} son los más fieles? ${p.nombre} lo demuestra cada día. 🐾`,
+  (p) => `Cada día que pasa, ${p.nombre} ve cómo otros se van con familia. ¿Cuándo le toca a ${p.genero === '♀' ? 'ella' : 'él'}? 😢`,
+  (p) => `No compres. ADOPTÁ. ${p.nombre} es ${p.tipo === 'perro' ? 'un perrito' : 'un gatito'} increíble que merece una oportunidad. 🧡`,
+  (p) => `Este es ${p.nombre}. Tiene ${p.edad}. No tiene familia. ¿Podés cambiar eso? ❤️‍🩹`,
+  (p) => `Si no podés adoptar, COMPARTÍ. Para ${p.nombre}, un share puede ser la diferencia entre la calle y un hogar. 🏠`,
+];
+
+const HOOKS_NADIE = [
+  (p, dias) => `Llevo ${dias} días esperando que alguien me elija. Mis compañeros ya se fueron todos. 💔`,
+  (p, dias) => `Hoy hace ${dias} días que estoy acá. A veces pienso que nadie me quiere. 🥺`,
+  (p, dias) => `Todos los días veo gente pasar. Ninguno me mira. Soy ${p.nombre} y llevo ${dias} días esperando. 😢`,
+  (p, dias) => `Me dijeron que soy "difícil de adoptar" porque soy ${p.tamanio.toLowerCase()}. Solo quiero que alguien me quiera. 💔`,
+  (p, dias) => `${dias} días. ${dias} noches. Todavía espero. ¿Alguien me va a elegir? 🐾`,
+];
+
+const HASHTAGS = '#AdoptáConPatitas #AdoptáNoCompres #PatitasBA #AdopciónResponsable #PerrosEnAdopción #GatosEnAdopción #BuenosAires #CABA #GBA #Adoptar #Refugio #Rescate #MascotaEnAdopción #AmigoPeludo';
+
+const CTA_OPTIONS = [
+  '👉 Más info en patitasba.com.ar',
+  '🔗 Conocelo en patitasba.com.ar',
+  '📲 Entrá a patitasba.com.ar y encontrá tu compañero',
+  '🐾 patitasba.com.ar — Adoptá con amor',
+];
+
+function generateCaption(pet, format) {
+  const diasEnEspera = Math.max(1, Math.floor((Date.now() - new Date(pet.fecha).getTime()) / 86400000));
+  let hook;
+
+  if (format === 'nadie-me-quiere') {
+    hook = HOOKS_NADIE[Math.floor(Math.random() * HOOKS_NADIE.length)](pet, diasEnEspera);
+  } else {
+    hook = HOOKS_ADOPCION[Math.floor(Math.random() * HOOKS_ADOPCION.length)](pet);
+  }
+
+  const cta = CTA_OPTIONS[Math.floor(Math.random() * CTA_OPTIONS.length)];
+  const orgLine = `🏥 Refugio: @${pet.ig}`;
+
+  return `${hook}\n\n` +
+    `🐾 ${pet.nombre} — ${pet.tipo === 'perro' ? 'Perro' : 'Gato'}\n` +
+    `📅 ${pet.edad} · 📏 ${pet.tamanio}\n` +
+    `${orgLine}\n\n` +
+    `${cta}\n\n` +
+    `Etiquetá a alguien que NECESITA conocer a ${pet.nombre} 👇\n\n` +
+    HASHTAGS;
+}
+
+// ═══════════════════════════════════════
+//  PRIORIDAD: A QUIÉN POSTEAR HOY
+// ═══════════════════════════════════════
+function scorePet(pet) {
+  const dias = Math.floor((Date.now() - new Date(pet.fecha).getTime()) / 86400000);
+  let score = dias * 10; // más días esperando = más prioridad
+  if (pet.edadCat === 'adulto' || pet.edadCat === 'adulto+') score += 30; // adultos tienen menos chances
+  if (pet.raza === 'Mestizo/a' || pet.raza === 'Doméstico/a') score += 20; // mestizos cuestan más
+  if (pet.tamanio === 'Grande') score += 15; // grandes cuestan más
+  return score;
+}
+
+function getDailyPick(pets) {
+  const available = pets.filter(p => p.disponible);
+  if (!available.length) return null;
+  // Usar el día como seed para que sea consistente durante el día
+  const today = new Date().toISOString().split('T')[0];
+  const sorted = [...available].sort((a, b) => scorePet(b) - scorePet(a));
+  // Top 3 por prioridad, rotar por día
+  const dayNum = parseInt(today.replace(/-/g, ''));
+  return sorted[dayNum % Math.min(3, sorted.length)];
+}
+
+// ═══════════════════════════════════════
+//  CANVAS: GENERAR CARDS
+// ═══════════════════════════════════════
+async function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error('No se pudo cargar: ' + src));
+    img.src = src;
+  });
+}
+
+function drawRoundedRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
+async function generateFeedCard(canvas, pet) {
+  const W = 1080, H = 1080;
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  ctx.fillStyle = '#0a0a0a';
+  ctx.fillRect(0, 0, W, H);
+
+  // Try to load pet image
+  let img;
+  try {
+    img = await loadImage(pet.imgUrls[0]);
+    // Draw image covering top portion
+    const imgH = 700;
+    const scale = Math.max(W / img.width, imgH / img.height);
+    const dx = (W - img.width * scale) / 2;
+    const dy = (imgH - img.height * scale) / 2;
+    ctx.save();
+    ctx.rect(0, 0, W, imgH);
+    ctx.clip();
+    ctx.drawImage(img, dx, dy, img.width * scale, img.height * scale);
+    ctx.restore();
+
+    // Gradient overlay on image
+    const grad = ctx.createLinearGradient(0, imgH - 300, 0, imgH);
+    grad.addColorStop(0, 'rgba(10,10,10,0)');
+    grad.addColorStop(1, 'rgba(10,10,10,1)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, imgH - 300, W, 300);
+  } catch (e) {
+    // No image - gradient bg
+    const grad = ctx.createLinearGradient(0, 0, W, H);
+    grad.addColorStop(0, '#1a1a2e');
+    grad.addColorStop(1, '#16213e');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, 700);
+  }
+
+  // "EN ADOPCIÓN" badge
+  const badgeY = 30;
+  ctx.font = '700 28px Inter, sans-serif';
+  const badgeText = pet.disponible ? '❤️ EN ADOPCIÓN' : '🏠 YA ADOPTADO';
+  const badgeW = ctx.measureText(badgeText).width + 40;
+  drawRoundedRect(ctx, 30, badgeY, badgeW, 50, 25);
+  ctx.fillStyle = pet.disponible ? '#f97316' : '#16a34a';
+  ctx.fill();
+  ctx.fillStyle = '#fff';
+  ctx.fillText(badgeText, 50, badgeY + 35);
+
+  // Shelter tag
+  ctx.font = '500 24px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  ctx.fillText(`@${pet.ig}`, 30, badgeY + 90);
+
+  // Pet name - big
+  const nameY = 740;
+  ctx.font = '900 72px Inter, sans-serif';
+  ctx.fillStyle = '#fff';
+  ctx.fillText(pet.nombre, 40, nameY);
+
+  // Info line
+  ctx.font = '500 32px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.8)';
+  const infoText = `${pet.emoji} ${pet.tipo === 'perro' ? 'Perro' : 'Gato'} · ${pet.edad} · ${pet.tamanio}`;
+  ctx.fillText(infoText, 40, nameY + 50);
+
+  // Breed
+  ctx.font = '400 26px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.fillText(pet.raza, 40, nameY + 90);
+
+  // Description (truncated)
+  const desc = pet.desc.length > 140 ? pet.desc.substring(0, 137) + '...' : pet.desc;
+  ctx.font = '400 24px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.6)';
+  wrapText(ctx, desc, 40, nameY + 140, W - 80, 32);
+
+  // Bottom bar
+  ctx.fillStyle = '#111';
+  ctx.fillRect(0, H - 80, W, 80);
+  ctx.font = '700 28px Inter, sans-serif';
+  ctx.fillStyle = '#f97316';
+  ctx.fillText('🐾 patitasba.com.ar', 40, H - 30);
+
+  // Shelter on right
+  ctx.font = '500 24px Inter, sans-serif';
+  ctx.fillStyle = '#888';
+  const orgText = `📍 ${pet.org}`;
+  const orgW = ctx.measureText(orgText).width;
+  ctx.fillText(orgText, W - orgW - 40, H - 30);
+}
+
+async function generateStoryCard(canvas, pet) {
+  const W = 1080, H = 1920;
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  ctx.fillStyle = '#0a0a0a';
+  ctx.fillRect(0, 0, W, H);
+
+  // Try to load pet image - full bleed
+  try {
+    const img = await loadImage(pet.imgUrls[0]);
+    const scale = Math.max(W / img.width, H / img.height);
+    const dx = (W - img.width * scale) / 2;
+    const dy = (H - img.height * scale) / 2;
+    ctx.drawImage(img, dx, dy, img.width * scale, img.height * scale);
+
+    // Dark overlay
+    ctx.fillStyle = 'rgba(0,0,0,0.35)';
+    ctx.fillRect(0, 0, W, H);
+  } catch (e) {
+    const grad = ctx.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, '#1a1a2e');
+    grad.addColorStop(1, '#0a0a0a');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  // Bottom gradient
+  const grad = ctx.createLinearGradient(0, H - 800, 0, H);
+  grad.addColorStop(0, 'rgba(0,0,0,0)');
+  grad.addColorStop(0.5, 'rgba(0,0,0,0.8)');
+  grad.addColorStop(1, 'rgba(0,0,0,0.95)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, H - 800, W, 800);
+
+  // Top badge
+  ctx.font = '700 32px Inter, sans-serif';
+  const badgeText = '❤️ EN ADOPCIÓN';
+  const badgeW = ctx.measureText(badgeText).width + 48;
+  drawRoundedRect(ctx, (W - badgeW) / 2, 80, badgeW, 56, 28);
+  ctx.fillStyle = '#f97316';
+  ctx.fill();
+  ctx.fillStyle = '#fff';
+  ctx.textAlign = 'center';
+  ctx.fillText(badgeText, W / 2, 117);
+
+  // Name
+  ctx.font = '900 96px Inter, sans-serif';
+  ctx.fillStyle = '#fff';
+  ctx.textAlign = 'center';
+  ctx.fillText(pet.nombre, W / 2, H - 480);
+
+  // Info
+  ctx.font = '500 40px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  ctx.fillText(`${pet.emoji} ${pet.edad} · ${pet.tamanio} · ${pet.raza}`, W / 2, H - 410);
+
+  // Description
+  ctx.font = '400 32px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  ctx.textAlign = 'center';
+  const desc = pet.desc.length > 120 ? pet.desc.substring(0, 117) + '...' : pet.desc;
+  wrapText(ctx, desc, W / 2, H - 340, W - 120, 42, 'center');
+
+  // CTA
+  drawRoundedRect(ctx, 140, H - 220, W - 280, 70, 35);
+  ctx.fillStyle = '#f97316';
+  ctx.fill();
+  ctx.font = '700 32px Inter, sans-serif';
+  ctx.fillStyle = '#fff';
+  ctx.textAlign = 'center';
+  ctx.fillText('🐾 ¡Quiero adoptarlo!', W / 2, H - 177);
+
+  // Footer
+  ctx.font = '600 28px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.fillText(`patitasba.com.ar · @${pet.ig}`, W / 2, H - 100);
+
+  ctx.textAlign = 'left';
+}
+
+async function generateNadieMeQuiereCard(canvas, pet) {
+  const W = 1080, H = 1080;
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+
+  // Dark dramatic background
+  ctx.fillStyle = '#050505';
+  ctx.fillRect(0, 0, W, H);
+
+  // Try image - desaturated
+  try {
+    const img = await loadImage(pet.imgUrls[0]);
+    const scale = Math.max(W / img.width, H / img.height);
+    const dx = (W - img.width * scale) / 2;
+    const dy = (H - img.height * scale) / 2;
+    ctx.filter = 'grayscale(60%) brightness(0.6)';
+    ctx.drawImage(img, dx, dy, img.width * scale, img.height * scale);
+    ctx.filter = 'none';
+  } catch (e) {}
+
+  // Heavy dark overlay
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, 'rgba(0,0,0,0.4)');
+  grad.addColorStop(0.6, 'rgba(0,0,0,0.7)');
+  grad.addColorStop(1, 'rgba(0,0,0,0.9)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Days counter
+  const dias = Math.max(1, Math.floor((Date.now() - new Date(pet.fecha).getTime()) / 86400000));
+  ctx.textAlign = 'center';
+  ctx.font = '900 180px Inter, sans-serif';
+  ctx.fillStyle = '#f97316';
+  ctx.fillText(dias, W / 2, 280);
+  ctx.font = '600 36px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.6)';
+  ctx.fillText('días esperando una familia', W / 2, 330);
+
+  // Name
+  ctx.font = '900 80px Inter, sans-serif';
+  ctx.fillStyle = '#fff';
+  ctx.fillText(pet.nombre, W / 2, 550);
+
+  // Emotional quote
+  ctx.font = '400 30px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  const quote = `"Solo quiero que alguien me elija"`;
+  ctx.fillText(quote, W / 2, 620);
+
+  // Info
+  ctx.font = '500 28px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.fillText(`${pet.emoji} ${pet.tipo === 'perro' ? 'Perro' : 'Gato'} · ${pet.edad} · ${pet.tamanio} · ${pet.raza}`, W / 2, 700);
+
+  // CTA bottom
+  ctx.font = '700 34px Inter, sans-serif';
+  ctx.fillStyle = '#f97316';
+  ctx.fillText('¿Vas a ser vos? ❤️', W / 2, 850);
+
+  // Footer
+  ctx.font = '500 24px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.fillText(`🐾 patitasba.com.ar · @${pet.ig}`, W / 2, H - 50);
+
+  ctx.textAlign = 'left';
+}
+
+function wrapText(ctx, text, x, y, maxWidth, lineHeight, align) {
+  const words = text.split(' ');
+  let line = '';
+  const savedAlign = ctx.textAlign;
+  if (align) ctx.textAlign = align;
+
+  for (let n = 0; n < words.length; n++) {
+    const testLine = line + words[n] + ' ';
+    const metrics = ctx.measureText(testLine);
+    if (metrics.width > maxWidth && n > 0) {
+      ctx.fillText(line.trim(), x, y);
+      line = words[n] + ' ';
+      y += lineHeight;
+    } else {
+      line = testLine;
+    }
+  }
+  ctx.fillText(line.trim(), x, y);
+  if (align) ctx.textAlign = savedAlign;
+}
+
+// ═══════════════════════════════════════
+//  DOWNLOAD & COPY
+// ═══════════════════════════════════════
+function downloadCard(canvas, petName, format) {
+  const link = document.createElement('a');
+  link.download = `patitasba_${petName.toLowerCase().replace(/\s/g, '_')}_${format}.png`;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+
+function copyCaption(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✅ Copiado!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 Copiar caption';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// ═══════════════════════════════════════
+//  RENDER UI
+// ═══════════════════════════════════════
+async function renderCards(pets, format) {
+  const container = document.getElementById('cards-container');
+  container.innerHTML = '';
+
+  const available = pets.filter(p => p.disponible);
+  const dailyPick = getDailyPick(pets);
+
+  // Sort: daily pick first, then by score
+  const sorted = [...available].sort((a, b) => {
+    if (dailyPick && a.id === dailyPick.id) return -1;
+    if (dailyPick && b.id === dailyPick.id) return 1;
+    return scorePet(b) - scorePet(a);
+  });
+
+  for (const pet of sorted) {
+    const card = document.createElement('div');
+    card.className = 'pet-card' + (dailyPick && pet.id === dailyPick.id ? ' suggested' : '');
+
+    const caption = generateCaption(pet, format);
+
+    card.innerHTML = `
+      <div class="preview"><canvas id="canvas-${pet.id}"></canvas></div>
+      <div class="card-body">
+        <h3>${pet.emoji} ${pet.nombre} ${dailyPick && pet.id === dailyPick.id ? '<span style="color:#f97316;font-size:0.75rem;">⭐ SUGERIDO HOY</span>' : ''}</h3>
+        <div class="meta">
+          <span>📅 ${pet.edad}</span>
+          <span>📏 ${pet.tamanio}</span>
+          <span>🏥 @${pet.ig}</span>
+        </div>
+        <div class="caption-box">${caption.replace(/\n/g, '<br>')}</div>
+        <div class="card-actions">
+          <button class="btn-download" onclick="downloadCard(document.getElementById('canvas-${pet.id}'), '${pet.nombre}', '${format}')">⬇️ Descargar card</button>
+          <button class="btn-copy" onclick="copyCaption(this, \`${caption.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">📋 Copiar caption</button>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+
+    // Generate canvas async
+    const canvas = card.querySelector('canvas');
+    try {
+      if (format === 'story') {
+        await generateStoryCard(canvas, pet);
+      } else if (format === 'nadie-me-quiere') {
+        await generateNadieMeQuiereCard(canvas, pet);
+      } else {
+        await generateFeedCard(canvas, pet);
+      }
+    } catch (e) {
+      console.error('Error rendering card for', pet.nombre, e);
+    }
+  }
+}
+
+function renderDailyPick(pets) {
+  const pick = getDailyPick(pets);
+  if (!pick) return;
+  const dias = Math.max(1, Math.floor((Date.now() - new Date(pick.fecha).getTime()) / 86400000));
+  const container = document.getElementById('daily-pick-container');
+  container.innerHTML = `
+    <div class="daily-pick">
+      <div class="badge">⭐ SUGERENCIA DEL DÍA</div>
+      <div class="info">
+        <h3>${pick.emoji} ${pick.nombre} — ${pick.edad}, ${pick.tamanio}</h3>
+        <p>${dias} días esperando · ${pick.org} · Prioridad alta porque ${pick.edadCat === 'adulto' || pick.edadCat === 'adulto+' ? 'es adulto y' : ''} ${pick.raza === 'Mestizo/a' || pick.raza === 'Doméstico/a' ? 'es mestizo' : 'lleva mucho tiempo'}</p>
+      </div>
+      <button class="action-btn" onclick="document.querySelector('.pet-card.suggested .btn-download')?.click()">⬇️ Descargar</button>
+    </div>
+  `;
+}
+
+function renderStats(pets) {
+  const available = pets.filter(p => p.disponible);
+  const perros = available.filter(p => p.tipo === 'perro').length;
+  const gatos = available.filter(p => p.tipo === 'gato').length;
+  const refugios = [...new Set(available.map(p => p.ig))].length;
+  const avgDias = available.length ? Math.round(available.reduce((sum, p) => sum + Math.floor((Date.now() - new Date(p.fecha).getTime()) / 86400000), 0) / available.length) : 0;
+
+  document.getElementById('stats-container').innerHTML = `
+    <div class="stat-card"><div class="num">${available.length}</div><div class="label">En adopción</div></div>
+    <div class="stat-card"><div class="num">${perros}</div><div class="label">Perros</div></div>
+    <div class="stat-card"><div class="num">${gatos}</div><div class="label">Gatos</div></div>
+    <div class="stat-card"><div class="num">${refugios}</div><div class="label">Refugios</div></div>
+    <div class="stat-card"><div class="num">${avgDias}d</div><div class="label">Promedio de espera</div></div>
+  `;
+}
+
+// ═══════════════════════════════════════
+//  FORMAT TABS
+// ═══════════════════════════════════════
+document.getElementById('format-tabs').addEventListener('click', (e) => {
+  const btn = e.target.closest('.format-tab');
+  if (!btn) return;
+  document.querySelectorAll('.format-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFormat = btn.dataset.format;
+  renderCards(allPets, currentFormat);
+});
+
+// ═══════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════
+async function init() {
+  try {
+    const res = await fetch(PETS_JSON_URL);
+    const data = await res.json();
+    allPets = data.mascotas || [];
+
+    renderStats(allPets);
+    renderDailyPick(allPets);
+    renderCards(allPets, currentFormat);
+  } catch (err) {
+    document.getElementById('cards-container').innerHTML = `
+      <div class="loading">
+        <p style="color:#f97316;">❌ Error cargando pets.json</p>
+        <p style="font-size:0.8rem;color:#666;margin-top:8px;">Asegurate de que este archivo esté en la misma carpeta que pets.json</p>
+        <p style="font-size:0.75rem;color:#444;margin-top:8px;">${err.message}</p>
+      </div>
+    `;
+  }
+}
+
+init();
+</script>
+</body>
+</html>
