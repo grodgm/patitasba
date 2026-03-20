@@ -424,72 +424,65 @@ async function generateFeedCard(canvas, pet) {
     ctx.fillRect(0, 0, W, H);
   }
 
-  // Top gradient overlay for badges
-  const topGrad = ctx.createLinearGradient(0, 0, 0, 280);
-  topGrad.addColorStop(0, 'rgba(0,0,0,0.5)');
-  topGrad.addColorStop(1, 'rgba(0,0,0,0)');
-  ctx.fillStyle = topGrad;
-  ctx.fillRect(0, 0, W, 280);
-
-  // Bottom gradient overlay for text
-  const botGrad = ctx.createLinearGradient(0, H - 480, 0, H);
-  botGrad.addColorStop(0, 'rgba(42,30,20,0)');
-  botGrad.addColorStop(0.35, 'rgba(42,30,20,0.55)');
-  botGrad.addColorStop(1, 'rgba(42,30,20,0.92)');
-  ctx.fillStyle = botGrad;
-  ctx.fillRect(0, H - 480, W, 480);
+  // Full gradient overlay — covers whole image, stronger at bottom
+  const fullGrad = ctx.createLinearGradient(0, 0, 0, H);
+  fullGrad.addColorStop(0, 'rgba(20,14,8,0.35)');
+  fullGrad.addColorStop(0.4, 'rgba(20,14,8,0.15)');
+  fullGrad.addColorStop(0.6, 'rgba(20,14,8,0.25)');
+  fullGrad.addColorStop(1, 'rgba(20,14,8,0.85)');
+  ctx.fillStyle = fullGrad;
+  ctx.fillRect(0, 0, W, H);
 
   // "Busca familia" badge — top left
-  const badgeY = 50;
-  ctx.font = '700 32px Inter, sans-serif';
+  const badgeY = 46;
+  ctx.font = '700 36px Inter, sans-serif';
   const badgeText = pet.disponible ? '❤️ Busca familia' : '🏠 Ya encontró hogar';
-  const badgeW = ctx.measureText(badgeText).width + 44;
-  drawRoundedRect(ctx, 50, badgeY, badgeW, 54, 27);
-  ctx.fillStyle = pet.disponible ? 'rgba(212,130,126,0.92)' : 'rgba(122,158,122,0.92)';
+  const badgeW = ctx.measureText(badgeText).width + 48;
+  drawRoundedRect(ctx, 46, badgeY, badgeW, 58, 29);
+  ctx.fillStyle = pet.disponible ? 'rgba(212,130,126,0.95)' : 'rgba(122,158,122,0.95)';
   ctx.fill();
   ctx.fillStyle = '#fff';
-  ctx.fillText(badgeText, 72, badgeY + 38);
+  ctx.fillText(badgeText, 70, badgeY + 42);
 
   // Shelter tag — below badge
-  ctx.font = '600 26px Inter, sans-serif';
+  ctx.font = '600 28px Inter, sans-serif';
   const igTag = `@${pet.ig}`;
-  const igW = ctx.measureText(igTag).width + 32;
-  drawRoundedRect(ctx, 50, badgeY + 66, igW, 42, 21);
-  ctx.fillStyle = 'rgba(0,0,0,0.45)';
+  const igW = ctx.measureText(igTag).width + 36;
+  drawRoundedRect(ctx, 46, badgeY + 72, igW, 46, 23);
+  ctx.fillStyle = 'rgba(0,0,0,0.5)';
   ctx.fill();
   ctx.fillStyle = '#fff';
-  ctx.fillText(igTag, 66, badgeY + 96);
+  ctx.fillText(igTag, 64, badgeY + 104);
 
-  // Pet name — big, bottom area
-  ctx.font = '700 82px Lora, serif';
+  // ── CENTERED TEXT BLOCK (optimized for IG grid crop) ──
+  ctx.textAlign = 'center';
+
+  // Pet name — big, centered, positioned so it's visible in grid thumbnail
+  ctx.font = '700 120px Lora, serif';
   ctx.fillStyle = '#fff';
-  ctx.fillText(pet.nombre, 56, H - 200);
+  ctx.shadowColor = 'rgba(0,0,0,0.5)';
+  ctx.shadowBlur = 16;
+  ctx.fillText(pet.nombre, W / 2, H - 210);
+  ctx.shadowBlur = 0;
 
-  // Info line — bigger
-  ctx.font = '600 34px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+  // Info line — centered below name
+  ctx.font = '600 38px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.95)';
   const infoText = `${pet.emoji} ${pet.tipo === 'perro' ? 'Perro' : 'Gato'} · ${pet.edad} · ${pet.tamanio} · ${pet.raza}`;
-  ctx.fillText(infoText, 56, H - 145);
+  ctx.fillText(infoText, W / 2, H - 130);
 
-  // Description — one line, bigger
-  const desc = pet.desc.length > 90 ? pet.desc.substring(0, 87) + '...' : pet.desc;
-  ctx.font = '400 28px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.75)';
-  ctx.fillText(desc, 56, H - 100);
-
-  // Bottom bar — semi-transparent warm
-  ctx.fillStyle = 'rgba(139,111,71,0.65)';
-  ctx.fillRect(0, H - 60, W, 60);
-  ctx.font = '600 26px Lora, serif';
-  ctx.fillStyle = '#fff';
-  ctx.fillText('🐾 patitasba.com.ar', 50, H - 22);
-
-  // Shelter on right
-  ctx.font = '500 24px Inter, sans-serif';
+  // Short description — centered
+  const desc = pet.desc.length > 80 ? pet.desc.substring(0, 77) + '...' : pet.desc;
+  ctx.font = '400 30px Inter, sans-serif';
   ctx.fillStyle = 'rgba(255,255,255,0.8)';
-  const orgText = `📍 ${pet.org}`;
-  const orgW = ctx.measureText(orgText).width;
-  ctx.fillText(orgText, W - orgW - 50, H - 22);
+  wrapText(ctx, desc, W / 2, H - 78, W - 140, 36, 'center');
+
+  // Footer — subtle centered
+  ctx.font = '500 24px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.fillText(`🐾 patitasba.com.ar  ·  📍 ${pet.org}`, W / 2, H - 20);
+
+  ctx.textAlign = 'left';
 }
 
 async function generateStoryCard(canvas, pet) {
