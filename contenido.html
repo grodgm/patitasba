@@ -404,88 +404,92 @@ async function generateFeedCard(canvas, pet) {
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext('2d');
 
-  // Warm cream background
+  // Warm cream fallback
   ctx.fillStyle = '#FFF8F0';
   ctx.fillRect(0, 0, W, H);
 
-  // Try to load pet image
-  let img;
-  const imgH = 650;
-  const margin = 40;
+  // Full-bleed photo
   try {
-    img = await loadImage(pet.imgUrls[0]);
-    const scale = Math.max((W - margin*2) / img.width, imgH / img.height);
-    const dx = margin + ((W - margin*2) - img.width * scale) / 2;
-    const dy = margin + (imgH - img.height * scale) / 2;
-    ctx.save();
-    drawRoundedRect(ctx, margin, margin, W - margin*2, imgH, 24);
-    ctx.clip();
+    const img = await loadImage(pet.imgUrls[0]);
+    const scale = Math.max(W / img.width, H / img.height);
+    const dx = (W - img.width * scale) / 2;
+    const dy = (H - img.height * scale) / 2;
     ctx.drawImage(img, dx, dy, img.width * scale, img.height * scale);
-    ctx.restore();
   } catch (e) {
     // No image - warm gradient
-    drawRoundedRect(ctx, margin, margin, W - margin*2, imgH, 24);
-    const grad = ctx.createLinearGradient(0, 0, W, imgH);
+    const grad = ctx.createLinearGradient(0, 0, W, H);
     grad.addColorStop(0, '#E8DDD3');
     grad.addColorStop(1, '#D4827E');
     ctx.fillStyle = grad;
-    ctx.fill();
+    ctx.fillRect(0, 0, W, H);
   }
 
-  // "Busca familia" badge on photo
-  const badgeY = 60;
-  ctx.font = '600 26px Inter, sans-serif';
+  // Top gradient overlay for badges
+  const topGrad = ctx.createLinearGradient(0, 0, 0, 280);
+  topGrad.addColorStop(0, 'rgba(0,0,0,0.5)');
+  topGrad.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = topGrad;
+  ctx.fillRect(0, 0, W, 280);
+
+  // Bottom gradient overlay for text
+  const botGrad = ctx.createLinearGradient(0, H - 480, 0, H);
+  botGrad.addColorStop(0, 'rgba(42,30,20,0)');
+  botGrad.addColorStop(0.35, 'rgba(42,30,20,0.55)');
+  botGrad.addColorStop(1, 'rgba(42,30,20,0.92)');
+  ctx.fillStyle = botGrad;
+  ctx.fillRect(0, H - 480, W, 480);
+
+  // "Busca familia" badge — top left
+  const badgeY = 50;
+  ctx.font = '700 32px Inter, sans-serif';
   const badgeText = pet.disponible ? '❤️ Busca familia' : '🏠 Ya encontró hogar';
-  const badgeW = ctx.measureText(badgeText).width + 36;
-  drawRoundedRect(ctx, 60, badgeY, badgeW, 46, 23);
-  ctx.fillStyle = pet.disponible ? 'rgba(212,130,126,0.9)' : 'rgba(122,158,122,0.9)';
+  const badgeW = ctx.measureText(badgeText).width + 44;
+  drawRoundedRect(ctx, 50, badgeY, badgeW, 54, 27);
+  ctx.fillStyle = pet.disponible ? 'rgba(212,130,126,0.92)' : 'rgba(122,158,122,0.92)';
   ctx.fill();
   ctx.fillStyle = '#fff';
-  ctx.fillText(badgeText, 78, badgeY + 32);
+  ctx.fillText(badgeText, 72, badgeY + 38);
 
-  // Shelter tag on photo
-  ctx.font = '500 22px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  // Shelter tag — below badge
+  ctx.font = '600 26px Inter, sans-serif';
   const igTag = `@${pet.ig}`;
-  const igW = ctx.measureText(igTag).width + 28;
-  drawRoundedRect(ctx, 60, badgeY + 56, igW, 36, 18);
-  ctx.fillStyle = 'rgba(0,0,0,0.35)';
+  const igW = ctx.measureText(igTag).width + 32;
+  drawRoundedRect(ctx, 50, badgeY + 66, igW, 42, 21);
+  ctx.fillStyle = 'rgba(0,0,0,0.45)';
   ctx.fill();
   ctx.fillStyle = '#fff';
-  ctx.font = '500 20px Inter, sans-serif';
-  ctx.fillText(igTag, 74, badgeY + 80);
+  ctx.fillText(igTag, 66, badgeY + 96);
 
-  // Pet name
-  const nameY = imgH + margin + 70;
-  ctx.font = '700 64px Lora, serif';
-  ctx.fillStyle = '#4A3728';
-  ctx.fillText(pet.nombre, margin + 10, nameY);
+  // Pet name — big, bottom area
+  ctx.font = '700 82px Lora, serif';
+  ctx.fillStyle = '#fff';
+  ctx.fillText(pet.nombre, 56, H - 200);
 
-  // Info line
-  ctx.font = '500 28px Inter, sans-serif';
-  ctx.fillStyle = '#8B7B6B';
+  // Info line — bigger
+  ctx.font = '600 34px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
   const infoText = `${pet.emoji} ${pet.tipo === 'perro' ? 'Perro' : 'Gato'} · ${pet.edad} · ${pet.tamanio} · ${pet.raza}`;
-  ctx.fillText(infoText, margin + 10, nameY + 42);
+  ctx.fillText(infoText, 56, H - 145);
 
-  // Description (truncated)
-  const desc = pet.desc.length > 120 ? pet.desc.substring(0, 117) + '...' : pet.desc;
-  ctx.font = '400 24px Inter, sans-serif';
-  ctx.fillStyle = '#8B7B6B';
-  wrapText(ctx, desc, margin + 10, nameY + 90, W - margin*2 - 20, 32);
+  // Description — one line, bigger
+  const desc = pet.desc.length > 90 ? pet.desc.substring(0, 87) + '...' : pet.desc;
+  ctx.font = '400 28px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.75)';
+  ctx.fillText(desc, 56, H - 100);
 
-  // Bottom bar - warm
-  ctx.fillStyle = '#F0E6DA';
-  ctx.fillRect(0, H - 70, W, 70);
-  ctx.font = '600 24px Lora, serif';
-  ctx.fillStyle = '#8B6F47';
-  ctx.fillText('🐾 patitasba.com.ar', margin, H - 28);
+  // Bottom bar — semi-transparent warm
+  ctx.fillStyle = 'rgba(139,111,71,0.65)';
+  ctx.fillRect(0, H - 60, W, 60);
+  ctx.font = '600 26px Lora, serif';
+  ctx.fillStyle = '#fff';
+  ctx.fillText('🐾 patitasba.com.ar', 50, H - 22);
 
   // Shelter on right
-  ctx.font = '500 22px Inter, sans-serif';
-  ctx.fillStyle = '#A8896C';
+  ctx.font = '500 24px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.8)';
   const orgText = `📍 ${pet.org}`;
   const orgW = ctx.measureText(orgText).width;
-  ctx.fillText(orgText, W - orgW - 40, H - 30);
+  ctx.fillText(orgText, W - orgW - 50, H - 22);
 }
 
 async function generateStoryCard(canvas, pet) {
@@ -494,20 +498,16 @@ async function generateStoryCard(canvas, pet) {
   const ctx = canvas.getContext('2d');
 
   // Background
-  ctx.fillStyle = '#0a0a0a';
+  ctx.fillStyle = '#2A1E14';
   ctx.fillRect(0, 0, W, H);
 
-  // Try to load pet image - full bleed
+  // Full bleed pet image
   try {
     const img = await loadImage(pet.imgUrls[0]);
     const scale = Math.max(W / img.width, H / img.height);
     const dx = (W - img.width * scale) / 2;
     const dy = (H - img.height * scale) / 2;
     ctx.drawImage(img, dx, dy, img.width * scale, img.height * scale);
-
-    // Dark overlay
-    ctx.fillStyle = 'rgba(0,0,0,0.35)';
-    ctx.fillRect(0, 0, W, H);
   } catch (e) {
     const grad = ctx.createLinearGradient(0, 0, 0, H);
     grad.addColorStop(0, '#E8DDD3');
@@ -516,56 +516,63 @@ async function generateStoryCard(canvas, pet) {
     ctx.fillRect(0, 0, W, H);
   }
 
-  // Warm bottom gradient (cream/brown instead of black)
-  const grad = ctx.createLinearGradient(0, H - 800, 0, H);
-  grad.addColorStop(0, 'rgba(74,55,40,0)');
-  grad.addColorStop(0.5, 'rgba(74,55,40,0.7)');
-  grad.addColorStop(1, 'rgba(74,55,40,0.92)');
+  // Top gradient for badge
+  const topGrad = ctx.createLinearGradient(0, 0, 0, 300);
+  topGrad.addColorStop(0, 'rgba(0,0,0,0.55)');
+  topGrad.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = topGrad;
+  ctx.fillRect(0, 0, W, 300);
+
+  // Warm bottom gradient
+  const grad = ctx.createLinearGradient(0, H - 850, 0, H);
+  grad.addColorStop(0, 'rgba(42,30,20,0)');
+  grad.addColorStop(0.4, 'rgba(42,30,20,0.6)');
+  grad.addColorStop(1, 'rgba(42,30,20,0.95)');
   ctx.fillStyle = grad;
-  ctx.fillRect(0, H - 800, W, 800);
+  ctx.fillRect(0, H - 850, W, 850);
 
   // Top badge
-  ctx.font = '600 30px Inter, sans-serif';
+  ctx.font = '700 34px Inter, sans-serif';
   const badgeText = '❤️ Busca familia';
-  const badgeW = ctx.measureText(badgeText).width + 48;
-  drawRoundedRect(ctx, (W - badgeW) / 2, 80, badgeW, 56, 28);
-  ctx.fillStyle = 'rgba(212,130,126,0.9)';
+  const badgeW = ctx.measureText(badgeText).width + 52;
+  drawRoundedRect(ctx, (W - badgeW) / 2, 80, badgeW, 62, 31);
+  ctx.fillStyle = 'rgba(212,130,126,0.92)';
   ctx.fill();
   ctx.fillStyle = '#fff';
   ctx.textAlign = 'center';
-  ctx.fillText(badgeText, W / 2, 117);
+  ctx.fillText(badgeText, W / 2, 121);
 
-  // Name
-  ctx.font = '700 90px Lora, serif';
+  // Name — larger
+  ctx.font = '700 110px Lora, serif';
   ctx.fillStyle = '#fff';
   ctx.textAlign = 'center';
   ctx.fillText(pet.nombre, W / 2, H - 480);
 
-  // Info
-  ctx.font = '500 36px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.85)';
-  ctx.fillText(`${pet.emoji} ${pet.edad} · ${pet.tamanio} · ${pet.raza}`, W / 2, H - 415);
+  // Info — larger
+  ctx.font = '600 40px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+  ctx.fillText(`${pet.emoji} ${pet.edad} · ${pet.tamanio} · ${pet.raza}`, W / 2, H - 400);
 
   // Description
-  ctx.font = '400 30px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  ctx.font = '400 34px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.75)';
   ctx.textAlign = 'center';
-  const desc = pet.desc.length > 120 ? pet.desc.substring(0, 117) + '...' : pet.desc;
-  wrapText(ctx, desc, W / 2, H - 340, W - 120, 40, 'center');
+  const desc = pet.desc.length > 110 ? pet.desc.substring(0, 107) + '...' : pet.desc;
+  wrapText(ctx, desc, W / 2, H - 320, W - 120, 46, 'center');
 
-  // CTA
-  drawRoundedRect(ctx, 140, H - 220, W - 280, 70, 35);
-  ctx.fillStyle = '#8B6F47';
+  // CTA button
+  drawRoundedRect(ctx, 140, H - 210, W - 280, 76, 38);
+  ctx.fillStyle = '#D4827E';
   ctx.fill();
-  ctx.font = '600 30px Inter, sans-serif';
+  ctx.font = '700 34px Inter, sans-serif';
   ctx.fillStyle = '#fff';
   ctx.textAlign = 'center';
-  ctx.fillText('🐾 Conocé su historia', W / 2, H - 177);
+  ctx.fillText('🐾 Conocé su historia', W / 2, H - 163);
 
   // Footer
-  ctx.font = '500 26px Inter, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.5)';
-  ctx.fillText(`patitasba.com.ar · @${pet.ig}`, W / 2, H - 100);
+  ctx.font = '500 28px Inter, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.55)';
+  ctx.fillText(`patitasba.com.ar · @${pet.ig}`, W / 2, H - 90);
 
   ctx.textAlign = 'left';
 }
