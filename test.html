@@ -12,22 +12,22 @@
     <meta property="og:image" content="https://patitasba.com.ar/og-image.png">
     <meta property="og:url" content="https://patitasba.com.ar/test.html">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%23FF6B35'/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%235B8A72'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%235B8A72'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%235B8A72'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%235B8A72'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%235B8A72'/></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #F7F8FA; color: #1a1a2e; }
+        body { font-family: 'Inter', sans-serif; background: #F8F5F0; color: #3D3229; }
 
         /* Nav */
         nav { background: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
-        .nav-logo { font-size: 24px; font-weight: 800; color: #1a1a2e; text-decoration: none; }
-        .nav-logo span { color: #FF6B35; }
+        .nav-logo { font-size: 24px; font-weight: 800; color: #3D3229; text-decoration: none; }
+        .nav-logo span { color: #5B8A72; }
         .nav-links { display: flex; gap: 24px; align-items: center; }
-        .nav-links a { text-decoration: none; color: #555; font-weight: 500; font-size: 15px; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: #FF6B35; }
-        .nav-links .btn-donar { background: #FF6B35; color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; }
-        .nav-links .btn-donar:hover { background: #e55a2b; color: white; }
+        .nav-links a { text-decoration: none; color: #7D7168; font-weight: 500; font-size: 15px; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #5B8A72; }
+        .nav-links .btn-donar { background: #D4836B; color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; }
+        .nav-links .btn-donar:hover { background: #C07058; color: white; }
         .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
         @media (max-width: 768px) {
             .nav-toggle { display: block; }
@@ -51,7 +51,7 @@
             overflow: hidden;
         }
         .progress-fill {
-            background: #FF6B35;
+            background: #D4836B;
             height: 100%;
             border-radius: 100px;
             transition: width 0.4s ease;
@@ -72,7 +72,7 @@
         .question-number {
             font-size: 14px;
             font-weight: 600;
-            color: #FF6B35;
+            color: #D4836B;
             margin-bottom: 8px;
         }
         .question-text {
@@ -96,15 +96,15 @@
             font-size: 16px;
         }
         .option:hover {
-            border-color: #FF6B35;
-            background: #FFF8F5;
+            border-color: #D4836B;
+            background: #FFF8F0;
         }
         .option .emoji { font-size: 28px; flex-shrink: 0; }
         .option .label { font-weight: 500; }
-        .option .sublabel { font-size: 13px; color: #888; margin-top: 2px; }
+        .option .sublabel { font-size: 13px; color: #9A8E82; margin-top: 2px; }
         .option.selected {
-            border-color: #FF6B35;
-            background: #FFF3ED;
+            border-color: #D4836B;
+            background: #FDF5F0;
         }
 
         /* Result */
@@ -129,7 +129,7 @@
         .result-desc {
             font-size: 16px;
             line-height: 1.7;
-            color: #555;
+            color: #7D7168;
             margin-bottom: 24px;
         }
         .result-tags {
@@ -140,8 +140,8 @@
             margin-bottom: 20px;
         }
         .result-tag {
-            background: #FFF3ED;
-            color: #FF6B35;
+            background: #FDF5F0;
+            color: #D4836B;
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 14px;
@@ -160,7 +160,7 @@
         }
         .matches-subtitle {
             text-align: center;
-            color: #888;
+            color: #9A8E82;
             font-size: 15px;
             margin-bottom: 24px;
         }
@@ -189,7 +189,7 @@
             padding: 16px;
         }
         .pet-match-info h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-        .pet-match-info p { font-size: 14px; color: #888; }
+        .pet-match-info p { font-size: 14px; color: #9A8E82; }
         .pet-match-tags {
             display: flex;
             gap: 6px;
@@ -202,20 +202,20 @@
             border-radius: 12px;
             font-weight: 500;
         }
-        .tag-perro { background: #EEF2FF; color: #4F46E5; }
-        .tag-gato { background: #FFF7ED; color: #EA580C; }
-        .tag-size { background: #F0FDF4; color: #16A34A; }
+        .tag-perro { background: #E8F3ED; color: #4A7460; }
+        .tag-gato { background: #FDEEE8; color: #C07058; }
+        .tag-size { background: #F0EDE8; color: #6B6058; }
 
         .no-matches {
             text-align: center;
             padding: 40px;
-            color: #888;
+            color: #9A8E82;
             font-size: 16px;
         }
 
         .btn-restart {
             display: inline-block;
-            background: #FF6B35;
+            background: #D4836B;
             color: white;
             padding: 14px 32px;
             border-radius: 30px;
@@ -230,15 +230,15 @@
         .btn-restart:hover { transform: scale(1.05); }
         .btn-secondary {
             display: inline-block;
-            color: #FF6B35;
+            color: #D4836B;
             padding: 14px 32px;
             font-weight: 600;
             font-size: 16px;
             text-decoration: none;
         }
 
-        footer { text-align: center; padding: 32px; color: #999; font-size: 14px; }
-        footer a { color: #FF6B35; text-decoration: none; }
+        footer { text-align: center; padding: 32px; color: #9A8E82; font-size: 14px; }
+        footer a { color: #5B8A72; text-decoration: none; }
     </style>
 </head>
 <body>

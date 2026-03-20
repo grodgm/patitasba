@@ -12,12 +12,12 @@
     <meta property="og:image" content="https://patitasba.com.ar/og-image.png">
     <meta property="og:url" content="https://patitasba.com.ar/proceso.html">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%23FF6B35'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%23FF6B35'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%23FF6B35'/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><ellipse cx='150' cy='80' rx='50' ry='60' fill='%235B8A72'/><ellipse cx='362' cy='80' rx='50' ry='60' fill='%235B8A72'/><ellipse cx='60' cy='210' rx='45' ry='55' fill='%235B8A72'/><ellipse cx='452' cy='210' rx='45' ry='55' fill='%235B8A72'/><ellipse cx='256' cy='320' rx='130' ry='120' fill='%235B8A72'/></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #F7F8FA; color: #1a1a2e; }
+        body { font-family: 'Inter', sans-serif; background: #F8F5F0; color: #3D3229; }
 
         /* Nav */
         nav {
@@ -34,27 +34,27 @@
         .nav-logo {
             font-size: 24px;
             font-weight: 800;
-            color: #1a1a2e;
+            color: #3D3229;
             text-decoration: none;
         }
-        .nav-logo span { color: #FF6B35; }
+        .nav-logo span { color: #5B8A72; }
         .nav-links { display: flex; gap: 24px; align-items: center; }
         .nav-links a {
             text-decoration: none;
-            color: #555;
+            color: #7D7168;
             font-weight: 500;
             font-size: 15px;
             transition: color 0.2s;
         }
-        .nav-links a:hover, .nav-links a.active { color: #FF6B35; }
+        .nav-links a:hover, .nav-links a.active { color: #5B8A72; }
         .nav-links .btn-donar {
-            background: #FF6B35;
+            background: #D4836B;
             color: white;
             padding: 8px 20px;
             border-radius: 20px;
             font-weight: 600;
         }
-        .nav-links .btn-donar:hover { background: #e55a2b; color: white; }
+        .nav-links .btn-donar:hover { background: #C07058; color: white; }
 
         /* Mobile nav */
         .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
@@ -66,7 +66,7 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: #3D3229;
             color: white;
             padding: 80px 24px;
             text-align: center;
@@ -102,7 +102,7 @@
             flex-shrink: 0;
             width: 56px;
             height: 56px;
-            background: #FF6B35;
+            background: #D4836B;
             color: white;
             border-radius: 50%;
             display: flex;
@@ -115,21 +115,21 @@
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 8px;
-            color: #1a1a2e;
+            color: #3D3229;
         }
         .step-content p {
             font-size: 16px;
             line-height: 1.7;
-            color: #444;
+            color: #5D5348;
         }
         .step-content .tip {
-            background: #FFF3ED;
-            border-left: 4px solid #FF6B35;
+            background: #FDF5F0;
+            border-left: 4px solid #D4836B;
             padding: 12px 16px;
             margin-top: 12px;
             border-radius: 0 8px 8px 0;
             font-size: 14px;
-            color: #333;
+            color: #3D3229;
         }
 
         @media (max-width: 600px) {
@@ -148,7 +148,7 @@
             margin-bottom: 12px;
         }
         .section-header p {
-            color: #666;
+            color: #7D7168;
             font-size: 16px;
             max-width: 500px;
             margin: 0 auto;
@@ -172,8 +172,8 @@
             align-items: center;
             font-size: 16px;
         }
-        .faq-question:hover { background: #FAFAFA; }
-        .faq-question .arrow { transition: transform 0.3s; font-size: 14px; color: #999; }
+        .faq-question:hover { background: #FAF8F5; }
+        .faq-question .arrow { transition: transform 0.3s; font-size: 14px; color: #9A8E82; }
         .faq-question.open .arrow { transform: rotate(180deg); }
         .faq-answer {
             padding: 0 24px;
@@ -182,7 +182,7 @@
             transition: max-height 0.3s ease, padding 0.3s ease;
             font-size: 15px;
             line-height: 1.7;
-            color: #555;
+            color: #7D7168;
         }
         .faq-answer.open {
             padding: 0 24px 20px;
@@ -191,7 +191,7 @@
 
         /* CTA */
         .cta-section {
-            background: linear-gradient(135deg, #FF6B35, #ff8f65);
+            background: #3D3229;
             color: white;
             text-align: center;
             padding: 60px 24px;
@@ -206,7 +206,7 @@
         .cta-btn {
             display: inline-block;
             background: white;
-            color: #FF6B35;
+            color: #D4836B;
             padding: 14px 32px;
             border-radius: 30px;
             font-weight: 700;
@@ -220,10 +220,10 @@
         footer {
             text-align: center;
             padding: 32px;
-            color: #999;
+            color: #9A8E82;
             font-size: 14px;
         }
-        footer a { color: #FF6B35; text-decoration: none; }
+        footer a { color: #5B8A72; text-decoration: none; }
     </style>
 </head>
 <body>
