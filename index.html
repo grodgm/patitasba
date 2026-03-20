@@ -89,15 +89,14 @@
 
         /* ── PULSE BAR (Latidos) ── */
         .pulse-bar {
-            background: linear-gradient(135deg, #5B8A72, #D4836B);
-            color: white; text-align: center; padding: 9px 20px;
-            font-size: 14px; font-weight: 700;
+            background: #3D3229;
+            color: #E2DDD6; text-align: center; padding: 9px 20px;
+            font-size: 14px; font-weight: 600;
             display: flex; align-items: center; justify-content: center; gap: 10px;
-            box-shadow: 0 2px 10px rgba(91,138,114,0.25);
         }
         .pulse-bar .pulse-heart { animation: hbeat 1.2s ease-in-out infinite; display: inline-block; font-size: 18px; }
         @keyframes hbeat { 0%,100%{transform:scale(1)} 15%{transform:scale(1.3)} 30%{transform:scale(1)} 45%{transform:scale(1.15)} }
-        .pulse-bar .pulse-count { font-size: 20px; font-weight: 800; }
+        .pulse-bar .pulse-count { font-size: 20px; font-weight: 800; color: #D4836B; }
 
         /* ── HEART BUTTON ON CARDS ── */
         .card-heart-btn {
@@ -165,7 +164,7 @@
         .hero-collage img:hover { transform: scale(1.05); }
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(74,55,40,0.6) 0%, rgba(91,138,114,0.45) 50%, rgba(74,55,40,0.55) 100%);
+            background: linear-gradient(180deg, rgba(61,50,41,0.45) 0%, rgba(61,50,41,0.55) 100%);
             z-index: 2;
         }
         .hero-content {
@@ -181,8 +180,8 @@
         }
         .search-bar input { flex: 1; border: none; outline: none; font-size: 15px; color: #3D3229; background: transparent; }
         .search-bar input::placeholder { color: #b2bec3; }
-        .search-bar button { background: #5B8A72; color: white; border: none; border-radius: 50px; padding: 10px 26px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background .2s; }
-        .search-bar button:hover { background: #4A7460; }
+        .search-bar button { background: #D4836B; color: white; border: none; border-radius: 50px; padding: 10px 26px; font-weight: 600; font-size: 14px; cursor: pointer; transition: background .2s; }
+        .search-bar button:hover { background: #C07058; }
         @media (max-width: 600px) {
             .hero-collage { grid-template-columns: repeat(3, 1fr); }
             .hero { min-height: 340px; }
@@ -192,7 +191,7 @@
         /* ── STATS ── */
         .stats { background: #FFF8F0; display: flex; justify-content: center; gap: 56px; padding: 18px; border-bottom: 1px solid #E2DDD6; }
         .stat { text-align: center; }
-        .stat-number { font-size: 26px; font-weight: 800; color: #5B8A72; }
+        .stat-number { font-size: 26px; font-weight: 800; color: #D4836B; }
         .stat-label { font-size: 11px; color: #7D7168; text-transform: uppercase; letter-spacing: .6px; margin-top: 2px; }
 
         /* ── FILTERS ── */
@@ -204,8 +203,8 @@
             padding: 7px 16px; border-radius: 50px; font-size: 13px;
             font-weight: 500; cursor: pointer; color: #7D7168; transition: all .18s;
         }
-        .filter-btn:hover { border-color: #5B8A72; color: #5B8A72; background: #FFF8F0; }
-        .filter-btn.active { background: #5B8A72; color: white; border-color: #5B8A72; }
+        .filter-btn:hover { border-color: #D4836B; color: #C07058; background: #FFF8F0; }
+        .filter-btn.active { background: #3D3229; color: white; border-color: #3D3229; }
         .filter-divider { width: 1px; height: 26px; background: #e0e0e0; margin: 0 4px; }
 
         /* ── GRID ── */
@@ -304,19 +303,19 @@
 
         .card-actions { display: flex; gap: 8px; }
         .btn-adopt {
-            flex: 1; background: #5B8A72; color: white; border: none;
+            flex: 1; background: #D4836B; color: white; border: none;
             padding: 12px; border-radius: 12px; font-size: 13px; font-weight: 700;
             cursor: pointer; transition: all .2s; letter-spacing: 0.1px;
         }
-        .btn-adopt:hover { background: #4A7460; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(91,138,114,0.3); }
+        .btn-adopt:hover { background: #C07058; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(212,131,107,0.35); }
         .btn-adopt.adoptado-btn { background: #E2DDD6; color: #9A8E82; cursor: default; }
         .btn-adopt.adoptado-btn:hover { transform: none; box-shadow: none; }
         .btn-ig {
-            background: #D4836B;
+            background: #3D3229;
             color: white; border: none; padding: 12px 16px;
             border-radius: 12px; font-size: 16px; cursor: pointer; transition: all .2s;
         }
-        .btn-ig:hover { background: #C07058; transform: translateY(-1px); }
+        .btn-ig:hover { background: #2A221B; transform: translateY(-1px); }
 
         /* ── MODAL DETALLE PET ── */
         .modal-overlay {
@@ -358,20 +357,20 @@
         .modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
         .modal-post {
             flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
-            background: #5B8A72; color: white; text-decoration: none;
+            background: #D4836B; color: white; text-decoration: none;
             padding: 14px 18px; text-align: center;
             border-radius: 14px; font-weight: 700; font-size: 14px;
             transition: all .2s;
         }
-        .modal-post:hover { background: #4A7460; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(91,138,114,0.3); }
+        .modal-post:hover { background: #C07058; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(212,131,107,0.3); }
         .modal-ig {
             flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
-            background: #D4836B;
+            background: #3D3229;
             color: white; text-decoration: none; padding: 14px 18px; text-align: center;
             border-radius: 14px; font-weight: 700; font-size: 14px; border: none; cursor: pointer;
             transition: all .2s;
         }
-        .modal-ig:hover { background: #C07058; transform: translateY(-1px); }
+        .modal-ig:hover { background: #2A221B; transform: translateY(-1px); }
         .modal-close {
             position: absolute; top: 14px; right: 14px;
             background: rgba(0,0,0,.35); backdrop-filter: blur(8px);
@@ -426,7 +425,7 @@
         .donar-modal { max-width: 560px; }
         .donar-modal .modal-body { padding: 0; overflow: hidden; border-radius: 24px; }
         .donar-header {
-            background: linear-gradient(135deg, #5B8A72 0%, #D4836B 100%);
+            background: #3D3229;
             padding: 32px 32px 24px;
             color: white;
             text-align: center;
@@ -435,21 +434,21 @@
         .donar-header p { font-size: 14px; opacity: .9; line-height: 1.5; }
         .donar-body { padding: 28px 32px; }
         .goal-label { display: flex; justify-content: space-between; font-size: 13px; color: #7D7168; margin-bottom: 8px; font-weight: 600; }
-        .goal-label .meta { color: #5B8A72; font-size: 15px; font-weight: 800; }
+        .goal-label .meta { color: #D4836B; font-size: 15px; font-weight: 800; }
         .progress-track {
             background: #f0f0f0; border-radius: 50px; height: 18px;
             overflow: visible; position: relative; margin-bottom: 6px;
         }
         .progress-fill {
             height: 100%; border-radius: 50px;
-            background: linear-gradient(90deg, #5B8A72, #D4836B);
+            background: linear-gradient(90deg, #D4836B, #E8A88E);
             transition: width 1s ease;
             position: relative; min-width: 0;
         }
         .progress-fill.superado { background: linear-gradient(90deg, #00b894, #00cec9); }
         .progress-pct {
             position: absolute; right: 0; top: -24px;
-            font-size: 13px; font-weight: 800; color: #5B8A72; white-space: nowrap;
+            font-size: 13px; font-weight: 800; color: #D4836B; white-space: nowrap;
         }
         .progress-pct.superado { color: #00b894; }
         .goal-sub { font-size: 12px; color: #b2bec3; margin-bottom: 22px; }
@@ -460,22 +459,22 @@
             margin-bottom: 18px; display: none;
         }
         .alias-box {
-            background: #FFF8F0; border: 2px solid #5B8A72; border-radius: 16px;
+            background: #FFF8F0; border: 2px solid #D4836B; border-radius: 16px;
             padding: 20px 24px; text-align: center; margin-bottom: 20px;
         }
         .alias-label { font-size: 12px; color: #7D7168; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
-        .alias-value { font-size: 28px; font-weight: 800; color: #5B8A72; letter-spacing: .5px; margin-bottom: 10px; }
+        .alias-value { font-size: 28px; font-weight: 800; color: #D4836B; letter-spacing: .5px; margin-bottom: 10px; }
         .alias-steps { font-size: 12px; color: #7D7168; line-height: 1.6; }
         .btn-copy {
-            background: #5B8A72; color: white; border: none; border-radius: 50px;
+            background: #D4836B; color: white; border: none; border-radius: 50px;
             padding: 8px 20px; font-size: 13px; font-weight: 600; cursor: pointer;
             margin-top: 10px; transition: background .2s;
         }
-        .btn-copy:hover { background: #4A7460; }
+        .btn-copy:hover { background: #C07058; }
         .refugios-list { font-size: 13px; color: #7D7168; line-height: 1.8; margin-bottom: 18px; }
         .refugios-list strong { color: #3D3229; }
         .donar-footer { font-size: 12px; color: #b2bec3; text-align: center; padding: 0 32px 24px; line-height: 1.6; }
-        @keyframes pulse-btn { 0%,100%{box-shadow:0 0 0 0 rgba(212,130,126,.4)} 50%{box-shadow:0 0 0 8px rgba(212,130,126,0)} }
+        @keyframes pulse-btn { 0%,100%{box-shadow:0 0 0 0 rgba(212,131,107,.4)} 50%{box-shadow:0 0 0 8px rgba(212,131,107,0)} }
         .pub-modal h2 { margin-bottom: 20px; }
         .form-group { margin-bottom: 14px; text-align: left; }
         .form-group label { display: block; font-size: 13px; font-weight: 600; color: #3D3229; margin-bottom: 5px; }
@@ -484,11 +483,11 @@
             padding: 10px 12px; font-size: 14px; outline: none; transition: border-color .2s;
             font-family: inherit;
         }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #5B8A72; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #D4836B; }
         .form-row { display: flex; gap: 12px; }
         .form-row .form-group { flex: 1; }
-        .btn-submit { width: 100%; background: #5B8A72; color: white; border: none; padding: 13px; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 8px; }
-        .btn-submit:hover { background: #4A7460; }
+        .btn-submit { width: 100%; background: #D4836B; color: white; border: none; padding: 13px; border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 8px; }
+        .btn-submit:hover { background: #C07058; }
 
         /* ── FOOTER ── */
         footer { background: #3D3229; color: #E2DDD6; text-align: center; padding: 36px 24px; margin-top: 48px; }
@@ -535,7 +534,7 @@
         <a href="/test.html">Test</a>
         <a href="/donar.html" style="color:#D4836B; font-weight:700;">🧡 Ayudá a un refugio</a>
     </nav>
-    <a href="/donar.html" class="btn-primary" style="background: linear-gradient(135deg,#D4836B,#5B8A72); animation: pulse-btn 2s infinite; text-decoration:none; color:white;">🧡 Ayudá a un refugio</a>
+    <a href="/donar.html" class="btn-primary" style="animation: pulse-btn 2s infinite; text-decoration:none; color:white;">🧡 Ayudá a un refugio</a>
 </header>
 
 <!-- HERO -->
@@ -706,7 +705,7 @@
 </div>
 
 <!-- CTA VIRAL BANNER -->
-<section style="background:linear-gradient(135deg,#5B8A72,#D4836B);padding:40px 24px;text-align:center;color:white;margin-top:48px;">
+<section style="background:#3D3229;padding:40px 24px;text-align:center;color:white;margin-top:48px;">
     <div style="font-size:36px;margin-bottom:12px;">🐾</div>
     <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Conocés a alguien que quiera adoptar?</h2>
     <p style="font-size:15px;opacity:.9;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto;">Cada vez que compartís, un perrito o gatito tiene más chances de encontrar familia. Dale share!</p>
