@@ -56,12 +56,47 @@
         }
         .nav-links .btn-donar:hover { background: #C07058; color: white; }
 
-        /* Mobile nav */
-        .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+        /* Hamburger */
+        .hamburger {
+            display: none; background: none; border: none; cursor: pointer;
+            width: 36px; height: 36px; padding: 4px; flex-shrink: 0;
+            position: relative; z-index: 200;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 3px; background: #3D3229;
+            border-radius: 2px; margin: 5px auto; transition: all 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+        .mobile-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(61,50,41,0.5); z-index: 149;
+        }
+        .mobile-overlay.open { display: block; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
+            background: #FFF8F0; z-index: 150; padding: 80px 28px 40px;
+            box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+            transition: right 0.3s ease;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .mobile-nav.open { right: 0; }
+        .mobile-nav a {
+            display: block; text-decoration: none; color: #3D3229;
+            font-weight: 600; font-size: 18px; padding: 14px 16px;
+            border-radius: 12px; transition: background 0.2s;
+        }
+        .mobile-nav a:hover, .mobile-nav a:active { background: rgba(91,138,114,0.1); }
+        .mobile-nav .mobile-donar {
+            margin-top: 12px; background: #D4836B; color: white;
+            text-align: center; border-radius: 50px; padding: 14px 20px;
+            font-weight: 700; font-size: 16px;
+        }
+        .mobile-nav .mobile-donar:hover { background: #C07058; }
         @media (max-width: 768px) {
-            .nav-toggle { display: block; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-            .nav-links.open { display: flex; }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
         }
 
         /* Hero */
@@ -230,7 +265,6 @@
 
 <nav>
     <a href="/" class="nav-logo">Patitas<span>BA</span></a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <div class="nav-links">
         <a href="/">Inicio</a>
         <a href="/proceso.html" class="active">Cómo adoptar</a>
@@ -238,7 +272,26 @@
         <a href="/test.html">Test</a>
         <a href="/donar.html" class="btn-donar">❤️ Ayudá a un refugio</a>
     </div>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menú">
+        <span></span><span></span><span></span>
+    </button>
 </nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+    <a href="/">Inicio</a>
+    <a href="/proceso.html">Cómo adoptar</a>
+    <a href="/guia.html">Guía</a>
+    <a href="/test.html">Test</a>
+    <a href="/donar.html" class="mobile-donar">❤️ Ayudá a un refugio</a>
+</div>
+<script>
+function toggleMobileMenu() {
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.getElementById('mobileNav').classList.toggle('open');
+    document.getElementById('mobileOverlay').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobileNav').classList.contains('open') ? 'hidden' : '';
+}
+</script>
 
 <div class="hero">
     <h1>Cómo adoptar una mascota</h1>
