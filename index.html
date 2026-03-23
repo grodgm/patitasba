@@ -129,11 +129,50 @@
         }
         .logo { display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: 800; color: #3D3229; }
         .logo span { color: #5B8A72; }
-        nav { display: flex; gap: 28px; }
+        nav { display: flex; gap: 28px; align-items: center; }
         nav a { text-decoration: none; color: #7D7168; font-weight: 600; font-size: 16px; transition: color .2s; }
         nav a:hover { color: #5B8A72; }
         .btn-primary { background: #D4836B; color: white; border: none; padding: 11px 24px; border-radius: 50px; font-weight: 700; font-size: 15px; cursor: pointer; transition: background .2s; }
         .btn-primary:hover { background: #C07058; }
+
+        /* ── HAMBURGER MENU ── */
+        .hamburger {
+            display: none; background: none; border: none; cursor: pointer;
+            width: 36px; height: 36px; padding: 4px; flex-shrink: 0;
+            position: relative; z-index: 200;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 3px; background: #3D3229;
+            border-radius: 2px; margin: 5px auto; transition: all 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+        .mobile-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(61,50,41,0.5); z-index: 149;
+        }
+        .mobile-overlay.open { display: block; }
+        .mobile-nav {
+            position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
+            background: #FFF8F0; z-index: 150; padding: 80px 28px 40px;
+            box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+            transition: right 0.3s ease;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .mobile-nav.open { right: 0; }
+        .mobile-nav a {
+            display: block; text-decoration: none; color: #3D3229;
+            font-weight: 600; font-size: 18px; padding: 14px 16px;
+            border-radius: 12px; transition: background 0.2s;
+        }
+        .mobile-nav a:hover, .mobile-nav a:active { background: rgba(91,138,114,0.1); }
+        .mobile-nav .mobile-donar {
+            margin-top: 12px; background: #D4836B; color: white;
+            text-align: center; border-radius: 50px; padding: 14px 20px;
+            font-weight: 700; font-size: 16px;
+        }
+        .mobile-nav .mobile-donar:hover { background: #C07058; }
 
         /* ── HERO ── */
         .hero {
@@ -500,7 +539,8 @@
             header { padding: 10px 12px; flex-wrap: nowrap; gap: 8px; }
             .logo { font-size: 18px; white-space: nowrap; flex-shrink: 0; }
             nav { display: none; }
-            .btn-primary { padding: 8px 14px; font-size: 12px; white-space: nowrap; flex-shrink: 0; }
+            .btn-primary { display: none; }
+            .hamburger { display: block; }
             .stats { gap: 16px; padding: 14px 8px; flex-wrap: wrap; }
             .stat-number { font-size: 22px; }
             .stat-label { font-size: 11px; }
@@ -535,7 +575,28 @@
         <a href="/donar.html" style="color:#D4836B; font-weight:700;">🧡 Ayudá a un refugio</a>
     </nav>
     <a href="/donar.html" class="btn-primary" style="animation: pulse-btn 2s infinite; text-decoration:none; color:white;">🧡 Ayudá a un refugio</a>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menú">
+        <span></span><span></span><span></span>
+    </button>
 </header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+    <a href="/">Inicio</a>
+    <a href="/proceso.html">Cómo adoptar</a>
+    <a href="/guia.html">Guía</a>
+    <a href="/test.html">Test</a>
+    <a href="/donar.html" class="mobile-donar">🧡 Ayudá a un refugio</a>
+</div>
+<script>
+function toggleMobileMenu() {
+    document.querySelector('.hamburger').classList.toggle('active');
+    document.getElementById('mobileNav').classList.toggle('open');
+    document.getElementById('mobileOverlay').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobileNav').classList.contains('open') ? 'hidden' : '';
+}
+</script>
 
 <!-- HERO -->
 <section class="hero" id="heroSection">
