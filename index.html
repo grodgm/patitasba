@@ -87,17 +87,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #F8F5F0; color: #3D3229; }
 
-        /* ── PULSE BAR (Latidos) ── */
-        .pulse-bar {
-            background: #3D3229;
-            color: #E2DDD6; text-align: center; padding: 9px 20px;
-            font-size: 14px; font-weight: 600;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-        }
-        .pulse-bar .pulse-heart { animation: hbeat 1.2s ease-in-out infinite; display: inline-block; font-size: 18px; }
-        @keyframes hbeat { 0%,100%{transform:scale(1)} 15%{transform:scale(1.3)} 30%{transform:scale(1)} 45%{transform:scale(1.15)} }
-        .pulse-bar .pulse-count { font-size: 20px; font-weight: 800; color: #D4836B; }
-
         /* ── HEART BUTTON ON CARDS ── */
         .card-heart-btn {
             position: absolute; top: 50px; right: 14px; z-index: 10;
@@ -557,12 +546,6 @@
     </style>
 </head>
 <body>
-
-<!-- PULSE BAR (Latidos de PatitasBA) -->
-<div class="pulse-bar" id="pulseBar">
-    <span class="pulse-heart">❤️</span>
-    <span><span class="pulse-count" id="pulseCount">0</span> corazones latieron por una mascota hoy</span>
-</div>
 
 <!-- HEADER -->
 <header>
@@ -1258,21 +1241,8 @@ window.addEventListener('hashchange', () => {
 //  LATIDOS DE PATITASBA — Firebase Realtime
 // ══════════════════════════════════════════════
 
-function getTodayKey() {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-}
-
 function initLatidos() {
-    // 1. Escuchar el pulso del día (corazones totales de hoy)
-    const todayRef = db.ref('pulse/' + getTodayKey());
-    todayRef.on('value', snap => {
-        const val = snap.val() || 0;
-        const el = document.getElementById('pulseCount');
-        if (el) el.textContent = val;
-    });
-
-    // 2. Escuchar corazones por mascota
+    // 1. Escuchar corazones por mascota
     db.ref('hearts').on('value', snap => {
         const data = snap.val() || {};
         Object.keys(data).forEach(petId => {
@@ -1289,7 +1259,7 @@ function initLatidos() {
         });
     });
 
-    // 3. Restaurar likes del usuario (localStorage)
+    // 2. Restaurar likes del usuario (localStorage)
     const myLikes = JSON.parse(localStorage.getItem('patitas_likes') || '{}');
     Object.keys(myLikes).forEach(petId => {
         const btn = document.getElementById('heart-' + petId);
@@ -1304,7 +1274,6 @@ function toggleHeart(petId) {
     const myLikes = JSON.parse(localStorage.getItem('patitas_likes') || '{}');
     const btn = document.getElementById('heart-' + petId);
     const heartRef = db.ref('hearts/' + petId);
-    const pulseRef = db.ref('pulse/' + getTodayKey());
 
     if (myLikes[petId]) {
         // Unlike
@@ -1312,28 +1281,20 @@ function toggleHeart(petId) {
         btn.classList.remove('liked');
         btn.querySelector('span').textContent = '🤍';
         heartRef.transaction(v => Math.max((v || 0) - 1, 0));
-        pulseRef.transaction(v => Math.max((v || 0) - 1, 0));
     } else {
         // Like
         myLikes[petId] = true;
         btn.classList.add('liked');
         btn.querySelector('span').textContent = '❤️';
         heartRef.transaction(v => (v || 0) + 1);
-        pulseRef.transaction(v => (v || 0) + 1);
     }
     localStorage.setItem('patitas_likes', JSON.stringify(myLikes));
 }
 
-// También sumar al pulso cuando clickean "Me interesa"
+// Re-init hearts display after rendering pets
 const _origRenderPets = renderPets;
 renderPets = function() {
     _origRenderPets();
-    document.querySelectorAll('.btn-adopt:not(.adoptado-btn)').forEach(btn => {
-        btn.addEventListener('click', () => {
-            db.ref('pulse/' + getTodayKey()).transaction(v => (v || 0) + 1);
-        });
-    });
-    // Re-init hearts display
     initLatidos();
 };
 
