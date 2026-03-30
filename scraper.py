@@ -42,8 +42,8 @@ PERFILES = [
     "gatitos_parque_chacabuco",
 ]
 
-MAX_POSTS_POR_PERFIL = 15   # cuántos posts recientes revisar por perfil
-PAUSA_ENTRE_PERFILES = 4    # segundos de pausa (evita rate limit)
+MAX_POSTS_POR_PERFIL = 6    # cuántos posts recientes revisar (los refugios publican 1-2/día)
+PAUSA_ENTRE_PERFILES = 20   # segundos de pausa entre perfiles (simula humano)
 OUTPUT_FILE = "pets.json"
 
 # ─────────────────────────────────────────
@@ -591,6 +591,8 @@ def post_a_mascota(post, ig: str, idx: int) -> dict | None:
 # ─────────────────────────────────────────
 
 def scrape(login_user: str | None = None, max_posts: int = MAX_POSTS_POR_PERFIL):
+    import random
+
     L = instaloader.Instaloader(
         download_pictures=False,
         download_videos=False,
@@ -600,8 +602,8 @@ def scrape(login_user: str | None = None, max_posts: int = MAX_POSTS_POR_PERFIL)
         save_metadata=False,
         post_metadata_txt_pattern="",
         quiet=True,
-        request_timeout=15,  # timeout más corto para no colgarse
-        max_connection_attempts=2,  # máximo 2 reintentos (no infinito)
+        request_timeout=15,
+        max_connection_attempts=1,  # NO reintentar (evita acumular 401s)
     )
 
     # Login opcional (permite ver más posts)
@@ -620,8 +622,18 @@ def scrape(login_user: str | None = None, max_posts: int = MAX_POSTS_POR_PERFIL)
     todas_las_mascotas = []
     total_posts_revisados = 0
     total_adopciones = 0
+    errores_consecutivos = 0  # si falla 2 seguidos, parar
 
-    for ig in PERFILES:
+    # Mezclar orden de perfiles (evita patrón predecible)
+    perfiles_shuffled = PERFILES.copy()
+    random.shuffle(perfiles_shuffled)
+
+    for ig in perfiles_shuffled:
+        # Si ya fallaron 2 perfiles seguidos, Instagram nos bloqueó → parar
+        if errores_consecutivos >= 2:
+            print(f"\n   🛑 2 perfiles seguidos bloqueados — parando para no empeorar.")
+            break
+
         print(f"\n📱 Scrapeando @{ig}...")
         try:
             profile = instaloader.Profile.from_username(L.context, ig)
@@ -641,23 +653,28 @@ def scrape(login_user: str | None = None, max_posts: int = MAX_POSTS_POR_PERFIL)
                     estado = "🏠 adoptado" if not mascota["disponible"] else f"📸 {len(mascota['imgUrls'])} foto(s)"
                     print(f"   ✅ [{mascotas_perfil}] {mascota['nombre']} — {mascota['tipo']} {mascota['edad']} {mascota['tamanio']} · {estado}")
 
-                # Pausa corta entre requests
-                time.sleep(0.5)
+                # Pausa humana entre posts (1-3 segundos random)
+                time.sleep(random.uniform(1.0, 3.0))
 
             if mascotas_perfil == 0:
                 print(f"   ⚠️  No se encontraron posts de adopción en los últimos {max_posts} posts.")
 
-            # Pausa entre perfiles
-            if ig != PERFILES[-1]:
-                print(f"   ⏳ Esperando {PAUSA_ENTRE_PERFILES}s antes del próximo perfil...")
-                time.sleep(PAUSA_ENTRE_PERFILES)
+            errores_consecutivos = 0  # reset si este perfil anduvo bien
+
+            # Pausa larga entre perfiles (15-30 segundos random)
+            if ig != perfiles_shuffled[-1]:
+                pausa = random.uniform(PAUSA_ENTRE_PERFILES * 0.75, PAUSA_ENTRE_PERFILES * 1.5)
+                print(f"   ⏳ Esperando {pausa:.0f}s antes del próximo perfil...")
+                time.sleep(pausa)
 
         except instaloader.exceptions.ProfileNotExistsException:
             print(f"   ❌ Perfil @{ig} no existe o es privado.")
         except instaloader.exceptions.LoginRequiredException:
             print(f"   ❌ @{ig} requiere login para ver sus posts. Usá --login TU_USUARIO")
+            errores_consecutivos += 1
         except Exception as e:
             print(f"   ❌ Error inesperado: {e}")
+            errores_consecutivos += 1
 
     # No sobreescribir si no encontró nada (Instagram bloqueó)
     if len(todas_las_mascotas) == 0:
