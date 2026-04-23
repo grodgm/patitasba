@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayudá a un refugio — PatitasBA</title>
-    <meta name="description" content="Los refugios de Buenos Aires están formados por voluntarios que necesitan tu ayuda. Doná comida, dinero o tu tiempo para que más perritos y gatitos tengan una segunda oportunidad.">
-    <meta name="keywords" content="donar refugio animales Buenos Aires, ayudar refugio perros, voluntario refugio animales, donación mascotas, apadrinar refugio">
+    <meta name="description" content="Los refugios de Buenos Aires necesitan alimento, medicamentos, mantas, transporte y voluntarios. Contanos qué podés donar y te conectamos con el refugio que más lo necesite.">
+    <meta name="keywords" content="donar comida refugio animales Buenos Aires, ayudar refugio perros, voluntario refugio animales, donar medicamentos veterinarios, hogar de tránsito CABA, apadrinar refugio">
     <link rel="canonical" href="https://patitasba.com.ar/donar.html">
     <meta property="og:title" content="Ayudá a un refugio — PatitasBA">
-    <meta property="og:description" content="Los refugios dependen de personas como vos. Doná comida, dinero o tu tiempo.">
+    <meta property="og:description" content="Alimento, medicamentos, mantas, transporte o tu tiempo. Contanos qué podés aportar y te conectamos con el refugio que lo necesita.">
     <meta property="og:image" content="https://patitasba.com.ar/og-image.png">
     <meta property="og:url" content="https://patitasba.com.ar/donar.html">
     <meta name="twitter:card" content="summary_large_image">
@@ -229,6 +229,43 @@
         }
         .contact-form input:focus, .contact-form textarea:focus { border-color: #D4836B; outline: none; }
         .contact-form textarea { resize: vertical; min-height: 120px; }
+
+        /* Tipo de ayuda grid (checkboxes) */
+        .tipo-ayuda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .tipo-check {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .tipo-check input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .tipo-check span {
+            display: block;
+            padding: 12px 14px;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #5D5348;
+            background: white;
+            text-align: center;
+            transition: all 0.15s ease;
+        }
+        .tipo-check:hover span { border-color: #D4836B; }
+        .tipo-check input:checked + span {
+            border-color: #D4836B;
+            background: #FFF3EE;
+            color: #D4836B;
+        }
         .btn-enviar {
             background: #D4836B;
             color: white;
@@ -290,6 +327,7 @@ function toggleMobileMenu() {
 <div class="hero">
     <h1>Detrás de cada refugio hay<br>personas como vos</h1>
     <p>Los refugios de Buenos Aires funcionan con voluntarios que ponen el cuerpo todos los días. Sin sueldo, sin sponsors, sin estructura. Solo amor y compromiso — y necesitan tu ayuda.</p>
+    <a href="#ayudar" style="display:inline-block;margin-top:28px;background:#D4836B;color:white;padding:14px 32px;border-radius:30px;font-weight:700;font-size:16px;text-decoration:none;transition:transform 0.2s,background 0.2s;">Quiero ayudar →</a>
 </div>
 
 <div class="content">
@@ -327,28 +365,87 @@ function toggleMobileMenu() {
 
     <div class="ways-grid">
         <div class="way-card">
-            <div class="icon">💰</div>
-            <h3>Doná dinero</h3>
-            <p>Tu donación ayuda a cubrir alimento, castraciones y tratamientos veterinarios. Cada peso cuenta y se distribuye entre los 5 refugios.</p>
+            <div class="icon">🍖</div>
+            <h3>Alimento balanceado</h3>
+            <p>Bolsones de comida para perros o gatos — de cualquier marca y edad. Es la necesidad más constante de todos los refugios.</p>
         </div>
         <div class="way-card">
-            <div class="icon">🍖</div>
-            <h3>Doná alimento</h3>
-            <p>Muchos refugios aceptan donaciones de alimento balanceado directamente. Si preferís donar en especie, contactanos y te conectamos con el refugio más cercano.</p>
+            <div class="icon">💊</div>
+            <h3>Medicamentos e insumos</h3>
+            <p>Antiparasitarios, antibióticos, pipetas, vendas, suero. También laboratorios o veterinarias que quieran donar stock: nos encargamos de coordinar.</p>
+        </div>
+        <div class="way-card">
+            <div class="icon">🛏️</div>
+            <h3>Mantas, juguetes y accesorios</h3>
+            <p>Mantas, camas, correas, collares, transportadoras, juguetes. Todo lo que ya no usás y puede darle confort a un animal rescatado.</p>
+        </div>
+        <div class="way-card">
+            <div class="icon">🚗</div>
+            <h3>Transporte y tránsito</h3>
+            <p>¿Tenés auto y podés trasladar un animal al veterinario? ¿Podés ser hogar de tránsito por unos días? Es una de las ayudas más necesarias.</p>
+        </div>
+        <div class="way-card">
+            <div class="icon">🙋</div>
+            <h3>Tu tiempo</h3>
+            <p>Voluntariado para bañar, pasear, cuidar o administrar redes. Los refugios siempre necesitan manos extras.</p>
         </div>
         <div class="way-card">
             <div class="icon">📢</div>
             <h3>Compartí</h3>
-            <p>A veces la mejor ayuda es pasar la voz. Compartí PatitasBA con amigos, en redes sociales o en tu grupo de WhatsApp. Cada compartida puede ser una adopción más.</p>
+            <p>Pasar la voz también es ayudar. Compartí PatitasBA o los posts de los refugios en tus redes — cada compartida puede ser una adopción.</p>
         </div>
     </div>
 
-    <!-- Donation box -->
-    <div class="donate-box">
+    <!-- Unified help form -->
+    <div class="contact-section" id="ayudar">
+        <h2>Quiero ayudar</h2>
+        <p>Contanos qué podés aportar y te conectamos con el refugio que más lo necesite. Te respondemos en 24-48 hs.</p>
+        <form class="contact-form" id="ayudarForm" action="https://formspree.io/f/mwvrwrew" method="POST">
+            <input type="hidden" name="_subject" value="[PatitasBA] Nueva oferta de ayuda">
+            <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+
+            <label for="ayuda-name">Tu nombre</label>
+            <input type="text" name="name" id="ayuda-name" placeholder="Ej: María López" required>
+
+            <label for="ayuda-email">Email</label>
+            <input type="email" name="email" id="ayuda-email" placeholder="Ej: maria@gmail.com" required>
+
+            <label for="ayuda-tel">Teléfono / WhatsApp <span style="font-weight:400;color:#999;">(opcional)</span></label>
+            <input type="tel" name="telefono" id="ayuda-tel" placeholder="Ej: 11 5555 5555">
+
+            <label>¿Qué podés donar o aportar? <span style="font-weight:400;color:#999;">(podés marcar varios)</span></label>
+            <div class="tipo-ayuda-grid">
+                <label class="tipo-check"><input type="checkbox" name="tipo_ayuda" value="Alimento balanceado"><span>🍖 Alimento</span></label>
+                <label class="tipo-check"><input type="checkbox" name="tipo_ayuda" value="Medicamentos / insumos veterinarios"><span>💊 Medicamentos</span></label>
+                <label class="tipo-check"><input type="checkbox" name="tipo_ayuda" value="Mantas, juguetes, accesorios"><span>🛏️ Mantas / accesorios</span></label>
+                <label class="tipo-check"><input type="checkbox" name="tipo_ayuda" value="Transporte"><span>🚗 Transporte</span></label>
+                <label class="tipo-check"><input type="checkbox" name="tipo_ayuda" value="Hogar de tránsito"><span>🏠 Hogar de tránsito</span></label>
+                <label class="tipo-check"><input type="checkbox" name="tipo_ayuda" value="Voluntariado / tiempo"><span>🙋 Mi tiempo</span></label>
+                <label class="tipo-check"><input type="checkbox" name="tipo_ayuda" value="Donación de dinero"><span>💛 Dinero</span></label>
+                <label class="tipo-check"><input type="checkbox" name="tipo_ayuda" value="Otro"><span>✨ Otro</span></label>
+            </div>
+
+            <label for="ayuda-zona">Zona / barrio <span style="font-weight:400;color:#999;">(opcional)</span></label>
+            <input type="text" name="zona" id="ayuda-zona" placeholder="Ej: Palermo, CABA">
+
+            <label for="ayuda-detalle">Contanos más</label>
+            <textarea name="detalle" id="ayuda-detalle" placeholder="Ej: Tengo 3 bolsones de Pedigree sin abrir, puedo llevarlos a zona norte cualquier día de semana después de las 18hs." required></textarea>
+
+            <button type="submit" class="btn-enviar" id="btnEnviarAyuda">Enviar</button>
+            <div id="ayudaSuccess" style="display:none;margin-top:16px;background:#E8F5E9;color:#2E7D32;padding:16px;border-radius:12px;font-weight:600;text-align:center;">
+                ¡Gracias! Recibimos tu mensaje y te escribimos en las próximas 24-48 hs.
+            </div>
+            <div id="ayudaError" style="display:none;margin-top:16px;background:#FFEBEE;color:#C62828;padding:16px;border-radius:12px;font-weight:600;text-align:center;">
+                Hubo un error. Escribinos directo a grodgm@gmail.com y lo resolvemos.
+            </div>
+        </form>
+    </div>
+
+    <!-- Donation box (MercadoPago) — oculto por ahora, se mantiene el código por si se reactiva
+    <div class="donate-box" style="display:none;">
         <h2>Hacé tu donación</h2>
         <p>El 100% de lo recaudado se distribuye entre los refugios para comida, veterinario y cuidados. Sin comisiones, sin intermediarios.</p>
 
-        <!-- Progress bar -->
         <div style="max-width:400px;margin:0 auto 24px;">
             <div class="goal-label">
                 <span>Recaudado este mes</span>
@@ -363,7 +460,6 @@ function toggleMobileMenu() {
             <div class="superado-msg" id="superadoMsg">🎉 ¡Superamos la meta! Cada peso extra también va a los refugios.</div>
         </div>
 
-        <!-- Alias -->
         <div class="alias-box" style="max-width:400px;margin:0 auto 24px;">
             <div class="alias-label">Alias MercadoPago</div>
             <div class="alias-value" id="donarAlias">patitasba.mp</div>
@@ -386,11 +482,13 @@ function toggleMobileMenu() {
             PatitasBA es un proyecto sin fines de lucro. Distribuimos las donaciones equitativamente cada mes entre todos los refugios. No cobramos comisión.
         </div>
     </div>
+    -->
 
-    <!-- Contact -->
-    <div class="contact-section" id="contacto">
-        <h2>Contactanos</h2>
-        <p>¿Tenés una propuesta, una idea, querés sumar tu refugio o simplemente saludar? Escribinos y te respondemos.</p>
+
+    <!-- Contact (otros motivos) -->
+    <div class="contact-section" id="contacto" style="margin-top:32px;">
+        <h2>¿Otro motivo?</h2>
+        <p>¿Sos un refugio y querés sumarte? ¿Tenés una propuesta, una idea o simplemente querés saludar? Escribinos.</p>
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvrwrew" method="POST">
             <input type="hidden" name="_subject" value="Contacto desde Patitasba.com.ar">
             <!-- Honeypot anti-spam (hidden from humans) -->
@@ -419,7 +517,7 @@ function toggleMobileMenu() {
 
 <div class="cta-bottom">
     <h2>Cada gesto cuenta</h2>
-    <p>Doná, compartí, adoptá. Lo que puedas, cuando puedas. Los refugios y sus animales te lo agradecen.</p>
+    <p>Aportá lo que puedas — comida, medicamentos, tiempo, tu auto, tu departamento por unos días. Todo suma.</p>
     <a href="/" class="cta-btn">Ver mascotas en adopción</a>
     <a href="/test.html" class="cta-btn secondary">Hacer el test de compatibilidad</a>
 </div>
@@ -429,62 +527,66 @@ function toggleMobileMenu() {
 </footer>
 
 <script>
-// Copy alias
+// Copy alias (disponible por si se reactiva MP)
 function copiarAlias() {
     navigator.clipboard.writeText('patitasba.mp').then(() => {
         const btn = document.querySelector('.btn-copy');
-        btn.textContent = '✅ ¡Copiado!';
-        setTimeout(() => btn.textContent = '📋 Copiar alias', 2000);
+        if (btn) {
+            btn.textContent = '✅ ¡Copiado!';
+            setTimeout(() => btn.textContent = '📋 Copiar alias', 2000);
+        }
     });
 }
 
-// Load donation progress
-async function cargarDonaciones() {
-    try {
-        const resp = await fetch('donaciones.json');
-        if (!resp.ok) return;
-        const data = await resp.json();
-        const meta = data.meta || 200000;
-        const actual = data.recaudado || 0;
-        const pct = Math.min(Math.round((actual / meta) * 100), 100);
-        document.getElementById('donarProgressFill').style.width = pct + '%';
-        document.getElementById('donarPct').textContent = pct + '%';
-        document.getElementById('donarGoalSub').textContent = `$${actual.toLocaleString('es-AR')} de $${meta.toLocaleString('es-AR')} ARS`;
-        document.getElementById('donarMetaLabel').textContent = `Meta: $${meta.toLocaleString('es-AR')}`;
-        if (actual >= meta) {
-            document.getElementById('superadoMsg').style.display = 'block';
-        }
-    } catch(e) {}
-}
-
-// Contact form → Formspree
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('btnEnviar');
-    const successMsg = document.getElementById('formSuccess');
-    const errorMsg = document.getElementById('formError');
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'none';
-    try {
-        const resp = await fetch(this.action, {
-            method: 'POST',
-            body: new FormData(this),
-            headers: { 'Accept': 'application/json' }
-        });
-        if (resp.ok) {
-            successMsg.style.display = 'block';
-            this.reset();
-        } else {
+// Helper genérico para enviar formularios a Formspree
+function enviarFormspree(formId, btnId, successId, errorId, btnText) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById(btnId);
+        const successMsg = document.getElementById(successId);
+        const errorMsg = document.getElementById(errorId);
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'none';
+        try {
+            const resp = await fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (resp.ok) {
+                successMsg.style.display = 'block';
+                this.reset();
+                // Scroll suave al mensaje
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        } catch(err) {
             errorMsg.style.display = 'block';
         }
-    } catch(err) {
-        errorMsg.style.display = 'block';
+        btn.textContent = btnText;
+        btn.disabled = false;
+    });
+}
+
+// Formulario principal de ayuda
+enviarFormspree('ayudarForm', 'btnEnviarAyuda', 'ayudaSuccess', 'ayudaError', 'Enviar');
+// Formulario de contacto general
+enviarFormspree('contactForm', 'btnEnviar', 'formSuccess', 'formError', 'Enviar mensaje');
+
+// Validar que al menos un tipo de ayuda esté marcado
+document.getElementById('ayudarForm').addEventListener('submit', function(e) {
+    const checks = this.querySelectorAll('input[name="tipo_ayuda"]:checked');
+    if (checks.length === 0) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        alert('Marcá al menos una forma de ayudar 💛');
     }
-    btn.textContent = 'Enviar mensaje';
-    btn.disabled = false;
-});
+}, true); // captura → corre ANTES del listener de arriba
 
 // Load pet count
 async function cargarStats() {
@@ -500,7 +602,6 @@ async function cargarStats() {
     } catch(e) {}
 }
 
-cargarDonaciones();
 cargarStats();
 </script>
 

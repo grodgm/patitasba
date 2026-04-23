@@ -40,4 +40,4 @@ jobs:
 
           git add pets.json images/ donaciones.json || true
           git diff --staged --quiet || git commit -m "🐾 Actualización automática $(date +'%d/%m/%Y %H:%M')"
-          git push || echo "⚠️ Push falló, se reintenta..." && git pull --rebase origin main && git push
+          git push || (echo "⚠️ Push falló, se reintenta..." && git pull --rebase origin main && git push)
