@@ -232,9 +232,15 @@ _NOMBRE_STOP = {
     # Palabras descriptivas frecuentes
     "camada", "camadita", "hermanitos", "hermanitas", "hermanos", "hermanas",
     "muchas", "muchos", "mucha", "mucho", "nadie", "todos", "todas",
-    "algunos", "algunas", "alguno", "alguna", "cual", "cuanto", "como", "cómo",
-    "donde", "dónde", "cuando", "cuándo", "qué", "porque",
+    "algunos", "algunas", "alguno", "alguna", "cual", "cuál", "cuanto", "cuánto",
+    "como", "cómo", "donde", "dónde", "cuando", "cuándo", "qué", "porque",
     "hola", "les", "nos", "sus", "su", "cada", "solo", "sola",
+    # Adjetivos/adverbios que suelen empezar posts
+    "importante", "importantes", "urgente", "urgentes",
+    "necesitamos", "necesitan", "necesita", "necesito",
+    "hoy", "mañana", "recientemente",
+    "facha", "dulce", "dulcita",
+    "estas", "estos", "esos", "esas",
     # Generales de refugio
     "hogar", "adopcion", "adopción", "casa", "familia", "refugio",
     "fundación", "fundacion", "proyecto", "campaña",
@@ -262,7 +268,7 @@ _NOMBRE_STOP = {
     "adopta", "adoptado", "adoptada", "adoptados", "adoptadas",
     "rescate", "rescatado", "rescatada", "rescatados", "rescatadas",
     # Adjetivos que aparecen como si fueran nombres
-    "lourdesiano", "lourdesiana", "camperitos",
+    "lourdesiano", "lourdesiana", "lourdesianos", "lourdesianas", "camperitos",
     # Números como palabra
     "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez",
     # Redes / CTAs
@@ -323,8 +329,10 @@ def extraer_nombre(caption: str) -> str | None:
         r"(?i)\bnombre\s*[:\-]\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
         r"(?i)\b(?:se llama|lo llamamos|la llamamos|llamamos)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
         r"(?i)\b(?:te presentamos a|les presentamos a|conocé a|conoce a|conozcan a)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
-        r"(?i)\b(?:él es|ella es)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        r"(?i)\b(?:él es|ella es|ella es la dulce|es la dulce|es el dulce)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
         r"(?i)\b(?:adoptá a|adoptar a|adopta a)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        # Hashtag-nombre: #PIPE, #EROS, #XUL, #UMA (lo que hace zaguates, gatitos_parque_chacabuco)
+        r"#([A-ZÁÉÍÓÚÑ]{3,14})\b",
     ]
     for p in high_conf:
         n = _match(p, texto, re.MULTILINE)
@@ -355,7 +363,12 @@ def extraer_nombre(caption: str) -> str | None:
         # mayúsculas + cualquier cosa no-letra + "en adopción" (ej "RAYO⚡️ en adopcion")
         r'\b([A-ZÁÉÍÓÚÑ]{3,14})[^A-Za-zÁÉÍÓÚÑáéíóúñ]*?\s+(?:en adopción|en adopcion|busca|necesita|adoptado|adoptada)',
         # Capitalizada + verbo (ej "Xion tiene once meses", "Pandy y Ámbar fueron...")
-        r'\b([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\s+(?:tiene|es un|es una|busca|necesita|está en adopción|esta en adopcion|llegó|llego|fueron|fue|y )',
+        # Incluye "está en adopción" sin guión bajo
+        r'\b([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\s+(?:tiene|es un|es una|busca|necesita|está en|esta en|llegó|llego|fueron|fue|se presenta|ya está|y )',
+        # "si NOMBRE está en adopción" o "si NOMBRE busca hogar" (Simona)
+        r'\bsi\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\s+(?:está|esta|busca|tiene)',
+        # "Hoy NOMBRE se presenta" / "Hoy NOMBRE..."
+        r'\bHoy\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b',
         # Lista de cachorros: "- Pimienta, hembra" / "Pimienta, hembra 🐶"
         r'(?:^|\n)\s*[-•·*]?\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\s*,\s*(?:hembra|macho)',
         # Emoji de corazón/flor + nombre capitalizado
@@ -381,6 +394,9 @@ def es_post_genuino(caption: str) -> bool:
         "hay historias", "cada vez ", "todos los años",
         "cuando pensamos", "queremos contarles",
         "gracias a ", "feliz día", "felicidades",
+        "algunos perros", "algunos gatos", "algunas perras", "algunas gatas",
+        "cuánto más", "cuanto más", "cuál es",
+        "la facha", "todos adoptados", "lourdesian",
     ]
     if any(primera_linea.startswith(s) for s in generic_starters):
         return False

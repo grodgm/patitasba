@@ -1,81 +1,8 @@
 {
   "generado": "2026-04-24T01:40:46.122456",
-  "total": 25,
+  "total": 18,
   "posts_revisados": 57,
   "mascotas": [
-    {
-      "id": "DXfW3SMAeGC",
-      "nombre": "Sin nombre #0",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "1 años",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "La facha 😎 que tiene este bebote no se puede creer. Hiper mimoso,  super bueno,  prefiere ser único",
-      "org": "Gatitos Parque Chacabuco",
-      "ig": "gatitos_parque_chacabuco",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
-      "postUrl": "https://www.instagram.com/p/DXfW3SMAeGC/",
-      "imgUrls": [
-        "images/DXfW3SMAeGC_0.jpg",
-        "images/DXfW3SMAeGC_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-04-23",
-      "caption": "La facha 😎 que tiene este bebote no se puede creer\n#IAN \nHiper mimoso,  super bueno,  prefiere ser único \n\nTendrá 1 año y apareció en una de las colonias que alimentamos \n\nEstá castrado y ya listo para irse a una casita dónde jamás lo abandonen ni lo dejen vagar por ahí\n\nPara adoptarlo, escribí por privado"
-    },
-    {
-      "id": "DXe0nqeET0y",
-      "nombre": "Cuál",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto+",
-      "edadCat": "senior",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Cuál es tu bebida preferida. Dicen las malas lenguas que son los tres chiflados en forma felina",
-      "org": "Gatitos Parque Chacabuco",
-      "ig": "gatitos_parque_chacabuco",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
-      "postUrl": "https://www.instagram.com/p/DXe0nqeET0y/",
-      "imgUrls": [
-        "images/DXe0nqeET0y_0.jpg",
-        "images/DXe0nqeET0y_1.jpg",
-        "images/DXe0nqeET0y_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-04-23",
-      "caption": "Cuál es tu bebida preferida ? 🤣\n\nDicen las malas lenguas que son los tres chiflados en forma felina ...\n\nLas malas lenguas dicen también que son muy apegados y consentidos, NO aptos para que se queden solos muchas horas...y si hay un hermano mayor ,mucho mejor ....\n\nLlegaron feos como llegan todos, flacos, con diarrea , enemigos , hasta pasaron por dos días de internación ....hubiese sido tan facil y barato castrar a la mamá 🙄, pero para qué no?  A ver si todavía se doblan el tobillo por mover e"
-    },
-    {
-      "id": "DXdA7ALCOfF",
-      "nombre": "Cuánto",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "1 años",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Cuánto más tendrá que esperar un hogar definitivo 😔. Porque cuesta tanto que se fijen en jovencitos",
-      "org": "Gatitos Parque Chacabuco",
-      "ig": "gatitos_parque_chacabuco",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
-      "postUrl": "https://www.instagram.com/p/DXdA7ALCOfF/",
-      "imgUrls": [
-        "images/DXdA7ALCOfF_0.jpg",
-        "images/DXdA7ALCOfF_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-04-23",
-      "caption": "Cuánto más tendrá que esperar un hogar definitivo 😔?\nPorque cuesta tanto que se fijen en jovencitos?\n\nSi te sentis sólo,  él puede ser tu compañía cotidiana\n\n#POPEYE \n\nEs un gato intenso,  mimoso,  juguetón , charleta y demandante de atención \nActualmente no convive con gatis pero creemos que se llevará bien con algún gato juguetón cómo él \n\nTiene 1 año \nYa está castrado y vacunado \nEs lo más de lo más \n\nSi querés adoptar,  escribí por privado"
-    },
     {
       "id": "DXb4OqAAdSO",
       "nombre": "Pipe",
@@ -101,7 +28,7 @@
     },
     {
       "id": "DXaaZqaCCpN",
-      "nombre": "Sin nombre #4",
+      "nombre": "Eros",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♂",
@@ -125,7 +52,7 @@
     },
     {
       "id": "DXaMkXBk8Jd",
-      "nombre": "Sin nombre #5",
+      "nombre": "Sin nombre",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♀",
@@ -148,7 +75,7 @@
     },
     {
       "id": "DXQH9hljMhQ",
-      "nombre": "Sin nombre #6",
+      "nombre": "Simona",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♀",
@@ -193,33 +120,8 @@
       "caption": "Tobi ya está bien.\n\nSuperó todo lo que le tocó vivir y hoy es un perro tranquilo, cariñoso y que convive perfecto con otros perros.\n\nNo necesita nada raro.\nSolo alguien que lo elija de verdad y le dé un lugar para siempre.\n\n¿Querés sumarlo a tu vida?\n\n📩 adopciones@proyecto4patas.org"
     },
     {
-      "id": "DXDT76rDC34",
-      "nombre": "Algunos",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "1 años",
-      "edadCat": "cachorro",
-      "tamanio": "Mediano",
-      "tamanioCat": "mediano",
-      "desc": "Algunos perros son elegidos rápido. Otros aprenden a quedarse viendo cómo todos se van",
-      "org": "Proyecto 4 Patas",
-      "ig": "proyecto4patas",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
-      "postUrl": "https://www.instagram.com/p/DXDT76rDC34/",
-      "imgUrls": [
-        "images/DXDT76rDC34_0.jpg",
-        "images/DXDT76rDC34_1.jpg",
-        "images/DXDT76rDC34_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-04-13",
-      "caption": "Algunos perros son elegidos rápido. Otros aprenden a quedarse viendo cómo todos se van.\n\nHiena es uno de ellos 🥺\n\nVio a cada uno de sus hermanos irse a casa mientras él se quedaba. Siempre él.\n\nTiene 1 año y medio, es de tamaño mediano, está castrado, vacunado y listo para irse con su familia.\n\nDato clave: se lleva bien con gatos 🐱\n\nLo único que le falta es que alguien lo elija ❤️🏠\n\nHiena no necesita suerte.\nNecesita una oportunidad 🙏\n\nAdoptalo. Dale el final que viene esperando.\n\nSi querés adop"
-    },
-    {
       "id": "kkpTYkjCYw",
-      "nombre": "Sin nombre #9",
+      "nombre": "Rayo",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
@@ -315,7 +217,7 @@
     },
     {
       "id": "DXMYoK0lZMU",
-      "nombre": "Sin nombre #13",
+      "nombre": "Milena",
       "tipo": "perro",
       "raza": "Galgo",
       "genero": "♀",
@@ -340,7 +242,7 @@
     },
     {
       "id": "DXJzhM5lRkZ",
-      "nombre": "Importante",
+      "nombre": "Sin nombre",
       "tipo": "perro",
       "raza": "Galgo",
       "genero": "♂",
@@ -362,31 +264,6 @@
       "disponible": false,
       "fecha": "2026-04-15",
       "caption": "🩷🩷🩷🩵Estas hermosas cachorras de 4 meses buscan familia. Como ven son absolutamente adorables 🥰 \nSi queres adoptar envíanos mail a adoptaungalgoenargentina@hotmail.com\nIMPORTANTE: Los cachorras están en Santa Fe, van a viajar una vez que estén adoptadas. No es posible visitarlos antes. \nAdopción en Buenos Aires (CABA Y GBA)"
-    },
-    {
-      "id": "DXIJLDmmZ5C",
-      "nombre": "Sin nombre #15",
-      "tipo": "perro",
-      "raza": "Galgo",
-      "genero": "♂",
-      "edad": "2 meses",
-      "edadCat": "cachorro",
-      "tamanio": "Grande",
-      "tamanioCat": "grande",
-      "desc": "TODOS ADOPTADOS 🥰. 🩷🩵🩷Estos bebitos hermosos tiene 2 meses y están listos para encontrar un hogar🏠",
-      "org": "Adopta un Galgo",
-      "ig": "adoptaungalgo",
-      "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
-      "postUrl": "https://www.instagram.com/p/DXIJLDmmZ5C/",
-      "imgUrls": [
-        "images/DXIJLDmmZ5C_0.jpg",
-        "images/DXIJLDmmZ5C_1.jpg",
-        "images/DXIJLDmmZ5C_2.jpg"
-      ],
-      "disponible": false,
-      "fecha": "2026-04-14",
-      "caption": "TODOS ADOPTADOS 🥰\n🩷🩵🩷Estos bebitos hermosos tiene 2 meses y están listos para encontrar un hogar🏠 \nQueres que formé parte de tu familia? 🐾🩷\nEscribinos a adoptaungalgoenargentina@hotmail.com"
     },
     {
       "id": "DXeuIHIDhxo",
@@ -415,7 +292,7 @@
     },
     {
       "id": "DXZLLalle06",
-      "nombre": "Choco",
+      "nombre": "Canela",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♀",
@@ -439,31 +316,8 @@
       "caption": "🌈Canela y choco en adopción 🌈\n\nEstas dos diosas del Olimpo son hembras, tienen aprox 2 meses y 1/2 y buscan una familia que les dé mucho mucho amor 🫀\n\nCanela ( es la marroncita) es MUY cariñosa. Una adicta a los mimos y a la cercanía. Disfruta de largas rascaditas en la panza y le gusta estar cerquita de sus humanos de tránsito ✨ aprende super rápido ✅ se lleva muy bien con 🐶\n\nChoco ( la negrita) es SUPER inteligente y juguetona. Amante de jugar con su pelota y con su hermana. Aprendió muy rápid"
     },
     {
-      "id": "DXe9tRQCXfM",
-      "nombre": "Lourdesianas",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Cachorro",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Lourdesianas Stars 🌈🐈💫. Chimi y Churri tienen 60 días",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
-      "postUrl": "https://www.instagram.com/p/DXe9tRQCXfM/",
-      "imgUrls": [
-        "images/DXe9tRQCXfM.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-04-23",
-      "caption": "Lourdesianas Stars 🌈🐈💫\nChimi y Churri tienen 60 días. Están despulgadas y desparasitadas.\nSon hermanas inseparables.  Se asignarán juntas.\nIdeales para quienes quieran recibir en su hogar dos corazones unidos.\nAptas para convivir con todos.\n\nDaremos a quien las adopte 6 kilos de alimentos dos sets de juguetes.\nPor favor ayúdennos a difundirlas.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adopcionresponsable #adoptaungato #hogarlourdes #g"
-    },
-    {
       "id": "DXe9AfKjkdc",
-      "nombre": "Sin nombre #19",
+      "nombre": "Sin nombre",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♀",
@@ -533,29 +387,6 @@
       "caption": "Carlo tiene 60 días. Esta despulgado y desparasitado.\nEs súper tranquilo y mimoso.\nApto para convivir con todos.\nNos ayudan a difundirlo?\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adoptanocompres #gatito #adoptaungato #gatosdeinstagram #hogarlourdes"
     },
     {
-      "id": "DXSgKPej2Bf",
-      "nombre": "Cuánto",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "4 meses",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Cuánto más tiene que esperar esta panterita. Él es Rasti, un bebé de 4 meses mega dulce, compañero y juguetón",
-      "org": "Rescataditos en Adopción",
-      "ig": "rescataditosenadopcionn",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
-      "postUrl": "https://www.instagram.com/p/DXSgKPej2Bf/",
-      "imgUrls": [
-        "images/DXSgKPej2Bf.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-04-18",
-      "caption": "Cuánto más tiene que esperar esta panterita? 💔\n\nÉl es Rasti, un bebé de 4 meses mega dulce, compañero y juguetón.. fue rescatado por Ani junto a su mamá y hermanos, todos consiguieron familias hermosas pero hace tiempo que el espera y espera 🥺\nRasti es vif vilef negativo y ama estar con otros gatos. \n\nPor qué los negritos siempre son los últimos?\nEllos no entienden de colores, solo saben dar y recibir amor ❤️‍🩹\n\nSe que ahí afuera hay alguien que lo va a elegir con el corazón para que sea parte d"
-    },
-    {
       "id": "DXP4I0mjzHS",
       "nombre": "Gandalf",
       "tipo": "gato",
@@ -580,7 +411,7 @@
     },
     {
       "id": "DXKcWAMkYWx",
-      "nombre": "Sin nombre #24",
+      "nombre": "Azu",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♀",
