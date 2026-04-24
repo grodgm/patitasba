@@ -14,6 +14,10 @@ jobs:
     permissions:
       contents: write
 
+    # Forzar Node.js 24 para las actions (opt-in temprano, requerido a partir de junio 2026)
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -26,9 +30,36 @@ jobs:
       - name: Instalar dependencias
         run: pip install instaloader
 
-      - name: Correr scraper (con timeout y menos posts)
+      - name: Restaurar sesión de Instagram desde secret
+        env:
+          INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
+          INSTAGRAM_SESSION_B64: ${{ secrets.INSTAGRAM_SESSION_B64 }}
+        run: |
+          if [ -z "$INSTAGRAM_USERNAME" ] || [ -z "$INSTAGRAM_SESSION_B64" ]; then
+            echo "⚠️  No hay secrets de sesión configurados — el scraper correrá sin login."
+            echo "IG_LOGIN=" >> $GITHUB_ENV
+            exit 0
+          fi
+          SESSION_DIR="$HOME/.config/instaloader"
+          mkdir -p "$SESSION_DIR"
+          # instaloader lowercasea el username al construir el path por default
+          USERNAME_LC=$(echo "$INSTAGRAM_USERNAME" | tr '[:upper:]' '[:lower:]')
+          echo "$INSTAGRAM_SESSION_B64" | base64 --decode > "$SESSION_DIR/session-$USERNAME_LC"
+          chmod 600 "$SESSION_DIR/session-$USERNAME_LC"
+          SIZE=$(wc -c < "$SESSION_DIR/session-$USERNAME_LC")
+          echo "✅ Sesión restaurada: $SESSION_DIR/session-$USERNAME_LC ($SIZE bytes)"
+          echo "IG_LOGIN=$INSTAGRAM_USERNAME" >> $GITHUB_ENV
+
+      - name: Correr scraper (con login si hay sesión)
         timeout-minutes: 15
-        run: python scraper.py --max-posts 8
+        run: |
+          if [ -n "$IG_LOGIN" ]; then
+            echo "🔑 Corriendo scraper con login: @$IG_LOGIN"
+            python scraper.py --login "$IG_LOGIN" --max-posts 8
+          else
+            echo "👤 Corriendo scraper sin login"
+            python scraper.py --max-posts 8
+          fi
 
       - name: Commit y push cambios
         run: |

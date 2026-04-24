@@ -1,6 +1,10 @@
 # Token de MercadoPago — NUNCA subir a GitHub
 mp_token.txt
 
+# Sesiones de Instagram (contienen cookies de login — NUNCA subir)
+session-*
+*.session
+
 # Logs locales
 scraper.log
 
