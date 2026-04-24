@@ -1,11 +1,11 @@
 {
   "generado": "2026-03-31T13:07:23.043875",
-  "total": 24,
+  "total": 23,
   "posts_revisados": 49,
   "mascotas": [
     {
       "id": "DWgc7J7FSw8",
-      "nombre": "Camada",
+      "nombre": "Pimienta",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
@@ -30,7 +30,7 @@
     },
     {
       "id": "DWcxFFYlZ4y",
-      "nombre": "Busco",
+      "nombre": "Canela",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
@@ -130,7 +130,7 @@
     },
     {
       "id": "DWWqTZSlWvb",
-      "nombre": "Sin nombre #5",
+      "nombre": "July",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
@@ -155,7 +155,7 @@
     },
     {
       "id": "DWWP67vlQnj",
-      "nombre": "Sin nombre #6",
+      "nombre": "Pipo",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
@@ -180,7 +180,7 @@
     },
     {
       "id": "DWZCwmEAFil",
-      "nombre": "Sin nombre #7",
+      "nombre": "Estrella",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♀",
@@ -226,7 +226,7 @@
     },
     {
       "id": "DWT2S7oAJss",
-      "nombre": "Sin nombre #9",
+      "nombre": "Sin nombre",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♀",
@@ -272,7 +272,7 @@
     },
     {
       "id": "kkpTYkjCYw",
-      "nombre": "Sin nombre #11",
+      "nombre": "Rayo",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
@@ -393,7 +393,7 @@
     },
     {
       "id": "DWhMPGtFJr6",
-      "nombre": "Sin nombre #16",
+      "nombre": "Xion",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♂",
@@ -512,7 +512,7 @@
     },
     {
       "id": "DWhJJ15FFBe",
-      "nombre": "Sin nombre #21",
+      "nombre": "Sin nombre",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♀",
@@ -534,31 +534,8 @@
       "caption": "Tránsito.\n-\nNecesitamos quien nos ayude a cuidarla durante un tempo a convenir mientras le buscamos una familia definitiva.\n\nDaremos todo lo necesario para el tránsito, alimentos y controles veterinarios.\nUn voluntario coordinador estará en contacto permanente.\n\nPor favor ayúdennos a difundirla.\n\nInformes por Prana:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaunperrito #adopcionresponsable"
     },
     {
-      "id": "DWNXkQxjKIB",
-      "nombre": "Hay",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Hay historias que no solo se cuentan… se sienten. Este retrato nace desde el respeto y la admiración hacia la labor tan increíble de",
-      "org": "Proyecto 4 Patas",
-      "ig": "proyecto4patas",
-      "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
-      "postUrl": "https://www.instagram.com/p/DWNXkQxjKIB/",
-      "imgUrls": [
-        "images/DWNXkQxjKIB.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-03-22",
-      "caption": "Hay historias que no solo se cuentan… se sienten.\n\nEste retrato nace desde el respeto y la admiración hacia la labor tan increíble de\n\n@proyecto4patas \n\nNo es un trabajo con fines comerciales,\nes un gesto… un pequeño homenaje a una vida que dejó huella\ny a las personas que nunca dejaron de creer.\n\nGracias por recordarnos que amar también es luchar hasta el final.\n\nSi puedes, apoya, comparte o adopta.\nEllos hacen una labor que merece ser vista por todos ❤️\n\n#rescateanimal #adopcionresponsable #am"
-    },
-    {
       "id": "DVSN71cDDFU",
-      "nombre": "Sin nombre #23",
+      "nombre": "Pandy",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",

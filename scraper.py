@@ -209,96 +209,190 @@ def detectar_tipo(caption: str, ig: str = "") -> str:
     return "perro"  # default: la mayoría de las cuentas son de perros
 
 
+# ─── Stop-words para extracción de nombres ─────────────────────────────
+# Palabras que NO son nombres de animales (se descartan si matchean algún patrón).
+_NOMBRE_STOP = {
+    # Artículos / conectores
+    "el", "la", "los", "las", "un", "una", "unos", "unas",
+    "de", "del", "con", "sin", "por", "para", "que",
+    "este", "esta", "estos", "estas", "ese", "esa", "esos", "esas",
+    "y", "o", "e", "u", "pero", "aunque", "si", "ya", "no", "mas", "más",
+    # Verbos conjugados (los que el scraper viejo tomaba como nombre)
+    "busco", "buscas", "busca", "buscan", "buscamos", "buscando", "esperando", "necesitando",
+    "hay", "fue", "fueron", "son", "era", "eran", "está", "estan", "están",
+    "tiene", "tienen", "tenía", "tenían", "quiere", "quieren",
+    "sigue", "siguen", "llegó", "llego", "llegaron", "lleva", "llevan", "llegan",
+    "saben", "sabe", "puede", "pueden", "hace", "hacer", "ser", "estar",
+    "vamos", "voy", "va", "van", "vino", "vienen", "viene",
+    "seguimos", "somos", "tenemos", "estamos", "queremos", "querés", "queres",
+    # Pronombres — NO son nombres de animales
+    "él", "ella", "ellos", "ellas", "nosotros", "nosotras",
+    "ustedes", "mío", "mía", "tuyo", "tuya", "suyo", "suya",
+    "nuestro", "nuestra", "nuestros", "nuestras",
+    # Palabras descriptivas frecuentes
+    "camada", "camadita", "hermanitos", "hermanitas", "hermanos", "hermanas",
+    "muchas", "muchos", "mucha", "mucho", "nadie", "todos", "todas",
+    "algunos", "algunas", "alguno", "alguna", "cual", "cuanto", "como", "cómo",
+    "donde", "dónde", "cuando", "cuándo", "qué", "porque",
+    "hola", "les", "nos", "sus", "su", "cada", "solo", "sola",
+    # Generales de refugio
+    "hogar", "adopcion", "adopción", "casa", "familia", "refugio",
+    "fundación", "fundacion", "proyecto", "campaña",
+    "disponible", "disponibles", "transitando", "tránsito", "transito",
+    "jornada", "evento", "feria", "charla",
+    "info", "información", "consultas", "contacto", "datos", "informes",
+    # Especies
+    "perro", "perra", "perrito", "perrita", "gato", "gata", "gatito", "gatita",
+    "cachorro", "cachorra", "cachorrito", "cachorrita",
+    "animal", "mascota", "galgo", "galga", "galguito", "galguita",
+    "mestizo", "mestiza",
+    # Atributos
+    "macho", "hembra", "castrado", "castrada", "esterilizada",
+    "vacunado", "vacunada", "desparasitado", "desparasitada",
+    "edad", "tamaño", "peso", "color", "raza", "mes", "meses", "años",
+    "año", "dias", "día", "semanas", "semana",
+    "hermoso", "hermosa", "lindo", "linda", "bello", "bella",
+    "nuevo", "nueva", "bueno", "buena",
+    "super", "súper", "mega", "bien", "mal", "mejor", "peor",
+    "chico", "chica", "grande", "mediano", "mediana", "pequeño", "pequeña",
+    "urgente", "hoy", "ayer", "ahora", "antes", "después", "despues",
+    "siempre", "nunca", "recién", "recien",
+    "zona", "barrio", "caba", "buenos", "aires",
+    # Contexto de adopción
+    "adopta", "adoptado", "adoptada", "adoptados", "adoptadas",
+    "rescate", "rescatado", "rescatada", "rescatados", "rescatadas",
+    # Adjetivos que aparecen como si fueran nombres
+    "lourdesiano", "lourdesiana", "camperitos",
+    # Números como palabra
+    "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez",
+    # Redes / CTAs
+    "seguimos", "miralo", "mirala", "ayuda", "ayudanos", "compartí", "comparti",
+    "gracias", "graciass", "thanks", "conoce", "conocé", "mirá", "mira", "aquí", "acá",
+    "dale", "buenas", "tardes", "noches",
+    # Términos que solo vi generar nombres basura
+    "historia", "historias", "labor", "admiración", "admiracion", "respeto",
+    "bomboncitos", "bombón", "bombon", "estrellita",
+    "especias", "especiales", "especial",
+    "bebé", "bebe", "bebés", "bebes", "bebita", "bebito",
+    "panteritas", "atigrada", "atigrado",
+    "resuelto", "resuelta",
+    "gran", "muy",
+}
+
+
+def _colapsar_letras_espaciadas(texto: str) -> str:
+    """'E S T R E L L A' → 'ESTRELLA' (cuando hay 4+ letras mayúsculas separadas por espacios)."""
+    def repl(m):
+        return m.group(0).replace(' ', '')
+    return re.sub(r'\b(?:[A-ZÁÉÍÓÚÑ]\s){3,}[A-ZÁÉÍÓÚÑ]\b', repl, texto)
+
+
+def _nombre_valido(nombre: str) -> bool:
+    """Filtra stop-words, acrónimos raros y nombres fuera de rango."""
+    if not nombre:
+        return False
+    if len(nombre) < 3 or len(nombre) > 15:
+        return False
+    if nombre.lower() in _NOMBRE_STOP:
+        return False
+    # Al menos una vocal (filtra acrónimos raros tipo "PSP")
+    if not re.search(r'[aeiouáéíóúAEIOUÁÉÍÓÚ]', nombre):
+        return False
+    return True
+
+
 def extraer_nombre(caption: str) -> str | None:
-    """Intenta extraer el nombre del animal del caption."""
-    # Palabras que NO son nombres de animales
-    STOP = {
-        "busca", "está", "este", "esta", "están", "estan", "tiene", "gran", "muy", "para",
-        "hola", "por", "les", "nos", "sus", "con", "sin", "que", "del",
-        "una", "uno", "los", "las", "pueden", "tienen", "queremos",
-        "buscamos", "necesita", "necesitamos", "urgente", "hoy",
-        "ayer", "hace", "desde", "hasta", "zona", "barrio", "caba",
-        "buenos", "aires", "hogar", "adopcion", "adopción", "casa",
-        "familia", "perro", "perra", "perrito", "perrita", "gato", "gata",
-        "gatito", "gatita", "cachorro", "cachorra", "cachorrito", "cachorrita",
-        "animal", "mascota", "rescate", "rescatado", "rescatada",
-        "macho", "hembra", "castrado", "castrada", "esterilizada",
-        "vacunado", "vacunada", "desparasitado", "desparasitada",
-        "edad", "tamaño", "peso", "color", "raza", "mes", "meses", "años",
-        "año", "dias", "día", "semanas", "semana",
-        "adopta", "adoptado", "adoptada", "adoptados",
-        "hermoso", "hermosa", "lindo", "linda", "bello", "bella",
-        "nuevo", "nueva", "bueno", "buena",
-        "info", "información", "consultas", "contacto", "datos",
-        "refugio", "fundación", "fundacion", "proyecto", "campaña",
-        "disponible", "disponibles", "transitando", "tránsito", "transito",
-        "jornada", "evento", "feria", "charla",
-        "como", "cómo", "donde", "dónde", "cuando", "cuándo",
-        "todo", "toda", "todos", "todas", "cada", "solo", "sola",
-        "ellos", "ellas", "ella", "nuestro", "nuestra", "nuestros",
-        "lleva", "llegan", "llegó", "llego", "viene", "vienen",
-        "quiere", "quieren", "puede", "pueden", "sigue", "siguen",
-        "buscando", "esperando", "necesitando",
-        "super", "súper", "mega", "más", "mas",
-        "bien", "mal", "mejor", "peor",
-        "ser", "estar", "tener", "hacer", "poder",
-        "estos", "estas", "esos", "esas", "aquel", "aquella",
-        "ahora", "antes", "después", "despues", "siempre", "nunca",
-        "tres", "cuatro", "cinco", "seis", "siete", "ocho",
-        "hermanitos", "hermanitas", "hermanos", "hermanas",
-        "conoce", "conocé", "mirá", "mira", "aquí", "acá",
-        # Verbos/palabras que el scraper confundió con nombres
-        "no", "nadie", "fueron", "fue", "saben", "muchas", "muchos",
-        "seguimos", "llegaron", "llegó", "rescatados", "rescatadas",
-        "informes", "resuelto", "resuelta",
-        "lourdesiana", "lourdesiano", "camperitos",
-        "somos", "tenemos", "estamos", "querés", "queres",
-        "miralo", "mirala", "ayuda", "ayudanos", "compartí", "comparti",
-        "gracias", "graciass", "thanks",
-        "nuevo", "nueva", "recién", "recien",
-        "vamos", "dale", "buenas", "tardes", "noches", "días",
-    }
+    """Extrae el nombre del animal del caption. Retorna None si no encuentra uno válido."""
+    if not caption:
+        return None
 
-    patterns = [
-        # 1. Etiqueta explícita: "Nombre: Rogelio", "se llama Pandy"
-        r"(?:nombre|se llama|llamamos?|llama|su nombre es|lo llamamos|la llamamos)\s*[:\-]?\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
-        # 2. "Él/ella es NOMBRE" o "Te presentamos a NOMBRE"
-        r"(?:(?:él|ella|el|la) es|te presentamos a|les presentamos a|conocé a|conoce a)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
-        # 3. Nombre en MAYÚSCULAS al inicio del caption (primera línea)
-        r"^[🐾🐕🐕‍🦺🦮🐩🐶🐈🐈‍⬛🐱😺😸❤️💕✨⭐️🌟✅🔴🟢🟡]*\s*([A-ZÁÉÍÓÚÑ]{2,14})\b",
-        # 4. Nombre en MAYÚSCULAS seguido de verbos/contexto de adopción
-        r"\b([A-ZÁÉÍÓÚÑ]{2,14})\s+(?:busca|necesita|está en|en adopción|busca hogar|busca familia|espera|llegó|llego)",
-        # 5. Emojis seguidos de nombre
-        r"(?:🐾|🐕|🐕‍🦺|🦮|🐩|🐶|🐈|🐈‍⬛|🐱)\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
-        # 6. "NOMBRE, [edad/tamaño/tipo]" en la primera línea
-        r"^[^.\n]{0,30}?([A-ZÁÉÍÓÚÑ]{2,14})\s*[,\-]\s*(?:\d+|macho|hembra|cachorro|adulto|perro|perra|gato|gata)",
-        # 7. Nombre en mayúsculas seguido de coma o punto
-        r"\b([A-ZÁÉÍÓÚÑ]{2,14})\s*[,\.]\s*(?:\d+\s*(?:años?|meses?)|macho|hembra|cachorro|adulto)",
-        # 8. "en adopción NOMBRE y NOMBRE" o "adopción: NOMBRE"
-        r"(?:en adopción|en adopcion)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
-        # 9. Nombre después de "adoptá a" o "adoptar a"
-        r"(?:adoptá a|adoptar a|adopta a)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+    # Pre-procesar: colapsar "E S T R E L L A" → "ESTRELLA"
+    texto = _colapsar_letras_espaciadas(caption)
+
+    def _match(pattern: str, scope: str = texto, flags=re.MULTILINE) -> str | None:
+        for m in re.finditer(pattern, scope, flags):
+            n = m.group(1).strip().capitalize()
+            if _nombre_valido(n):
+                return n
+        return None
+
+    # Ronda 1 — patrones de ALTA confianza (etiquetas explícitas "Me llamo X", etc.)
+    high_conf = [
+        r"(?i)\bme llamo\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        r"(?i)\bmi nombre es\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        r"(?i)\bnombre\s*[:\-]\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        r"(?i)\b(?:se llama|lo llamamos|la llamamos|llamamos)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        r"(?i)\b(?:te presentamos a|les presentamos a|conocé a|conoce a|conozcan a)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        r"(?i)\b(?:él es|ella es)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
+        r"(?i)\b(?:adoptá a|adoptar a|adopta a)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b",
     ]
+    for p in high_conf:
+        n = _match(p, texto, re.MULTILINE)
+        if n:
+            return n
 
-    for pattern in patterns:
-        for match in re.finditer(pattern, caption, re.MULTILINE):
-            nombre = match.group(1).strip()
-            # Normalizar: "ROGELIO" -> "Rogelio"
-            nombre_clean = nombre.capitalize()
-            if nombre_clean.lower() not in STOP and len(nombre_clean) >= 2:
-                return nombre_clean
+    primera_linea = texto.split('\n')[0]
 
-    # Último intento: buscar primera palabra capitalizada en la primera línea
-    primera_linea = caption.split('\n')[0].strip()
-    # Quitar emojis del inicio
-    primera_linea = re.sub(r'^[^\w]*', '', primera_linea)
-    match = re.match(r'^([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b', primera_linea)
-    if match:
-        nombre = match.group(1)
-        if nombre.lower() not in STOP:
-            return nombre.capitalize()
+    # Ronda 2 — NOMBRE EN MAYÚSCULAS al principio de la primera línea
+    # Captura "JULY ADOPTADA", "PIPO ADOPTADO", "BENJA🐕💖", "PONCHO EN ADOPCIÓN"
+    m = re.match(r'^[^A-Za-zÁÉÍÓÚÑáéíóúñ]*([A-ZÁÉÍÓÚÑ]{3,14})\b', primera_linea)
+    if m:
+        n = m.group(1).capitalize()
+        if _nombre_valido(n):
+            return n
+
+    # Ronda 3 — primera palabra Capitalizada al inicio de la primera línea
+    # Captura "Mara Adoptada!", "Dulcinea 💚🐾", "Pandora tiene...", "Lilo en adopción"
+    primera_limpia = re.sub(r'^[^\w]+', '', primera_linea, flags=re.UNICODE)
+    m = re.match(r'^([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b', primera_limpia)
+    if m:
+        n = m.group(1).capitalize()
+        if _nombre_valido(n):
+            return n
+
+    # Ronda 4 — NOMBRE seguido de contexto de adopción/verbo (cualquier parte del caption)
+    context = [
+        # mayúsculas + cualquier cosa no-letra + "en adopción" (ej "RAYO⚡️ en adopcion")
+        r'\b([A-ZÁÉÍÓÚÑ]{3,14})[^A-Za-zÁÉÍÓÚÑáéíóúñ]*?\s+(?:en adopción|en adopcion|busca|necesita|adoptado|adoptada)',
+        # Capitalizada + verbo (ej "Xion tiene once meses", "Pandy y Ámbar fueron...")
+        r'\b([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\s+(?:tiene|es un|es una|busca|necesita|está en adopción|esta en adopcion|llegó|llego|fueron|fue|y )',
+        # Lista de cachorros: "- Pimienta, hembra" / "Pimienta, hembra 🐶"
+        r'(?:^|\n)\s*[-•·*]?\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\s*,\s*(?:hembra|macho)',
+        # Emoji de corazón/flor + nombre capitalizado
+        r'(?:🐾|🐕|🐕‍🦺|🦮|🐩|🐶|🐈|🐈‍⬛|🐱|❤️|🤎|🩷|🩵|💚|💕|✨|⭐️|🌟|🌺|🌸|🌹|🖤|💖|💘|💫|🔥|🔴|🟢|🟡)\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,14})\b',
+    ]
+    for p in context:
+        n = _match(p, texto, re.MULTILINE)
+        if n:
+            return n
 
     return None
+
+
+def es_post_genuino(caption: str) -> bool:
+    """Descarta posts que son reflexiones genéricas o shoutouts a otros refugios."""
+    if not caption:
+        return False
+    lower = caption.lower()
+    primera_linea = lower.split('\n')[0].strip()
+
+    # Posts reflexivos/genéricos — empiezan con estas frases
+    generic_starters = [
+        "hay historias", "cada vez ", "todos los años",
+        "cuando pensamos", "queremos contarles",
+        "gracias a ", "feliz día", "felicidades",
+    ]
+    if any(primera_linea.startswith(s) for s in generic_starters):
+        return False
+
+    # Shoutout a otro perfil: "@algo" + palabras reflexivas → homenaje genérico
+    shoutout_indicators = ["labor", "admiración", "admiracion", "respeto",
+                           "retrato", "homenaje", "gracias por ",
+                           "apoyando a", "colaborando con"]
+    if '@' in caption and any(ind in lower for ind in shoutout_indicators):
+        return False
+
+    return True
 
 
 def extraer_edad(caption: str) -> tuple[str, str]:
@@ -547,13 +641,17 @@ def post_a_mascota(post, ig: str, idx: int) -> dict | None:
         print(f"      ⏭️  Saltando campaña/evento (no es animal individual)")
         return None
 
+    if not es_post_genuino(caption):
+        print(f"      ⏭️  Saltando post genérico/reflexivo/shoutout")
+        return None
+
     datos      = parsear_caption(caption, ig)
     adoptado   = esta_adoptado(caption)
     disponible = not adoptado
 
-    # Generar nombre fallback
+    # Fallback cuando no encontramos un nombre válido
     if not datos["nombre"]:
-        datos["nombre"] = f"Sin nombre #{idx}"
+        datos["nombre"] = "Sin nombre"
 
     import random
     rng = random.Random(post.shortcode)
@@ -763,7 +861,7 @@ def generar_demo():
 
         mascota = {
             "id":         f"demo_{i}",
-            "nombre":     datos["nombre"] or f"Sin nombre #{i}",
+            "nombre":     datos["nombre"] or "Sin nombre",
             "tipo":       datos["tipo"],
             "raza":       datos["raza"],
             "genero":     datos["genero"],
