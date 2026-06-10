@@ -12,7 +12,12 @@ Uso:
     python scraper.py --max-posts 20     # cambiar cantidad de posts
 """
 
-import instaloader
+from __future__ import annotations
+
+try:
+    import instaloader  # opcional: solo necesario para scrape() con instaloader
+except ImportError:
+    instaloader = None  # scraper_apify.py importa los parsers sin necesitarlo
 import json
 import re
 import os
