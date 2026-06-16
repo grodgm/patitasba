@@ -1,8 +1,58 @@
 {
-  "generado": "2026-06-15T17:32:15.581083",
-  "total": 23,
+  "generado": "2026-06-16T17:31:36.972662",
+  "total": 20,
   "posts_revisados": 49,
   "mascotas": [
+    {
+      "id": "DZpXQzIHJPm",
+      "nombre": "Vela",
+      "tipo": "perro",
+      "raza": "Galgo",
+      "genero": "♂",
+      "edad": "3 años",
+      "edadCat": "adulto",
+      "tamanio": "Grande",
+      "tamanioCat": "grande",
+      "desc": "Vela busca familia 💛. Tiene 3 años, está castrada, vacunada y lista para tener su familia para siempre",
+      "org": "Adopta un Galgo",
+      "ig": "adoptaungalgo",
+      "emoji": "🐕",
+      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
+      "postUrl": "https://www.instagram.com/p/DZpXQzIHJPm/",
+      "imgUrls": [
+        "images/DZpXQzIHJPm_0.jpg",
+        "images/DZpXQzIHJPm_1.jpg",
+        "images/DZpXQzIHJPm_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-06-16",
+      "caption": "Vela busca familia 💛\n\nTiene 3 años, está castrada, vacunada y lista para tener su familia para siempre \nVela está esperando su oportunidad, es dulce y compañera, se lleva bien con todos. Escribinos a \nadoptaungalgoenargentina@hotmail.com\nBuenos Aires"
+    },
+    {
+      "id": "DZpWzGTFe6a",
+      "nombre": "Cachorros",
+      "tipo": "perro",
+      "raza": "Mestizo/a",
+      "genero": "♂",
+      "edad": "Cachorro",
+      "edadCat": "cachorro",
+      "tamanio": "Mediano",
+      "tamanioCat": "mediano",
+      "desc": "CACHORROS EN ADOPCIÓN. Estos bomboncitos que tienen 40 días,  están buscando una familia que los ame para toda la vida",
+      "org": "Zaguates Refugio",
+      "ig": "zaguatesrefugio",
+      "emoji": "🐕‍🦺",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "postUrl": "https://www.instagram.com/p/DZpWzGTFe6a/",
+      "imgUrls": [
+        "images/DZpWzGTFe6a_0.jpg",
+        "images/DZpWzGTFe6a_1.jpg",
+        "images/DZpWzGTFe6a_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-06-16",
+      "caption": "CACHORROS EN ADOPCIÓN! ✨🐾\n\nEstos bomboncitos que tienen 40 días,  están buscando una familia que los ame para toda la vida. 💛 Son súper amigables, sociables y muy juguetones, siempre listos para repartir besos, alegría y travesuras. 🐶\n\nSu tamaño futuro es incierto, aunque su mamá pesa aproximadamente 11 kg. \n\nAntes de adoptar, es fundamental recordar que los cachorros requieren tiempo, paciencia y dedicación. Son adorables, sí, pero también necesitan aprender, ser guiados y educados con amor y r"
+    },
     {
       "id": "DZnUnuAAsQZ",
       "nombre": "Sin nombre",
@@ -50,102 +100,6 @@
       "caption": "Rebeca es una caniche adulta de 4 años. Está castrada y vacunada.\nEs mimosa y sociable, muy compañera.\nApta para convivir con niños, gatos y perros.\nPor favor ayúdennos a difundirla.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes"
     },
     {
-      "id": "DZnUZE-D8vP",
-      "nombre": "Kinoto",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "Cachorro",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Kinoto tiene dos años. Está castrado y vacunado",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
-      "postUrl": "https://www.instagram.com/p/DZnUZE-D8vP/",
-      "imgUrls": [
-        "images/DZnUZE-D8vP_0.jpg",
-        "images/DZnUZE-D8vP_1.jpg",
-        "images/DZnUZE-D8vP_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-06-15",
-      "caption": "Kinoto tiene dos años. Está castrado y vacunado.\nEs mimoso y sociable. Muy dormilón, le gusta que lo tapen. \nEscucha música relajante para gatos y juega con perros.\nTe acaricia la mano cuando le das de comer.\nEstá acostumbrado a perros y otros gatos, no a niños.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #gatito #gatosdeinstagram #adoptanocompres #hogarlourdes"
-    },
-    {
-      "id": "DZnUDI3Assq",
-      "nombre": "Ynur",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Mediano",
-      "tamanioCat": "mediano",
-      "desc": "Ynur tiene 60 días. Está despulgada y desparasitada",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
-      "postUrl": "https://www.instagram.com/p/DZnUDI3Assq/",
-      "imgUrls": [
-        "images/DZnUDI3Assq.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-06-15",
-      "caption": "Ynur tiene 60 días. Está despulgada y desparasitada.\nMuy tranquila y sociable. Preciosa.\nSerá de tamaño mediano.\nApta para convivir con todos.\nNos ayudan a difundirla?\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes"
-    },
-    {
-      "id": "DZnTtB7gXEs",
-      "nombre": "Bouquet",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "18 meses",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Bouquet tiene 18 meses y está castrada y vacunada. Muy sociable, tranquila y compañera",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
-      "postUrl": "https://www.instagram.com/p/DZnTtB7gXEs/",
-      "imgUrls": [
-        "images/DZnTtB7gXEs_0.jpg",
-        "images/DZnTtB7gXEs_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-06-15",
-      "caption": "Bouquet tiene 18 meses y está castrada y vacunada.\nMuy sociable, tranquila y compañera.\nSe lleva bien con todos.\nPreciosa.\n\nPor favor ayúdennos a difundirla.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #gato #adopcionresponsable"
-    },
-    {
-      "id": "DZnT0TqDgDB",
-      "nombre": "Kitty",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "4 años",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Kitty tiene 4 años. Está castrada y vacunada",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
-      "postUrl": "https://www.instagram.com/p/DZnT0TqDgDB/",
-      "imgUrls": [
-        "images/DZnT0TqDgDB_0.jpg",
-        "images/DZnT0TqDgDB_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-06-15",
-      "caption": "Kitty tiene 4 años. Está castrada y vacunada.\nBellísima adulta joven, súper compañera y mimosa.\nApta para convivir con niños, no está acostumbrada a gatos ni perros.\nPor favor ayúdennos a difundirla. Gracias.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #gatosdeinstagram #adoptanocompres"
-    },
-    {
       "id": "DZnUu5mk7jZ",
       "nombre": "Maggie",
       "tipo": "gato",
@@ -159,7 +113,7 @@
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
       "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
       "postUrl": "https://www.instagram.com/p/DZnUu5mk7jZ/",
       "imgUrls": [
         "images/DZnUu5mk7jZ.jpg"
@@ -167,6 +121,31 @@
       "disponible": true,
       "fecha": "2026-06-15",
       "caption": "Maggie es una hermosa caniche adulta de 4 años.\nEstá castrada y vacunada.\nMuy tranquila, sociable y mimosa.\nSe lleva bien con todos.\nNos ayudan a difundirla?\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes"
+    },
+    {
+      "id": "DZnUgcpFaGf",
+      "nombre": "Cielo",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "5 meses",
+      "edadCat": "cachorro",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "🌸 CIELO EN ADOPCIÓN 🌸. Cielo tiene 5 meses y ya está lista para encontrar una familia que la ame para siempre 💛",
+      "org": "Zaguates Refugio",
+      "ig": "zaguatesrefugio",
+      "emoji": "🐈‍⬛",
+      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "postUrl": "https://www.instagram.com/p/DZnUgcpFaGf/",
+      "imgUrls": [
+        "images/DZnUgcpFaGf_0.jpg",
+        "images/DZnUgcpFaGf_1.jpg",
+        "images/DZnUgcpFaGf_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-06-15",
+      "caption": "🌸 CIELO EN ADOPCIÓN 🌸\n\nCielo tiene 5 meses y ya está lista para encontrar una familia que la ame para siempre 💛\n\nEs VIF y ViLeF negativa, súper compañera y juguetona. Le encanta estar con otros gatitos y correr/jugar con ellos.\n\nDe bebé tuvo herpesvirus y, como secuela, desarrolló una úlcera en uno de sus ojitos. La buena noticia es que ya recibió el alta veterinaria y está cicatrizando sola, evolucionando muy bien ✨\n\nAhora solo le falta lo más importante: un hogar donde crecer rodeada de amor 🏡"
     },
     {
       "id": "DZmyxkIlbAJ",
@@ -182,7 +161,7 @@
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
       "postUrl": "https://www.instagram.com/p/DZmyxkIlbAJ/",
       "imgUrls": [
         "images/DZmyxkIlbAJ_0.jpg",
@@ -194,29 +173,29 @@
       "caption": "🧸 TRES PULGUITAS EN ADOPCIÓN 🧸\n\nEstos bebitos tienen 50 días y están listos para encontrar ese hogar donde los elijan para toda la vida. Estimamos que serán de tamaño chico a mediano. Su mamá pesa apenas 8 kg, aunque desconocemos el tamaño de su papá 🥹\n\n🤎 Román (foto 1 y 2)\nCompañero, dulce y muy pegote. De esos cachorritos que siempre quieren estar cerca y formar parte de todo lo que hacés, es super inteligente.\n\n🤎 Mike (foto 3 y 4)\nCurioso y aventurero. Le encanta explorar, jugar y descubrir e"
     },
     {
-      "id": "DZnUgcpFaGf",
-      "nombre": "Cielo",
+      "id": "DZnUZE-D8vP",
+      "nombre": "Kinoto",
       "tipo": "gato",
       "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "6 meses",
+      "genero": "♂",
+      "edad": "Cachorro",
       "edadCat": "cachorro",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "🌸 CIELO EN ADOPCIÓN 🌸. Cielo tiene 5/6 meses y ya está lista para encontrar una familia que la ame para siempre 💛",
-      "org": "Zaguates Refugio",
-      "ig": "zaguatesrefugio",
+      "desc": "Kinoto tiene dos años. Está castrado y vacunado",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
       "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
-      "postUrl": "https://www.instagram.com/p/DZnUgcpFaGf/",
+      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "postUrl": "https://www.instagram.com/p/DZnUZE-D8vP/",
       "imgUrls": [
-        "images/DZnUgcpFaGf_0.jpg",
-        "images/DZnUgcpFaGf_1.jpg",
-        "images/DZnUgcpFaGf_2.jpg"
+        "images/DZnUZE-D8vP_0.jpg",
+        "images/DZnUZE-D8vP_1.jpg",
+        "images/DZnUZE-D8vP_2.jpg"
       ],
       "disponible": true,
       "fecha": "2026-06-15",
-      "caption": "🌸 CIELO EN ADOPCIÓN 🌸\n\nCielo tiene 5/6 meses y ya está lista para encontrar una familia que la ame para siempre 💛\n\nEs VIF y ViLeF negativa, súper compañera y juguetona. Le encanta estar con otros gatitos y correr/jugar con ellos.\n\nDe bebé tuvo herpesvirus y, como secuela, desarrolló una úlcera en uno de sus ojitos. La buena noticia es que ya recibió el alta veterinaria y está cicatrizando sola, evolucionando muy bien ✨\n\nAhora solo le falta lo más importante: un hogar donde crecer rodeada de amor"
+      "caption": "Kinoto tiene dos años. Está castrado y vacunado.\nEs mimoso y sociable. Muy dormilón, le gusta que lo tapen. \nEscucha música relajante para gatos y juega con perros.\nTe acaricia la mano cuando le das de comer.\nEstá acostumbrado a perros y otros gatos, no a niños.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #gatito #gatosdeinstagram #adoptanocompres #hogarlourdes"
     },
     {
       "id": "DZlLck0xFvb",
@@ -232,7 +211,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
+      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
       "postUrl": "https://www.instagram.com/p/DZlLck0xFvb/",
       "imgUrls": [
         "images/DZlLck0xFvb.jpg"
@@ -255,7 +234,7 @@
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
       "postUrl": "https://www.instagram.com/p/DZkM2BxlZUR/",
       "imgUrls": [
         "images/DZkM2BxlZUR_0.jpg",
@@ -265,31 +244,6 @@
       "disponible": true,
       "fecha": "2026-06-14",
       "caption": "GONZA EN ADOPCIÓN 🤎\n\nEste bombonazo de 7 meses, fue rescatado hace dos semanas de un barrio de bajos recursos, viviendo en la calle, corriendo el riesgo de morir a cada segundo 🫠. \n\nPor suerte está súper bien de salud, además de lo potro que es, y se porta súper! Es re amiguero, convive con su amiga Lupe que la ama. Hace sus necesidades en el paseo. Y sabe quedarse solo. \n\nUn santo total. Y un franela de otro planeta 😍 🪐 \n\nBuscamos para el una familia para toda la vida! 💛🫶 \n\nSi quieres saber más"
-    },
-    {
-      "id": "DZgDKiGlTt2",
-      "nombre": "Existe",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "Cachorro",
-      "edadCat": "cachorro",
-      "tamanio": "Grande",
-      "tamanioCat": "grande",
-      "desc": "LLEGARON LOS BEBÉS CUPIDO🏹❤️. En una época en donde vincularse es tan difícil, llegaron estos bebés que atravesarán sus corazones logrando hipnotizarlos pasa siempre",
-      "org": "Zaguates Refugio",
-      "ig": "zaguatesrefugio",
-      "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
-      "postUrl": "https://www.instagram.com/p/DZgDKiGlTt2/",
-      "imgUrls": [
-        "images/DZgDKiGlTt2_0.jpg",
-        "images/DZgDKiGlTt2_1.jpg",
-        "images/DZgDKiGlTt2_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-06-12",
-      "caption": "LLEGARON LOS BEBÉS CUPIDO🏹❤️\n\nEn una época en donde vincularse es tan difícil, llegaron estos bebés que atravesarán sus corazones logrando hipnotizarlos pasa siempre!!🏹❤️\n\nExiste un mejor MATCH que el de un humano con un perrito?? PUES NO, así que ahora si, ya no se necesitan más chongos!!! Les traemos la mejor opción de sus vidas!! Adoptar a estos cachorros adorables que cambiarán sus vidas para siempre, y quién sabe… los ayudan a encontrar pareja, nada más atractivo y motivo de conversación qu"
     },
     {
       "id": "DZckYcoRC38",
@@ -305,7 +259,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
       "postUrl": "https://www.instagram.com/p/DZckYcoRC38/",
       "imgUrls": [
         "images/DZckYcoRC38.jpg"
@@ -328,7 +282,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
       "postUrl": "https://www.instagram.com/p/DZJWKupjBZq/",
       "imgUrls": [
         "images/DZJWKupjBZq_0.jpg",
@@ -376,7 +330,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
       "postUrl": "https://www.instagram.com/p/DZEA-5nFglO/",
       "imgUrls": [
         "images/DZEA-5nFglO_0.jpg",
@@ -401,7 +355,7 @@
       "org": "gaby.vete",
       "ig": "gaby.vete",
       "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
       "postUrl": "https://www.instagram.com/p/DY8Wr5houhI/",
       "imgUrls": [
         "images/DY8Wr5houhI.jpg"
@@ -424,7 +378,7 @@
       "org": "Rescataditos en Adopción",
       "ig": "rescataditosenadopcionn",
       "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
       "postUrl": "https://www.instagram.com/p/DY7PuOxglyh/",
       "imgUrls": [
         "images/DY7PuOxglyh.jpg"
@@ -432,29 +386,6 @@
       "disponible": false,
       "fecha": "2026-05-29",
       "caption": "Nymeria y Locki\n\nAdoptados hace 8 años, hoy vuelven a buscar una familia.\n\nSu tutora no puede tenerlos más, esta en una situación muy complicada y nos aviso que no iban a poder tener la misma vida, así que con su corazón roto nos pidió que le encontremos una familia para que sigan siendo felices.\n\nLes pido que me ayuden a difundir su historia así alguien conecta y su mundo vuelve a recomponerse🙏\n\nEllos son sociables dulces tranquilos, están castrados con las vacunas al día y testeados 🙏\n\nEl trán"
-    },
-    {
-      "id": "DY5p3GqNYsg",
-      "nombre": "Pancho",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "8 años (Adulto+)",
-      "edadCat": "senior",
-      "tamanio": "Mediano",
-      "tamanioCat": "mediano",
-      "desc": "A Pancho le dispararon dos veces. Según la versión que llegó hasta nosotros, fue durante un intento de robo",
-      "org": "Proyecto 4 Patas",
-      "ig": "proyecto4patas",
-      "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
-      "postUrl": "https://www.instagram.com/p/DY5p3GqNYsg/",
-      "imgUrls": [
-        "images/DY5p3GqNYsg.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-05-28",
-      "caption": "A Pancho le dispararon dos veces.\nSegún la versión que llegó hasta nosotros, fue durante un intento de robo. \n\nPasó por cirugías, meses de recuperación y muchísimo dolor. Aprendió de nuevo a caminar, recibió amor, cuidados y una segunda oportunidad.\n\nHoy Pancho tiene 8 años y está listo para empezar una vida distinta. Deseamos de corazón que todo lo que le queda por vivir sea acompañado, querido y en familia.\n\nSi querés adoptarlo:\n📩 adopciones@proyecto4patas.org 🐾"
     },
     {
       "id": "DY3PFlGMuXd",
@@ -470,7 +401,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
       "postUrl": "https://www.instagram.com/p/DY3PFlGMuXd/",
       "imgUrls": [
         "images/DY3PFlGMuXd.jpg"
@@ -480,29 +411,27 @@
       "caption": "Muchos ya la conocen. Botitas fue protagonista de nuestro calendario, pero antes de eso fue una perra invisible. Una de esas que esperan y esperan.\n\nHoy por fin esa espera terminó. Botitas tiene familia"
     },
     {
-      "id": "DY5KzCzGfM8",
-      "nombre": "Luana",
+      "id": "DY5p3GqNYsg",
+      "nombre": "Pancho",
       "tipo": "perro",
-      "raza": "Galgo",
+      "raza": "Mestizo/a",
       "genero": "♂",
-      "edad": "Cachorro",
-      "edadCat": "cachorro",
-      "tamanio": "Grande",
-      "tamanioCat": "grande",
-      "desc": "La bella Luana es una simpática cachorrona de menos de dos años. Es intensa y juguetona, necesita compañía de otros perros y preferiblemente jardín",
-      "org": "Adopta un Galgo",
-      "ig": "adoptaungalgo",
+      "edad": "8 años (Adulto+)",
+      "edadCat": "senior",
+      "tamanio": "Mediano",
+      "tamanioCat": "mediano",
+      "desc": "A Pancho le dispararon dos veces. Según la versión que llegó hasta nosotros, fue durante un intento de robo",
+      "org": "Proyecto 4 Patas",
+      "ig": "proyecto4patas",
       "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
-      "postUrl": "https://www.instagram.com/p/DY5KzCzGfM8/",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
+      "postUrl": "https://www.instagram.com/p/DY5p3GqNYsg/",
       "imgUrls": [
-        "images/DY5KzCzGfM8_0.jpg",
-        "images/DY5KzCzGfM8_1.jpg",
-        "images/DY5KzCzGfM8_2.jpg"
+        "images/DY5p3GqNYsg.jpg"
       ],
       "disponible": true,
       "fecha": "2026-05-28",
-      "caption": "La bella Luana es una simpática cachorrona de menos de dos años. Es intensa y juguetona, necesita compañía de otros perros y preferiblemente jardín. Está castrada y vacunada. \nSi queres adoptarla envíanos mail a adoptaungalgoenargentina@hotmail.com \n\nBuenos Aires"
+      "caption": "A Pancho le dispararon dos veces.\nSegún la versión que llegó hasta nosotros, fue durante un intento de robo. \n\nPasó por cirugías, meses de recuperación y muchísimo dolor. Aprendió de nuevo a caminar, recibió amor, cuidados y una segunda oportunidad.\n\nHoy Pancho tiene 8 años y está listo para empezar una vida distinta. Deseamos de corazón que todo lo que le queda por vivir sea acompañado, querido y en familia.\n\nSi querés adoptarlo:\n📩 adopciones@proyecto4patas.org 🐾"
     },
     {
       "id": "DYnCQ-jJujp",
@@ -541,7 +470,7 @@
       "org": "Mascotas en Adopción",
       "ig": "mascotasenadopcion",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
+      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
       "postUrl": "https://www.instagram.com/p/kkpTYkjCYw/",
       "imgUrls": [
         "images/kkpTYkjCYw.jpg"
