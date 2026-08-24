@@ -1,8 +1,80 @@
 {
-  "generado": "2026-08-23T13:10:14.101470",
-  "total": 14,
+  "generado": "2026-08-24T13:30:09.529492",
+  "total": 13,
   "posts_revisados": 49,
   "mascotas": [
+    {
+      "id": "DcZFFDjkZgp",
+      "nombre": "Satén",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♂",
+      "edad": "3 años",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Satén tiene 3 años. Está castrado y vacunado",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
+      "postUrl": "https://www.instagram.com/p/DcZFFDjkZgp/",
+      "imgUrls": [
+        "images/DcZFFDjkZgp_0.jpg",
+        "images/DcZFFDjkZgp_1.jpg",
+        "images/DcZFFDjkZgp_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-08-23",
+      "caption": "Satén tiene 3 años. Está castrado y vacunado.\nMimoso, tranquilo, muy compañero.\nApto para convivir con niños, gatos y perros.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes\n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+    },
+    {
+      "id": "DcZGzYUk9Us",
+      "nombre": "Buscás",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Buscás una compañera leal que te devuelva multiplicado el amor que le des. whatsapp +54 9 11 3301-5857 Natalia",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "postUrl": "https://www.instagram.com/p/DcZGzYUk9Us/",
+      "imgUrls": [
+        "images/DcZGzYUk9Us.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-08-23",
+      "caption": "Buscás una compañera leal que te devuelva multiplicado el amor que le des?\nAquí está. Danna. Hermosa.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes  #adopcionresponsable  #adoptaunperrito"
+    },
+    {
+      "id": "DcZGc7PEsXX",
+      "nombre": "Pinky",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "Cachorro",
+      "edadCat": "cachorro",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Pinky tiene cinco meses y está castrada y vacunada. Es una cachorra muy activa, al principio un poco recelosa pero entra en confianza rápidamente",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "postUrl": "https://www.instagram.com/p/DcZGc7PEsXX/",
+      "imgUrls": [
+        "images/DcZGc7PEsXX_0.jpg",
+        "images/DcZGc7PEsXX_1.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-08-23",
+      "caption": "Pinky tiene cinco meses y está castrada y vacunada.\nEs una cachorra muy activa, al principio un poco recelosa pero entra en confianza rápidamente. Belleza.\nApta para convivir con personas adultas y otros gatos.\n\nEs hermana de otro cachorro hermoso Cerebro también en adopción y ayudaríamos en todo lo posible para que los adoptasen juntos.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes"
+    },
     {
       "id": "DcYcC8Alaak",
       "nombre": "Chiqui",
@@ -17,7 +89,7 @@
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
       "postUrl": "https://www.instagram.com/p/DcYcC8Alaak/",
       "imgUrls": [
         "images/DcYcC8Alaak_0.jpg",
@@ -27,76 +99,6 @@
       "disponible": true,
       "fecha": "2026-08-23",
       "caption": "🎀 CHIQUI & PEQUE EN ADOPCIÓN 🎀\n\nTenemos dos nuevas especialistas en ocupar tu cama y exigir mimos sin ningún tipo de culpa 🤭💘\n\n🤍 CHIQUI — la más clarita\n🤎 PEQUE — la más oscurita\n\nTienen apenas 50 días, son hermanitas y las dos son recontra mimosas. Aman estar cerquita, dormir en la cama, acurrucarse con vos y recibir todo el amor disponible 🥹\n\nEstimamos que serán de tamaño mediano.\n\n✨ Se adoptan por separado y, como toda cachorrita, necesitan una familia con paciencia, compromiso y muchas ganas"
-    },
-    {
-      "id": "DcYhfTKk2cs",
-      "nombre": "Unite",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Unite al Hogar como voluntario de tránsitos. whatsapp +54 9 11 3050-4282 Anica",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
-      "postUrl": "https://www.instagram.com/p/DcYhfTKk2cs/",
-      "imgUrls": [
-        "images/DcYhfTKk2cs.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-23",
-      "caption": "Unite al Hogar como voluntario de tránsitos.\n\nInformes: \nwhatsapp +54 9 11 3050-4282 Anica\nInstagram: @hogardeproteccionlourdes \n\n#hogarlourdes #adoptaungato #adopcionresponsable"
-    },
-    {
-      "id": "DcWgoF1CfLO",
-      "nombre": "Simón",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "18 meses",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Simón tiene 18 meses. Está castrado y vacunado",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
-      "postUrl": "https://www.instagram.com/p/DcWgoF1CfLO/",
-      "imgUrls": [
-        "images/DcWgoF1CfLO_0.jpg",
-        "images/DcWgoF1CfLO_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-22",
-      "caption": "Simón tiene 18 meses. Está castrado y vacunado.\nEs tranquilo, cariñoso y compañero.\nPuede convivir con niños y otros gatos, no con perros.\nPor favor ayúdennos a difundirlo.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adopcionresponsable #adoptaungato"
-    },
-    {
-      "id": "DcWgKsYDsjS",
-      "nombre": "Sin nombre",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "whatsapp +54 9 11 3301-5857 Natalia. Instagram: @hogardeproteccionlourdes",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
-      "postUrl": "https://www.instagram.com/p/DcWgKsYDsjS/",
-      "imgUrls": [
-        "images/DcWgKsYDsjS.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-22",
-      "caption": "Informes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable"
     },
     {
       "id": "DcRy8U9j4YK",
@@ -112,7 +114,7 @@
       "org": "Rescataditos en Adopción",
       "ig": "rescataditosenadopcionn",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
       "postUrl": "https://www.instagram.com/p/DcRy8U9j4YK/",
       "imgUrls": [
         "images/DcRy8U9j4YK_0.jpg",
@@ -137,7 +139,7 @@
       "org": "Adopta un Galgo",
       "ig": "adoptaungalgo",
       "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
+      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
       "postUrl": "https://www.instagram.com/p/DcOar7alVzf/",
       "imgUrls": [
         "images/DcOar7alVzf_0.jpg",
@@ -162,7 +164,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
       "postUrl": "https://www.instagram.com/p/DcJR9WbR-7v/",
       "imgUrls": [
         "images/DcJR9WbR-7v.jpg"
@@ -185,7 +187,7 @@
       "org": "difusionv",
       "ig": "difusionv",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
+      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
       "postUrl": "https://www.instagram.com/p/DcHJ-jpRiXx/",
       "imgUrls": [
         "images/DcHJ-jpRiXx.jpg"
@@ -208,7 +210,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
+      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
       "postUrl": "https://www.instagram.com/p/DcESbNHxbbK/",
       "imgUrls": [
         "images/DcESbNHxbbK.jpg"
@@ -231,7 +233,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
       "postUrl": "https://www.instagram.com/p/Db0wYCbMeV_/",
       "imgUrls": [
         "images/Db0wYCbMeV_.jpg"
@@ -254,7 +256,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
       "postUrl": "https://www.instagram.com/p/DbmQztJlogA/",
       "imgUrls": [
         "images/DbmQztJlogA_0.jpg",
@@ -264,30 +266,6 @@
       "disponible": true,
       "fecha": "2026-08-04",
       "caption": "Hay despedidas que duelen en lo mas profundo. Hoy nos toca decirle adiós a Camilo.\n\nPero antes que nada, queremos agradecer a Cami y Gonza. Porque cuando muchos solo veían un perro roto ellos vieron una vida que valía la pena. Lo adoptaron, lo amaron y le dieron la mejor vida que Camilo pudo haber tenido. No tenemos ninguna duda de que fueron lo mejor que le pasó.\n\nA Camilo lo rescatamos después de que fuera atropellado. El impacto le desplazó la columna y lo dejó sin la posibilidad de volver a "
-    },
-    {
-      "id": "DZ-xFHyGfhX",
-      "nombre": "Jagger",
-      "tipo": "perro",
-      "raza": "Galgo",
-      "genero": "♂",
-      "edad": "3 años",
-      "edadCat": "adulto",
-      "tamanio": "Grande",
-      "tamanioCat": "grande",
-      "desc": "Jagger busca familia 🐾❤️. Quizás lo recuerden: llegó desnutrido, con la piel lastimada y una patita rota, estaba muy mal, tenía erlichia",
-      "org": "Adopta un Galgo",
-      "ig": "adoptaungalgo",
-      "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
-      "postUrl": "https://www.instagram.com/p/DZ-xFHyGfhX/",
-      "imgUrls": [
-        "images/DZ-xFHyGfhX_0.jpg",
-        "images/DZ-xFHyGfhX_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-06-24",
-      "caption": "Jagger busca familia 🐾❤️\n\nQuizás lo recuerden: llegó desnutrido, con la piel lastimada y una patita rota, estaba muy mal, tenía erlichia. Por suerte está mucho mejor, ya termino el tratamiento para la erlichia, sus escaras cicatrizaron y su peso en breve será el ideal 🥰\n\nJagger tiene 3 años, esta castrado y vacunado.\nSe merece una familia que lo cuide, ahora le toca ser feliz.\n\nSi querés adoptarlo escribinos a:\n📧 adoptaungalgoenargentina@hotmail.com\n\nBuenos Aires"
     },
     {
       "id": "DWBrnkGFc-U",
@@ -303,7 +281,7 @@
       "org": "Adopta un Galgo",
       "ig": "adoptaungalgo",
       "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
+      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
       "postUrl": "https://www.instagram.com/p/DWBrnkGFc-U/",
       "imgUrls": [
         "images/DWBrnkGFc-U_0.jpg",
@@ -328,7 +306,7 @@
       "org": "Mascotas en Adopción",
       "ig": "mascotasenadopcion",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
       "postUrl": "https://www.instagram.com/p/kkpTYkjCYw/",
       "imgUrls": [
         "images/kkpTYkjCYw.jpg"
