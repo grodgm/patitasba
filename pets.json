@@ -1,80 +1,32 @@
 {
-  "generado": "2026-08-28T22:31:07.208428",
-  "total": 22,
+  "generado": "2026-08-29T16:49:57.821265",
+  "total": 21,
   "posts_revisados": 49,
   "mascotas": [
     {
-      "id": "Dcl8QctFHR4",
-      "nombre": "Sin nombre",
+      "id": "DcoVvIAlUar",
+      "nombre": "Venecia",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
+      "edad": "7 meses",
+      "edadCat": "cachorro",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "whatsapp +54 9 11 3301-5857 Natalia. Instagram: @hogardeproteccionlourdes",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
+      "desc": "🐾 Venecia en adopción 🐈‍⬛. Tiene aproximadamente 7 meses, vivió su corta vida en la calle, esperando que algún día alguien la viera",
+      "org": "Zaguates Refugio",
+      "ig": "zaguatesrefugio",
       "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
-      "postUrl": "https://www.instagram.com/p/Dcl8QctFHR4/",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
+      "postUrl": "https://www.instagram.com/p/DcoVvIAlUar/",
       "imgUrls": [
-        "images/Dcl8QctFHR4.jpg"
+        "images/DcoVvIAlUar_0.jpg",
+        "images/DcoVvIAlUar_1.jpg",
+        "images/DcoVvIAlUar_2.jpg"
       ],
       "disponible": true,
-      "fecha": "2026-08-28",
-      "caption": "Informes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable"
-    },
-    {
-      "id": "Dcl6_B6lKnP",
-      "nombre": "Mario",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "3 años",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Mario tiene 3 años. Está castrado y vacunado",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
-      "postUrl": "https://www.instagram.com/p/Dcl6_B6lKnP/",
-      "imgUrls": [
-        "images/Dcl6_B6lKnP_0.jpg",
-        "images/Dcl6_B6lKnP_1.jpg",
-        "images/Dcl6_B6lKnP_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-28",
-      "caption": "Mario tiene 3 años. Está castrado y vacunado.\nEs muy tranquilo, mimoso y compañero.\nApto para convivir con niños, otros gatos y perros.\n\nPor favor ayúdennos a difundirlo.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
-    },
-    {
-      "id": "Dcl63KqFNYp",
-      "nombre": "Dante",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Dante tiene dos años. Está castrado y vacunado",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
-      "postUrl": "https://www.instagram.com/p/Dcl63KqFNYp/",
-      "imgUrls": [
-        "images/Dcl63KqFNYp_0.jpg",
-        "images/Dcl63KqFNYp_1.jpg",
-        "images/Dcl63KqFNYp_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-28",
-      "caption": "Dante tiene dos años. Está castrado y vacunado.\nEs tranquilo y muy sociable con la gente.\nApto para convivir con niños pero debe ser el único animal de compañia en la casa, nos se lleva con gatos ni perros.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes"
+      "fecha": "2026-08-29",
+      "caption": "🐾 Venecia en adopción 🐈‍⬛\n\nTiene aproximadamente 7 meses, vivió su corta vida en la calle, esperando que algún día alguien la viera. Que alguien se detuviera, alguien le demostrara que también había un lugar para ella...\n\nEs una gatita dulce, buena y llena de amor pero al principio es tímida. Necesita un poquito de tiempo para confiar y entender que esta vez llegó a un lugar donde nadie la va a abandonar.\n\nCuando finalmente entra en confianza… aparece la verdadera Venecia 🥹💕\nUna gatita mimosa, j"
     },
     {
       "id": "Dcl7-DtlE3r",
@@ -90,7 +42,7 @@
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
       "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
       "postUrl": "https://www.instagram.com/p/Dcl7-DtlE3r/",
       "imgUrls": [
         "images/Dcl7-DtlE3r.jpg"
@@ -113,7 +65,7 @@
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
       "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
       "postUrl": "https://www.instagram.com/p/Dcl8aHsFHQX/",
       "imgUrls": [
         "images/Dcl8aHsFHQX_0.jpg",
@@ -122,6 +74,79 @@
       "disponible": true,
       "fecha": "2026-08-28",
       "caption": "Cerebro tiene 5 meses y está castrado y vacunado.\nEs independiente pero sociable y mimoso.\nSe lleva muy bien con niños y otros gatos pero no está acostumbrado a perros.\nNos ayudan a difundirlo?\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+    },
+    {
+      "id": "Dcl8QctFHR4",
+      "nombre": "Sin nombre",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "whatsapp +54 9 11 3301-5857 Natalia. Instagram: @hogardeproteccionlourdes",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈‍⬛",
+      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "postUrl": "https://www.instagram.com/p/Dcl8QctFHR4/",
+      "imgUrls": [
+        "images/Dcl8QctFHR4.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-08-28",
+      "caption": "Informes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable"
+    },
+    {
+      "id": "Dcl6_B6lKnP",
+      "nombre": "Mario",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♂",
+      "edad": "3 años",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Mario tiene 3 años. Está castrado y vacunado",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐱",
+      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "postUrl": "https://www.instagram.com/p/Dcl6_B6lKnP/",
+      "imgUrls": [
+        "images/Dcl6_B6lKnP_0.jpg",
+        "images/Dcl6_B6lKnP_1.jpg",
+        "images/Dcl6_B6lKnP_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-08-28",
+      "caption": "Mario tiene 3 años. Está castrado y vacunado.\nEs muy tranquilo, mimoso y compañero.\nApto para convivir con niños, otros gatos y perros.\n\nPor favor ayúdennos a difundirlo.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+    },
+    {
+      "id": "DcmfE1omaCj",
+      "nombre": "Quique",
+      "tipo": "perro",
+      "raza": "Galgo",
+      "genero": "♂",
+      "edad": "3 años",
+      "edadCat": "adulto",
+      "tamanio": "Grande",
+      "tamanioCat": "grande",
+      "desc": "Buscamos una familia para QUIQUE. Este galguito de 3 años que es pura alegría, ternura y buena onda",
+      "org": "Adopta un Galgo",
+      "ig": "adoptaungalgo",
+      "emoji": "🐶",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "postUrl": "https://www.instagram.com/p/DcmfE1omaCj/",
+      "imgUrls": [
+        "images/DcmfE1omaCj_0.jpg",
+        "images/DcmfE1omaCj_1.jpg",
+        "images/DcmfE1omaCj_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-08-28",
+      "caption": "Buscamos una familia para QUIQUE! 🐾✨\nEste galguito de 3 años que es pura alegría, ternura y buena onda.\nQuique es un compañero de vida ideal:\n Súper sano y activo, listo para paseos, juegos y caminatas, es de esos perros que te alegran el día solo con mirarte.\nSe lleva de diez con todo el mundo.\nSi estás buscando un nuevo integrante para tu hogar que te llene la casa de amor y momentos felices, Quique te está esperando. ❤️\n📧 Contacto para adopción: adoptaungalgoenargentina@hotmail.com\n\nBuenos Ai"
     },
     {
       "id": "DclYaN8nGNx",
@@ -137,7 +162,7 @@
       "org": "Adopta un Galgo",
       "ig": "adoptaungalgo",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
       "postUrl": "https://www.instagram.com/p/DclYaN8nGNx/",
       "imgUrls": [
         "images/DclYaN8nGNx_0.jpg",
@@ -186,7 +211,7 @@
       "org": "Rescataditos en Adopción",
       "ig": "rescataditosenadopcionn",
       "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
       "postUrl": "https://www.instagram.com/p/Dcg-sCuj4z2/",
       "imgUrls": [
         "images/Dcg-sCuj4z2_0.jpg",
@@ -234,7 +259,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
       "postUrl": "https://www.instagram.com/p/Dce3L8OhCF4/",
       "imgUrls": [
         "images/Dce3L8OhCF4.jpg"
@@ -242,31 +267,6 @@
       "disponible": true,
       "fecha": "2026-08-25",
       "caption": "Si no podés adoptar, ayudanos a encontrarle una familia compartiendo 🙏\n\nMoka es una pitbull de un año. La rescatamos de la calle en celo, perseguida por varios perros y con un tumor. Ya completó su tratamiento, está castrada y completamente recuperada.\n\nPara adoptarla: adopciones@proyecto4patas.org"
-    },
-    {
-      "id": "DcccNZwlUIc",
-      "nombre": "Rocco",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "7 años",
-      "edadCat": "adulto",
-      "tamanio": "Mediano",
-      "tamanioCat": "mediano",
-      "desc": "TRÁNSITO / ADOPCIÓN  PARA ROCCO🧸🖤. Rocco no tuvo un comienzo fácil",
-      "org": "Zaguates Refugio",
-      "ig": "zaguatesrefugio",
-      "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
-      "postUrl": "https://www.instagram.com/p/DcccNZwlUIc/",
-      "imgUrls": [
-        "images/DcccNZwlUIc_0.jpg",
-        "images/DcccNZwlUIc_1.jpg",
-        "images/DcccNZwlUIc_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-25",
-      "caption": "TRÁNSITO / ADOPCIÓN  PARA ROCCO🧸🖤 \n\nRocco no tuvo un comienzo fácil. Pero estamos seguras que su final va a cambiar 🥹❤️‍🩹\nA Rocco lo rescatamos hace dos años. Por mas de un año tuvo una familia, un hogar y la ilusión de que, por fin, había encontrado su lugar. Pero de un día para el otro, esos planes cambiaron… y Rocco volvió a conocer el abandono y la indiferencia. 💔\n\nHace meses está en un pensionado, trabajando junto a un educador para sanar sus heridas, superar sus miedos y dejar atrás todo l"
     },
     {
       "id": "Dcekm_iFU3V",
@@ -294,31 +294,6 @@
       "caption": "🐣 HERMANITOS EN ADOPCIÓN 🐣\n\nTres hermanitos, 2 meses de vida y todo un camino de aventuras por recorrer 💛\n\nTodavía están en esa etapa donde todo es nuevo, jugar hasta quedarse dormidos, investigar cada rincón y descubrir que los humanos somos bastante útiles para dar mimos 🤭\n\nLes presentamos a esta mini banda:\n\n🧸 Floki (macho) ADOPTADO\n🍪 Chocolina (hembra) ADOPTADA\n🧸 Paquito (macho) | fotos 5 y 6\n\nEstimamos que serán de tamaño medio 🐶✨ y se adoptan por separado.\n\nAhora cada uno merece ser el pro"
     },
     {
-      "id": "DceCZrdFY-Y",
-      "nombre": "Gordo",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "7 años",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "GORDO PRE ADOPTADO. Gordo espera y espera… y a nosotras nos desespera 🥹",
-      "org": "Zaguates Refugio",
-      "ig": "zaguatesrefugio",
-      "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
-      "postUrl": "https://www.instagram.com/p/DceCZrdFY-Y/",
-      "imgUrls": [
-        "images/DceCZrdFY-Y_0.jpg",
-        "images/DceCZrdFY-Y_1.jpg",
-        "images/DceCZrdFY-Y_2.jpg"
-      ],
-      "disponible": false,
-      "fecha": "2026-08-25",
-      "caption": "GORDO PRE ADOPTADO!\n\nGordo espera y espera… y a nosotras nos desespera 🥹\n\nDe su vida anterior preferimos no hablar.\nHay cosas que ya no vale la pena mencionar cuando alguien está haciendo tanto esfuerzo por ser feliz 🙏🏼 Y Gordo es eso: un perro que intenta ser feliz ❤️\n\nTiene unos 7 años, pesa 17 kilos, está castrado y es de tamaño mediano. Es tranquilo, dulce, buenísimo. Aprendió a pedir para salir, entiende todo, se adapta a todo y agradece cada caricia como si fuera un regalo enorme ❤️‍🩹\nSe l"
-    },
-    {
       "id": "DcdrR6IFWDf",
       "nombre": "Olivio",
       "tipo": "perro",
@@ -332,7 +307,7 @@
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
       "postUrl": "https://www.instagram.com/p/DcdrR6IFWDf/",
       "imgUrls": [
         "images/DcdrR6IFWDf_0.jpg",
@@ -344,54 +319,54 @@
       "caption": "OLIVIO y NANI EN ADOPCIÓN 🧡\n\nSon dos cachorrones de 8 meses, muy sociables y buenos. \nAmbos conviven con otros perritos, pero no sabemos con gatitos. \n\nOlivio, es un perrito súper jugueton, y muy cariñoso. \n\nNani, es una perrita muy tranquila, dulce y cariñosa, ama  la compañía y los paseos. \n\nEl tamaño que tienen es mediano, hoy pesan 14 kgs. \n\nSí queres sumar a alguno de ellos a tu flia, escribinos 💌"
     },
     {
-      "id": "DccBNFhFbK_",
-      "nombre": "Canela",
+      "id": "DcccNZwlUIc",
+      "nombre": "Rocco",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
-      "edad": "3 años",
+      "edad": "7 años",
       "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "CANELA EN ADOPCIÓN ❤️. Les presentamos a Canela , es una perrita súper dulce y compañera",
+      "tamanio": "Mediano",
+      "tamanioCat": "mediano",
+      "desc": "TRÁNSITO / ADOPCIÓN  PARA ROCCO🧸🖤. Rocco no tuvo un comienzo fácil",
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
-      "postUrl": "https://www.instagram.com/p/DccBNFhFbK_/",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "postUrl": "https://www.instagram.com/p/DcccNZwlUIc/",
       "imgUrls": [
-        "images/DccBNFhFbK__0.jpg",
-        "images/DccBNFhFbK__1.jpg",
-        "images/DccBNFhFbK__2.jpg"
+        "images/DcccNZwlUIc_0.jpg",
+        "images/DcccNZwlUIc_1.jpg",
+        "images/DcccNZwlUIc_2.jpg"
       ],
       "disponible": true,
-      "fecha": "2026-08-24",
-      "caption": "CANELA EN ADOPCIÓN ❤️\n\nLes presentamos a Canela , es una perrita súper dulce y compañera . \n\nEs tamaño mediano a chico ( 12 kilos aproximadamente) . Calculamos que tendrá 3 años \n\nSe lleva con perros y gatos , pero sobretodo ama los niños 👶🏼 ❤️\n\nSi te enamoraste pedimos el formulario pre adopción por mje privado 💫"
+      "fecha": "2026-08-25",
+      "caption": "TRÁNSITO / ADOPCIÓN  PARA ROCCO🧸🖤 \n\nRocco no tuvo un comienzo fácil. Pero estamos seguras que su final va a cambiar 🥹❤️‍🩹\nA Rocco lo rescatamos hace dos años. Por mas de un año tuvo una familia, un hogar y la ilusión de que, por fin, había encontrado su lugar. Pero de un día para el otro, esos planes cambiaron… y Rocco volvió a conocer el abandono y la indiferencia. 💔\n\nHace meses está en un pensionado, trabajando junto a un educador para sanar sus heridas, superar sus miedos y dejar atrás todo l"
     },
     {
-      "id": "DcbgFApFRiz",
-      "nombre": "Soy",
+      "id": "DceCZrdFY-Y",
+      "nombre": "Gordo",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
-      "edad": "5 meses",
-      "edadCat": "cachorro",
+      "edad": "7 años",
+      "edadCat": "adulto",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "♥️SOY DOBY Y ESTOY EN ADOPCIÓN 🐾❤️. HOLAAA , soy Doby",
+      "desc": "GORDO PRE ADOPTADO. Gordo espera y espera… y a nosotras nos desespera 🥹",
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
-      "postUrl": "https://www.instagram.com/p/DcbgFApFRiz/",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "postUrl": "https://www.instagram.com/p/DceCZrdFY-Y/",
       "imgUrls": [
-        "images/DcbgFApFRiz_0.jpg",
-        "images/DcbgFApFRiz_1.jpg",
-        "images/DcbgFApFRiz_2.jpg"
+        "images/DceCZrdFY-Y_0.jpg",
+        "images/DceCZrdFY-Y_1.jpg",
+        "images/DceCZrdFY-Y_2.jpg"
       ],
-      "disponible": true,
-      "fecha": "2026-08-24",
-      "caption": "♥️SOY DOBY Y ESTOY EN ADOPCIÓN 🐾❤️\n\nHOLAAA , soy Doby. Tengo apenas 5 meses y, aunque soy chiquito, ya conocí cosas que ningún cachorro debería conocer 😔! \n\nConocí el hambre y el frío. Conocí el miedo de no saber dónde dormir ni cuándo iba a volver a comer. Y cuando parecía que ya no podía más, tuve que luchar contra una enfermedad muy dura: el parvovirus.\n\nPero luché. 💪🐾\nY GANÉ 🥇 \n\nPor eso los que me conocen dicen  que soy un guerrero 🥹 Y quizás lo sea… aunque todavía soy un poquito miedoso cua"
+      "disponible": false,
+      "fecha": "2026-08-25",
+      "caption": "GORDO PRE ADOPTADO!\n\nGordo espera y espera… y a nosotras nos desespera 🥹\n\nDe su vida anterior preferimos no hablar.\nHay cosas que ya no vale la pena mencionar cuando alguien está haciendo tanto esfuerzo por ser feliz 🙏🏼 Y Gordo es eso: un perro que intenta ser feliz ❤️\n\nTiene unos 7 años, pesa 17 kilos, está castrado y es de tamaño mediano. Es tranquilo, dulce, buenísimo. Aprendió a pedir para salir, entiende todo, se adapta a todo y agradece cada caricia como si fuera un regalo enorme ❤️‍🩹\nSe l"
     },
     {
       "id": "DcRy8U9j4YK",
@@ -432,7 +407,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
+      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
       "postUrl": "https://www.instagram.com/p/DcJR9WbR-7v/",
       "imgUrls": [
         "images/DcJR9WbR-7v.jpg"
@@ -455,7 +430,7 @@
       "org": "difusionv",
       "ig": "difusionv",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
       "postUrl": "https://www.instagram.com/p/DcHJ-jpRiXx/",
       "imgUrls": [
         "images/DcHJ-jpRiXx.jpg"
@@ -478,7 +453,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
       "postUrl": "https://www.instagram.com/p/Db0wYCbMeV_/",
       "imgUrls": [
         "images/Db0wYCbMeV_.jpg"
@@ -501,7 +476,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
       "postUrl": "https://www.instagram.com/p/DbmQztJlogA/",
       "imgUrls": [
         "images/DbmQztJlogA_0.jpg",
@@ -526,7 +501,7 @@
       "org": "Mascotas en Adopción",
       "ig": "mascotasenadopcion",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
       "postUrl": "https://www.instagram.com/p/kkpTYkjCYw/",
       "imgUrls": [
         "images/kkpTYkjCYw.jpg"
