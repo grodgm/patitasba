@@ -1,56 +1,32 @@
 {
-  "generado": "2026-08-31T19:11:40.534892",
-  "total": 21,
+  "generado": "2026-09-01T16:48:30.386028",
+  "total": 20,
   "posts_revisados": 49,
   "mascotas": [
     {
-      "id": "Dctq7NglJfX",
-      "nombre": "Río",
+      "id": "DctoghgFKSb",
+      "nombre": "Menta",
       "tipo": "gato",
       "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "6 meses",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Río tiene 6 meses y está castrado y vacunado. Es un gatito tímido pero afectuoso que requiere mucho cariño",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
-      "postUrl": "https://www.instagram.com/p/Dctq7NglJfX/",
-      "imgUrls": [
-        "images/Dctq7NglJfX_0.jpg",
-        "images/Dctq7NglJfX_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-31",
-      "caption": "Río tiene 6 meses y está castrado y vacunado.\nEs un gatito tímido pero afectuoso que requiere mucho cariño.\nPuede convivir con niños, gatos y perros.\nSúper bueno y compañero.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable #adoptaungatoadulto"
-    },
-    {
-      "id": "DctoGGKlDBq",
-      "nombre": "Satén",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "3 años",
+      "genero": "♀",
+      "edad": "Adulto",
       "edadCat": "adulto",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "Satén tiene 3 años. Está castrado y vacunado",
+      "desc": "Menta tiene 70 días. Está despulgada y desparasitada",
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
-      "postUrl": "https://www.instagram.com/p/DctoGGKlDBq/",
+      "emoji": "🐱",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "postUrl": "https://www.instagram.com/p/DctoghgFKSb/",
       "imgUrls": [
-        "images/DctoGGKlDBq_0.jpg",
-        "images/DctoGGKlDBq_1.jpg",
-        "images/DctoGGKlDBq_2.jpg"
+        "images/DctoghgFKSb_0.jpg",
+        "images/DctoghgFKSb_1.jpg",
+        "images/DctoghgFKSb_2.jpg"
       ],
       "disponible": true,
       "fecha": "2026-08-31",
-      "caption": "Satén tiene 3 años. Está castrado y vacunado.\nMimoso, tranquilo, muy compañero.\nApto para convivir con niños, gatos y perros.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes\n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+      "caption": "Menta tiene 70 días. Está despulgada y desparasitada.\nEs mimosa, tranquila, súper compañera.\nApta para convivir con todos.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adopcionresponsable #adoptaunperrito"
     },
     {
       "id": "DctoxxLFP_8",
@@ -66,7 +42,7 @@
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
       "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
       "postUrl": "https://www.instagram.com/p/DctoxxLFP_8/",
       "imgUrls": [
         "images/DctoxxLFP_8_0.jpg",
@@ -90,7 +66,7 @@
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
       "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
       "postUrl": "https://www.instagram.com/p/DctqXt7lHYU/",
       "imgUrls": [
         "images/DctqXt7lHYU_0.jpg",
@@ -101,29 +77,29 @@
       "caption": "Aslan tiene un año y está castrado y vacunado.\nEs mimoso, muy sociable y tranquilo.\nPuede convivir con niños, gatos y perros.\nEs hermoso.\n\nNos ayudan a difundirlo?\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable #adoptaungatoadulto"
     },
     {
-      "id": "DctoghgFKSb",
-      "nombre": "Menta",
+      "id": "DctoGGKlDBq",
+      "nombre": "Satén",
       "tipo": "gato",
       "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
+      "genero": "♂",
+      "edad": "3 años",
       "edadCat": "adulto",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "Menta tiene 70 días. Está despulgada y desparasitada",
+      "desc": "Satén tiene 3 años. Está castrado y vacunado",
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
-      "postUrl": "https://www.instagram.com/p/DctoghgFKSb/",
+      "emoji": "🐈‍⬛",
+      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "postUrl": "https://www.instagram.com/p/DctoGGKlDBq/",
       "imgUrls": [
-        "images/DctoghgFKSb_0.jpg",
-        "images/DctoghgFKSb_1.jpg",
-        "images/DctoghgFKSb_2.jpg"
+        "images/DctoGGKlDBq_0.jpg",
+        "images/DctoGGKlDBq_1.jpg",
+        "images/DctoGGKlDBq_2.jpg"
       ],
       "disponible": true,
       "fecha": "2026-08-31",
-      "caption": "Menta tiene 70 días. Está despulgada y desparasitada.\nEs mimosa, tranquila, súper compañera.\nApta para convivir con todos.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adopcionresponsable #adoptaunperrito"
+      "caption": "Satén tiene 3 años. Está castrado y vacunado.\nMimoso, tranquilo, muy compañero.\nApto para convivir con niños, gatos y perros.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes\n\n #hogarlourdes #adoptaungato #adopcionresponsable"
     },
     {
       "id": "Dctph5yFe1q",
@@ -139,7 +115,7 @@
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
       "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
+      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
       "postUrl": "https://www.instagram.com/p/Dctph5yFe1q/",
       "imgUrls": [
         "images/Dctph5yFe1q.jpg"
@@ -147,6 +123,30 @@
       "disponible": true,
       "fecha": "2026-08-31",
       "caption": "Informes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: Hogar De Protección Lourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable #adoptaungatoadulto"
+    },
+    {
+      "id": "Dctq7NglJfX",
+      "nombre": "Río",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♂",
+      "edad": "6 meses",
+      "edadCat": "cachorro",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Río tiene 6 meses y está castrado y vacunado. Es un gatito tímido pero afectuoso que requiere mucho cariño",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈‍⬛",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "postUrl": "https://www.instagram.com/p/Dctq7NglJfX/",
+      "imgUrls": [
+        "images/Dctq7NglJfX_0.jpg",
+        "images/Dctq7NglJfX_1.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-08-31",
+      "caption": "Río tiene 6 meses y está castrado y vacunado.\nEs un gatito tímido pero afectuoso que requiere mucho cariño.\nPuede convivir con niños, gatos y perros.\nSúper bueno y compañero.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable #adoptaungatoadulto"
     },
     {
       "id": "DctM7nEHHXR",
@@ -174,31 +174,6 @@
       "caption": "Venus tiene 3 años, es lo más dulce que existe, está castrada y vacunada \nSi queres adoptarla envíanos mail a adoptaungalgoenargentina@hotmail.com\n\nBuenos Aires 🇦🇷"
     },
     {
-      "id": "DcqmvzunKaa",
-      "nombre": "Greta",
-      "tipo": "perro",
-      "raza": "Galgo",
-      "genero": "♂",
-      "edad": "3 años",
-      "edadCat": "adulto",
-      "tamanio": "Grande",
-      "tamanioCat": "grande",
-      "desc": "Greta es una galguita joven, le calculamos 2/3 años. Activa, divertida, súper sociable y cariñosa",
-      "org": "Adopta un Galgo",
-      "ig": "adoptaungalgo",
-      "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
-      "postUrl": "https://www.instagram.com/p/DcqmvzunKaa/",
-      "imgUrls": [
-        "images/DcqmvzunKaa_0.jpg",
-        "images/DcqmvzunKaa_1.jpg",
-        "images/DcqmvzunKaa_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-30",
-      "caption": "Greta es una galguita joven, le calculamos 2/3 años. Activa, divertida, súper sociable y cariñosa. \nEstá castrada y vacunada. No está probada con gatos 🐈 \nSi queres adoptarla envíanos mail a adoptaungalgoenargentina@hotmail.com \n\nBuenos Aires 🇦🇷"
-    },
-    {
       "id": "Dcq37ONlRDS",
       "nombre": "Homero",
       "tipo": "perro",
@@ -212,7 +187,7 @@
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
       "postUrl": "https://www.instagram.com/p/Dcq37ONlRDS/",
       "imgUrls": [
         "images/Dcq37ONlRDS_0.jpg",
@@ -222,6 +197,31 @@
       "disponible": true,
       "fecha": "2026-08-30",
       "caption": "🐾❤️ HOMERO EN ADOPCIÓN ❤️🐾\n\nTengo apenas 3 meses y todavía soy demasiado pequeño para entender por qué mi familia aún no llegó… 🥺\n\nSoy Homero. Un cachorrito con toda una vida por delante, con ganas de correr 🏃 jugar 🧸descubrir el mundo🌏 y, sobre todo, amar♥️ con todo mi corazoncito . 🐶💕\n\nSueño con una casa 🏠 donde alguien me diga “acá te vas a quedar para siempre”.🫂\nDonde pueda dormir tranquilo sabiendo que mañana voy a despertar rodeado de amor. 🏡❤️\nSueño con esos brazos que me abracen🫂con algu"
+    },
+    {
+      "id": "DcqmvzunKaa",
+      "nombre": "Greta",
+      "tipo": "perro",
+      "raza": "Galgo",
+      "genero": "♂",
+      "edad": "3 años",
+      "edadCat": "adulto",
+      "tamanio": "Grande",
+      "tamanioCat": "grande",
+      "desc": "Greta es una galguita joven, le calculamos 2/3 años. Activa, divertida, súper sociable y cariñosa",
+      "org": "Adopta un Galgo",
+      "ig": "adoptaungalgo",
+      "emoji": "🐕",
+      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
+      "postUrl": "https://www.instagram.com/p/DcqmvzunKaa/",
+      "imgUrls": [
+        "images/DcqmvzunKaa_0.jpg",
+        "images/DcqmvzunKaa_1.jpg",
+        "images/DcqmvzunKaa_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-08-30",
+      "caption": "Greta es una galguita joven, le calculamos 2/3 años. Activa, divertida, súper sociable y cariñosa. \nEstá castrada y vacunada. No está probada con gatos 🐈 \nSi queres adoptarla envíanos mail a adoptaungalgoenargentina@hotmail.com \n\nBuenos Aires 🇦🇷"
     },
     {
       "id": "Dco43PTlfqy",
@@ -258,44 +258,20 @@
       "edadCat": "cachorro",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "🐾 Venecia en adopción 🐈‍⬛. Tiene aproximadamente 7 meses, vivió su corta vida en la calle, esperando que algún día alguien la viera",
+      "desc": "🐾 Venecia pre adoptada. Tiene aproximadamente 7 meses, vivió su corta vida en la calle, esperando que algún día alguien la viera",
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
+      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
       "postUrl": "https://www.instagram.com/p/DcoVvIAlUar/",
       "imgUrls": [
         "images/DcoVvIAlUar_0.jpg",
         "images/DcoVvIAlUar_1.jpg",
         "images/DcoVvIAlUar_2.jpg"
       ],
-      "disponible": true,
+      "disponible": false,
       "fecha": "2026-08-29",
-      "caption": "🐾 Venecia en adopción 🐈‍⬛\n\nTiene aproximadamente 7 meses, vivió su corta vida en la calle, esperando que algún día alguien la viera. Que alguien se detuviera, alguien le demostrara que también había un lugar para ella...\n\nEs una gatita dulce, buena y llena de amor pero al principio es tímida. Necesita un poquito de tiempo para confiar y entender que esta vez llegó a un lugar donde nadie la va a abandonar.\n\nCuando finalmente entra en confianza… aparece la verdadera Venecia 🥹💕\nUna gatita mimosa, j"
-    },
-    {
-      "id": "DclYaN8nGNx",
-      "nombre": "Irma",
-      "tipo": "perro",
-      "raza": "Galgo",
-      "genero": "♂",
-      "edad": "6 años",
-      "edadCat": "adulto",
-      "tamanio": "Grande",
-      "tamanioCat": "grande",
-      "desc": "Irma tiene 6 años, está en un refugio, tiene la pata fracturada y herida. Necesita ayuda urgente 🚨 Buscamos hogar de tránsito en zona norte les poder avanzar con sus estudios y …",
-      "org": "Adopta un Galgo",
-      "ig": "adoptaungalgo",
-      "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
-      "postUrl": "https://www.instagram.com/p/DclYaN8nGNx/",
-      "imgUrls": [
-        "images/DclYaN8nGNx_0.jpg",
-        "images/DclYaN8nGNx_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-08-28",
-      "caption": "Irma tiene 6 años, está en un refugio, tiene la pata fracturada y herida. Necesita ayuda urgente 🚨 Buscamos hogar de tránsito en zona norte les poder avanzar con sus estudios y aliviar su dolor. Si podes recibirla escribimos a adoptaungalgoenargentina@hotmail.com\n\nBuenos Aires 🇦🇷"
+      "caption": "🐾 Venecia pre adoptada!!🐈‍⬛\n\nTiene aproximadamente 7 meses, vivió su corta vida en la calle, esperando que algún día alguien la viera. Que alguien se detuviera, alguien le demostrara que también había un lugar para ella...\n\nEs una gatita dulce, buena y llena de amor pero al principio es tímida. Necesita un poquito de tiempo para confiar y entender que esta vez llegó a un lugar donde nadie la va a abandonar.\n\nCuando finalmente entra en confianza… aparece la verdadera Venecia 🥹💕\nUna gatita mimosa,"
     },
     {
       "id": "DcmfE1omaCj",
@@ -311,7 +287,7 @@
       "org": "Adopta un Galgo",
       "ig": "adoptaungalgo",
       "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
       "postUrl": "https://www.instagram.com/p/DcmfE1omaCj/",
       "imgUrls": [
         "images/DcmfE1omaCj_0.jpg",
@@ -323,29 +299,28 @@
       "caption": "Buscamos una familia para QUIQUE! 🐾✨\nEste galguito de 3 años que es pura alegría, ternura y buena onda.\nQuique es un compañero de vida ideal:\n Súper sano y activo, listo para paseos, juegos y caminatas, es de esos perros que te alegran el día solo con mirarte.\nSe lleva de diez con todo el mundo.\nSi estás buscando un nuevo integrante para tu hogar que te llene la casa de amor y momentos felices, Quique te está esperando. ❤️\n📧 Contacto para adopción: adoptaungalgoenargentina@hotmail.com\n\nBuenos Ai"
     },
     {
-      "id": "Dcj1bxPmSWT",
-      "nombre": "Homero",
+      "id": "DclYaN8nGNx",
+      "nombre": "Irma",
       "tipo": "perro",
       "raza": "Galgo",
       "genero": "♂",
-      "edad": "2 años",
+      "edad": "6 años",
       "edadCat": "adulto",
       "tamanio": "Grande",
       "tamanioCat": "grande",
-      "desc": "Homero tiene 2 años, es un galguito adorable, está viviendo en un refugio. Sería ideal que encontrara una familia o al menos un hogar de tránsito para que pueda recuperar peso",
+      "desc": "Irma tiene 6 años, está en un refugio, tiene la pata fracturada y herida. Necesita ayuda urgente 🚨 Buscamos hogar de tránsito en zona norte les poder avanzar con sus estudios y …",
       "org": "Adopta un Galgo",
       "ig": "adoptaungalgo",
-      "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
-      "postUrl": "https://www.instagram.com/p/Dcj1bxPmSWT/",
+      "emoji": "🦮",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "postUrl": "https://www.instagram.com/p/DclYaN8nGNx/",
       "imgUrls": [
-        "images/Dcj1bxPmSWT_0.jpg",
-        "images/Dcj1bxPmSWT_1.jpg",
-        "images/Dcj1bxPmSWT_2.jpg"
+        "images/DclYaN8nGNx_0.jpg",
+        "images/DclYaN8nGNx_1.jpg"
       ],
       "disponible": true,
-      "fecha": "2026-08-27",
-      "caption": "Homero tiene 2 años, es un galguito adorable, está viviendo en un refugio. Sería ideal que encontrara una familia o al menos un hogar de tránsito para que pueda recuperar peso. Aún no está castrado debido a su bajo peso. \nSi queres adoptarlo o transitarlo escribinos a adoptaungalgoenargentina@hotmail.com\n\nBuenos Aires 🇦🇷"
+      "fecha": "2026-08-28",
+      "caption": "Irma tiene 6 años, está en un refugio, tiene la pata fracturada y herida. Necesita ayuda urgente 🚨 Buscamos hogar de tránsito en zona norte les poder avanzar con sus estudios y aliviar su dolor. Si podes recibirla escribimos a adoptaungalgoenargentina@hotmail.com\n\nBuenos Aires 🇦🇷"
     },
     {
       "id": "DchbePGx15X",
@@ -361,7 +336,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
+      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
       "postUrl": "https://www.instagram.com/p/DchbePGx15X/",
       "imgUrls": [
         "images/DchbePGx15X.jpg"
@@ -384,7 +359,7 @@
       "org": "Rescataditos en Adopción",
       "ig": "rescataditosenadopcionn",
       "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
       "postUrl": "https://www.instagram.com/p/Dcg-sCuj4z2/",
       "imgUrls": [
         "images/Dcg-sCuj4z2_0.jpg",
@@ -409,7 +384,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
       "postUrl": "https://www.instagram.com/p/Dce3L8OhCF4/",
       "imgUrls": [
         "images/Dce3L8OhCF4.jpg"
@@ -432,7 +407,7 @@
       "org": "Rescataditos en Adopción",
       "ig": "rescataditosenadopcionn",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
+      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
       "postUrl": "https://www.instagram.com/p/DcRy8U9j4YK/",
       "imgUrls": [
         "images/DcRy8U9j4YK_0.jpg",
@@ -457,7 +432,7 @@
       "org": "difusionv",
       "ig": "difusionv",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
       "postUrl": "https://www.instagram.com/p/DcHJ-jpRiXx/",
       "imgUrls": [
         "images/DcHJ-jpRiXx.jpg"
