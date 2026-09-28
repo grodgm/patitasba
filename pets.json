@@ -1,8 +1,225 @@
 {
-  "generado": "2026-09-27T17:08:00.024933",
-  "total": 16,
+  "generado": "2026-09-28T19:47:00.704443",
+  "total": 17,
   "posts_revisados": 49,
   "mascotas": [
+    {
+      "id": "Dd1scJ2CrUJ",
+      "nombre": "Charlie",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♂",
+      "edad": "6 años",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Charlie tiene 6 años. Está castrado y vacunado",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐱",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
+      "postUrl": "https://www.instagram.com/p/Dd1scJ2CrUJ/",
+      "imgUrls": [
+        "images/Dd1scJ2CrUJ_0.jpg",
+        "images/Dd1scJ2CrUJ_1.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-28",
+      "caption": "Charlie tiene 6 años. Está castrado y vacunado.\nEs muy sociable y cariñoso. Le gusta mucho el aire libre.\nApto para convivir con niños perros y otros gatos. \n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable #adoptaungatoadulto"
+    },
+    {
+      "id": "Dd1si0FDYXJ",
+      "nombre": "London",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "London, cada día más lindo y bueno. whatsapp +54 9 11 3301-5857 Natalia",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "postUrl": "https://www.instagram.com/p/Dd1si0FDYXJ/",
+      "imgUrls": [
+        "images/Dd1si0FDYXJ.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-28",
+      "caption": "London, cada día más lindo y bueno.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nMP Instagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable"
+    },
+    {
+      "id": "Dd1sxckDdr_",
+      "nombre": "Gina",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Gina tiene cinco meses y está castrada y vacunada. Mimosa, muy sociable y tranquila",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐱",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "postUrl": "https://www.instagram.com/p/Dd1sxckDdr_/",
+      "imgUrls": [
+        "images/Dd1sxckDdr__0.jpg",
+        "images/Dd1sxckDdr__1.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-28",
+      "caption": "Gina tiene cinco meses y está castrada y vacunada.\nMimosa, muy sociable y tranquila.\nApta para convivir con niños, gatos y perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nMP Instagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable"
+    },
+    {
+      "id": "Dd1tAR1D7RO",
+      "nombre": "Job",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♂",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Job tiene tres años. Está castrado y vacunado",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐱",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "postUrl": "https://www.instagram.com/p/Dd1tAR1D7RO/",
+      "imgUrls": [
+        "images/Dd1tAR1D7RO_0.jpg",
+        "images/Dd1tAR1D7RO_1.jpg",
+        "images/Dd1tAR1D7RO_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-28",
+      "caption": "Job tiene tres años. Está castrado y vacunado.\nSociable, mimoso y compañero.\nConvive con niños, gatos y perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+    },
+    {
+      "id": "Dd1sUvYk1UG",
+      "nombre": "Ronin",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♂",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Ronin tien un año. Está castrado y vacunado",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈‍⬛",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "postUrl": "https://www.instagram.com/p/Dd1sUvYk1UG/",
+      "imgUrls": [
+        "images/Dd1sUvYk1UG_0.jpg",
+        "images/Dd1sUvYk1UG_1.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-28",
+      "caption": "Ronin tien un año. Está castrado y vacunado.\nEs muy bueno y sociable con personas adultas.\nNo está acostubrado a niños ni otros animales de compañía.\nDebe ser único.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+    },
+    {
+      "id": "Dd1sFVQjN0o",
+      "nombre": "Sin nombre",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Cada día está más lindo y compañero 💜. Informes por Rubí:",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐱",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
+      "postUrl": "https://www.instagram.com/p/Dd1sFVQjN0o/",
+      "imgUrls": [
+        "images/Dd1sFVQjN0o.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-28",
+      "caption": "Cada día está más lindo y compañero 💜\n\nInformes por Rubí:\nwhatsapp +54 9 11 3301-5857 Natalia\nMP Instagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+    },
+    {
+      "id": "Dd1tHVLD2Kr",
+      "nombre": "Alma",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Alma tiene cinco años. Está castrada y vacunada",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈‍⬛",
+      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "postUrl": "https://www.instagram.com/p/Dd1tHVLD2Kr/",
+      "imgUrls": [
+        "images/Dd1tHVLD2Kr_0.jpg",
+        "images/Dd1tHVLD2Kr_1.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-28",
+      "caption": "Alma tiene cinco años. Está castrada y vacunada.\nEs una gata adulta ultra mimosa, dulce y cariñosa.\nApta para convivir con niños, otros gatos y perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nMP Instagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+    },
+    {
+      "id": "Ddz8g2BCJ-4",
+      "nombre": "Owen",
+      "tipo": "perro",
+      "raza": "Mestizo/a",
+      "genero": "♂",
+      "edad": "5 meses",
+      "edadCat": "cachorro",
+      "tamanio": "Mediano",
+      "tamanioCat": "mediano",
+      "desc": "OWEN EN ADOPCION ✨. Owen es un machito de 5 meses, súper enérgico, juguetón y muy mimoso 🏡 Buscamos para el un tránsito estable o adopción, idealmente una casa con patio y si es…",
+      "org": "Zaguates Refugio",
+      "ig": "zaguatesrefugio",
+      "emoji": "🐕‍🦺",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "postUrl": "https://www.instagram.com/p/Ddz8g2BCJ-4/",
+      "imgUrls": [
+        "images/Ddz8g2BCJ-4_0.jpg",
+        "images/Ddz8g2BCJ-4_1.jpg",
+        "images/Ddz8g2BCJ-4_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-28",
+      "caption": "OWEN EN ADOPCION ✨\n\nOwen es un machito de 5 meses, súper enérgico, juguetón y muy mimoso 🏡 Buscamos para el un tránsito estable o adopción, idealmente una casa con patio y si es con un hermano perruno, mejor 🐶\n\nNecesita una familia que entienda su proceso, pueda acompañarlo y tenga paciencia hasta que se sienta seguro ❤️‍🩹\n\nEs un cachorro hermoso y muy cariñoso, pero necesita encontrar un lugar donde puedan comprender sus necesidades y darle estabilidad. ❤️\n\n📩 si queres adoptarlo, escribinos por"
+    },
+    {
+      "id": "Ddz1SK9lkQM",
+      "nombre": "Rubius",
+      "tipo": "perro",
+      "raza": "Mestizo/a",
+      "genero": "♂",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Mediano",
+      "tamanioCat": "mediano",
+      "desc": "Rubius sigue esperando🥺. Queremos que este post llegue a la persona que pueda darle una familia",
+      "org": "Proyecto 4 Patas",
+      "ig": "proyecto4patas",
+      "emoji": "🐶",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
+      "postUrl": "https://www.instagram.com/p/Ddz1SK9lkQM/",
+      "imgUrls": [
+        "images/Ddz1SK9lkQM_0.jpg",
+        "images/Ddz1SK9lkQM_1.jpg",
+        "images/Ddz1SK9lkQM_2.jpg"
+      ],
+      "disponible": true,
+      "fecha": "2026-09-27",
+      "caption": "Rubius sigue esperando🥺\n\nQueremos que este post llegue a la persona que pueda darle una familia. \n\nSi no podés adoptarlo, compartilo 🙏 quizás alguien que te sigue todavía no conoce a Rubius.\n\nPara adoptar, escribí a adopciones@proyecto4patas.org o mandanos un mensaje privado y te enviamos el formulario de adopción 📋\n\nAdopciones en CABA y GBA 🇦🇷"
+    },
     {
       "id": "DdzALfqxSYR",
       "nombre": "Caramelo",
@@ -17,7 +234,7 @@
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
       "postUrl": "https://www.instagram.com/p/DdzALfqxSYR/",
       "imgUrls": [
         "images/DdzALfqxSYR.jpg"
@@ -25,76 +242,6 @@
       "disponible": true,
       "fecha": "2026-09-27",
       "caption": "CARAMELO EN ADOPCIÓN 🧡\nEste antes&después no tiene desperdicio 🥹\n\nTiene unos 5 añitos, pesa 12kg y está castrado. Le falta una patita, sí… pero le sobran ganas de pasear, recibir mimos y disfrutar todo lo lindo de la vida ✨\n\nEs muyyy tranquilo, dulce y súper compañero. Se queda solito sin problema, ama salir a pasear y tiene una debilidad imposible de ocultar por el pollito 🤭\nY como si todo eso fuera poco, se lleva bien con absolutamente todo! Perros, gatos y niños\n\nComo verán, Caramelo ya pasó "
-    },
-    {
-      "id": "DdwoN8ZjZJd",
-      "nombre": "Rumba",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Cachorro",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Rumba tiene un año. Está castrada, vacunada y desparasitada",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
-      "postUrl": "https://www.instagram.com/p/DdwoN8ZjZJd/",
-      "imgUrls": [
-        "images/DdwoN8ZjZJd_0.jpg",
-        "images/DdwoN8ZjZJd_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-09-26",
-      "caption": "Rumba tiene un año. Está castrada, vacunada y desparasitada.\nEs una cachorra mimosa, tranquila, muy compañera.\nConvive con niños, gatos y perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
-    },
-    {
-      "id": "DdwpBL8ACCg",
-      "nombre": "Mara",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Mara tiene dos años. Está castrada, vacunada y desparasitada",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
-      "postUrl": "https://www.instagram.com/p/DdwpBL8ACCg/",
-      "imgUrls": [
-        "images/DdwpBL8ACCg.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-09-26",
-      "caption": "Mara tiene dos años. Está castrada, vacunada y desparasitada.\nTranquila, mimosa, muy sociable.\nConvive con niños y gatos pero no con perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
-    },
-    {
-      "id": "DdwoyhVDN6i",
-      "nombre": "London",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "London, cada día más lindo y bueno. whatsapp +54 9 11 3301-5857 Natalia",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
-      "postUrl": "https://www.instagram.com/p/DdwoyhVDN6i/",
-      "imgUrls": [
-        "images/DdwoyhVDN6i.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-09-26",
-      "caption": "London, cada día más lindo y bueno.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nMP Instagram: @hogardeproteccionlourdes \n\n #adoptaungato #hogarlourdes #adopcionresponsable"
     },
     {
       "id": "Ddw_M3BFWvP",
@@ -110,7 +257,7 @@
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
       "postUrl": "https://www.instagram.com/p/Ddw_M3BFWvP/",
       "imgUrls": [
         "images/Ddw_M3BFWvP_0.jpg",
@@ -120,80 +267,6 @@
       "disponible": true,
       "fecha": "2026-09-26",
       "caption": "🚨 PICO BUSCA TRÁNSITO 🚨\n\nHoy queremos presentarles a Pico 🤎\n\nPico tiene 6 años y hace más de 2 años que vive encerrado en un canil en el refugio de Pinamar 🥺\n\nHace unos meses empezamos a traer algunos de los perritos de allí para darles la oportunidad de conocer otra vida, y ahora queremos que Pico también tenga esa oportunidad\n\n♡ Está castrado\n♡ Tiene las vacunas al día\n♡ Se lleva bien con otros perros 🐶\n\nPico ya estaría listo para publicar en adopción, pero para poder traerlo necesitamos conse"
-    },
-    {
-      "id": "DdwpXXClO8q",
-      "nombre": "Donna",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Donna cumplió dos años. Está castrada, vacunada y desparasitada",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
-      "postUrl": "https://www.instagram.com/p/DdwpXXClO8q/",
-      "imgUrls": [
-        "images/DdwpXXClO8q_0.jpg",
-        "images/DdwpXXClO8q_1.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-09-26",
-      "caption": "Donna cumplió dos años. Está castrada, vacunada y desparasitada.\nSúper mimosa, tranquila, muy compañera.\nConvive con niños y gatos, no con perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
-    },
-    {
-      "id": "DdusEWPFVHf",
-      "nombre": "Angel",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "1 años",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "🐾 ANGEL BUSCA FAMILIA ❤️. A Angel lo dejaron tirado en un descampado de Campo de Mayo, donde corría muchísimo peligro: autos a toda velocidad y animales salvajes",
-      "org": "Zaguates Refugio",
-      "ig": "zaguatesrefugio",
-      "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
-      "postUrl": "https://www.instagram.com/p/DdusEWPFVHf/",
-      "imgUrls": [
-        "images/DdusEWPFVHf_0.jpg",
-        "images/DdusEWPFVHf_1.jpg",
-        "images/DdusEWPFVHf_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-09-25",
-      "caption": "🐾 ANGEL BUSCA FAMILIA ❤️\n\nA Angel lo dejaron tirado en un descampado de Campo de Mayo, donde corría muchísimo peligro: autos a toda velocidad y animales salvajes. 💔\n\nLo rescatamos para darle una oportunidad… y descubrimos a un gato increíble. 🥹\n\nAngel tiene aproximadamente 1 año, está castrado, desparasitado y con pipeta. Es Vif Vilef negativo.\nEs súper cariñoso, mimoso y compañero. Ama dormir en la cama, tomar sol, jugar y estar cerca de las personas. Es muy curioso y también bastante charlatán"
-    },
-    {
-      "id": "Ddubj1XFbeZ",
-      "nombre": "Dos",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "4 meses",
-      "edadCat": "cachorro",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "DOS CACHORRAS BUSCAN FAMILIA. Hoy les presentamos a estas dos bomboncitas que están listas para encontrar un hogar donde las quieran para siempre 🥹🏡",
-      "org": "Zaguates Refugio",
-      "ig": "zaguatesrefugio",
-      "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
-      "postUrl": "https://www.instagram.com/p/Ddubj1XFbeZ/",
-      "imgUrls": [
-        "images/Ddubj1XFbeZ_0.jpg",
-        "images/Ddubj1XFbeZ_1.jpg",
-        "images/Ddubj1XFbeZ_2.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-09-25",
-      "caption": "DOS CACHORRAS BUSCAN FAMILIA! 💕🐾\n\nHoy les presentamos a estas dos bomboncitas que están listas para encontrar un hogar donde las quieran para siempre 🥹🏡\n\n🌸 NAYLA (fotos 1,2,3)\nTiene 4 meses y será de tamaño mediano. Es juguetona, súper dulce y mimosa. Una cachorrita de esas que te derriten con una mirada y después te invitan a jugar 😍🐶\n\n🍪 CANELA (fotos 4,5)\nTiene 5 meses y será de tamaño mediano. Es muy cariñosa, inteligente y se lleva bien con todos. ¡Una pequeña genia de cuatro patas! 🥰🐾\n ❤️\n "
     },
     {
       "id": "DdtgZn2nNqm",
@@ -209,7 +282,7 @@
       "org": "Adopta un Galgo",
       "ig": "adoptaungalgo",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
       "postUrl": "https://www.instagram.com/p/DdtgZn2nNqm/",
       "imgUrls": [
         "images/DdtgZn2nNqm_0.jpg",
@@ -219,29 +292,6 @@
       "disponible": true,
       "fecha": "2026-09-25",
       "caption": "Miel está en un refugio, necesitamos con urgencia hogar de tránsito o adopción para ella. \nTiene 2 años, una vieja fractura ya soldada que no le impide ningún movimiento. Está castrada y vacunada. \nSi queres ayudarla envíanos mail a adoptaungalgoenargentina@hotmail.com\n\nBuenos Aires 🇦🇷"
-    },
-    {
-      "id": "DdrRAQqCJxl",
-      "nombre": "Frodo",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Frodo en Adopción 🌟. Cada día está más lindo",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
-      "postUrl": "https://www.instagram.com/p/DdrRAQqCJxl/",
-      "imgUrls": [
-        "images/DdrRAQqCJxl.jpg"
-      ],
-      "disponible": true,
-      "fecha": "2026-09-24",
-      "caption": "Frodo en Adopción 🌟\nCada día está más lindo.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nMP Instagram: @hogardeproteccionlourdes \n\n#hogarlourdes #adopcionresponsable #adoptaunperrito"
     },
     {
       "id": "DdrcBiWv7BZ",
@@ -257,7 +307,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
+      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
       "postUrl": "https://www.instagram.com/p/DdrcBiWv7BZ/",
       "imgUrls": [
         "images/DdrcBiWv7BZ.jpg"
@@ -280,7 +330,7 @@
       "org": "Refugio El Campito",
       "ig": "refugioelcampito",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
       "postUrl": "https://www.instagram.com/p/DdoVdrfRfAe/",
       "imgUrls": [
         "images/DdoVdrfRfAe.jpg"
@@ -303,7 +353,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
       "postUrl": "https://www.instagram.com/p/DdfV2bbB8XV/",
       "imgUrls": [
         "images/DdfV2bbB8XV.jpg"
@@ -326,7 +376,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
       "postUrl": "https://www.instagram.com/p/DdSZWozuMqz/",
       "imgUrls": [
         "images/DdSZWozuMqz.jpg"
@@ -334,31 +384,6 @@
       "disponible": true,
       "fecha": "2026-09-15",
       "caption": "A Magenta la dimos en adopción cuando tenía apenas un año.\n\nDurante 11 años vivió junto a una mujer que la cuidó, la amó y fue su familia.\n\nCuando la señora falleció, todo cambió. No había nadie que pudiera hacerse cargo de Magenta y después de tantos años teniendo un hogar volvió con nosotros.\n\nHoy con 12 años, está esperando una nueva oportunidad.\n\nMagenta es una perra divina, cariñosa y compañera. Le gusta jugar, es activa y disfruta mucho de estar con personas, pero también tiene sus momento"
-    },
-    {
-      "id": "DdFRYoYD7yP",
-      "nombre": "Copito",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "3 años",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "C O P I T O 🩷 ADOPTADO. Bueno, dulce, compañero",
-      "org": "Rescataditos en Adopción",
-      "ig": "rescataditosenadopcionn",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
-      "postUrl": "https://www.instagram.com/p/DdFRYoYD7yP/",
-      "imgUrls": [
-        "images/DdFRYoYD7yP_0.jpg",
-        "images/DdFRYoYD7yP_1.jpg",
-        "images/DdFRYoYD7yP_2.jpg"
-      ],
-      "disponible": false,
-      "fecha": "2026-09-09",
-      "caption": "C O P I T O 🩷 ADOPTADO\n\nBueno, dulce, compañero.amante del respaldo del sillón 🙈, fan del pollito y del pouch, le encanta salir a pasear!\nSe lleva muy bien con todo ser! Con gatos y perros.\n\nEncontrado atropellado, por suerte solo fue un golpe 🙏 ya fue esterilizado y todos sus estudios dieron bien 💘\n\nTiene entre 2 y 3 años y pesa 6 kilos.\n\nDeseo una familia que lo ame y respete, que cree un vínculo para toda la vida ♾️🙏\n\nDeseo una familia para él 💖 \n\nSi queres adoptarlo podes dejarme mensaje pri"
     },
     {
       "id": "kkpTYkjCYw",
@@ -374,7 +399,7 @@
       "org": "Mascotas en Adopción",
       "ig": "mascotasenadopcion",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
       "postUrl": "https://www.instagram.com/p/kkpTYkjCYw/",
       "imgUrls": [
         "images/kkpTYkjCYw.jpg"
