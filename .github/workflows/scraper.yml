@@ -26,7 +26,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      # Sin dependencias: scraper_apify.py usa solo stdlib
+      # Pillow: para pasar las fotos a WebP y achicarlas
+      - name: Instalar Pillow
+        run: pip install pillow
 
       - name: Correr scraper vía Apify
         timeout-minutes: 20
@@ -41,6 +43,6 @@ jobs:
 
           git pull --rebase origin main || true
 
-          git add pets.json images/ || true
+          git add -A pets.json images/ sitemap.xml || true
           git diff --staged --quiet || git commit -m "🐾 Actualización automática $(date +'%d/%m/%Y %H:%M')"
           git push || (echo "⚠️ Push falló, se reintenta..." && git pull --rebase origin main && git push)
