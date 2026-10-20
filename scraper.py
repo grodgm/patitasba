@@ -44,7 +44,7 @@ PERFILES = [
     "proyecto4patas",
     "rescataditosenadopcionn",
     "hogardeproteccionlourdes",
-    "gatitos_parque_chacabuco",
+    # "gatitos_parque_chacabuco",  # perfil restringido en IG desde oct 2026
 ]
 
 MAX_POSTS_POR_PERFIL = 6    # cuántos posts recientes revisar (los refugios publican 1-2/día)

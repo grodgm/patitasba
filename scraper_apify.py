@@ -176,21 +176,48 @@ def main():
             print("❌ Falta APIFY_TOKEN. Crealo en https://console.apify.com/account/integrations")
             sys.exit(1)
         items = correr_apify(token, args.max_posts)
+        if not any(it.get("shortCode") and not it.get("error") for it in items):
+            print("\n🔁 Apify no devolvió ningún post válido (probable bloqueo de Instagram). Reintento en 2 min...")
+            time.sleep(120)
+            items = correr_apify(token, args.max_posts)
 
     mascotas, vistos = [], set()
     posts_revisados = 0
+    perfiles_ok = set()
     for item in items:
         # Items de error del actor (perfil privado/inexistente) no tienen shortCode
         if item.get("error"):
             print(f"   ⚠️  {item.get('url', '?')}: {item['error']}")
             continue
         posts_revisados += 1
+        if item.get("ownerUsername"):
+            perfiles_ok.add(item["ownerUsername"].lower())
         m = item_a_mascota(item, len(mascotas))
         if m and m["id"] not in vistos:
             vistos.add(m["id"])
             mascotas.append(m)
             estado = "🏠 adoptado" if not m["disponible"] else f"📸 {len(m['imgUrls'])} foto(s)"
             print(f"   ✅ {m['nombre']} (@{m['ig']}) — {m['tipo']} {m['edad']} · {estado}")
+
+    # Si Instagram bloqueó algunos perfiles hoy, conservamos sus mascotas del pets.json anterior
+    # (así un bloqueo parcial no vacía el sitio).
+    try:
+        anteriores = json.load(open(OUTPUT_FILE, encoding="utf-8")).get("mascotas", [])
+    except (OSError, ValueError):
+        anteriores = []
+    conservadas = 0
+    for m in anteriores:
+        if m.get("ig") in PERFILES and m.get("ig") not in perfiles_ok and m.get("id") not in vistos:
+            vistos.add(m["id"])
+            mascotas.append(m)
+            conservadas += 1
+    if conservadas:
+        sin_respuesta = sorted({m["ig"] for m in anteriores if m.get("ig") in PERFILES and m.get("ig") not in perfiles_ok})
+        print(f"\n♻️  {conservadas} mascotas conservadas de perfiles sin respuesta hoy: {', '.join(sin_respuesta)}")
+
+    if not perfiles_ok:
+        print("\n⚠️  Ningún perfil respondió — se conserva el pets.json anterior.")
+        sys.exit(1)  # exit 1 para que GitHub Actions avise del fallo
 
     if not mascotas:
         print("\n⚠️  0 mascotas encontradas — se conserva el pets.json anterior.")
