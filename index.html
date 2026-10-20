@@ -11,13 +11,13 @@
         gtag('js', new Date());
         gtag('config', 'G-LZ8Q82ML5B');
     </script>
-    <link rel="icon" href="/favicon.ico" sizes="48x48">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <title>PatitasBA — Adoptá perros y gatos en Buenos Aires</title>
-    <meta name="description" content="Encontrá perros y gatos en adopción de refugios de Buenos Aires y GBA. PatitasBA reúne mascotas rescatadas de 5 refugios para que encuentren una familia.">
+    <link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+    <title>Adopción de perros y gatos en Buenos Aires | PatitasBA</title>
+    <meta name="description" content="Encontrá perros y gatos en adopción de refugios de Buenos Aires y GBA. PatitasBA reúne en un solo lugar las mascotas rescatadas de refugios porteños para que encuentren familia.">
     <meta name="keywords" content="adopción perros Buenos Aires, adoptar gato CABA, refugio animales GBA, mascotas en adopción, adopción responsable, perros rescatados, gatos en adopción Buenos Aires, adoptar mascota gratis, refugio perros zona norte, adoptar cachorro Buenos Aires, adoptar gatito capital federal">
     <meta name="theme-color" content="#5B8A72">
     <!-- Palette: Sage #5B8A72, Coral #D4836B, Cream #FFF8F0, Dark #3D3229 -->
@@ -26,7 +26,7 @@
     <link rel="canonical" href="https://patitasba.com.ar/">
 
     <!-- Open Graph (para cuando compartan en redes sociales) -->
-    <meta property="og:title" content="PatitasBA — Adoptá perros y gatos en Buenos Aires">
+    <meta property="og:title" content="Adopción de perros y gatos en Buenos Aires | PatitasBA">
     <meta property="og:description" content="Cientos de perritos y gatitos rescatados te están esperando en refugios de CABA y GBA. Encontrá tu próximo compañero.">
     <meta property="og:url" content="https://patitasba.com.ar/">
     <meta property="og:type" content="website">
@@ -35,11 +35,11 @@
     <meta property="og:image" content="https://patitasba.com.ar/og-image.png?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="PatitasBA — Perros y gatos en adopción en Buenos Aires">
+    <meta property="og:image:alt" content="PatitasBA: perros y gatos en adopción en Buenos Aires">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PatitasBA — Adoptá perros y gatos en Buenos Aires">
+    <meta name="twitter:title" content="Adopción de perros y gatos en Buenos Aires | PatitasBA">
     <meta name="twitter:description" content="Encontrá perros y gatos en adopción de refugios de Buenos Aires y GBA.">
     <meta name="twitter:image" content="https://patitasba.com.ar/og-image.png?v=2">
 
@@ -61,6 +61,7 @@
       "@type": "Organization",
       "name": "PatitasBA",
       "url": "https://patitasba.com.ar/",
+      "logo": "https://patitasba.com.ar/favicon-512x512.png",
       "description": "Plataforma gratuita de adopción de mascotas que centraliza perros y gatos de refugios de Buenos Aires.",
       "areaServed": {
         "@type": "City",
@@ -560,7 +561,7 @@
 
 <!-- HEADER -->
 <header>
-    <div class="logo">🐾 Patitas<span>BA</span></div>
+    <a href="/" class="logo" style="text-decoration:none"><img src="/logo.svg" alt="" width="32" height="30" style="display:block">Patitas<span>BA</span></a>
     <nav>
         <a href="/">Inicio</a>
         <a href="/proceso.html">Cómo adoptar</a>
@@ -599,7 +600,7 @@ function toggleMobileMenu() {
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1>Adoptá un perrito o gatito<br>y cambiale la vida — y la tuya 🐾</h1>
+        <h1>Adoptá un perrito o gatito<br>y cambiale la vida (y la tuya) 🐾</h1>
         <p>Cientos de perritos y gatitos rescatados te esperan en refugios de CABA y GBA</p>
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Buscá por nombre, raza o refugio…" oninput="applyFilters()">
@@ -611,11 +612,11 @@ function toggleMobileMenu() {
 <!-- STATS -->
 <section class="stats">
     <div class="stat">
-        <div class="stat-number" id="statPerros">—</div>
+        <div class="stat-number" id="statPerros">…</div>
         <div class="stat-label">🐕 Perros</div>
     </div>
     <div class="stat">
-        <div class="stat-number" id="statGatos">—</div>
+        <div class="stat-number" id="statGatos">…</div>
         <div class="stat-label">🐈 Gatos</div>
     </div>
     <div class="stat">
@@ -623,7 +624,7 @@ function toggleMobileMenu() {
         <div class="stat-label">🏠 Refugios</div>
     </div>
     <div class="stat">
-        <div class="stat-number" id="statTotal">—</div>
+        <div class="stat-number" id="statTotal">…</div>
         <div class="stat-label">🐾 Esperando hogar</div>
     </div>
 </section>
@@ -748,7 +749,7 @@ function toggleMobileMenu() {
             </div>
             <button class="btn-submit" onclick="generarPublicacion()">Generar mensaje para compartir 🚀</button>
             <div id="pub_resultado" style="display:none;margin-top:16px;background:#f8f9fa;border-radius:12px;padding:16px">
-                <p style="font-size:13px;font-weight:600;margin-bottom:8px">✅ Mensaje generado — copialo y compartilo:</p>
+                <p style="font-size:13px;font-weight:600;margin-bottom:8px">✅ Mensaje generado. Copialo y compartilo:</p>
                 <textarea id="pub_mensaje" rows="6" style="width:100%;border:1px solid #E2DDD6;border-radius:8px;padding:10px;font-size:13px;resize:none" readonly></textarea>
                 <div style="display:flex;gap:8px;margin-top:10px">
                     <button onclick="copiarMensaje()" style="flex:1;background:#3D3229;color:white;border:none;padding:10px;border-radius:10px;font-weight:600;cursor:pointer">📋 Copiar</button>
@@ -773,14 +774,14 @@ function toggleMobileMenu() {
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-logo">🐾 PatitasBA</div>
+    <div class="footer-logo" style="display:flex;align-items:center;justify-content:center;gap:8px"><img src="/logo.svg" alt="" width="28" height="26">PatitasBA</div>
     <p>Adopción responsable en Buenos Aires · CABA y GBA</p>
     <p style="margin-top:12px;opacity:.8;font-size:12px;">
         ❤️ Adoptá con compromiso · ✂️ Castración responsable · 🏥 Salud y vacunas al día
     </p>
     <p>Este sitio no representa oficialmente a los refugios listados.<br>
     Para adoptar, contactá directamente a cada organización por Instagram.<br>
-    Adoptar es un compromiso de por vida — ¡gracias por elegir adoptar!</p>
+    Adoptar es un compromiso de por vida. ¡Gracias por elegir adoptar!</p>
 </footer>
 
 <script>
@@ -795,7 +796,7 @@ async function cargarDatos() {
         pets = data.mascotas || [];
         const banner = document.getElementById('dataBanner');
         if (banner) {
-            const fecha = data.generado ? new Date(data.generado).toLocaleDateString('es-AR') : '—';
+            const fecha = data.generado ? new Date(data.generado).toLocaleDateString('es-AR') : '-';
             const disponiblesCount = pets.filter(p => p.disponible !== false).length;
             banner.textContent = `✅ Datos reales de Instagram · ${disponiblesCount} mascotas en adopción · Actualizado: ${fecha}`;
             banner.style.background = '#E8F5E9';
@@ -806,7 +807,7 @@ async function cargarDatos() {
         pets = DEMO_PETS;
         const banner = document.getElementById('dataBanner');
         if (banner) {
-            banner.textContent = '🎭 Mostrando datos de demo — Corré scraper.py para ver datos reales de Instagram';
+            banner.textContent = '🎭 Mostrando datos de demo. Corré scraper.py para ver datos reales de Instagram';
             banner.style.background = '#FFF8E1';
             banner.style.color = '#F57F17';
         }
@@ -990,7 +991,7 @@ function openModal(id) {
     if (imgs.length > 0) {
         // Build a carousel for the modal
         const slides = imgs.map(src =>
-            `<div class="carousel-slide"><img src="${src}" onerror="this.parentElement.innerHTML='<div style=font-size:60px;display:flex;align-items:center;justify-content:center;height:100%>${p.emoji}</div>'"></div>`
+            `<div class="carousel-slide"><img src="${src}" alt="${escAttr(p.nombre)}, ${p.tipo === 'gato' ? 'gato' : 'perro'} en adopción" onerror="this.parentElement.innerHTML='<div style=font-size:60px;display:flex;align-items:center;justify-content:center;height:100%>${p.emoji}</div>'"></div>`
         ).join('');
         const dots = imgs.length > 1
             ? `<div class="carousel-dots">${imgs.map((_,i) => `<button class="carousel-dot ${i===0?'active':''}" onclick="modalCarousel(${i === 0 ? 0 : i},event)"></button>`).join('')}</div>`
@@ -1114,7 +1115,7 @@ function generarPublicacion() {
     const msg = `${emoji} *${nombre.toUpperCase()} BUSCA HOGAR* ${emoji}\n\n` +
         `📅 Edad: ${edad}\n📏 Tamaño: ${tamanio}\n🐾 Especie: ${tipo === 'perro' ? 'Perro' : 'Gato'}\n\n` +
         (desc ? `${desc}\n\n` : '') +
-        `🏠 Organización: ${org}\n📸 Instagram: @${ig || '—'}\n\n` +
+        `🏠 Organización: ${org}\n📸 Instagram: @${ig || '-'}\n\n` +
         `Para adoptar, escribinos por Instagram o mandá un mensaje directo.\n\n#adopcion #PatitasBA #buscahogar`;
 
     document.getElementById('pub_mensaje').value = msg;
@@ -1131,13 +1132,14 @@ function copiarMensaje() {
 }
 
 // ── RENDER CARDS ──
+function escAttr(s) { return String(s || '').replace(/[&"<>]/g, c => ({'&':'&amp;','"':'&quot;','<':'&lt;','>':'&gt;'}[c])); }
 function buildCarousel(p) {
     const imgs = p.imgUrls || (p.imgUrl ? [p.imgUrl] : []);
     if (imgs.length === 0) {
         return `<span class="emoji-placeholder" style="font-size:76px;display:flex;align-items:center;justify-content:center;height:100%">${p.emoji}</span>`;
     }
     const slides = imgs.map(src =>
-        `<div class="carousel-slide"><img src="${src}" loading="lazy" onerror="this.parentElement.innerHTML='<div style=font-size:60px;display:flex;align-items:center;justify-content:center;height:100%>${p.emoji}</div>'"></div>`
+        `<div class="carousel-slide"><img src="${src}" loading="lazy" alt="${escAttr(p.nombre)}, ${p.tipo === 'gato' ? 'gato' : 'perro'} en adopción" onerror="this.parentElement.innerHTML='<div style=font-size:60px;display:flex;align-items:center;justify-content:center;height:100%>${p.emoji}</div>'"></div>`
     ).join('');
     const dots = imgs.length > 1
         ? `<div class="carousel-dots">${imgs.map((_,i) => `<button class="carousel-dot ${i===0?'active':''}" onclick="carouselMove('${p.id}',${i === 0 ? 0 : i},event)"></button>`).join('')}</div>`

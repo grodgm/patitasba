@@ -611,6 +611,8 @@ def descargar_imagen(url: str, shortcode: str) -> str | None:
     """Descarga la imagen del post y la guarda localmente. Retorna la ruta relativa."""
     try:
         IMAGES_DIR.mkdir(exist_ok=True)
+        if (IMAGES_DIR / f"{shortcode}.webp").exists():
+            return f"images/{shortcode}.webp"  # ya descargada y optimizada
         dest = IMAGES_DIR / f"{shortcode}.jpg"
         if dest.exists():
             return f"images/{shortcode}.jpg"  # ya descargada

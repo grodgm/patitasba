@@ -25,7 +25,14 @@ import random
 import argparse
 import urllib.request
 import urllib.error
+import re
+from pathlib import Path
 from datetime import datetime
+
+try:
+    from PIL import Image  # opcional: si no está, no se optimizan las fotos
+except ImportError:
+    Image = None
 
 # Parser y helpers existentes (no requiere instaloader)
 from scraper import (
@@ -158,6 +165,60 @@ def item_a_mascota(item: dict, idx: int) -> dict | None:
     }
 
 
+IMG_MAX_ANCHO = 900
+IMG_CALIDAD = 78
+
+
+def optimizar_imagenes(mascotas: list[dict]) -> None:
+    """Pasa las fotos usadas a WebP (máx. 900 px de ancho) y borra de images/ las que ya no usa nadie."""
+    if Image is None:
+        print("ℹ️  Pillow no está instalado: se saltea la optimización de fotos")
+        return
+    convertidas = 0
+    for m in mascotas:
+        nuevas = []
+        for ruta in m.get("imgUrls", []):
+            p = Path(ruta)
+            if p.suffix.lower() in (".jpg", ".jpeg", ".png") and p.exists():
+                destino = p.with_suffix(".webp")
+                try:
+                    with Image.open(p) as im:
+                        im = im.convert("RGB")
+                        if im.width > IMG_MAX_ANCHO:
+                            im = im.resize((IMG_MAX_ANCHO, round(im.height * IMG_MAX_ANCHO / im.width)), Image.LANCZOS)
+                        im.save(destino, "WEBP", quality=IMG_CALIDAD, method=6)
+                    p.unlink()
+                    ruta = destino.as_posix()
+                    convertidas += 1
+                except Exception as e:
+                    print(f"   ⚠️  No se pudo optimizar {p}: {e}")
+            elif p.suffix.lower() in (".jpg", ".jpeg", ".png") and p.with_suffix(".webp").exists():
+                ruta = p.with_suffix(".webp").as_posix()
+            nuevas.append(ruta)
+        m["imgUrls"] = nuevas
+
+    en_uso = {Path(r).name for m in mascotas for r in m.get("imgUrls", [])}
+    borradas = 0
+    carpeta = Path("images")
+    if carpeta.is_dir():
+        for f in carpeta.iterdir():
+            if f.is_file() and f.name not in en_uso:
+                f.unlink()
+                borradas += 1
+    print(f"🖼️  Fotos: {convertidas} convertidas a WebP, {borradas} sin uso borradas, {len(en_uso)} en uso")
+
+
+def actualizar_sitemap() -> None:
+    """Pone la fecha de hoy como lastmod de la home en sitemap.xml."""
+    try:
+        s = Path("sitemap.xml").read_text(encoding="utf-8")
+        hoy = datetime.now().strftime("%Y-%m-%d")
+        s = re.sub(r"(<loc>https://patitasba\.com\.ar/</loc>\s*<lastmod>)[^<]*(</lastmod>)", rf"\g<1>{hoy}\g<2>", s, count=1)
+        Path("sitemap.xml").write_text(s, encoding="utf-8")
+    except OSError:
+        pass
+
+
 def main():
     parser = argparse.ArgumentParser(description="PatitasBA — Scraper vía Apify")
     parser.add_argument("--max-posts", type=int, default=MAX_POSTS_POR_PERFIL)
@@ -222,6 +283,9 @@ def main():
     if not mascotas:
         print("\n⚠️  0 mascotas encontradas — se conserva el pets.json anterior.")
         sys.exit(1)  # exit 1 para que GitHub Actions avise del fallo
+
+    optimizar_imagenes(mascotas)
+    actualizar_sitemap()
 
     # Más nuevas primero
     mascotas.sort(key=lambda m: m["fecha"], reverse=True)

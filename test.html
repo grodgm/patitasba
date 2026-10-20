@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de compatibilidad — PatitasBA</title>
+    <title>Test: ¿qué mascota es para vos? | PatitasBA</title>
     <meta name="description" content="Respondé 5 preguntas y descubrí qué tipo de mascota se adapta mejor a tu vida. Después te mostramos las que están disponibles.">
     <meta name="keywords" content="test adopción mascota, qué perro adoptar, quiz mascota compatible, test perro gato">
     <link rel="canonical" href="https://patitasba.com.ar/test.html">
-    <meta property="og:title" content="Test: ¿Qué mascota es para vos? — PatitasBA">
+    <meta property="og:title" content="Test: ¿qué mascota es para vos? | PatitasBA">
     <meta property="og:description" content="5 preguntas para descubrir qué tipo de mascota se adapta a tu vida.">
     <meta property="og:image" content="https://patitasba.com.ar/og-image.png?v=2">
     <meta property="og:url" content="https://patitasba.com.ar/test.html">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="/favicon.ico" sizes="48x48">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -26,6 +26,7 @@
         /* Nav */
         nav { background: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
         .nav-logo { font-size: 24px; font-weight: 800; color: #3D3229; text-decoration: none; }
+        .nav-logo { display: inline-flex; align-items: center; gap: 8px; }
         .nav-logo span { color: #5B8A72; }
         .nav-links { display: flex; gap: 24px; align-items: center; }
         .nav-links a { text-decoration: none; color: #7D7168; font-weight: 500; font-size: 15px; transition: color 0.2s; }
@@ -284,7 +285,7 @@
 <body>
 
 <nav>
-    <a href="/" class="nav-logo">Patitas<span>BA</span></a>
+    <a href="/" class="nav-logo"><img src="/logo.svg" alt="" width="32" height="30" style="display:block">Patitas<span>BA</span></a>
     <div class="nav-links">
         <a href="/">Inicio</a>
         <a href="/proceso.html">Cómo adoptar</a>
@@ -340,7 +341,7 @@ function toggleMobileMenu() {
 </div>
 
 <footer>
-    <p>Hecho con amor por <a href="/">PatitasBA</a> — Buenos Aires, Argentina</p>
+    <p>Hecho con amor por <a href="/">PatitasBA</a> en Buenos Aires, Argentina</p>
 </footer>
 
 <script>
@@ -478,7 +479,7 @@ function calculateProfile() {
             } else {
                 emoji = '🐕';
                 titulo = 'Un perro chico';
-                descripcion = 'Tu depto es ideal para un perro chico. Como pasás bastante tiempo en casa, puede ser cachorro o adulto — tenés el tiempo para dedicarle.';
+                descripcion = 'Tu depto es ideal para un perro chico. Como pasás bastante tiempo en casa, puede ser cachorro o adulto: tenés el tiempo para dedicarle.';
                 tags = ['Perro', 'Chico'];
             }
         }
@@ -559,7 +560,7 @@ async function loadAndFilterPets(profile) {
                 <div class="matches-title">Mascotas disponibles</div>
                 <div class="no-matches">
                     No encontramos mascotas que matcheen exactamente con tu perfil en este momento.<br>
-                    Pero revisá todas las disponibles — puede haber alguna que te sorprenda.
+                    Pero revisá todas las disponibles, puede haber alguna que te sorprenda.
                     <br><br>
                     <a href="/" class="btn-restart" style="text-decoration: none;">Ver todas las mascotas</a>
                 </div>
