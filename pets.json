@@ -1,35 +1,59 @@
 {
-  "generado": "2026-10-26T18:47:03.053541",
-  "total": 23,
+  "generado": "2026-10-27T18:08:51.315717",
+  "total": 18,
   "posts_revisados": 49,
   "mascotas": [
     {
-      "id": "De9z8AmlqyB",
-      "nombre": "Rumba",
+      "id": "DfAQuobDLKb",
+      "nombre": "Martina",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♀",
-      "edad": "Cachorro",
-      "edadCat": "cachorro",
+      "edad": "Adulto",
+      "edadCat": "adulto",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "Rumba tiene un año. Está castrada, vacunada y desparasitada",
+      "desc": "Martina tiene un año. Está castrada y vacunada",
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
       "emoji": "🐈",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
-      "postUrl": "https://www.instagram.com/p/De9z8AmlqyB/",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "postUrl": "https://www.instagram.com/p/DfAQuobDLKb/",
       "imgUrls": [
-        "images/De9z8AmlqyB_0.webp",
-        "images/De9z8AmlqyB_1.webp"
+        "images/DfAQuobDLKb_0.webp",
+        "images/DfAQuobDLKb_1.webp"
       ],
       "disponible": true,
-      "fecha": "2026-10-26",
-      "caption": "Rumba tiene un año. Está castrada, vacunada y desparasitada.\nEs una cachorra mimosa, tranquila, muy compañera.\nConvive con niños, gatos y perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+      "fecha": "2026-10-27",
+      "caption": "Martina tiene un año. Está castrada y vacunada.\nEs muy mimosa y sociable.\nPuede convivir con niños, gatos y perros.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nMD Instagram: @hogardeproteccionlourdes"
     },
     {
-      "id": "De90LYKFo-z",
-      "nombre": "Haiku",
+      "id": "DfAR_qYlL49",
+      "nombre": "Donna",
+      "tipo": "gato",
+      "raza": "Doméstico/a",
+      "genero": "♀",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Chico",
+      "tamanioCat": "chico",
+      "desc": "Donna cumplió dos años. Está castrada, vacunada y desparasitada",
+      "org": "Hogar de Protección Lourdes",
+      "ig": "hogardeproteccionlourdes",
+      "emoji": "🐈",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "postUrl": "https://www.instagram.com/p/DfAR_qYlL49/",
+      "imgUrls": [
+        "images/DfAR_qYlL49_0.webp",
+        "images/DfAR_qYlL49_1.webp"
+      ],
+      "disponible": true,
+      "fecha": "2026-10-27",
+      "caption": "Donna cumplió dos años. Está castrada, vacunada y desparasitada.\nSúper mimosa, tranquila, muy compañera.\nConvive con niños y gatos, no con perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+    },
+    {
+      "id": "DfAQgBVDTRk",
+      "nombre": "Ronin",
       "tipo": "gato",
       "raza": "Doméstico/a",
       "genero": "♂",
@@ -37,115 +61,19 @@
       "edadCat": "adulto",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "Haiku tiene un año. Está castrado y vacunado",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
-      "postUrl": "https://www.instagram.com/p/De90LYKFo-z/",
-      "imgUrls": [
-        "images/De90LYKFo-z_0.webp",
-        "images/De90LYKFo-z_1.webp"
-      ],
-      "disponible": true,
-      "fecha": "2026-10-26",
-      "caption": "Haiku tiene un año. Está castrado y vacunado.\nEs mimoso y tranquilo.\nApto para convivir con niños, gatos y perros.\nEs precioso.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nMD Instagram: @hogardeproteccionlourdes"
-    },
-    {
-      "id": "De90eqiFrjc",
-      "nombre": "Munay",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Munay tiene tres meses. Está despulgada y desparasitada",
+      "desc": "Ronin tien un año. Está castrado y vacunado",
       "org": "Hogar de Protección Lourdes",
       "ig": "hogardeproteccionlourdes",
       "emoji": "🐈‍⬛",
       "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
-      "postUrl": "https://www.instagram.com/p/De90eqiFrjc/",
+      "postUrl": "https://www.instagram.com/p/DfAQgBVDTRk/",
       "imgUrls": [
-        "images/De90eqiFrjc.webp"
+        "images/DfAQgBVDTRk_0.webp",
+        "images/DfAQgBVDTRk_1.webp"
       ],
       "disponible": true,
-      "fecha": "2026-10-26",
-      "caption": "Munay tiene tres meses. Está despulgada y desparasitada.\nEs muy mimosa y juguetona.\nApta para convivir con niños, gatos y perros.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nMD Instagram: @hogardeproteccionlourdes"
-    },
-    {
-      "id": "De90VFMlmjp",
-      "nombre": "Ramui",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Ramui tiene siete años. Está castrado y vacunado",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
-      "postUrl": "https://www.instagram.com/p/De90VFMlmjp/",
-      "imgUrls": [
-        "images/De90VFMlmjp_0.webp",
-        "images/De90VFMlmjp_1.webp"
-      ],
-      "disponible": true,
-      "fecha": "2026-10-26",
-      "caption": "Ramui tiene siete años. Está castrado y vacunado.\nEs un adulto espléndido, mimoso, muy sociable.\nPuede convivir con niños, gatos y perros.\nSerá el gran compañero de todos en la familia que lo adopte.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nMP Instagram: @hogardeproteccionlourdes \n\n#hogarlourdes #adoptaungato #adopcionresponsable"
-    },
-    {
-      "id": "De90Qp4Fu-l",
-      "nombre": "Brenda",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♀",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Brenda tiene un año. Está castrada y vacunada",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
-      "postUrl": "https://www.instagram.com/p/De90Qp4Fu-l/",
-      "imgUrls": [
-        "images/De90Qp4Fu-l_0.webp",
-        "images/De90Qp4Fu-l_1.webp"
-      ],
-      "disponible": true,
-      "fecha": "2026-10-26",
-      "caption": "Brenda tiene un año. Está castrada y vacunada.\nEs tranquila, súper sociable y mimosa, muy compañera.\nApta para convivir con niños, gatos y perros.\n\nInformes por Brenda:\nwhatsapp +54 9 11 3301-5857 Natalia\nMD Instagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
-    },
-    {
-      "id": "De90A7blvnl",
-      "nombre": "Job",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
-      "genero": "♂",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "Job tiene tres años. Está castrado y vacunado",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
-      "postUrl": "https://www.instagram.com/p/De90A7blvnl/",
-      "imgUrls": [
-        "images/De90A7blvnl_0.webp",
-        "images/De90A7blvnl_1.webp",
-        "images/De90A7blvnl_2.webp"
-      ],
-      "disponible": true,
-      "fecha": "2026-10-26",
-      "caption": "Job tiene tres años. Está castrado y vacunado.\nSociable, mimoso y compañero.\nConvive con niños, gatos y perros.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
+      "fecha": "2026-10-27",
+      "caption": "Ronin tien un año. Está castrado y vacunado.\nEs muy bueno y sociable con personas adultas.\nNo está acostubrado a niños ni otros animales de compañía.\nDebe ser único.\n\nInformes por adopciones:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
     },
     {
       "id": "De9RJxYlf7A",
@@ -161,7 +89,7 @@
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
+      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
       "postUrl": "https://www.instagram.com/p/De9RJxYlf7A/",
       "imgUrls": [
         "images/De9RJxYlf7A_0.webp",
@@ -173,79 +101,29 @@
       "caption": "Hay seres que, con solo mirarlos, te transmiten paz, calma y una sensación difícil de explicar. Seres que te miran a los ojos y hacen que, por un ratito, todo parezca estar bien 🤍\n\nMISS MECHI es uno de esos seres, porque aun viviendo las peores atrocidades, sigue teniendo el corazón lleno de amor.\n\nBuena, buenaza, buenísima. Santa, ángel… ¡POR DIOS, QUÉ PERRA MÁS ESPECTACULAR! ❤️\n\nSi tenés hijos, otros perros tranquilos o simplemente soñás con compartir tu vida con una compañera increíble, ADOPT"
     },
     {
-      "id": "De90Gqflnr4",
-      "nombre": "Ian",
-      "tipo": "gato",
-      "raza": "Doméstico/a",
+      "id": "De-NhEDldq6",
+      "nombre": "Soy",
+      "tipo": "perro",
+      "raza": "Mestizo/a",
       "genero": "♂",
-      "edad": "18 meses",
-      "edadCat": "adulto",
+      "edad": "Adulto+",
+      "edadCat": "senior",
       "tamanio": "Chico",
       "tamanioCat": "chico",
-      "desc": "Ian tiene 18 meses. Está castrado y vacunado",
-      "org": "Hogar de Protección Lourdes",
-      "ig": "hogardeproteccionlourdes",
-      "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
-      "postUrl": "https://www.instagram.com/p/De90Gqflnr4/",
-      "imgUrls": [
-        "images/De90Gqflnr4_0.webp",
-        "images/De90Gqflnr4_1.webp",
-        "images/De90Gqflnr4_2.webp"
-      ],
-      "disponible": true,
-      "fecha": "2026-10-26",
-      "caption": "Ian tiene 18 meses. Está castrado y vacunado.\nEs sociable, muy activo y cariñoso.\nApto para convivir con niños y gatos.\n\nInformes:\nwhatsapp +54 9 11 3301-5857 Natalia\nInstagram: @hogardeproteccionlourdes \n\n #hogarlourdes #adoptaungato #adopcionresponsable"
-    },
-    {
-      "id": "De7pKrWla7D",
-      "nombre": "Tiara",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Mediano",
-      "tamanioCat": "mediano",
-      "desc": "Semana de adopciones 🎉. Todos ellos hoy forman parte de una familia definitiva que los amará por siempre",
-      "org": "Zaguates Refugio",
-      "ig": "zaguatesrefugio",
-      "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
-      "postUrl": "https://www.instagram.com/p/De7pKrWla7D/",
-      "imgUrls": [
-        "images/De7pKrWla7D_0.webp",
-        "images/De7pKrWla7D_1.webp",
-        "images/De7pKrWla7D_2.webp"
-      ],
-      "disponible": true,
-      "fecha": "2026-10-25",
-      "caption": "Semana de adopciones 🎉\n\nNafta \nSam \nOlmo \nPili\nBebita \nBenicio\nDona \nLuca\nFusi\nLilo\nMinnie \nElsa\nDaisy\nTiara y Mickey \nOreo \nSarita \nCuti\nPipo\n\nTodos ellos hoy forman parte de una familia definitiva que los amará por siempre! Gracias por elegir adoptar con el ❤️\n\n✨ Si querés sumar un integrante más a tu familia, podés ver a todos nuestros zaguatitos que buscan hogar en nuestro perfil y en las historias destacadas “En adopción”.\n\n#zaguatesrefugio #zaguatessomostodos #adoptarsalvavidas #adoptanoco"
-    },
-    {
-      "id": "De6o7YflVqX",
-      "nombre": "Sin nombre",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "Cachorro",
-      "edadCat": "cachorro",
-      "tamanio": "Mediano",
-      "tamanioCat": "mediano",
-      "desc": "♥️❤️ BEBÉS EN ADOPCIÓN ♥️ Tienen 60 días buscan una familia para toda la vida. Les presentamos a:",
+      "desc": "🐾💕 ¡HOLA, SOY LENNY Y SUEÑO CON TENER UNA FAMILIA QUE ME AME PARA SIEMPRE. Soy un pequeñín de unos 7 añitos y apenas peso 3,5 kilitos… ¡pero mi corazón es enorme",
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
       "emoji": "🐶",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
-      "postUrl": "https://www.instagram.com/p/De6o7YflVqX/",
+      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
+      "postUrl": "https://www.instagram.com/p/De-NhEDldq6/",
       "imgUrls": [
-        "images/De6o7YflVqX_0.webp",
-        "images/De6o7YflVqX_1.webp",
-        "images/De6o7YflVqX_2.webp"
+        "images/De-NhEDldq6_0.webp",
+        "images/De-NhEDldq6_1.webp",
+        "images/De-NhEDldq6_2.webp"
       ],
       "disponible": true,
-      "fecha": "2026-10-25",
-      "caption": "♥️❤️ BEBÉS EN ADOPCIÓN ♥️ Tienen 60 días buscan una familia para toda la vida! ❤️🩷\n\nLes presentamos a: \n🩷FLORENCIA (foto 1)\n🩷VENECIA (foto 2)\n🩷ROMA (foto 3)\n🩷CHIMI (foto 4)\n🩷CHURRI (foto 5) \n\nCinco pedacitos de amor♥️ cinco miradas 🥹llenas de ternura y cinco corazoncitos que sueñan con tener algo que todos los bebés merecen: un hogar donde los amen para siempre. 🥹🐶💕\n\nTienen apenas 60 días de vida… están empezando a descubrir el 🌍 , a jugar, a conocer el cariño y a llenar de alegría cada rincón. "
+      "fecha": "2026-10-26",
+      "caption": "🐾💕 ¡HOLA, SOY LENNY Y SUEÑO CON TENER UNA FAMILIA QUE ME AME PARA SIEMPRE! 🥹🐾\n\nSoy un pequeñín de unos 7 añitos y apenas peso 3,5 kilitos… ¡pero mi corazón es enorme! ❤️\n\nTengo un ojito blanquito y algunas cositas que me hacen especial, pero ¿sabés qué? Todavía tengo muchísimo amor para dar y unas ganas enormes de encontrar ese lugarcito al que pueda llamar hogar. 🏡💖\n\nMi plan favorito es dormir largas siestas, especialmente si puedo tomar solcito ☀️. Amo los mimos, disfruto de los paseos con vos"
     },
     {
       "id": "De5X5SDlqWB",
@@ -261,7 +139,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
+      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
       "postUrl": "https://www.instagram.com/p/De5X5SDlqWB/",
       "imgUrls": [
         "images/De5X5SDlqWB_0.webp",
@@ -273,54 +151,54 @@
       "caption": "Hoy nos visitaron Gonza y Cami, los adoptantes de Camilo. Y nos emocionaron muchísimo 🥹\n\nMuchos se acordarán de su historia. A Camilo lo rescatamos después de que fuera atropellado. Nunca volvió a caminar y necesitaba un carrito para moverse. \n\nPero eso no les importó a Gonza y Cami, que lo eligieron y le dieron una vida llena de amor.\n\nLamentablemente Camilo ya no está. Pero hoy nos mostraron algo hermoso: cada uno lleva colgada una medallita con su nombre y su figura. Y Gonza también lo tiene "
     },
     {
-      "id": "De5XQT4lTGr",
-      "nombre": "Rosita",
-      "tipo": "perro",
-      "raza": "Mestizo/a",
-      "genero": "♂",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "ROSITA BUSCA FAMILIA 💗🐾. 🌸 Rosita tiene 3 añitos y es una perrita súper dócil, mimosa e inteligente 🥰",
-      "org": "Zaguates Refugio",
-      "ig": "zaguatesrefugio",
-      "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
-      "postUrl": "https://www.instagram.com/p/De5XQT4lTGr/",
-      "imgUrls": [
-        "images/De5XQT4lTGr_0.webp",
-        "images/De5XQT4lTGr_1.webp",
-        "images/De5XQT4lTGr_2.webp"
-      ],
-      "disponible": true,
-      "fecha": "2026-10-24",
-      "caption": "ROSITA BUSCA FAMILIA 💗🐾\n\n🌸 Rosita tiene 3 añitos y es una perrita súper dócil, mimosa e inteligente 🥰\n\n🐶 Tamaño pequeño: pesa solo 9 kg.\n💕 Se lleva bien con todos.\n✂️ Está castrada y vacunada 💉\n🏡 Hace todas sus necesidades afuera.\n\nRosita está lista para encontrar esa familia que la ame para siempre, la cuide y le dé el lugarcito que tanto merece ❤️\n\n¿Te gustaría que  forme parte de tu familia? 🏡🐾\nPedinos el formulario de pre adopción por msje privado 💌"
-    },
-    {
-      "id": "De2gsn7FTzS",
+      "id": "De6o7YflVqX",
       "nombre": "Sin nombre",
       "tipo": "perro",
       "raza": "Mestizo/a",
       "genero": "♂",
-      "edad": "Adulto",
-      "edadCat": "adulto",
-      "tamanio": "Chico",
-      "tamanioCat": "chico",
-      "desc": "SOY MANTECA Y ESTOY BUSCANDO MI FAMILIA PARA SIEMPRE 🥹🏡. Mis amigos callejeros  me decían  la Galga 😆 pero mi mami de tránsito me eligió un nombre y es Manteca , les voy a conta…",
+      "edad": "Cachorro",
+      "edadCat": "cachorro",
+      "tamanio": "Mediano",
+      "tamanioCat": "mediano",
+      "desc": "♥️❤️ BEBÉS EN ADOPCIÓN ♥️ Tienen 60 días buscan una familia para toda la vida. Les presentamos a:",
       "org": "Zaguates Refugio",
       "ig": "zaguatesrefugio",
-      "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #a8edea, #fed6e3)",
-      "postUrl": "https://www.instagram.com/p/De2gsn7FTzS/",
+      "emoji": "🐶",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
+      "postUrl": "https://www.instagram.com/p/De6o7YflVqX/",
       "imgUrls": [
-        "images/De2gsn7FTzS_0.webp",
-        "images/De2gsn7FTzS_1.webp",
-        "images/De2gsn7FTzS_2.webp"
+        "images/De6o7YflVqX_0.webp",
+        "images/De6o7YflVqX_1.webp",
+        "images/De6o7YflVqX_2.webp"
+      ],
+      "disponible": false,
+      "fecha": "2026-10-25",
+      "caption": "♥️❤️ BEBÉS EN ADOPCIÓN ♥️ Tienen 60 días buscan una familia para toda la vida! ❤️🩷\n\nLes presentamos a: \n🩷FLORENCIA (ADOPTADA)\n🩷VENECIA (ADOPTADA)\n🩷ROMA (ADOPTADA)\n🩷CHIMI (foto 4)\n🩷CHURRI (foto 5) \n\nCinco pedacitos de amor♥️ cinco miradas 🥹llenas de ternura y cinco corazoncitos que sueñan con tener algo que todos los bebés merecen: un hogar donde los amen para siempre. 🥹🐶💕\n\nTienen apenas 60 días de vida… están empezando a descubrir el 🌍 , a jugar, a conocer el cariño y a llenar de alegría cada ri"
+    },
+    {
+      "id": "De7pKrWla7D",
+      "nombre": "Tiara",
+      "tipo": "perro",
+      "raza": "Mestizo/a",
+      "genero": "♂",
+      "edad": "Adulto",
+      "edadCat": "adulto",
+      "tamanio": "Mediano",
+      "tamanioCat": "mediano",
+      "desc": "Semana de adopciones 🎉. Todos ellos hoy forman parte de una familia definitiva que los amará por siempre",
+      "org": "Zaguates Refugio",
+      "ig": "zaguatesrefugio",
+      "emoji": "🦮",
+      "bg": "linear-gradient(135deg, #A18CD1, #FBC2EB)",
+      "postUrl": "https://www.instagram.com/p/De7pKrWla7D/",
+      "imgUrls": [
+        "images/De7pKrWla7D_0.webp",
+        "images/De7pKrWla7D_1.webp",
+        "images/De7pKrWla7D_2.webp"
       ],
       "disponible": true,
-      "fecha": "2026-10-23",
-      "caption": "💗🐾 ¡HOLA! SOY MANTECA Y ESTOY BUSCANDO MI FAMILIA PARA SIEMPRE 🥹🏡\n\nMis amigos callejeros  me decían  la Galga 😆 pero mi mami de tránsito me eligió un nombre y es Manteca , les voy a contar un poquito sobre mi, ♥️Tengo un añito y monedas 🪙 casi dos , ♥️peso 16 kilitos, ♥️estoy castrada. Soy una perrita buenísima, dulce, cariñosa y bastante tranquila… ¡aunque también me encanta jugar! 🎾💕\n\nMe llevo bien con otros animales🐕 y con los niños 👦 👧. Además, soy una chica muy educada: 🏫 sé hacer mis neces"
+      "fecha": "2026-10-25",
+      "caption": "Semana de adopciones 🎉\n\nNafta \nSam \nOlmo \nPili\nBebita \nBenicio\nDona \nLuca\nFusi\nLilo\nMinnie \nElsa\nDaisy\nTiara y Mickey \nOreo \nSarita \nCuti\nPipo\n\nTodos ellos hoy forman parte de una familia definitiva que los amará por siempre! Gracias por elegir adoptar con el ❤️\n\n✨ Si querés sumar un integrante más a tu familia, podés ver a todos nuestros zaguatitos que buscan hogar en nuestro perfil y en las historias destacadas “En adopción”.\n\n#zaguatesrefugio #zaguatessomostodos #adoptarsalvavidas #adoptanoco"
     },
     {
       "id": "DexqN5hnHus",
@@ -336,7 +214,7 @@
       "org": "Adopta un Galgo",
       "ig": "adoptaungalgo",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "bg": "linear-gradient(135deg, #F093FB, #F5576C)",
       "postUrl": "https://www.instagram.com/p/DexqN5hnHus/",
       "imgUrls": [
         "images/DexqN5hnHus_0.webp",
@@ -386,7 +264,7 @@
       "org": "Adopta un Galgo",
       "ig": "adoptaungalgo",
       "emoji": "🐕‍🦺",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
       "postUrl": "https://www.instagram.com/p/DepuuoXmaC7/",
       "imgUrls": [
         "images/DepuuoXmaC7_0.webp",
@@ -411,7 +289,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
+      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
       "postUrl": "https://www.instagram.com/p/Deku1mXBmQh/",
       "imgUrls": [
         "images/Deku1mXBmQh.webp"
@@ -434,7 +312,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #667EEA, #764BA2)",
+      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
       "postUrl": "https://www.instagram.com/p/DefopsilnFN/",
       "imgUrls": [
         "images/DefopsilnFN_0.webp",
@@ -459,7 +337,7 @@
       "org": "Rescataditos en Adopción",
       "ig": "rescataditosenadopcionn",
       "emoji": "🐈‍⬛",
-      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
+      "bg": "linear-gradient(135deg, #FDDB92, #D1FDFF)",
       "postUrl": "https://www.instagram.com/p/DefYRi-j1kz/",
       "imgUrls": [
         "images/DefYRi-j1kz_0.webp",
@@ -484,7 +362,7 @@
       "org": "Rescataditos en Adopción",
       "ig": "rescataditosenadopcionn",
       "emoji": "🐱",
-      "bg": "linear-gradient(135deg, #D4FC79, #96E6A1)",
+      "bg": "linear-gradient(135deg, #FFECD2, #FCB69F)",
       "postUrl": "https://www.instagram.com/p/DePR9woR-Hh/",
       "imgUrls": [
         "images/DePR9woR-Hh.webp"
@@ -507,7 +385,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #FDB99B, #F48FB1)",
+      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
       "postUrl": "https://www.instagram.com/p/DeNT_QXD9a6/",
       "imgUrls": [
         "images/DeNT_QXD9a6_0.webp",
@@ -532,7 +410,7 @@
       "org": "Proyecto 4 Patas",
       "ig": "proyecto4patas",
       "emoji": "🦮",
-      "bg": "linear-gradient(135deg, #F9D423, #FF4E50)",
+      "bg": "linear-gradient(135deg, #4E54C8, #8F94FB)",
       "postUrl": "https://www.instagram.com/p/DeIQ3UgPNyD/",
       "imgUrls": [
         "images/DeIQ3UgPNyD.webp"
@@ -555,7 +433,7 @@
       "org": "Mascotas en Adopción",
       "ig": "mascotasenadopcion",
       "emoji": "🐕",
-      "bg": "linear-gradient(135deg, #84FAB0, #8FD3F4)",
+      "bg": "linear-gradient(135deg, #FF9A9E, #FAD0C4)",
       "postUrl": "https://www.instagram.com/p/kkpTYkjCYw/",
       "imgUrls": [
         "images/kkpTYkjCYw.webp"
